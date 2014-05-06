@@ -1,0 +1,266 @@
+.editorOpen .editor
+  -webkit-transform: translateX(-300px)
+  -moz-transform: translateX(-300px)
+  -o-transform: translateX(-300px)
+  -ms-transform: translateX(-300px)
+  transform: translateX(-300px)
+.editor
+  -webkit-transform: translateX(0px)
+  -moz-transform: translateX(0px)
+  -o-transform: translateX(0px)
+  -ms-transform: translateX(0px)
+  transform: translateX(0px)
+  -webkit-transition: -webkit-transform 400ms cubic-bezier(0.165, 0.84, 0.44, 1), opacity 300ms ease-in 300ms
+  -moz-transition: -moz-transform 400ms cubic-bezier(0.165, 0.84, 0.44, 1), opacity 300ms ease-in 300ms
+  -o-transition: -o-transform 400ms cubic-bezier(0.165, 0.84, 0.44, 1), opacity 300ms ease-in 300ms
+  transition: -webkit-transform 400ms cubic-bezier(0.165, 0.84, 0.44, 1),-moz-transform 400ms cubic-bezier(0.165, 0.84, 0.44, 1),-o-transform 400ms cubic-bezier(0.165, 0.84, 0.44, 1),transform 400ms cubic-bezier(0.165, 0.84, 0.44, 1), opacity 300ms ease-in 300ms
+
+.navOpen 
+  .main-overlay
+    display: block !important
+  .main, .bg
+    opacity: .9
+    //position: absolute
+    -webkit-transform: translate3d(60%, 0, 0) scale(0.85)
+    -moz-transform: translate3d(60%, 0, 0) scale(0.85)
+    -o-transform: translate3d(60%, 0, 0) scale(0.85)
+    -ms-transform: translate3d(60%, 0, 0) scale(0.85)
+    transform: translate3d(60%, 0, 0) scale(0.85)
+.main, .bg
+  //box-shadow: rgba(0, 0, 0, 0.3) 0 0 10px 3px
+  -webkit-transform: scale(1)
+  -moz-transform: scale(1)
+  -o-transform: scale(1)
+  -ms-transform: scale(1)
+  transform: scale(1)
+  -webkit-transition: all 400ms cubic-bezier(0.175, 0.885, 0.335, 1.05)
+  -moz-transition: all 400ms cubic-bezier(0.175, 0.885, 0.335, 1.05)
+  -o-transition: all 400ms cubic-bezier(0.175, 0.885, 0.335, 1.05)
+  transition: all 400ms cubic-bezier(0.175, 0.885, 0.335, 1.05)
+  -webkit-backface-visibility: hidden
+  -moz-backface-visibility: hidden
+  -o-backface-visibility: hidden
+  -ms-backface-visibility: hidden
+  backface-visibility: hidden
+
+.list-vertical
+  opacity: 1
+  -webkit-transform: translateX(0px)
+  -moz-transform: translateX(0px)
+  -o-transform: translateX(0px)
+  -ms-transform: translateX(0px)
+  transform: translateX(0px)
+  >*
+    opacity: 0
+    -webkit-transform: translateX(-1000px)
+    -moz-transform: translateX(-1000px)
+    -o-transform: translateX(-1000px)
+    -ms-transform: translateX(-1000px)
+    transform: translateX(-1000px)
+    -webkit-transition: -webkit-transform 400ms cubic-bezier(0.165, 0.84, 0.44, 1), opacity 300ms ease-in 300ms
+    -moz-transition: -moz-transform 400ms cubic-bezier(0.165, 0.84, 0.44, 1), opacity 300ms ease-in 300ms
+    -o-transition: -o-transform 400ms cubic-bezier(0.165, 0.84, 0.44, 1), opacity 300ms ease-in 300ms
+    transition: -webkit-transform 400ms cubic-bezier(0.165, 0.84, 0.44, 1),-moz-transform 400ms cubic-bezier(0.165, 0.84, 0.44, 1),-o-transform 400ms cubic-bezier(0.165, 0.84, 0.44, 1),transform 400ms cubic-bezier(0.165, 0.84, 0.44, 1), opacity 300ms ease-in 300ms
+  >*:nth-child(1)
+    -webkit-transition-delay: 0s
+    -moz-transition-delay: 0s
+    -o-transition-delay: 0s
+    transition-delay: 0s
+  >*:nth-child(2)
+    -webkit-transition-delay: 0.04s
+    -moz-transition-delay: 0.04s
+    -o-transition-delay: 0.04s
+    transition-delay: 0.04s
+  >*:nth-child(3)
+    -webkit-transition-delay: 0.08s
+    -moz-transition-delay: 0.08s
+    -o-transition-delay: 0.08s
+    transition-delay: 0.08s
+  >*:nth-child(4)
+    -webkit-transition-delay: 0.12s
+    -moz-transition-delay: 0.12s
+    -o-transition-delay: 0.12s
+    transition-delay: 0.12s
+
+.navOpen
+  .list-vertical>*
+    opacity: 1
+    -webkit-transform: translateX(0px)
+    -moz-transform: translateX(0px)
+    -o-transform: translateX(0px)
+    -ms-transform: translateX(0px)
+    transform: translateX(0px)
+
+$top1 = -1200px
+$top2 = 20px
+.modal
+  display: block
+  visibility: visible
+  position: absolute
+  z-index: 100
+  width: 100vw
+  padding: 1.25rem
+  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.4)
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4) 
+  -webkit-transform: translateY($top1)
+  -moz-transform: translateY($top1)
+  -o-transform: translateY($top1)
+  -ms-transform: translateY($top1)
+  transform: translateY($top1)
+  -webkit-transition: -webkit-transform 400ms cubic-bezier(0.165, 0.84, 0.44, 1), opacity 300ms ease-in 300ms
+  -moz-transition: -moz-transform 400ms cubic-bezier(0.165, 0.84, 0.44, 1), opacity 300ms ease-in 300ms
+  -o-transition: -o-transform 400ms cubic-bezier(0.165, 0.84, 0.44, 1), opacity 300ms ease-in 300ms
+  transition: -webkit-transform 400ms cubic-bezier(0.165, 0.84, 0.44, 1),-moz-transform 400ms cubic-bezier(0.165, 0.84, 0.44, 1),-o-transform 400ms cubic-bezier(0.165, 0.84, 0.44, 1),transform 400ms cubic-bezier(0.165, 0.84, 0.44, 1), opacity 300ms ease-in 300ms
+@media only screen and (max-width: 40em)
+  .modal
+    height: 100vh
+    min-height: 100vh  
+@media only screen and (min-width: 40.063em)
+  .modal
+    left: 50%  
+dialog .column,
+dialog .columns, .modal .column,
+.modal .columns
+  min-width: 0 
+dialog > :first-child, .modal > :first-child
+  margin-top: 0 
+dialog > :last-child, .modal > :last-child
+  margin-bottom: 0 
+@media only screen and (min-width: 40.063em)
+  .modal
+    margin-left: -40%
+    width: 80%  
+@media only screen and (min-width: 40.063em)
+  .modal
+    top: 6.25rem  
+.modal .close-modal
+  font-size: 2.5rem
+  line-height: 1
+  position: absolute
+  top: 0.5rem
+  right: 0.6875rem
+  color: #aaaaaa
+  font-weight: bold
+  cursor: pointer 
+
+@media only screen and (min-width: 40.063em)
+  .modal
+    padding: 1.875rem 
+  .modal.full
+    top: 0
+    left: 0
+    height: 100vh
+    min-height: 100vh
+    margin-left: 0 !important  
+@media only screen and (min-width: 40.063em) and (min-width: 40.063em)
+  .modal
+    top: 6.25rem  
+@media only screen and (min-width: 40.063em) and (min-width: 40.063em)
+  .modal.tiny
+    margin-left: -15%
+    width: 30%  
+@media only screen and (min-width: 40.063em) and (min-width: 40.063em)
+  .modal.small
+    margin-left: -20%
+    width: 40%  
+@media only screen and (min-width: 40.063em) and (min-width: 40.063em)
+  .modal.medium
+    margin-left: -30%
+    width: 60%  
+@media only screen and (min-width: 40.063em) and (min-width: 40.063em)
+  .modal.large
+    margin-left: -35%
+    width: 70%  
+@media only screen and (min-width: 40.063em) and (min-width: 40.063em)
+  .modal.xlarge
+    margin-left: -47.5%
+    width: 95%  
+
+@media only screen and (min-width: 40.063em) and (min-width: 40.063em)
+  .modal.full
+    margin-left: -50vw
+    width: 100vw  
+
+@media print
+  .modal
+    background: white !important  
+
+.revealled
+  -webkit-transform: translateY($top2)
+  -moz-transform: translateY($top2)
+  -o-transform: translateY($top2)
+  -ms-transform: translateY($top2)
+  transform: translateY($top2)
+  -webkit-transition: -webkit-transform 400ms cubic-bezier(0.165, 0.84, 0.44, 1), opacity 300ms ease-in 300ms
+  -moz-transition: -moz-transform 400ms cubic-bezier(0.165, 0.84, 0.44, 1), opacity 300ms ease-in 300ms
+  -o-transition: -o-transform 400ms cubic-bezier(0.165, 0.84, 0.44, 1), opacity 300ms ease-in 300ms
+  transition: -webkit-transform 400ms cubic-bezier(0.165, 0.84, 0.44, 1),-moz-transform 400ms cubic-bezier(0.165, 0.84, 0.44, 1),-o-transform 400ms cubic-bezier(0.165, 0.84, 0.44, 1),transform 400ms cubic-bezier(0.165, 0.84, 0.44, 1), opacity 300ms ease-in 300ms
+
+.overlay
+  position: fixed
+  top: 0
+  bottom: 0
+  left: 0
+  right: 0
+  z-index: 99
+  background-color: rgba(0,0,0,0.4)
+  display: none
+  cursor: pointer
+.on
+  display: block
+
+.slides
+  width: 100%
+  overflow: hidden
+  position: relative
+  height: auto
+  min-height: 350px
+  .slides2
+    position: relative
+    overflow: hidden
+    width: 2000em
+    top: 0
+  .slide
+    max-width: 960px
+    width: auto
+    position: relative
+    overflow: hidden
+    position: relative
+    padding: 0
+    margin: 0
+    float: left
+    img
+      display: block
+      height: auto
+      border: 0
+  .navigator
+    position: relative
+    height: 70px
+    background: black
+    z-index: 99
+    width: 100%
+  .nav.next
+    left: auto
+    right: 0
+    text-align: right
+  .nav.prev
+    right: auto
+    left: 0
+    text-align: left
+  .nav
+    position: absolute
+    top: 0
+    bottom: 0
+    overflow: hidden
+    text-decoration: none
+    background: black
+    cursor: pointer
+    color: white
+    width: 100px
+    padding: 10px 30px
+    &:hover
+      background: #222
+    i
+      position: static
+      line-height: 50px
+      font-size: 30px

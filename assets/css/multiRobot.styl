@@ -1,0 +1,265 @@
+$orange1 = #ffb700
+$orange2 = #ff7f00
+$orange3 = #e68019
+$black-translucent = rgba(0,0,0,0.6)
+$off-white = #ddd
+$grey = #aaa
+
+$green1 = #67ff22
+$green2 = #2c923a
+$green3 = #133e02
+
+$orange1 = #ffb700
+$orange2 = #ff8c00
+$orange3 = #e68019
+
+$black = #000
+$black_alpha = rgba(0, 0, 0, 0.5)
+$white = #fff
+$grey1 = #fcfcfc
+$grey15 = #eaeaea
+$grey2 = #cdcdcd
+$grey3 = #999
+$grey4 = #777
+$grey5 = #444
+$grey6 = #222
+$orange = #ff7f00
+$yellow = #fff134
+$red = #800000
+$pink1 = #ffefef
+$pink2 = #fdd
+$cool_blue = #6dcff6
+$green = #3D7F29
+
+$alpha1 = rgba(0, 0, 0, 0.1)
+$alpha2 = rgba(0, 0, 0, 0.2)
+$alpha3 = rgba(0, 0, 0, 0.4)
+$alpha4 = rgba(0, 0, 0, 0.5)
+$alpha5 = rgba(0, 0, 0, 0.7)
+$alpha6 = rgba(0, 0, 0, 0.8)
+$alpha_black = rgba(0, 0, 0, 0.95)
+
+$walpha1 = rgba(255, 255, 255, 0.1)
+$walpha2 = rgba(255, 255, 255, 0.2)
+$walpha3 = rgba(255, 255, 255, 0.4)
+$walpha4 = rgba(255, 255, 255, 0.5)
+$walpha5 = rgba(255, 255, 255, 0.7)
+$walpha6 = rgba(255, 255, 255, 0.8)
+$walpha_white = rgba(255, 255, 255, 0.95)
+
+$blue1 = #324681
+$blue2 = #0f172e
+
+$red1 = #a00909
+$red2 = #7f0303
+
+$yellow1 = #ffce4b
+$yellow2 = #fff14b
+
+.white.robot
+  background: rgba(255,255,255,0.8)
+.black.robot
+  background: rgba(0,0,0,0.8)
+.robot
+  position: absolute
+  translateZ(0)
+  left: 50%
+  top: 50%
+  z-index: 2
+  padding: 0px
+  box-shadow: 5px 5px 15px rgba(0,0,0,0.3)
+  color: white
+  h1
+    font-size: 24px
+    margin: 0
+    padding: 5px 0
+    font-weight: normal
+  h2
+    font-size: 15px
+    margin: 10px 0
+    font-weight: normal
+    padding: 0
+  h3
+    font-size: 12px
+    margin: 10px 0
+    font-weight: normal
+    padding: 0
+  .size-handle
+    display: none
+    -webkit-user-select: none
+    -khtml-user-select: none
+    -moz-user-select: none
+    -o-user-select: none
+    user-select: none
+    background-color: #efefef
+    position: absolute
+    color: black
+    cursor: pointer
+    border-radius: 100em
+    width: 40px
+    text-align: center
+    line-height: 40px
+    height: 40px
+    box-shadow: inset 0 0 40px rgba(0,0,0,0.4)
+    background: -moz-linear-gradient(top, $orange1 0%, $orange2)
+    background: -webkit-gradient(linear, left top, left bottom, from($orange1), to($orange2))
+    border-color: $orange3
+    color: #222
+    text-shadow: 1px -1px 0px rgba(130,072,000,0.5), 0px 2px 7px rgba(207,214,13,1)
+  @media only screen and (max-width: 40.063em)
+    .size-handle
+      display: none !important
+  .handle-move
+    top: -20px
+    left: -20px
+    font-size: 1em
+  .handle-height
+    font-size: 1.4em
+    bottom: -20px
+    left: -20px
+  .handle-width
+    font-size: 1.4em
+    top: -20px
+    right: -20px
+  .handle-both
+    bottom: -20px
+    right: -20px
+    font-size: 0.8em
+  .text-column
+    p
+      margin: 0 0 10px 0
+      line-height: 20px
+      font-size: 14px
+      text-align: justify
+      color: $grey2
+  .h1-whole
+    h1.whole
+      display: block
+  .h1-top
+    h1.top
+      display: block
+  .h1-half
+    h1.half
+      padding: 0
+      display: block
+  .hide-feature
+    display: none
+  .feature
+    box-shadow: 1px 1px 3px rgba(0,0,0,0.5)
+    position: relative
+    .feature2
+      height: inherit
+      width: inherit
+      overflow: hidden
+    .image
+      width: 100%
+      img
+        width: 100%
+    .caption
+      background: rgba(255,255,255,0.2)
+      padding: 10px
+      font-size: 14px
+    .caption-inside
+      .caption-bottom
+        position: absolute
+        bottom: 0
+        width: 100%
+      .caption-left
+        position: absolute
+        top: 0
+        height: 100%
+      .caption-right
+        position: absolute
+        top: 0
+        right: 0
+        height: 100%
+  .left
+    float: left
+  .right
+    float: right
+  .left-column
+  .right-column
+  .column
+    margin: 10px 0 0 0
+  .text-left
+    .media-column
+      float: right
+      margin: 0 0 0 15px
+  .text-right
+    .media-column
+      float: left
+      margin: 0 15px 0 0
+  .media-column
+  .playlist
+    margin-top: -10px
+    overflow: hidden
+  .playlist-slider
+    width: 20000em
+    height: 100px
+    overflow-x: auto
+    overflow-y: hidden
+  .playlist-item
+    cursor: pointer
+    position: relative
+    overflow: hidden
+    max-width: 120px
+    float: left
+    .image
+      position: relative
+      border: 0
+      overflow: hidden
+      img
+        width: 100%
+    .caption
+      font-size: 14px
+      padding: 5px
+    &:after
+      clear: both
+      content: ''
+      display: block
+  .caption-inside
+    .caption
+      background: rgba(255,255,255,0.5)
+      position: absolute
+    .caption-bottom
+      bottom: 0
+      width: inherit
+    .caption-right
+      top: 0
+      right: 0
+      width: 70px
+      height: 100%
+    .caption-left
+      left: 0
+      top: 0
+      width: 70px
+      height: 130px
+  .caption-outside
+    .caption
+    .caption-bottom
+    //      background: rgba(255,255,255,0.5)
+    .caption-right
+      float: left
+  .caption-hide
+    caption
+      display: none
+  .big-thumb
+    .playlist-item
+      box-shadow: 1px 1px 3px rgba(0,0,0,0.5)
+    .image
+      width: 290px
+      height: 140px
+      margin: 0
+    .caption-bottom
+      background: rgba(255,255,255,0.5)
+  .small-thumb
+    .image
+      box-shadow: 1px 1px 3px rgba(0,0,0,0.5)
+      float: left
+      width: 145px
+      height: 70px
+      margin: 5px
+
+
+
+

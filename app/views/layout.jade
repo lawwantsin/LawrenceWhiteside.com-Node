@@ -1,0 +1,28 @@
+doctype 5
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width')
+    title= title
+    != css('site')
+    != css('multiRobot')
+    != css('interaction')
+    != css('video-js')
+    != css('foundation-icons')
+    != css('foundation')
+    != css('ionicon.min')
+  body.site('data-video' = 'off')
+    block content
+    != js('lib/jquery-1.9.1')    
+    != js('lib/can.custom')
+    != js('lib/bigtext')
+    != js('lib/jquery.fittext')
+    != js('lib/jquery.scrollmagic')
+    != js('lib/jquery.scrollmagic.debug')
+    != js('lib/TweenMax')
+    != js('lib/video.dev')
+    != js('controls/app.js')
+    != js('controls/nav.js')
+    != js('controls/section.js')
+    != js('controls/robot.js')
+    != js('controls/bg.js')
