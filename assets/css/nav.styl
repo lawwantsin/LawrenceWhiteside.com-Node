@@ -1,0 +1,40 @@
+.nav-mobile
+  position: fixed
+  top: 0
+  bottom: 0
+  left: 0
+  right: 0
+  z-index: 0
+.nav
+  background-image: url('/images/nav-bgs/tree-bg.jpg')
+  background-size: cover
+  font-family: 'Bank Gothic', Helvetica
+  .nav-items
+    position: absolute
+    left: 130px
+    top: 250px
+    -webkit-transform: translate(-50%, -50%)
+    -moz-transform: translate(-50%, -50%)
+    -o-transform: translate(-50%, -50%)
+    -ms-transform: translate(-50%, -50%)
+    transform: translate(-50%, -50%)
+    font-size: 1.2em
+    overflow-y: scroll
+  @media only screen and (min-width: 40.063em)
+  	.nav-items
+	    left: 350px
+	    top: 490px
+  h1
+    color: rgba(255,255,255,0.7)
+    text-decoration: underline
+    font-size: 1.2em
+  a.item
+    line-height: 1em
+    font-size: 1em
+    color: white
+    padding: .5em
+    margin: 1px 0
+    display: block
+    text-decoration: none
+  a:hover, .selected
+    background-color: rgba(255,255,255,0.1)

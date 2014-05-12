@@ -1,26 +1,26 @@
-.robot.media-text.text-left.black.resizable.draggable
-  .size-handle.handle-move
-    i.ion-arrow-move
-  .size-handle.handle-width.ui-resizable-handle.ui-resizable-e
-    i.ion-arrow-right-c
+.robot.media-text.text-left.black.resizable.draggable(id = "robot-"+article.slug)
+  //- .size-handle.handle-move
+  //-   i.ion-arrow-move
+  //- .size-handle.handle-width.ui-resizable-handle.ui-resizable-e
+  //-   i.ion-arrow-right-c
   //- .size-handle.handle-height.ui-resizable-handle.ui-resizable-s
   //-   i.ion-arrow-down-c     
   //- .size-handle.handle-both.ui-resizable-handle.ui-resizable-se
   //-   i.ion-android-arrow-down-right
   .row
     .column.small-12
-      h1 American Detour: Travel Web Series
+      h1 #{article.headline}
   .row
     .column.small-12
       .feature.has-options.show-feature
         .feature2
-          .caption-inside
+          each poster, p in robot.content.posters
             .image
-              img(src="/images/american-detour.jpg")
-            .clear
+              img(src="/images/posters/#{poster.imageURL}")
+          .clear
         .size-handle.handle-height.ui-resizable-handle.ui-resizable-s
-          i.ion-arrow-down-c
+            i.ion-arrow-down-c
   .row.clearFix
     .text-column.column.small-12
       .media.media-column.column
-      p This is some article text.  Can go on and on and on and on and on and on and on and on and on.
+      p #{robot.content.copy}

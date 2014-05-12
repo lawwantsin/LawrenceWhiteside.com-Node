@@ -1,0 +1,51 @@
+body.web
+  section
+    top: 0
+    left: 0
+    position: absolute
+    width: 100%
+    min-height: 100%
+    visibility: hidden
+    opacity: 0
+  .door
+    cursor: pointer
+  .doorH
+    height: 50%
+    width: 100%
+    position: absolute
+    left: 0
+  .centerKnob
+    position: absolute
+    top: 50%
+    left: 50%
+    margin: -100px 0 0 -100px
+    width: 200px
+    height: 200px
+    background-color: black
+    border-radius: 100%
+
+  section.front
+    visibility: visible
+    opacity: 1
+    z-index: 0
+    .topDoor
+      top: 0
+      background-color: rgba(0,0,0,0.5)
+      .label
+        color: white
+    .bottomDoor
+      bottom: 0
+      background-color: rgba(255,255,255,0.2)
+      .label
+        color: black
+    .knob
+      font-family: 'Krungthep', 'Bank Gothic'
+      font-size: 100px
+      color: #ddd
+
+  section.film
+    z-index: -2
+    background-color: rgba(0,0,0,0.5)
+  section.web
+    z-index: -1
+    background-color: rgba(255,255,255,0.2)

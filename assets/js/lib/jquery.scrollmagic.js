@@ -128,6 +128,8 @@ Greensock License info at http://www.greensock.com/licensing/
 		* @private
 		*/
 		var getScrollPos = function () {
+			var s = _options.container.scrollTop();
+			$('.scrollPos').text(s);
 			return _options.vertical ? _options.container.scrollTop() : _options.container.scrollLeft();
 		};
 
@@ -827,12 +829,13 @@ Greensock License info at http://www.greensock.com/licensing/
 				}
 				if (_pinOptions.relSize.height) {
 					if (pinned) {
-						if ($(window).height() == _pinOptions.spacer.parent().height()) {
+						if (true) {//$(window).height() == _pinOptions.spacer.parent().height()) {
 							// relative to body
 							_pin.css("height", "inherit");
 						} else {
 							// not relative to body -> need to calculate
 							_pin.css("height", _pinOptions.spacer.height());
+							debugger
 						}
 					} else {
 						_pin.css("height", "100%");

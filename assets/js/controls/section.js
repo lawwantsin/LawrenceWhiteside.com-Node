@@ -14,4 +14,4 @@ App.SectionControl = can.Control({
 	}
 
 });
-var nav = new App.SectionControl('section');
+//var sections = new App.SectionControl('section');

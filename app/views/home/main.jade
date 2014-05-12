@@ -1,12 +1,19 @@
-.main
-	.main-overlay
-	.main-stage
-		.stage-width
-			include name
-			.animation
-				section#american-detour.slide
-					include story
-				section#fred-astaire-dance-studios.slide
-					include story
-	.next-icon
-		i.ion-chevron-down
+include name
+.main#scroll-wrapper.scrollContainer
+  .scrollContent
+    section#opening
+      #intro
+        .position1.position Filmmaker
+        .initials LW
+        .position2.position Web Artist
+        .loading
+    section#introBubble
+      .introBubble2
+        h1 Hello
+        p Welcome to my portfolio.  Scroll through for a tour of my projects.  Or use the navigation to skip ahead.
+    each article, x in articleData
+      section(id=article.slug)
+        each robot, y in article.robots
+          include posters
+.next-icon.next
+  i.ion-chevron-down

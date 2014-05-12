@@ -1,0 +1,26 @@
+doctype 5
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    title= title
+    != css('foundation-icons')
+    != css('foundation')
+    != css('ionicon.min')
+    != css('site')
+    != css('interaction')
+    != css('nav')
+    != css('web')
+  body.web('data-video' = 'off')
+    block content
+    != js('lib/jquery-1.9.1')    
+    != js('lib/can.custom')
+    != js('lib/modernizr')    
+    != js('lib/iscroll-probe')
+    != js('lib/fastclick')
+    != js('lib/TweenMax')
+    != js('lib/video.dev')
+    != js('controls/app.js')
+    != js('controls/nav.js')
+    != js('controls/section.js')
+    != js('controls/bg.js')

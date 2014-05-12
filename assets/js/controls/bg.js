@@ -5,7 +5,7 @@ App.BGControl = can.Control({
 		if (el.attr('data-video') == 'on') self.setupVideo();
 		else $('#theme-video').hide();
 		setTimeout(function() {
-			self.sizeBigImage();
+			self.sizeBigImage($('#theme-image').find('img'));
 		},1);
 	},
 
@@ -18,8 +18,7 @@ App.BGControl = can.Control({
     (this.bigPlayer.volume() == 0) ? this.bigPlayer.volume(1) : this.bigPlayer.volume(0)
   },
 
-  sizeBigImage : function() {
-  	var image = $('#theme-image').find('img');
+  sizeBigImage : function(image) {
   	var sizes = {};
   	sizes.ih = image[0].naturalHeight;
   	sizes.iw = image[0].naturalWidth;
@@ -71,7 +70,7 @@ App.BGControl = can.Control({
 	},
 
 	'{window} resize' : function() {
-		this.doResize();
+		this.doResize($('#theme-image').find('img'));
 	}
 
 });

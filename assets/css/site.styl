@@ -1,6 +1,6 @@
 .spotlight-gradient
   background: -moz-radial-gradient(center, ellipse cover,  rgba(255,255,255,0.25) 9%, rgba(0,0,0,0.6) 85%, rgba(0,0,0,0.67) 100%) /* FF3.6+ */
-  background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(9%,rgba(255,255,255,0.25)), color-stop(85%,rgba(0,0,0,0.6)), color-stop(100%,rgba(0,0,0,0.67))); /* Chrome,Safari4+ */
+  background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(9%,rgba(255,255,255,0.25)), color-stop(85%,rgba(0,0,0,0.6)), color-stop(100%,rgba(0,0,0,0.67))) /* Chrome,Safari4+ */
   background: -webkit-radial-gradient(center, ellipse cover,  rgba(255,255,255,0.25) 9%,rgba(0,0,0,0.6) 85%,rgba(0,0,0,0.67) 100%) /* Chrome10+,Safari5.1+ */
   background: -o-radial-gradient(center, ellipse cover,  rgba(255,255,255,0.25) 9%,rgba(0,0,0,0.6) 85%,rgba(0,0,0,0.67) 100%) /* Opera 12+ */
   background: -ms-radial-gradient(center, ellipse cover,  rgba(255,255,255,0.25) 9%,rgba(0,0,0,0.6) 85%,rgba(0,0,0,0.67) 100%) /* IE10+ */
@@ -20,7 +20,7 @@
   bottom: 0
   z-index: 0
 .mobile-menu
-  position: absolute
+  position: fixed
   width: 50px
   height: 50px
   top: 0px
@@ -40,12 +40,43 @@
     min-height: 100%
 .site
   background-color: white
+ 
+ @font-face {
+  font-family: 'Krungthep';
+  src: url('/fonts/krungthep-webfont.eot');
+  src: url('/fonts/krungthep-webfont.eot?#iefix') format('eot'),
+       url('/fonts/krungthep-webfont.woff') format('woff'),
+       url('/fonts/krungthep-webfont.ttf') format('truetype'),
+       url('/fonts/krungthep-webfont.svg#webfontB2ikyPY2') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'BankGothicMdBTMedium';
+  src: url('bankgthd-webfont.eot');
+  src: url('bankgthd-webfont.eot?iefix') format('eot'),
+       url('bankgthd-webfont.woff') format('woff'),
+       url('bankgthd-webfont.ttf') format('truetype'),
+       url('bankgthd-webfont.svg#webfontPFvjvtdZ') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.threeD
+  -webkit-transform-style: preserve-3d   // Important for perspective renders, avoids the flicker
+  transform-style: preserve-3d   // Important for perspective renders, avoids the flicker
+
 .bg
   @extend .theme-size
 section
   position: relative
   height: 100%
   width: 100%
+  bottom: auto
+  right: auto
+ section#opening
+   margin: 100px 0
 #theme-color
   @extend .theme-size
   background-color: #FFF    
@@ -57,9 +88,12 @@ section
   min-width: 400px
   height: 100%
   z-index: 1
-  overflow: hidden  
+  overflow: hidden
+  // :first-child
+  //   opacity: 1
   img
     position: absolute
+    opacity: 0
     max-width: 100000%
   // background-position: top right // editable
   // background-repeat: no-repeat
@@ -67,6 +101,12 @@ section
   // background-size: cover
 body.site
   overflow-x: hidden
+  #scroll-wrapper
+    position: relative
+    height: 100%
+    min-height: 500px
+    .scrollContent
+      position: relative
 #theme-video
   @extend .theme-size
   z-index: 2
@@ -79,7 +119,7 @@ body.site
   .screen
     position: relative
     height: 100% 
-    width: 100% /*  NOTE:numVideos/100%  */
+    width: 100%
     float: left
     overflow: hidden
   .big-image
@@ -115,7 +155,7 @@ body.site
   text-align: center
   background-color: rgba(0,0,0,0.7)
   border-radius: 100em
-  position: absolute
+  position: fixed
   left: 50%
   margin-left: -60px
   font-size: 3em
@@ -126,173 +166,18 @@ body.site
   z-index: 3px
 @media only screen and (max-width: 40.063em)
   #theme-image
-    background-size: auto
+    img
+      //
 .clickable
   cursor: pointer
-.nav-mobile
-  position: fixed
-  top: 0
-  bottom: 0
-  left: 0
-  right: 0
-  z-index: 0
-.nav
-  background-image: url('/images/mobile-bg2.jpg')
-  background-size: cover
-  font-family: 'Bank Gothic'
-  .nav-items
-    position: absolute
-    left: 25%
-    top: 10px
-    //-webkit-transform: translate(-50%, -50%)
-    -moz-transform: translate(-50%, -50%)
-    -o-transform: translate(-50%, -50%)
-    -ms-transform: translate(-50%, -50%)
-    transform: translate(-50%, -50%)
-    bottom: 10px
-    overflow-y: scroll
-    @media only screen and (min-width: 40.063em)
-      left: 20%
-    h1
-      color: rgba(255,255,255,0.7)
-      text-decoration: underline
-      font-size: 1.2em
-    a.item
-      line-height: 1em
-      font-size: 1em
-      color: white
-      padding: .5em
-      margin: 1px 0
-      display: block
-      text-decoration: none
-    a:hover, .selected
-      background-color: rgba(255,255,255,0.1)
-.main
-  overflow-x: hidden
-.main-overlay
+.contentContainer
   position: absolute
-  top: 0
-  bottom: 0
-  left: 0
-  right: 0
-  cursor: pointer
-  z-index: 4
-  display: none    
-.main-stage
-  position: relative
   top: 0
   width: 100%
-  z-index: 3
-  .stage-width
-    top: 0
-    position: relative
-    height: inherit
-    margin: 0 auto
-    z-index: 1
-    //background-color: rgba(255,255,255,0.2)
-    @media only screen and (max-width: 40.063em)
-      min-width: 100% !important
-  .name
-    background-color: rgba(255,255,255,0.1)
-    color: white
-    font-size: 30px
-    text-align: right
-    position: fixed
-    line-height: 50px
-    text-align: center
-    width: 100%
-    top: 0
-    z-index: 1
-.editor
-  position: fixed
-  top: 0
-  bottom: 0
-  width: 300px
-  right: -300px
-  background-color: #ddd
-  box-shadow: -5px 5px 5px rgba(0,0,0,0.1)
-  z-index: 3
-  .options
-    padding: 30px
-    width: auto
-    input
-      width: 100%
-  .ed-handle
-    position: absolute
-    cursor: pointer
-    top: 0
-    left: -50px
-    height: 50px
-    border-bottom-left-radius: 0.2em
-    width: 50px
-    line-height: 50px
-    font-size: 2em
-    text-align: center
-    background-color: transparent
-    color: rgba(255,255,255,0.8)
-    box-shadow: none
-
-.volume {
-  position: absolute;
-  z-index: 3;
-  top: 5px;
-  left: 50px;
-  height: 30px
-  cursor: pointer
-  opacity: 0.5
-}
-.volume .bar {
-  position: absolute
-  bottom: 0
-  display:inline-block; 
-}
-.volume .bar span {
-  display:block;
-  width:5px;
-  -webkit-animation: grafic 300ms linear infinite alternate;
-}
-
-@-webkit-keyframes grafic {
-  0%{height:5px;}
-100%{height:20px;}
-}
-
-.bar:nth-child(1) { 
-  left: 0px;
-  span{
-    background:#dedede;
-    -webkit-animation-delay:0.3s;
-  }
-}
-
-.bar:nth-child(2) {
-  left: 5px;
-  span{
-    background:#aaa8b8;
-    -webkit-animation-duration:0.7s;
-  }
-}
-
-.bar:nth-child(3) {
-  left: 10px;
-  span{
-    background:#dedede;
-    -webkit-animation-delay:0.8s;
-  }
-}
-
-.bar:nth-child(4) {
-  left: 15px
-  span {
-    background:#aaa8b8;
-    -webkit-animation-delay:0.4s;
-  }
-}
-
-.bar:nth-child(5) {
-  left: 20px
-  span {
-    background:#dedede;
-    -webkit-animation-duration:0.6s;
-  }
-}
+  height: 100%
+.main
+  position: relative
+  overflow-x: hidden
+  min-height: 100%
+  width: 100%
+  z-index: 2

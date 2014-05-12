@@ -61,14 +61,13 @@ $yellow2 = #fff14b
 .black.robot
   background: rgba(0,0,0,0.8)
 .robot
-  position: absolute
-  translateZ(0)
-  left: 50%
-  top: 50%
+  position: relative
   z-index: 2
   padding: 0px
   box-shadow: 5px 5px 15px rgba(0,0,0,0.3)
   color: white
+  opacity: 1
+  left: 50%
   h1
     font-size: 24px
     margin: 0
@@ -147,12 +146,18 @@ $yellow2 = #fff14b
   .feature
     box-shadow: 1px 1px 3px rgba(0,0,0,0.5)
     position: relative
+    overflow: hidden
     .feature2
       height: inherit
       width: inherit
+      padding-bottom: 63%
       overflow: hidden
+      :first-child
+        opacity: 1
     .image
       width: 100%
+      position: absolute
+      opacity: 0
       img
         width: 100%
     .caption
