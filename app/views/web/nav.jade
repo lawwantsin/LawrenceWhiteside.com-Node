@@ -1,9 +1,11 @@
 .mobile-menu.clickable
-	i.ion-navicon
+  i.ion-navicon
 .nav.nav-mobile
-	.nav-items.list-vertical
-		a.item.clickable(href="#!web") Web Artecture
-		a.item.clickable(href="#!film") Filmmaking
-		a.item.clickable(href="#!speaking") Writing
-		a.item.clickable(href="#!speaking") Speaking
-		a.item.clickable(href="#!contact") Contact Me
+  .nav-items.list-vertical.film-nav
+    a.item.clickable(href="#!web") Back
+    each section, x in sections.film
+      a.item.clickable(href="/#{section.slug}") #{section.title}
+  .nav-items.list-vertical.web-nav
+    a.item.clickable(href="#!web") Back Web
+    each section, x in sections.web
+      a.item.clickable(href="/#{section.slug}") #{section.title}

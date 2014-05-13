@@ -1,20 +1,39 @@
 body.web
-  section
+  .contentContainer
+    height: 100%
+  .style
+    position: fixed
     top: 0
+    bottom: 0
     left: 0
+    rigth: 0
+  .style.film
+    background-color: rgba(0,0,0,0.5)
+  .style.web
+    background-color: rgba(255,255,255,0.2)
+  .scrollContainer
     position: absolute
+    top: 50px
+    z-index: 1
+    bottom: 0
+    top: 50px
     width: 100%
-    min-height: 100%
+    .scrollContent
+      position: relative
+  section
+    width: 100%
+    height: 100%
     visibility: hidden
-    opacity: 0
+    position: relative
   .door
     cursor: pointer
+    position: relative
   .doorH
     height: 50%
     width: 100%
     position: absolute
     left: 0
-  .centerKnob
+  .knob
     position: absolute
     top: 50%
     left: 50%
@@ -23,29 +42,142 @@ body.web
     height: 200px
     background-color: black
     border-radius: 100%
-
   section.front
     visibility: visible
     opacity: 1
-    z-index: 0
+    z-index: 1
+    position: fixed
+    bottom: auto
+    top: 0
     .topDoor
       top: 0
       background-color: rgba(0,0,0,0.5)
       .label
+        position: absolute
         color: white
+        bottom: 0
+        padding: 10px
+        right: 50%
+        margin-right: 100px
     .bottomDoor
       bottom: 0
       background-color: rgba(255,255,255,0.2)
       .label
+        position: absolute
+        left: 50%
+        margin-left: 100px
+        top: 0
+        padding: 10px
         color: black
-    .knob
+    @media only screen and (max-width: 40.063em)
+      .topDoor
+        .label
+          width: 100%
+          bottom: 120px
+          right: auto
+          text-align: center
+          margin-right: 0
+      .bottomDoor
+        .label
+          width: 100%
+          top: 120px
+          left: auto
+          text-align: center
+          margin-left: 0
+    .initials
+      @extend body.web .knob
+      background-color: transparent
       font-family: 'Krungthep', 'Bank Gothic'
       font-size: 100px
-      color: #ddd
-
+      color: white
+      line-height: 200px
+      text-align: center
+      width: 200px
+      border-radius: 0
+      overflow: hidden
+      span
+        display: inline-block
+      span.name
+        width: 0
+        overflow: hidden
+      span.nameL
+        width: 60px
+      span.nameW
+        width: 100px
+  .contact
+    position: absolute
+    width: 150px
+    height: 50px
+    right: 70%
+    opacity: 0
+    left: auto
+    color: #ccc
+    cursor: pointer
+    &:hover
+      color: red
+    i
+      transform: rotateZ(45deg)
+      -webkit-transform: rotateZ(45deg)
+      width: 50px
+      font-size: 36px
+      line-height: 50px
+      text-align: center
+      float: right
+    .reachOut
+      right: 50px
+      position: absolute
+      line-height: 50px
+      font-size: 15px
+      opacity: 0
   section.film
-    z-index: -2
-    background-color: rgba(0,0,0,0.5)
+    z-index: 2
   section.web
-    z-index: -1
-    background-color: rgba(255,255,255,0.2)
+    z-index: 1
+    display: block
+  .page
+    position: relative
+    width: inherit
+    top: 50px
+    padding: 0 90px 0px 90px
+    display: none
+    .row
+      max-width: 1090px
+    img
+      width: 100%
+    .imac
+      position: relative
+      width: 100%
+      margin: 40px auto
+    .iphone
+      position: absolute
+      bottom: -30px
+      right: -100px
+      width: 120px
+    .screen
+      position: absolute
+      left: 3%
+      right: 3%
+      top: 4%
+      bottom: 26.7%
+      overflow: hidden
+      img
+        opacity: 0
+        position: absolute
+        top: -1px
+    .infoBox
+      background-color: #FFF
+      color: black
+      padding: 20px
+      margin: 10px auto
+      width: 60%
+      opacity: 0
+      position: relative
+      border-radius: 2px
+      box-shadow: 1px 0 2px rgba(0,0,0,0.4)
+      font-size: 1em
+      line-height: 1.2em
+    .infoBox1
+      display: block
+  @media only screen and (max-width: 40.063em)
+    .page
+      padding: 10px

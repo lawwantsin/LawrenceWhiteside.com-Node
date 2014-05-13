@@ -56,8 +56,18 @@ var americanD = {
 var csfME = {
   slug: 'csf',
   title : 'Cinema Set Free',
+  screen: 'profile',
+  info : [
+    "Cinema Set Free is a personal piece.",
+    "It's my take on the artist portfolio.",
+    "A visual artist can log on and create a stunning portfolio that can go live in minutes.",
+    "I replaced any design tasks with simple questions that lead to beautiful results.",
+    "Every portfolio functions the same way.  Now they're all connected.",
+    "Finding a way to fade away, and let their visuals shine.",
+    "All behind a custom domain name."
+  ],
   posters : [
-    {url : 'csf-deisgn.jpg'}, 
+    {url : 'csf-design.jpg'}, 
     {url : 'csf-actor.jpg'}, 
     {url : 'csf-atlas.jpg'}, 
     {url : 'csf-upload.jpg'}, 
@@ -67,6 +77,16 @@ var csfME = {
 var fan = {
   slug: 'fantrotter',
   title : 'Fantrotter',
+  screen: 'profile',
+  info : [
+    "Fantrotter is an entertainment travel site.",
+    "My answer to what people love about the new generation of travel sites",
+    "A compeling animated interface that draws to to the next action",
+    "Anyone with a tour schedule can install the app to their facebook page in 6 clicks",
+    "They earn money with every click a fan who'd like to travel to their show or game",
+    "My personal favorite part is the floating estimator.",
+    "An intelligent robot that moves to the best position based on the available space in the browser"
+  ],
   posters : [
     {url : 'fan-hotel.jpg'}, 
     {url : 'fan-list.jpg'}, 
@@ -188,14 +208,14 @@ sections.film = [
 ]
 sections.web = [
   csfME,
-  fan,
-  spins,
-  fads,
-  h2h,
-  elay,
-  kavi,
-  rsf,
-  aaa,
-  eb
+  fan
+  // ,spins,
+  // fads,
+  // h2h,
+  // elay,
+  // kavi,
+  // rsf,
+  // aaa,
+  // eb
 ]
 

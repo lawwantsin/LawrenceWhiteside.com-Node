@@ -26,10 +26,11 @@
   top: 0px
   left: 0px
   line-height: 50px
-  color: rgba(255,255,255,0.8)
+  color: #ccc
   text-align: center
   font-size: 2.3em
   z-index: 2
+  opacity: 0
 #big-video-vid
   position:absolute
   height:auto
@@ -79,7 +80,7 @@ section
    margin: 100px 0
 #theme-color
   @extend .theme-size
-  background-color: #FFF    
+  background-color: #ccc    
 #theme-style
   @extend .theme-size
   @extend .spotlight-gradient
@@ -138,7 +139,7 @@ body.site
     font-size: 4em
     text-transform: uppercase
   nav
-    position:absolute 
+    position: absolute 
     right: 5% 
     top: 45% 
     padding: 20px 
@@ -159,25 +160,19 @@ body.site
   left: 50%
   margin-left: -60px
   font-size: 3em
-  bottom: 10px
+  bottom: -100px
   color: #fff
   cursor: pointer
   text-decoration: none
-  z-index: 3px
+  z-index: 3
 @media only screen and (max-width: 40.063em)
   #theme-image
     img
       //
 .clickable
   cursor: pointer
-.contentContainer
-  position: absolute
-  top: 0
-  width: 100%
-  height: 100%
 .main
   position: relative
-  overflow-x: hidden
   min-height: 100%
   width: 100%
-  z-index: 2
+  z-index: 2  

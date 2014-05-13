@@ -1,9 +1,20 @@
-.main
-  section.front
-    .doorH.topDoor.door
-    .doorH.bottomDoor.door
-    .centerKnob
-  section.web
-  section.film
-.next-icon.next
-  i.ion-chevron-down
+.scrollContainer
+  .scrollContent
+    .main
+      section.web
+        each section, x in sections.web
+          .page.clearfix(class=section.slug)
+            .row
+              .column.small-12.large-8.large-push-4
+                .imac
+                  img(src="/images/screens/imac.png")
+                  .screen
+                    each poster, y in section.posters
+                      img(src="/images/posters/#{poster.url}")
+                      //img(src="/images/screens/#{section.slug}/#{section.screen}.png")
+                .iphone
+                  img(src="/images/screens/iphone.png")
+              .column.small-12.large-4.large-pull-8
+                each info, x in section.info
+                  .infoBox #{info}
+      section.film
