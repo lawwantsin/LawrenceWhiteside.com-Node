@@ -1,4 +1,26 @@
 body.web
+  .brands
+    position: absolute
+    top: 0
+    left: 40%
+    width: 150px
+    .logo
+      position: absolute
+      top: 10px
+      border-radius: 100%
+      border: 5px #787878 solid
+    .csf-logo
+      top: 10px
+      width: 80px
+      left: 0px
+    .fads-logo
+      top: 10px
+      width: 80px
+      left: 90px
+    .spins-logo
+      left: 180px
+      top: 10px
+      width: 80px
   .contentContainer
     height: 100%
   .style
@@ -23,7 +45,7 @@ body.web
   section
     width: 100%
     height: 100%
-    visibility: hidden
+    display: none
     position: relative
   .door
     cursor: pointer
@@ -43,9 +65,9 @@ body.web
     background-color: black
     border-radius: 100%
   section.front
-    visibility: visible
+    display: block
     opacity: 1
-    z-index: 1
+    z-index: 2
     position: fixed
     bottom: auto
     top: 0
@@ -150,9 +172,12 @@ body.web
       margin: 40px auto
     .iphone
       position: absolute
-      bottom: -30px
-      right: -100px
+      left: 50%
+      margin-top: -90px
+      margin-left: -250px
       width: 120px
+      transform: rotateZ(-90deg)
+      -webkit-transform: rotateZ(-90deg)
     .screen
       position: absolute
       left: 3%
@@ -160,6 +185,8 @@ body.web
       top: 4%
       bottom: 26.7%
       overflow: hidden
+      :last-child
+        opacity: 1
       img
         opacity: 0
         position: absolute

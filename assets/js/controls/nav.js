@@ -4,7 +4,7 @@ App.NavControl = can.Control({
 		var self = this;
 		FastClick.attach(document.body);
 		this.currentSection = 'front';
-		this.navSection('web');
+		this.openDoors();
 	},
 
   '.main click' :function() {
@@ -35,8 +35,6 @@ App.NavControl = can.Control({
 			this.openDoors(section);
 			this.chooseNav(section)
 		}
-    presenter.resetPage(section);
-	  presenter.playCue();
 	},
 
 	chooseNav :function(section) {
@@ -60,13 +58,16 @@ App.NavControl = can.Control({
 			.to('.initials', 0.7, {width: '100%'}, 'pitch')
 			.to('.nameL', 0.3, {width: 180}, 'across')
 			.to('.nameW', 0.2, {width: 180}, 'across')
-			.to('.contact', 2, {opacity: 1, right: 0, ease: Bounce.easeOut}, 'across')
+			.to('.contact', 2, {opacity: 1, right: 0}, 'across')
 			.to('.reachOut', 0.4, {opacity: 1}, 'contact')
-			.to('.contact i', 0.4, {rotation: '0deg', ease: Elastic.easeIn}, 'contact')
+			.to('.contact i', 0.2, {rotation: '0deg'}, 'contact')
 			.to('.next-icon', 1, {bottom: 10, ease: Elastic.easeOut, delay: '+=1000'})
-		tl.to('.'+section, 1, {autoAlpha: true, opacity: 1}, 'web')
-		tl.to('.page:first', 1, {display: 'block'}, 'web');
-		tl.seek('web')
+			.to('.'+section, 1, {display: 'block', autoAlpha: true, opacity: 1}, 'web')
+			.to('.page:first', 1, {display: 'block', onComplete : function() {
+		    presenter.resetPage(section);
+			  presenter.playCue('csf');
+			}}, 'web');
+			tl.seek('web')
 	}
 
 });

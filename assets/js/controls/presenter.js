@@ -1,19 +1,3 @@
-var Cues = {
-  web : [
-    (function() {
-      new TimelineMax()
-        .staggerFromTo('.csf .screen img', 0.5, {opacity: 0, yoyo: true, autoAlpha: true, repeat: -1}, {opacity: 1, yoyo: true, autoAlpha: true, repeat: -1}, 1, 'page1')
-        .staggerTo('.csf .infoBox', 0.5, {opacity: 1}, .5, 'page1');
-    })
-  ,
-    (function() {
-      new TimelineMax()
-        .staggerFromTo('.fantrotter .screen img', 0.5, {opacity: 0}, {opacity: 1, yoyo: true, autoAlpha: true, reverse: true}, 1, 'page1')
-        .staggerTo('.fantrotter .infoBox', 0.5, {opacity: 1}, 2, 'page1');
-    })
-  ]
-}
-
 App.Presenter = can.Control({
 
   init :function() {
@@ -26,6 +10,8 @@ App.Presenter = can.Control({
     this.iScroll.on("scroll", function () {
       console.log('scrolling');
     });
+    this.page = null
+    this.section = 'front'
   },
 
   '{document} scroll' :function(el, ev) {
@@ -42,9 +28,9 @@ App.Presenter = can.Control({
     this.playCue();
   },
 
-  playCue :function() {
-    if (Cues[this.page][this.cue]) {
-      Cues[this.page][this.cue]();
+  playCue :function(page) {
+    if (typeof(this[this.section].cues[page]) == 'function') {
+      this[this.section].cues[page]();
       this.nextCue();
     }
   },
@@ -66,9 +52,30 @@ App.Presenter = can.Control({
     this.resetCue();
   },
 
-  resetPage :function(section) {
-    this.setPage(section)
+  resetPage :function(page) {
+    this.setPage(page)
     this.resetCue();
+  },
+
+  resetSection :function(section) {
+    this.setSection(section)
+    this.resetPage()
+    this.resetCue();
+  },
+
+  web : {
+    cues : {
+      csf : function() { new TimelineMax()
+        .from('.csf .iphone', 0.5, {marginTop: -1000}, 1)
+        .staggerFromTo('.csf .screen img', 0.5, {opacity: 0, yoyo: true, autoAlpha: true, repeat: -1}, {opacity: 1, yoyo: true, autoAlpha: true, repeat: -1}, 1, 'page1')
+        .staggerTo('.csf .infoBox', 0.5, {opacity: 1}, .5);
+      },
+      fantrotter : function() { new TimelineMax()
+        .from('.fantrotter .iphone', 0.5, {marginTop: -400}, 1)
+        .staggerFromTo('.fantrotter .screen img', 0.5, {opacity: 0}, {opacity: 1, yoyo: true, autoAlpha: true, reverse: true}, 1)
+        .staggerTo('.fantrotter .infoBox', 0.5, {opacity: 1}, 2);
+      }
+    }
   }
 
 });
