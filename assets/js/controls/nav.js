@@ -4,7 +4,7 @@ App.NavControl = can.Control({
 		var self = this;
 		FastClick.attach(document.body);
 		this.currentSection = 'front';
-		this.openDoors();
+		this.navSection('web', 'fantrotter')
 	},
 
   '.main click' :function() {
@@ -23,16 +23,18 @@ App.NavControl = can.Control({
 	},
 
 	'.topDoor click' : function() {
-		this.navSection('film')
+		this.navSection('film', 'morning')
 	},
 
 	'.bottomDoor click' : function() {
-		this.navSection('web')
+		this.navSection('web', 'csf')
 	},
 
-	navSection :function(section) {
+	navSection :function(section, page) {
 		if (this.currentSection == 'front') {
-			this.openDoors(section);
+	    presenter.setSection(section);
+	    presenter.setPage(page);
+			this.openDoors(section, page);
 			this.chooseNav(section)
 		}
 	},
@@ -41,33 +43,8 @@ App.NavControl = can.Control({
 		$('.nav').removeClass('film').removeClass('web').addClass(section)
 	},
 
-	openDoors :function(section) {
-		var tl = new TimelineMax()
-			.to('.topDoor', 0.5, {top: "-50%"}, 'open')			
-			.to('.bottomDoor', 0.5, {top: "100%"}, 'open')
-			.to('.door', 0, {display: 'none'})
-			.to('.knob', 0.5, {marginTop: 0, marginLeft: 0, top: 0, left: 0, width: 110, height: 50, borderRadius: 0}, 'tl')
-			.to('.initials', 0.5, {marginTop: 0, marginLeft: 0, top: 0, width: 80, left: 0, height: 50, textAlign: 'left'}, 'tl')
-			.to('.initials', 0.5, {fontSize: '30px', lineHeight: '50px'}, 'tl')
-			.to('.nameW', 0.5, {width: 30}, 'tl')
-			.to('.nameL', 0.5, {width: 19}, 'tl')
-			.to('.mobile-menu', 0.5, {opacity: 1}, 'windup')
-			.to('.initials', 0.5, {left: 52}, 'windup')
-			.to('.knob', 0.5, {width: '100%'}, 'pitch')
-			.to('.front', 0.5, {height: 50}, 'pitch')
-			.to('.initials', 0.7, {width: '100%'}, 'pitch')
-			.to('.nameL', 0.3, {width: 180}, 'across')
-			.to('.nameW', 0.2, {width: 180}, 'across')
-			.to('.contact', 2, {opacity: 1, right: 0}, 'across')
-			.to('.reachOut', 0.4, {opacity: 1}, 'contact')
-			.to('.contact i', 0.2, {rotation: '0deg'}, 'contact')
-			.to('.next-icon', 1, {bottom: 10, ease: Elastic.easeOut, delay: '+=1000'})
-			.to('.'+section, 1, {display: 'block', autoAlpha: true, opacity: 1}, 'web')
-			.to('.page:first', 1, {display: 'block', onComplete : function() {
-		    presenter.resetPage(section);
-			  presenter.playCue('csf');
-			}}, 'web');
-			tl.seek('web')
+	openDoors :function(section, page) {
+		presenter.front.open(section, page);
 	}
 
 });

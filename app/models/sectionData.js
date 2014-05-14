@@ -62,9 +62,8 @@ var csfME = {
     "It's my take on the artist portfolio.",
     "A visual artist can log on and create a stunning portfolio that can go live in minutes.",
     "I replaced any design tasks with simple questions that lead to beautiful results.",
-    "Every portfolio functions the same way.  Now they're all connected.",
-    "Finding a way to fade away, and let their visuals shine.",
-    "All behind a custom domain name."
+    "Ingore what's unimportant.  Remove barriers for the artist to promote themselves.",
+    "All behind a custom domain name.  Just $7.99 a month."
   ],
   posters : [
     {url : 'csf-design.jpg'}, 
@@ -77,9 +76,9 @@ var csfME = {
 var fan = {
   slug: 'fantrotter',
   title : 'Fantrotter',
-  screen: 'profile',
+  screen: 'list',
   info : [
-    "Fantrotter is an entertainment travel site.",
+    "Fantrotter is an entertainment travel search engine.",
     "My answer to what people love about the new generation of travel sites",
     "A compeling animated interface that draws to to the next action",
     "Anyone with a tour schedule can install the app to their facebook page in 6 clicks",

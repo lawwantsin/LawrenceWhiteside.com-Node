@@ -1,26 +1,24 @@
 body.web
   .brands
     position: absolute
-    top: 0
-    left: 40%
-    width: 150px
+    left: 410px
+    right: 80px
+    overflow: hidden
+    height: 90px
     .logo
-      position: absolute
-      top: 10px
+      position: relative
+      margin-top: 10px
       border-radius: 100%
       border: 5px #787878 solid
+      opacity: 0
+      width: 80px
+      float: left
     .csf-logo
-      top: 10px
-      width: 80px
-      left: 0px
-    .fads-logo
-      top: 10px
-      width: 80px
-      left: 90px
+      margin-left: 0px
+    .fantrotter-logo
     .spins-logo
-      left: 180px
-      top: 10px
-      width: 80px
+    .fads-logo
+      margin-left: 5px
   .contentContainer
     height: 100%
   .style
@@ -126,6 +124,9 @@ body.web
         width: 60px
       span.nameW
         width: 100px
+    @media only screen and (max-width: 40.063em)
+      .initials
+        font-size: 60%
   .contact
     position: absolute
     width: 150px
@@ -157,7 +158,7 @@ body.web
     z-index: 1
     display: block
   .page
-    position: relative
+    position: absolute
     width: inherit
     top: 50px
     padding: 0 90px 0px 90px
@@ -169,15 +170,16 @@ body.web
     .imac
       position: relative
       width: 100%
-      margin: 40px auto
+      margin: 40px auto 90px auto
+      opacity: 0
     .iphone
-      position: absolute
+      position: relative
       left: 50%
-      margin-top: -90px
-      margin-left: -250px
+      margin: -80px 0 0 -60px
       width: 120px
       transform: rotateZ(-90deg)
       -webkit-transform: rotateZ(-90deg)
+      opacity: 0
     .screen
       position: absolute
       left: 3%
@@ -185,12 +187,12 @@ body.web
       top: 4%
       bottom: 26.7%
       overflow: hidden
-      :last-child
-        opacity: 1
       img
         opacity: 0
         position: absolute
         top: -1px
+      :first-child
+        opacity: 1
     .infoBox
       background-color: #FFF
       color: black
