@@ -4,7 +4,7 @@ App.NavControl = can.Control({
 		var self = this;
 		FastClick.attach(document.body);
 		this.currentSection = 'front';
-		this.navSection('web', 'fantrotter')
+		can.route.ready();
 	},
 
   '.main click' :function() {
@@ -13,6 +13,14 @@ App.NavControl = can.Control({
 
 	'.mobile-menu click' : function() {
 		this.toggleMenu();
+	},
+
+	'.nav-items a click' : function(el, ev) {
+		this.toggleMenu('close');
+	},
+
+	'.contact click' :function() {
+		modals.open('#contactModal')
 	},
 
 	toggleMenu :function(action) {
@@ -30,13 +38,26 @@ App.NavControl = can.Control({
 		this.navSection('web', 'csf')
 	},
 
+	'.web .logo click' : function(el, ev){
+		var p = el.attr('data-page');
+	},
+
+	':section/:page route' : function(data) {
+		var p = data.page
+		var s = data.section
+		this.navSection(s, p);
+	},
+
 	navSection :function(section, page) {
-		if (this.currentSection == 'front') {
-	    presenter.setSection(section);
-	    presenter.setPage(page);
+		if (presenter.getSection() == 'front') {
 			this.openDoors(section, page);
-			this.chooseNav(section)
 		}
+		else {
+			presenter.revealPage(section, page);
+		}
+		this.chooseNav(section);
+    presenter.setSection(section);
+    presenter.setPage(page);
 	},
 
 	chooseNav :function(section) {
@@ -44,7 +65,7 @@ App.NavControl = can.Control({
 	},
 
 	openDoors :function(section, page) {
-		presenter.front.open(section, page);
+		t = presenter.playCue('front', 'doors', 'open').revealPage(section, page)
 	}
 
 });

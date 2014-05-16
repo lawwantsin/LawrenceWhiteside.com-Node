@@ -15,12 +15,12 @@ App.iPhoneControl = can.Control({
   },
 
   open :function() {
-    presenter.web.csf.iphone.open();
+    presenter.web.page.iphone.open();
     this.state = 'open';
   },
 
   close :function() {
-    presenter.web.csf.iphone.close();
+    presenter.web.page.iphone.close();
     this.state = 'close';
   }
 

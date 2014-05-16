@@ -1,7 +1,7 @@
 App.Scroll = can.Control({
 
   defaults : {
-    wrapEl : '#scroll-wrapper'
+    wrapEl : '.scrollContainer'
   }
 
 },{
@@ -19,24 +19,11 @@ App.Scroll = can.Control({
     var iScrollOptions = {
       scrollX: false, scrollY: true, scrollbars: false, 
       useTransform: true, useTransition: true, probeType: 3,
-      bounce: false, momentum: false
+      bounce: false, momentum: true
     }
     if (!t) $.extend(iScrollOptions, {touch: false});
     this.iScroll = new IScroll(this.options.wrapEl, iScrollOptions);
-    (t) ? this.initTouchScroll() : this.initNoTouchScroll();
-    this.iScroll.on("scroll", function () {
-      self.scrollController.update();
-    });
-    this.sections = $('section');
-    this.currentSection = 0;
-  },
-
-  '.next click' :function() {
-    if (this.sections.eq(this.currentSection+1).length > 0) {
-      this.section = this.sections.eq(this.currentSection);
-      this.currentSection = this.currentSection+1;
-      this.iScroll.scrollTo(0, -this.section.offset().top, 0);
-    }
+    this.initTouchScroll();
   },
 
   initTouchScroll :function() {
@@ -44,7 +31,7 @@ App.Scroll = can.Control({
 
     // update container on scroll
     this.iScroll.on("scroll", function () {
-      console.log(scrolling)
+      console.log('scrolling');
       self.scrollController.update();
     });
 
@@ -73,28 +60,7 @@ App.Scroll = can.Control({
         .parent(".scrollmagic-pin-spacer").css("min-height", $(window).height());
     });
     $(document).trigger("orientationchange"); // trigger to init
-    //this.firstTry();
-    this.animateOpening();
-  },
-
-  initNoTouchScroll :function() {
-    this.animateOpening();
-  }, 
- 
-  animateOpening :function() {
-    var self = this;
-    this.presentSite();
-  },
-
-  presentSite :function() {
-    var tl = new TimelineMax()
-      tl.staggerTo('.infoBox', 1, {backgroundColor: 'red'})
-
-    var csf1 = new ScrollScene({duration: 2100, offset: 400})
-      .setTween(tl)
-      .addTo(self.scrollController)
-
   }
 
 });
-scroll = new App.Scroll(document, {wrapEl: '.csf .scroller'});
+scroller = new App.Scroll(document, {wrapEl: '.scrollContainer'});

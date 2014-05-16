@@ -8,15 +8,18 @@ section.front
     span.nameL.name Lawrence&nbsp;
     span.nameW.name Whiteside
   .contact
-    span.reachOut.hide-for-medium-down.
-      Contact Me
+    span.reachOut
+      .show-for-small-only.
+        Small
+      .show-for-medium-only.
+        Medium
+      .show-for-large-only.
+        Large
+      .show-for-xlarge-only.
+        X-Large
     i.ion-paper-airplane
   .brands
-    .csf-logo.logo
-      img(src="/images/logo-circles/csf.png")
-    .fantrotter-logo.logo
-      img(src="/images/logo-circles/fantrotter.png")
-    .spins-logo.logo
-      img(src="/images/logo-circles/spins.png")
-    .fads-logo.logo
-      img(src="/images/logo-circles/fads.png")
+    each section, x in sections.web
+      if section.logo
+        a.logo(href='#!web/'+section.slug, class="#{section.logo}-logo")
+          img(src="/images/logo-circles/#{section.logo}.png")

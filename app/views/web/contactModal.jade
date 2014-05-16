@@ -1,0 +1,24 @@
+.overlay
+#contactModal.modal.medium
+  .close-x &#215;
+  .column.large-6.small-12.show-for-large-up
+    //img(src="/images/facebook-login.png")
+  .column.small-12.large-6
+    .accounts.login-form
+      h1 Contact Lawrence
+      form(action="/contact")
+        .input
+          input(name="name", type="text", placeholder="Your Name")
+          small.error 
+            span A name is required.
+        .input
+          input(name="email", type="email", placeholder="E-Mail Address")
+          small.error 
+            span E-Mail is required.
+        .input
+          textarea(name="message", placeholder="How can I help you?")
+        .buttons.row.collapse
+          .column.small-6
+            button.submit.actionButton Add Payment
+          .column.small-6
+            button.orangeButton.actionButton Send Message

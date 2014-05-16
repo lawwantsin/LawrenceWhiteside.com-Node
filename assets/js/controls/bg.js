@@ -5,7 +5,7 @@ App.BGControl = can.Control({
 		if (el.attr('data-video') == 'on') self.setupVideo();
 		else $('#theme-video').hide();
 		setTimeout(function() {
-			self.sizeBigImage($('#theme-image').find('img'));
+			self.sizeBigImages($('#theme-image').find('img'));
 		},1);
 	},
 
@@ -18,21 +18,21 @@ App.BGControl = can.Control({
     (this.bigPlayer.volume() == 0) ? this.bigPlayer.volume(1) : this.bigPlayer.volume(0)
   },
 
-  sizeBigImage : function(image) {
-  	var sizes = {};
-  	sizes.ih = image[0].naturalHeight;
-  	sizes.iw = image[0].naturalWidth;
-  	var iRatio = sizes.iw/sizes.ih;  // >1 is landscape; <=1 is portrait
-	  sizes.ww = $(window).width();
-	  sizes.wh = $(window).height();
-	  var winRatio = sizes.ww/sizes.wh;
-  	if ((sizes.ww-sizes.iw) < (sizes.wh-sizes.ih)) sizes = this.scaleUp('height', sizes);
-  	if ((sizes.ww-sizes.iw) >= (sizes.wh-sizes.ih)) sizes = this.scaleUp('width', sizes);
-  	var niRatio = sizes.niw/sizes.nih;  // >1 is landscape; <=1 is portrait
-  	console.log("Image: W-"+sizes.iw+" H-"+sizes.ih+" R-"+iRatio);
-  	console.log("New Image: W-"+sizes.niw+" H-"+sizes.nih+" R-"+niRatio);
-		console.log("Win: W-"+sizes.ww+" H-"+sizes.wh+" R-"+winRatio);
-  	image.css({ height: sizes.nih, width: sizes.niw});
+  sizeBigImages : function(images) {
+    images = (typeof(images) == "Array") ? [images] : images; 
+    $.each(images, function(i, image) {
+    	var sizes = {};
+    	sizes.ih = image[0].naturalHeight;
+    	sizes.iw = image[0].naturalWidth;
+    	var iRatio = sizes.iw/sizes.ih;  // >1 is landscape; <=1 is portrait
+  	  sizes.ww = $(window).width();
+  	  sizes.wh = $(window).height();
+  	  var winRatio = sizes.ww/sizes.wh;
+    	if ((sizes.ww-sizes.iw) < (sizes.wh-sizes.ih)) sizes = this.scaleUp('height', sizes);
+    	if ((sizes.ww-sizes.iw) >= (sizes.wh-sizes.ih)) sizes = this.scaleUp('width', sizes);
+    	var niRatio = sizes.niw/sizes.nih;  // >1 is landscape; <=1 is portrait
+    	image.css({ height: sizes.nih, width: sizes.niw});
+    });
   }, 
 
   scaleUp :function(type, sizes) {
