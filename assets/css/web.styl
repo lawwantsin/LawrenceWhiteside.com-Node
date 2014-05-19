@@ -3,9 +3,9 @@ body.web
   .brands
     position: absolute
     left: 410px
-    right: 80px
     overflow: hidden
     height: 90px
+    right: 0
     .logo
       position: relative
       margin-top: 10px
@@ -13,38 +13,40 @@ body.web
       border: 5px #787878 solid
       opacity: 0
       width: 80px
+      margin-left: 5px
       float: left
     .csf-logo
       margin-left: 0px
-    .fantrotter-logo
-    .spins-logo
-    .fads-logo
-      margin-left: 5px
+  @media only screen and (min-width: 40.063em)
+    .brands
+      right: 80px
   .contentContainer
-    height: 100%
+    top: 0
+    bottom: 0
+    left: 0
+    right: 0
+    position: fixed
+    z-index: 1
+    overflow: hidden
   .style
     position: fixed
     top: 0
     bottom: 0
     left: 0
-    rigth: 0
+    right: 0
   .style.film
     background-color: rgba(0,0,0,0.5)
   .style.web
     background-color: rgba(255,255,255,0.2)
   .scrollContainer
-    position: absolute
-    top: 50px
+    position: relative
     z-index: 0
+    margin-top: 50px
     bottom: 0
-    top: 50px
-    width: 100%
     overflow-y: auto
     .scrollContent
       position: absolute
-      height: 1000%
-      width: 100%
-  section
+  .half
     width: 100%
     height: 100%
     display: none
@@ -66,13 +68,15 @@ body.web
     height: 200px
     background-color: black
     border-radius: 100%
-  section.front
+  .front
     display: block
     opacity: 1
     z-index: 1
     position: fixed
     bottom: auto
     top: 0
+    width: 100%
+    height: 100%
     .topDoor
       top: 0
       background-color: rgba(0,0,0,0.5)
@@ -93,7 +97,7 @@ body.web
         top: 0
         padding: 10px
         color: black
-    @media only screen and (max-width: 40.063em)
+    @media only screen and (max-width: 64.063em)
       .topDoor
         .label
           width: 100%
@@ -128,9 +132,9 @@ body.web
         width: 60px
       span.nameW
         width: 100px
-    @media only screen and (max-width: 40.063em)
+    @media only screen and (max-width: 64.063em)
       .initials
-        font-size: 60%
+        //
   .contact
     position: absolute
     width: 150px
@@ -140,33 +144,41 @@ body.web
     left: auto
     color: #ccc
     cursor: pointer
+    display: none
     &:hover
       color: red
-    i
-      transform: rotateZ(45deg)
-      -webkit-transform: rotateZ(45deg)
-      width: 50px
-      font-size: 36px
-      line-height: 50px
-      text-align: center
-      float: right
-    .reachOut
-      right: 50px
-      position: absolute
-      line-height: 50px
-      font-size: 15px
-      opacity: 0
-  section.film
+  @media only screen and (min-width: 40.063em)
+    .contact
+      display: block
+      i
+        transform: rotateZ(45deg)
+        -webkit-transform: rotateZ(45deg)
+        width: 50px
+        font-size: 36px
+        line-height: 50px
+        text-align: center
+        float: right
+      .reachOut
+        right: 50px
+        position: absolute
+        line-height: 50px
+        font-size: 15px
+        opacity: 0
+  .film
     z-index: 2
-  section.web
+  .web
     z-index: 1
     display: block
-  .page
-    position: absolute
-    width: inherit
-    top: 50px
-    padding: 0 90px 0px 90px
+  .section
+    position: relative
+    width: 100%
+    padding: 0px 90px 0px 90px
+    margin-top: 50px
     display: none
+    .page
+      position: relative
+      top: 0
+      left: 0
     .row
       max-width: 1090px
     img
@@ -175,7 +187,7 @@ body.web
       position: relative
       width: 100%
       margin: 40px auto 90px auto
-      opacity: 0
+      opacity: 1
     .iphone
       position: relative
       left: 50%
@@ -183,7 +195,7 @@ body.web
       width: 120px
       transform: rotateZ(-90deg)
       -webkit-transform: rotateZ(-90deg)
-      opacity: 0
+      opacity: 1
     .screen
       position: absolute
       left: 3%
@@ -198,58 +210,34 @@ body.web
       :first-child
         opacity: 1
     .cards
-      position: fixed
-      width: 100%
-      left: 0
-      height: 0%
-      bottom: 0
-      background-color: #FFF
-      -webkit-transition: height 1s
-      transition: height 1s
+      position: relative
+      width: auto
+      background-color: transparent
       .infoBox
         background-color: #FFF
-        padding: 20px
-        margin: 10px auto
-        opacity: 0
-        position: absolute
-        width: 50%
-        margin-top: 30px
-        p
-          color: black
-          font-size: 1em
-          line-height: 1.2em
-        .icon
-          i
-            color: orange
+        color: black
+        padding: 10px 20px
+        margin: 150px auto 0 auto
+        width: 80%
+        opacity: 1
+        position: relative
+        border-radius: 2px
+        box-shadow: 1px 0 2px rgba(0,0,0,0.4)
+        font-size: 1em
+        line-height: 1.2em
       &:first-child
         display: block
-    .openCards
-      height: 30%
-    @media only screen and (min-width: 64.063em)
-      .cards
-        position: relative
-        width: auto
-        background-color: transparent
-        .infoBox
-          background-color: #FFF
-          color: black
-          padding: 20px
-          margin: 10px auto
-          width: 100%
-          opacity: 0
-          position: absolute
-          border-radius: 2px
-          box-shadow: 1px 0 2px rgba(0,0,0,0.4)
-          font-size: 1em
-          line-height: 1.2em
-        &:first-child
-          display: block
-  @media only screen and (max-width: 40.063em)
-    .page
-      padding: 10px
-      top: 0
+  @media only screen and (max-width: 64.063em)
+    .section
+      padding: 100px 10px 10px 10px
+      margin-top: 0
+      .imac
+        margin: 0 auto 40px auto
       .iphone
         margin-top: -140px
+      .cards
+        .infoBox
+          margin-top: 0
   section.fixed
     position: fixed
     pointer-events: none

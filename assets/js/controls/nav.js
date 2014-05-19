@@ -1,9 +1,7 @@
 App.NavControl = can.Control({
 
 	init : function() {
-		var self = this;
 		FastClick.attach(document.body);
-		this.currentSection = 'front';
 		can.route.ready();
 	},
 
@@ -22,6 +20,14 @@ App.NavControl = can.Control({
 	'.contact click' :function() {
 		modals.open('#contactModal')
 	},
+
+  '.next click' :function() {
+    this.scrollNext();
+  },
+
+  scrollNext :function() {
+  	scroller.iScroll.next()
+  },
 
 	toggleMenu :function(action) {
 		if (this.element.hasClass("navOpen") || action == 'close')
@@ -42,30 +48,31 @@ App.NavControl = can.Control({
 		var p = el.attr('data-page');
 	},
 
-	':section/:page route' : function(data) {
-		var p = data.page
+	':half/:section route' : function(data) {
 		var s = data.section
-		this.navSection(s, p);
+		var h = data.half
+		this.navSection(h, s);
 	},
 
-	navSection :function(section, page) {
-		if (presenter.getSection() == 'front') {
-			this.openDoors(section, page);
+	navSection :function(half, section, page) {
+		console.log(presenter.getHalf())
+		if (presenter.getHalf() == 'front') {
+			this.openDoors(half, section);
 		}
 		else {
-			presenter.revealPage(section, page);
+			presenter.revealSection(half, section);
 		}
-		this.chooseNav(section);
+		this.chooseHalf(half);
     presenter.setSection(section);
-    presenter.setPage(page);
 	},
 
-	chooseNav :function(section) {
-		$('.nav').removeClass('film').removeClass('web').addClass(section)
+	chooseHalf :function(half) {
+    presenter.setHalf(half);
+		$('.nav').removeClass('film').removeClass('web').addClass(half)
 	},
 
-	openDoors :function(section, page) {
-		t = presenter.playCue('front', 'doors', 'open').revealPage(section, page)
+	openDoors :function(half, section) {
+		t = presenter.play('front', 'doors', 'open').revealSection(half, section, 0);
 	}
 
 });

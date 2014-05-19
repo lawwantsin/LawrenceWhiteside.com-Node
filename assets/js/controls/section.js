@@ -2,19 +2,17 @@ App.SectionControl = can.Control({
 
 	init : function() {
 		var self = this;
-//		this.sizeToScreen();
+		self.sizeToScreen();
+		$(window).on('resize', function() {
+			self.sizeToScreen();
+		})
 	},
-
-	// "{window} resize" :function() {
-	// 	this.sizeToScreen();
-	// },
 
 	sizeToScreen : function() {
-		this.element.css({width: $(window).width(), height: $(window).height()})
-	},
-
-	presentPage :function(page) {
-		new Timeline().to('.'+page, 1, {opacity: 1});
+		this.element.css({height: $(window).height()})
+		setTimeout(function() {
+	    scroller.iScroll.refresh();
+		}, 0)
 	}
 
 });

@@ -1,23 +1,34 @@
 .main.scrollContainer
   .scrollContent
-    section.web
-      each section, x in sections.web
-        .page.clearfix(class=section.slug)
-          .row
-            .column.small-12.large-8.large-push-4
-              .imac
-                img(src="/images/screens/imac.png")
-                .screen
-                  each poster, y in section.posters
-                    img(src="/images/posters/#{poster.url}")
-                    //img(src="/images/screens/#{section.slug}/#{section.screen}.png")
-              .iphone
-                img(src="/images/screens/iphone.png")
-            .column.small-12.large-4.large-pull-8
-              .cards
-                each info, x in section.info
-                  .infoBox
-                    .icon
-                      i(class=info.icon)
-                    p #{info.text}
-    section.film
+    .half.web
+      each section, x in sections.web        
+        section.section.clearfix(class=section.slug)
+          each page, y in section.pages
+            .page.clearfix.wow.bounceInUp
+              .row
+                .column.small-12.large-8.large-push-4
+                  if page.desktops
+                    .imac
+                      img(src="/images/screens/imac.png")
+                      .screen
+                        each d in page.desktops
+                          img(src="/images/posters/#{d}.jpg")
+                  if page.mobiles
+                    .iphone
+                      img(src="/images/screens/iphone.png")                  
+                      .screen
+                        each m in page.mobiles
+                          img(src="/images/posters/#{m}.jpg")
+                  if page.posters
+                    .screen
+                      each p in page.posters
+                        img(src="/images/posters/#{p}.jpg")
+                .column.small-12.large-4.large-pull-8
+                  .cards
+                    .infoBox
+                      if page.icon
+                        .icon
+                          i(class=page.icon)
+                      each card in page.cards
+                        p #{card}
+    .half.film

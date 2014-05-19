@@ -46,32 +46,36 @@ var feHour = {
 
 var americanD = {
   slug: 'american-detour',
-  title : 'American Detour',
-  info : [
+  title: 'American Detour',
+  pages: [ 
     {
-      text: "American Detour is a Short travel web-series staring Bruce Northam.",
-      icon: "lightbulb"
+      video: 'ad-collage', 
+      card: 'American Detour is a Short travel web-series staring Bruce Northam.',
+      icon: 'travel'
     },
     {
-      text: "Bruce is a veteran writer with decades of experience",
-      icon: "lightbulb"
+      poster: 'bruce-and-books', 
+      card : 'Bruce is a veteran writer with decades of travel experience,',
+      icon : 'travel'
     },
     {
-      text: "But when it came to creating an identity online he needed an expert.",
-      icon: "lightbulb"
+      poster: 'bruce-and-i', 
+      card : 'When it came to creating an identity online he needed a guide.',
+      icon : 'travel'
     },
     {
-      text: "We created 20 episodes in 5 countries and 4 states, and a web-presence around the American Detour brand.",
-      icon: "lightbulb"
+      video: 'oktane-collage', 
+      card : [
+        'During my time there, Oktane, created 20 episodes in 5 countries and 4 states',
+        'And a wordpress based blog on the American Detour brand.'
+      ],
+      icon : 'travel'
     },
     {
-      text: "Bruce's new book is coming soon.",
-      icon: "lightbulb"
-    }
-  ],
-  posters : [
-    {url : 'ad-law.jpg'},
-    {url : 'ad-poster.jpg'}
+      poster: 'directions-book', 
+      card : 'Bruce\'s new book is coming soon.',
+      icon : 'travel'
+    },
   ]
 }
 
@@ -79,31 +83,57 @@ var csfME = {
   slug: 'csf',
   logo: 'csf',
   title : 'Cinema Set Free',
-  info : [
+  pages: [ 
     {
-      text: "Cinema Set Free is a personal piece.",
-      icon: "lightbulb"
+      desktops: ['csf-logo'], 
+      cards: [
+        'Cinema Set Free is a personal project.',
+        'And my playground for experimenting with new technologies',
+      ],
+      icon: ''
     },
     {
-      text: "It's my take on the artist portfolio.",
-      icon: ""
+      desktops: ['csf-atlas'], 
+      cards: ['It consists of a suite of apps for indie filmmakers'],
+      icon: ''
+    },
+
+    {
+      desktops: ['csf-actor'], 
+      cards: ['CSF.ME is my 3rd draft of an Artist\'s Online Portfolio Builder.'],
+      icon: ''
     },
     {
-      text: "Any artist can create a stunning portfolio and go live in minutes.",
-      icon: ""
+      desktops: ['csf-upload'],
+      cards: [
+        'Anyone can create a stunning portfolio with video and images', 
+        'and go live in minutes.'
+      ],
+      icon: ''
     },
     {
-      text: "I replaced any design tasks with simple questions that lead to beautiful results.",
-      icon: ""
+      desktops: [
+        'csf-design', 
+        'csf-upload', 
+        'csf-actor', 
+        'csf-altas'
+      ],
+      cards: [
+        'My goal was removing barriers for the artist who may not be a designer.  ', 
+        'I replaced any design tasks with simple questions that lead to beautiful results.',
+        'Give them nothing to drag, place or move about.  Everything just lines up.',
+        'A menu of options that any real designer would ask.'
+      ],
+      icon: ''
     },
     {
-      text: "Ingore what's unimportant.  Remove barriers for the artist to promote themselves.",
-      icon: ""
+      posters: ['csf-pricing'],
+      cards: [
+        'Completely free for everyone.',  
+        'Behind your own domain name for $7.99/month'
+      ],
+      icon: ''
     },
-    {
-      text: "All behind a custom domain name.  Just $7.99 a month.",
-      icon: ""
-    }
   ],
   posters : [
     {url : 'csf-design.jpg'}, 
@@ -201,11 +231,11 @@ var fads = {
       icon: "video"
     },
     {
-      text: "So we developed a system to produce their live events",
+      text: "So we developed a system to shoot their showcases and competitions",
       icon: "camera"
     },
     {
-      text: "They needed promotional print material, no problem.",
+      text: "They also needed promo print material. No problem.",
       icon: "print"
     },
     {
@@ -229,6 +259,7 @@ var fads = {
 
 var h2h = {
   slug: 'head2head',
+  logo: 'h2h',
   title : 'Head 2 Head',
   info : [
     {
@@ -263,6 +294,7 @@ var h2h = {
 
 var elay = {
   slug: 'e-layaway',
+  logo: 'elay',
   title : 'E-Layaway',
   info : [
     {
@@ -310,6 +342,7 @@ var kavi = {
 
 var rsf = {
   slug: 'real-smart-fitness',
+  logo: 'rsf',
   title : 'Real Smart Fitness',
   info : [
     {
@@ -364,6 +397,7 @@ var bsa = {
 
 var eb = {
   slug: 'edible-brians',
+  logo: 'eb',
   title : 'Edible Brains Productions',
   info : [
     {
@@ -391,6 +425,7 @@ var eb = {
 
 var aaa = {
   slug: 'alternative-arts',
+  logo: 'aaa',
   title : 'Alternative Arts Association',
   info : [
     {
@@ -428,14 +463,14 @@ sections.film = [
 ]
 sections.web = [
   csfME
-  ,fan
-  ,spins
-  ,fads
-  , h2h
-  , elay
-  , kavi
-  , rsf
-  , aaa
-  , eb
+  // ,fan
+  // ,spins
+  // ,fads
+  // , h2h
+  // , elay
+  // , kavi
+  // , rsf
+  // , aaa
+  // , eb
 ]
 

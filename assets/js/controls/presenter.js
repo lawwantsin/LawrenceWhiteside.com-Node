@@ -1,16 +1,12 @@
 App.Presenter = can.Control({
 
   init :function() {
-    var iScrollOptions = {
-      scrollX: false, scrollY: true, scrollbars: false, 
-      useTransform: false, useTransition: true, probeType: 3,
-      bounce: false, momentum: false
-    }
-    this.page = 'csf';
-    this.section = 'front';
-    this.cue = 'open';
+    this.page = 0;
+    this.section = null;
+    this.half = 'front';
     this.okToProceed = true;
-    $(window).setBreakpoints({breakpoints: [1024]});
+    new WOW().init();
+//    $(window).setBreakpoints({breakpoints: [1024]});
   },
 
   scrolled :function() {
@@ -21,19 +17,19 @@ App.Presenter = can.Control({
     }, 1000);
   },
 
-  '{window} extBreakpoint1024' :function(el, ev) {
-    console.log('small');
-    this.setSize('small');
-  },
+  // '{window} extBreakpoint1024' :function(el, ev) {
+  //   console.log('small');
+  //   this.setSize('small');
+  // },
 
-  '{window} enterBreakpoint1024' :function(el, ev) {
-    console.log(ev);
-    this.setSize('large');
-  },
+  // '{window} enterBreakpoint1024' :function(el, ev) {
+  //   console.log(ev);
+  //   this.setSize('large');
+  // },
 
-  '.next click' :function() {
-    this.scrolled();
-  },
+  // '.next click' :function() {
+  //   this.scrolled();
+  // },
 
   swiped :function() {
     this.okToProceed = false
@@ -42,67 +38,64 @@ App.Presenter = can.Control({
     this.playCue(this.section, this.page, cue);
   },
 
-  getCue :function() {
-    return this.cue
-  },
-
   getPage :function() {
-    return this.page;
+    return this.page
   },
 
-  getSection :function() {
+  getSection : function() {
     return this.section;
   },
 
-  setCue :function(cue) {
-    return this.cue = cue
-  },
-
-  resetCue :function() {
-    return this.cue = 'open';
+  getHalf : function() {
+    return this.half;
   },
 
   setPage :function(page) {
-    this.resetCue();
-    return this.page = page;
-  },
-
-  resetPage :function(page) {
-    this.resetCue();
-    return this.setPage(page);
-  },
-
-  resetSection :function(section) {
-    this.resetPage();
-    this.resetCue();
-    return this.setSection(section);
+    return this.page = page
   },
 
   setSection :function(section) {
+    this.resetPage();
     return this.section = section;
   },
 
-  revealPage : function(section, page) {
+  setHalf :function(half) {
+    this.resetSection();
+    return this.half = half;
+  },
+
+  resetPage :function() {
+    return this.setPage(0);
+  },
+
+  resetSection :function(section) {
+    return this.setSection(null);
+  },
+
+  resetSite :function(section) {
+    return this.setHalf('front');
+  },
+
+  revealSection : function(half, section, page) {
     this.setSection(section);
     this.setPage(page);
-    $('.page').css({zIndex: 1, opacity: 0});
+    $('.section').css({zIndex: 1, opacity: 0});
     var tl = new TimelineMax()
-      .to('.page.'+section, 0, {display: 'block', zIndex: 2})
-      .to('section.'+section, 1, {opacity: 1})
-      .to('.page.'+page, 0, {display: 'block'})
-      .to('.page.'+page, 0.5, {opacity: 1});
-    tl.add(this[section].page.open())
+      .to('.section.'+section, 0, {display: 'block', zIndex: 2})
+      .to('.'+section, 1, {opacity: 1})
+      .to('.section.'+section, 0, {display: 'block'})
+      .to('.section.'+section, 0.5, {opacity: 1});
+    tl.add(this[half].section.open())
     return tl
   },
 
-  playCue :function(section, page, cue, addCue) {
-    var f = this[section][page][cue];
+  play :function(half, section, page, addCue) {
+    var f = this[half][section][page];
     if (typeof(f) == 'function') {
+      this.setHalf(half);
       this.setSection(section);
-      this.setPage(page);
-      this.setCue(cue);
       if (addCue) {
-        f().add(addTL)
+        f().add(addCue)
       }
       else { f() }
       this.okToProceed = true;
@@ -129,25 +122,23 @@ App.Presenter = can.Control({
           .to('.initials', 0.7, {width: '100%'}, 'pitch')
           .to('.nameL', 0.3, {width: 180}, 'across')
           .to('.nameW', 0.2, {width: 180}, 'across')
-          .to('.contact', 2, {opacity: 1, right: 0}, 'across')
+          .to('.contact', 2, {opacity: 1, right: 0, ease: Linear.easeNone}, 'across')
           .staggerTo('.brands .logo', 0.5, {opacity: 1}, 0.1, 'across+=0.25')
           .to('.reachOut', 0.4, {opacity: 1}, 'contact')
           .to('.contact i', 0.2, {rotation: '0deg'}, 'contact')
           .to('.next-icon', 1, {bottom: 10, ease: Elastic.easeOut, delay: '-=1000'}, 'end')
-         //tl.seek('end')
+//         tl.seek('end')
          return tl
       }
     }
   },
   web : {
-    page : {
+    section : {
       open : function() { 
-        var page = presenter.getPage();
+        var section = presenter.getSection();
         tl = new TimelineMax()
-          .to('.'+page+' .imac', 1, {opacity: 1})
-          .to('.'+page+' .iphone', 1, {opacity: 1, onComplete: function() { $('.'+page+' .cards').addClass('openCards')}})
-          .staggerTo('.'+page+' .screen img', 0.5, {opacity: 1}, 3, '1')
-          .staggerTo('.'+page+' .infoBox', 0.5, {opacity: 1}, 3, '1');
+          .to('.'+section+' .imac', 1, {opacity: 1})
+          .to('.'+section+' .iphone', 1, {opacity: 1})
         return tl
       },
       close : function() { 

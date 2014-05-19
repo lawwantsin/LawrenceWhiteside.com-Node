@@ -69,9 +69,9 @@ App.BGControl = can.Control({
 	  $('#bigScreen').css({height: h, width: w});
 	},
 
-	'{window} resize' : function() {
-		this.doResize($('#theme-image').find('img'));
-	}
+// 	'{window} resize' : function() {
+//		this.doResize($('#theme-image').find('img'));
+// 	}
 
 });
 
