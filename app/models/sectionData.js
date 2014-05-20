@@ -162,7 +162,7 @@ var fan = {
       icon: ''
     },
     {
-      desktops: ['fan-install'],
+      desktops: ['fan-festival'],
       cards: [
         'A compelling, animated interface that draws users to their next action.'
       ],
@@ -183,7 +183,7 @@ var fan = {
       icon: ''
     },
     {
-      desktops: ['fan-revenue'],
+      desktops: ['fan-widget'],
       cards: [
         'Bands make 20-70% of the PPC revenue their fans generate.'
       ],

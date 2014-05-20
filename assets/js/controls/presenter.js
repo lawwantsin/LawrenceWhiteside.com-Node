@@ -5,7 +5,7 @@ App.Presenter = can.Control({
     this.section = null;
     this.half = 'front';
     this.okToProceed = true;
-    new WOW().init();
+//    new WOW().init();
 //    $(window).setBreakpoints({breakpoints: [1024]});
   },
 
@@ -77,9 +77,10 @@ App.Presenter = can.Control({
   },
 
   revealSection : function(half, section, page) {
+    console.log(arguments);
     this.setSection(section);
     this.setPage(page);
-    $('.section').css({zIndex: 1, opacity: 0});
+    $('.section').css({zIndex: 1, opacity: 0, display: 'none'});
     var tl = new TimelineMax()
       .to('.section.'+section, 0, {display: 'block', zIndex: 2})
       .to('.'+section, 1, {opacity: 1})
