@@ -100,46 +100,45 @@ var csfME = {
 
     {
       desktops: ['csf-actor'], 
-      cards: ['CSF.ME is my 3rd draft of an Artist\'s Online Portfolio Builder.'],
+      cards: ['CSF.ME is my everchanging idea for an Artist\'s Online Portfolio Builder.'],
       icon: ''
     },
     {
       desktops: ['csf-upload'],
       cards: [
-        'Anyone can create a stunning portfolio with video and images', 
-        'and go live in minutes.'
+        'Anyone can create a stunning portfolio with video and images and go live in minutes.'
       ],
       icon: ''
     },
     {
-      desktops: [
-        'csf-design', 
-        'csf-upload', 
-        'csf-actor', 
-        'csf-altas'
-      ],
+      desktops: ['csf-design'],
       cards: [
-        'My goal was removing barriers for the artist who may not be a designer.  ', 
-        'I replaced any design tasks with simple questions that lead to beautiful results.',
-        'Give them nothing to drag, place or move about.  Everything just lines up.',
+        'I replaced any design tasks with simple questions that lead to beautiful results.'
+      ],
+      icon: ''
+    },
+    {
+      desktops: ['csf-design2'],
+      cards: [
+        'Give them nothing to drag, place or move about.  Everything just lines up.'
+      ],
+      icon: ''
+    },
+    {
+      desktops: ['csf-design3'],
+      cards: [
         'A menu of options that any real designer would ask.'
       ],
       icon: ''
     },
     {
-      posters: ['csf-pricing'],
+      desktops: ['csf-upgrade'],
       cards: [
         'Completely free for everyone.',  
         'Behind your own domain name for $7.99/month'
       ],
       icon: ''
-    },
-  ],
-  posters : [
-    {url : 'csf-design.jpg'}, 
-    {url : 'csf-actor.jpg'}, 
-    {url : 'csf-atlas.jpg'}, 
-    {url : 'csf-upload.jpg'}
+    }
   ]
 }
 
@@ -147,37 +146,49 @@ var fan = {
   slug: 'fantrotter',
   logo: 'fantrotter',
   title : 'Fantrotter',
-  info : [
+  pages : [
     {
-      text: "Fantrotter is an event-travel search engine.",
-      icon: "airplane"
+      desktops: ['fan-start'],
+      cards: [
+        'Fantrotter is an event-travel search engine.'
+      ],
+      icon: ''
     },
     {
-      text: "Our answer to the next generation of travel sites",
-      icon: "compass"
+      desktops: ['fan-hotel'],
+      cards: [
+        'Our answer to the next generation of travel sites.'
+      ],
+      icon: ''
     },
     {
-      text: "A compelling, animated interface that draws users to their next action.",
-      icon: "click"
+      desktops: ['fan-install'],
+      cards: [
+        'A compelling, animated interface that draws users to their next action.'
+      ],
+      icon: ''
     },
     {
-      text: "Any band or performer with a tour can install the app in 6 clicks",
-      icon: "facebook"
+      desktops: ['fan-install'],
+      cards: [
+        'Any band or performer with a tour can install the app in 6 clicks.'
+      ],
+      icon: ''
     },
     {
-      text: "They promote their tour right along side the app.",
-      icon: "share"
+      desktops: ['fan-umphreys'],
+      cards: [
+        'They promote their tour right along side the app.'
+      ],
+      icon: ''
     },
     {
-      text: "Bands make 20-70% of the PPC revenue their fans generate.",
-      icon: "graph-trend"
+      desktops: ['fan-revenue'],
+      cards: [
+        'Bands make 20-70% of the PPC revenue their fans generate.'
+      ],
+      icon: ''
     }
-  ],
-  posters : [
-    {url : 'fan-hotel.jpg'}, 
-    {url : 'fan-list.jpg'}, 
-    {url : 'fan-install.jpg'},
-    {url : 'fan-start.jpg'}
   ]
 }
 
@@ -463,7 +474,7 @@ sections.film = [
 ]
 sections.web = [
   csfME
-  // ,fan
+  ,fan
   // ,spins
   // ,fads
   // , h2h
