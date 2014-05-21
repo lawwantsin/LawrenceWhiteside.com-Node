@@ -32,3 +32,8 @@ var config = {
 };
 
 module.exports = config[env];
+
+var sendgrid  = require('sendgrid')(
+  process.env.SENDGRID_USERNAME,
+  process.env.SENDGRID_PASSWORD
+);

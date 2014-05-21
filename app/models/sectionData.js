@@ -85,7 +85,7 @@ var csfME = {
   title : 'Cinema Set Free',
   pages: [ 
     {
-      desktops: ['csf-logo'], 
+      desktops: ['csf-logo.jpg'], 
       cards: [
         'Cinema Set Free is a personal project.',
         'And my playground for experimenting with new technologies',
@@ -93,46 +93,46 @@ var csfME = {
       icon: ''
     },
     {
-      desktops: ['csf-atlas'], 
+      desktops: ['csf-atlas.jpg'], 
       cards: ['It consists of a suite of apps for indie filmmakers'],
       icon: ''
     },
 
     {
-      desktops: ['csf-actor'], 
+      desktops: ['csf-actor.jpg'], 
       cards: ['CSF.ME is my everchanging idea for an Artist\'s Online Portfolio Builder.'],
       icon: ''
     },
     {
-      desktops: ['csf-upload'],
+      desktops: ['csf-upload.jpg'],
       cards: [
         'Anyone can create a stunning portfolio with video and images and go live in minutes.'
       ],
       icon: ''
     },
     {
-      desktops: ['csf-design'],
+      desktops: ['csf-design.jpg'],
       cards: [
         'I replaced any design tasks with simple questions that lead to beautiful results.'
       ],
       icon: ''
     },
     {
-      desktops: ['csf-design2'],
+      desktops: ['csf-design2.jpg'],
       cards: [
         'Give them nothing to drag, place or move about.  Everything just lines up.'
       ],
       icon: ''
     },
     {
-      desktops: ['csf-design3'],
+      desktops: ['csf-design3.jpg'],
       cards: [
         'A menu of options that any real designer would ask.'
       ],
       icon: ''
     },
     {
-      desktops: ['csf-upgrade'],
+      desktops: ['csf-upgrade.jpg'],
       cards: [
         'Completely free for everyone.',  
         'Behind your own domain name for $7.99/month'
@@ -148,42 +148,42 @@ var fan = {
   title : 'Fantrotter',
   pages : [
     {
-      desktops: ['fan-start'],
+      desktops: ['fan-start.jpg'],
       cards: [
         'Fantrotter is an event-travel search engine.'
       ],
       icon: ''
     },
     {
-      desktops: ['fan-hotel'],
+      desktops: ['fan-hotel.jpg'],
       cards: [
         'Our answer to the next generation of travel sites.'
       ],
       icon: ''
     },
     {
-      desktops: ['fan-festival'],
+      desktops: ['fan-festival.jpg'],
       cards: [
         'A compelling, animated interface that draws users to their next action.'
       ],
       icon: ''
     },
     {
-      desktops: ['fan-install'],
+      desktops: ['fan-install.jpg'],
       cards: [
         'Any band or performer with a tour can install the app in 6 clicks.'
       ],
       icon: ''
     },
     {
-      desktops: ['fan-umphreys'],
+      desktops: ['fan-umphreys.jpg'],
       cards: [
         'They promote their tour right along side the app.'
       ],
       icon: ''
     },
     {
-      desktops: ['fan-widget'],
+      desktops: ['fan-widget.jpg'],
       cards: [
         'Bands make 20-70% of the PPC revenue their fans generate.'
       ],
@@ -196,39 +196,49 @@ var spins = {
   slug: 'spins-fm',
   logo: 'spins',
   title : 'Spins.FM',
-  info : [
+  pages: [
     {
-      text: "Spins.FM is a terrestrial radio request app.",
-      icon: "lightbulb"
+      posters: ['spins-artist.png'],
+      cards: [
+        'Spins.FM is a terrestrial radio request app.'
+      ],
+      icon: ''
     },
     {
-      text: "Radio is still the #1 way musicians build a career.",
-      icon: "radio"
+      desktops: ['spins-station.jpg'],
+      cards: [
+        'Radio is still the #1 way musicians build a career.'
+      ],
+      icon: ''
     },
     {
-      text: "We leveraged their fanbase and reinvigorated the request line.",
-      icon: "social"
+      desktops: ['spins-playiga.jpg'],
+      cards: [
+        'We leveraged their fanbase and reinvigorated the request line.'
+      ],
+      icon: ''
+    },    
+    {
+      desktops: ['spins-station-signup.jpg'],
+      cards: [
+        'We made it a game and saw engagement increase overnight.'
+      ],
+      icon: ''
+    },    
+    {
+      desktops: ['spins-50cent.jpg'],
+      cards: [
+        'We opened the lines of communication to stations.'
+      ],
+      icon: ''
     },
     {
-      text: "We made it a game and saw engagement increase overnight.",
-      icon: "coins"
-    },
-    {
-      text: "We opened the lines of communication to stations.",
-      icon: "embedable"
-    },
-    {
-      text: "We got major attention from major labels.  It was fun.",
-      icon: "press"
+      desktops: ['spins-dash.jpg'],
+      cards: [
+        'We got major attention from major labels.  It was fun.'
+      ],
+      icon: ''
     }
-  ],
-  posters : [
-    {url : 'spins-50cent.jpg'}, 
-    {url : 'spins-artist.jpg'}, 
-    {url : 'spins-station-signup.jpg'}, 
-    {url : 'spins-station.jpg'}, 
-    {url : 'spins-dash.jpg'}, 
-    {url : 'spins-playiga.jpg'} 
   ]
 }
 
@@ -475,7 +485,7 @@ sections.film = [
 sections.web = [
   csfME
   ,fan
-  // ,spins
+  ,spins
   // ,fads
   // , h2h
   // , elay

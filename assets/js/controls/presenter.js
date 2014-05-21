@@ -140,6 +140,7 @@ App.Presenter = can.Control({
         tl = new TimelineMax()
           .to('.'+section+' .imac', 1, {opacity: 1})
           .to('.'+section+' .iphone', 1, {opacity: 1})
+          .to('.'+section+' .poster', 1, {opacity: 1})
         return tl
       },
       close : function() { 

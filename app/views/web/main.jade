@@ -12,17 +12,18 @@
                       img(src="/images/screens/imac.png")
                       .screen
                         each d in page.desktops
-                          img(src="/images/posters/#{d}.jpg")
+                          img(src="/images/posters/#{d}")
                   if page.mobiles
                     .iphone
                       img(src="/images/screens/iphone.png")                  
                       .screen
                         each m in page.mobiles
-                          img(src="/images/posters/#{m}.jpg")
+                          img(src="/images/posters/#{m}")
                   if page.posters
-                    .screen
-                      each p in page.posters
-                        img(src="/images/posters/#{p}.jpg")
+                    .poster
+                      .screen
+                        each p in page.posters
+                          img(src="/images/posters/#{p}")
                 .column.small-12.large-4.large-pull-8
                   .cards
                     .infoBox
