@@ -6,28 +6,28 @@ var config = {
   development: {
     root: rootPath,
     app: {
-      name: 'csf-me'
+      name: 'lawrencewhiteside'
     },
     port: 3000,
-    db: 'mongodb://localhost/csf-me-development'
+    db: 'mongodb://localhost/lawrencewhiteside-development'
   },
 
   test: {
     root: rootPath,
     app: {
-      name: 'csf-me'
+      name: 'lawrencewhiteside'
     },
     port: 3000,
-    db: 'mongodb://localhost/csf-me-test'
+    db: 'mongodb://localhost/lawrencewhiteside-test'
   },
 
   production: {
     root: rootPath,
     app: {
-      name: 'csf-me'
+      name: 'lawrencewhiteside'
     },
     port: 3000,
-    db: 'mongodb://localhost/csf-me-production'
+    db: process.env.MONGOHQ_URL
   }
 };
 
