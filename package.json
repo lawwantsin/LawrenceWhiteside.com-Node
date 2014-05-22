@@ -14,7 +14,8 @@
     "stylus": "~0.44.0",
     "mongoose": "~3.6.14",
     "sendgrid": "1.0.3",
-    "connect-assets" : "3.0.1"
+    "connect-assets" : "3.0.1",
+    "coffee-script" : "*"
   },
   "devDependencies": {
     "grunt": "~0.4.1",

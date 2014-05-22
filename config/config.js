@@ -26,7 +26,6 @@ var config = {
     app: {
       name: 'lawrencewhiteside'
     },
-    port: 3000,
     db: process.env.MONGOHQ_URL
   }
 };
