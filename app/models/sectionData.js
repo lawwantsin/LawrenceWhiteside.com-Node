@@ -49,33 +49,33 @@ var americanD = {
   title: 'American Detour',
   pages: [ 
     {
-      video: 'ad-collage', 
-      card: 'American Detour is a Short travel web-series staring Bruce Northam.',
-      icon: 'travel'
+      desktops: ['ad-collage.jpg'], 
+      cards: ['American Detour is a Short travel web-series staring Bruce Northam.'],
+      icon: ''
     },
     {
-      poster: 'bruce-and-books', 
-      card : 'Bruce is a veteran writer with decades of travel experience,',
-      icon : 'travel'
+      posters: ['ad-books.jpg'], 
+      cards : ['Bruce is a veteran writer with decades of travel experience,'],
+      icon : ''
     },
     {
-      poster: 'bruce-and-i', 
-      card : 'When it came to creating an identity online he needed a guide.',
-      icon : 'travel'
+      posters: 'ad-2guys.jpg', 
+      cards : 'When it came to creating an identity online he needed a guide.',
+      icon : ''
     },
     {
-      video: 'oktane-collage', 
-      card : [
+      video: 'ad-oktane.jpg', 
+      cards : [
         'During my time there, Oktane, created 20 episodes in 5 countries and 4 states',
         'And a wordpress based blog on the American Detour brand.'
       ],
-      icon : 'travel'
+      icon : ''
     },
     {
-      poster: 'directions-book', 
-      card : 'Bruce\'s new book is coming soon.',
-      icon : 'travel'
-    },
+      posters: ['ad-directions'], 
+      cards : ['Bruce\'s new book is coming soon.'],
+      icon : ''
+    }
   ]
 }
 
@@ -246,35 +246,42 @@ var fads = {
   slug: 'fred-astaire',
   logo: 'fads',
   title : 'Fred Astaire Dance Studios',
-  info : [
+  pages : [
     {
-      text: "Fred Astaire Portland wanted to engage new customers with video.",
-      icon: "video"
+      desktops: ['fads-front.jpg'],
+      cards: [
+        'Fred Astaire Portland wanted to engage new customers with video.'
+      ],
+      icon: ''
     },
     {
-      text: "So we developed a system to shoot their showcases and competitions",
-      icon: "camera"
+      desktops: ['fads-showcase.jpg'],
+      cards: [
+        'So we developed a system to shoot their showcases and competitions'
+      ],
+      icon: ''
     },
     {
-      text: "They also needed promo print material. No problem.",
-      icon: "print"
+      desktops: ['fads-mailer.jpg', 'fads-invite.jpg'],
+      cards: [
+        'They also needed promo print material. No problem.'
+      ],
+      icon: ''
     },
     {
-      text: "Oh yeah, and their site had to sync to their iCalendar class-schedule.",
-      icon: "calendar"
+      desktops: ['fads-weddings.jpg'],
+      cards: [
+        'Oh yeah, and their site had to sync to their iCalendar class-schedule.'
+      ],
+      icon: ''
     },
     {
-      text: "They couldn't be happier with our results.",
-      icon: "testimonial"
+      desktops: ['fads-faq.jpg'],
+      cards: [
+        "They couldn't be happier with our results."
+      ],
+      icon: ''
     }
-  ],
-  posters : [
-    {url : 'fads-front.jpg'}, 
-    {url : 'fads-faq.jpg'}, 
-    {url : 'fads-showcase.jpg'}, 
-    {url : 'fads-weddings.jpg'}, 
-    {url : 'fads-mailer.jpg'}, 
-    {url : 'fads-invite.jpg'} 
   ]
 }
 
@@ -282,34 +289,42 @@ var h2h = {
   slug: 'head2head',
   logo: 'h2h',
   title : 'Head 2 Head',
-  info : [
+  pages : [
     {
-      text: "Head2Head was my first real app.  Before app was a thing.",
-      icon: "vote"
+      desktops: ['h2h-.jpg'],
+      cards: [
+        "Head2Head was my first real app.  Before app was a thing."
+      ],
+      icon: ''
     },
     {
-      text: "Back when content creator's were still chasing video marketing",
-      icon: "video-dollars"
+      desktops: ['h2h-.jpg'],
+      cards: [
+        "The NHL was our first big client.  Fans voted on goals, players & other highlights"
+      ],
+      icon: ''
     },
     {
-      text: "The NHL was our first big client.  Fans voted on goals, players & other highlights",
-      icon: "nhl"
+      desktops: ['h2h-.jpg'],
+      cards: [
+        "The site went through 3 major version.  I learned a lot."
+      ],
+      icon: ''
     },
     {
-      text: "The site went through 3 major version.  I learned a lot.",
-      icon: "versions"
+      desktops: ['h2h-.jpg'],
+      cards: [
+        "Sadly the company folded into our 4th year after dozens of clients."
+      ],
+      icon: ''
     },
     {
-      text: "Sadly the company folded into our 4th year after dozens of clients",
-      icon: "sadface"
-    },
-    {
-      text: "And the NHL made their own in-house version in Flash (suckers)",
-      icon: "ripoff"
+      desktops: ['h2h-.jpg'],
+      cards: [
+        "And the NHL made their own in-house version in Flash (suckers)."
+      ],
+      icon: ''
     }
-  ],
-  posters : [
-    {url : ''} 
   ]
 }
 
@@ -317,47 +332,64 @@ var elay = {
   slug: 'e-layaway',
   logo: 'elay',
   title : 'E-Layaway',
-  info : [
+  pages : [
     {
-      text: "eLayaway needed a sexier checkout embeddable javascript",
-      icon: "vote"
+      desktops: ['elay-checkout1.jpg'],
+      cards: [
+        "eLayaway needed a sexier checkout embeddable javascript."
+      ],
+      icon: ''
     },
     {
-      text: "Across thousands of e-commerce sites, this modal had work to do",
-      icon: "video-dollars"
-    },
+      desktops: ['elay-checkout2.jpg'],
+      cards: [
+        "Across thousands of e-commerce sites, this modal had work to do."
+      ],
+      icon: ''
+    },    
     {
-      text: "Our answer was a beautiful and complex pay schedule calculator.",
-      icon: "video-dollars"
+      desktops: ['elay-checkout1.jpg'],
+      cards: [
+        "Our answer was a beautiful and complex pay schedule calculator."
+      ],
+      icon: ''
     }
-  ],
-  posters : [
-    {url : 'elay-checkout1.jpg'}, 
-    {url : 'elay-checkout2.jpg'} 
   ]
 }
 
 var kavi = {
   slug: 'kavi',
   title : 'Kavi Calculator',
-  info : [
+  logo: 'kavi',
+  pages : [
     {
-      text: "Kavi Workspace needed a promotional questionaire for it's Project Management Software.",
-      icon: "vote"
+      desktops: ['h2h-.jpg'],
+      cards: [
+        "Kavi Workspace needed a promotional questionaire for it's Project Management Software."
+      ],
+      icon: ''
     },
     {
-      text: "We gave them a responsive, simple wizard that generates leads.",
-      icon: "video-dollars"
+      desktops: ['kavi-desktop1.jpg'],
+      cards: [
+        "We gave them a responsive, simple wizard that generates leads."
+      ],
+      icon: ''
     },
     {
-      text: "They couldn't be happier with the results.",
-      icon: "video-dollars"
+      mobiles: ['kavi-mobile1.jpg'],
+      cards: [
+        "They couldn't be happier with the results."
+      ],
+      icon: ''
+    },
+    {
+      mobiles: ['kavi-mobile2.jpg'],
+      cards: [
+        "And the NHL made their own in-house version in Flash (suckers)."
+      ],
+      icon: ''
     }
-  ],
-  posters : [
-    {url : 'kavi-desktop1.jpg'},
-    {url : 'kavi-mobile1.jpg'},
-    {url : 'kavi-mobile2.jpg'}
   ]
 }
 
@@ -365,28 +397,28 @@ var rsf = {
   slug: 'real-smart-fitness',
   logo: 'rsf',
   title : 'Real Smart Fitness',
-  info : [
+  pages : [
     {
-      text: "Real Smart Fitness wanted to codify their training program in a mobile app.",
-      icon: "vote"
+      mobiles: ['rsf-preview1.png'],
+      cards: [
+        "Real Smart Fitness wanted to codify their training program in a mobile app."
+      ],
+      icon: ''
     },
     {
-      text: "We created 3D puppets that animated and gave instructions through the hour long program",
-      icon: "video-dollars"
+      mobiles: ['rsf-preview2.png'],
+      cards: [
+        "We created 3D puppets that animated and gave instructions through the hour long program"
+      ],
+      icon: ''
     },
     {
-      text: "The app got attention for their personal training business.",
-      icon: "video-dollars"
-    },
-    {
-      text: "But you can't replace a real-human trainer and the app was discontinued",
-      icon: "video-dollars"
+      mobiles: ['rsf-preview3.png'],
+      cards: [
+        "The app got attention for their personal training business."
+      ],
+      icon: ''
     }
-  ],
-  posters : [
-    {url : 'rsf-preview1.png'}, 
-    {url : 'rsf-preview2.png'}, 
-    {url : 'rsf-preview3.png'} 
   ]
 }
 
@@ -486,11 +518,12 @@ sections.web = [
   csfME
   ,fan
   ,spins
-  // ,fads
-  // , h2h
-  // , elay
-  // , kavi
-  // , rsf
+  ,fads
+  ,americanD
+  , h2h
+  , elay
+  , kavi
+  , rsf
   // , aaa
   // , eb
 ]

@@ -3,6 +3,10 @@ Modals = can.Control({
   '.overlay click' : function() {
     this.closeAll();
   },
+
+  '.close-x click' :function() {
+    this.closeAll();
+  },
   
   closeAll :function() {
     $('.overlay').removeClass('on');

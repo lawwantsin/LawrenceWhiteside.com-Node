@@ -128,8 +128,8 @@ App.Presenter = can.Control({
           .to('.reachOut', 0.4, {opacity: 1}, 'contact')
           .to('.contact i', 0.2, {rotation: '0deg'}, 'contact')
           .to('.next-icon', 1, {bottom: 10, ease: Elastic.easeOut, delay: '-=1000'}, 'end')
-//         tl.seek('end')
-         return tl
+        tl.seek('end')
+        return tl
       }
     }
   },

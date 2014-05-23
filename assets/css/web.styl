@@ -1,5 +1,11 @@
+// Colors
+$green1 = #67ff22
+$green2 = #2c923a
+$green3 = #2c923a
+
 body.web
   overflow: hidden
+  font-family: 'Lato', Helvetica
   .brands
     position: absolute
     left: 410px
@@ -45,7 +51,10 @@ body.web
     bottom: 0
     overflow-y: auto
     .scrollContent
+      width: 100%
       position: absolute
+      background-image: url('/images/bgs/hex-bg.png')
+      background-repeat: repeat
   .half
     width: 100%
     height: 100%
@@ -162,7 +171,7 @@ body.web
         right: 50px
         position: absolute
         line-height: 50px
-        font-size: 15px
+        font-size: 100%
         opacity: 0
   .film
     z-index: 2
@@ -232,7 +241,7 @@ body.web
         position: relative
         border-radius: 2px
         box-shadow: 1px 0 2px rgba(0,0,0,0.4)
-        font-size: 1em
+        font-size: 120%
         line-height: 1.8em
       &:first-child
         display: block
@@ -249,23 +258,78 @@ body.web
           margin-top: 0
   section.fixed
     position: fixed
-    pointer-events: none
+    pointer-events: noneweb
     .page
       position: fixed
       pointer-events: none
-
+.law-hands
+  background-image: url('/images/bgs/law-hands-bg.jpg')
+  background-repeat: no-repeat
+  background-position: top left
 .modal
   background-color: white
-
+  text-align: right
+  .close-x
+    z-index: 1
+    font-size: 3em
+    line-height: .5em
+    position: absolute
+    left: 22px
+    top: 22px
+    cursor: pointer
+  h1
+    color: #51c61e
+    margin: 0
+  .paymentForm
+    display: none
+    position: relative
+  .contactForm
+    position: relative
+  .input
+    padding: 20px 0
+    position: relative
+  input, textarea
+    outline: none
+    padding: 15px
+    font-size: 150%
+    margin: 0
+    background-color: rgba(255,255,255,0.85)
+  .error
+    position: absolute
+    top: 0
+    right: 0
+    font-weight: 800
+    display: none
+  .payment
+    width: 200px
+  .submit
+    //
+@media only screen and (min-width: 40.063em)
+  .modal
+    .buttons
+      background: white 
 .actionButton
-  font-size: 1em
+  font-size: 120%
+  font-family: 'Krungthep'
   border-radius: 6px
-  box-shadow: 0px 2px 6px rgba(000,000,000,0.3), inset 0px 0px 3px rgba(255,255,255,1)
+  box-shadow: 1px 2px 4px rgba(0,0,0,0.2), inset 0px 0px 3px rgba(255,255,255,1)
   text-align: center
   display: block
+  letter-spacing: 1px
   cursor: pointer
   border-width: 1px 
   border-type: solid 
   margin: 0 auto
-  color: black
-  padding: 10px 10px
+  color: white
+  padding: 20px
+  outline: none
+  &:active
+    box-shadow: 0px 0px 0px rgba(0,0,0,0.2), inset 0px 0px 3px rgba(255,255,255,1)
+    margin-top: 3px
+    margin-bottom: -3px
+.greenButton
+  @extend .actionButton
+  background: -moz-linear-gradient(top, $green1 0%, $green2)
+  background: -webkit-gradient(linear, left top, left bottom, from($green1), to($green2))
+  border-color: $green1
+  text-shadow: -1px -1px 2px $green3, 0px 2px 7px $green1
