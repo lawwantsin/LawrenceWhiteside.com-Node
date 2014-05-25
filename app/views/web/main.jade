@@ -1,10 +1,11 @@
 .main.scrollContainer
   .scrollContent
     .half.web
-      each section, x in sections.web        
+      each section, x in sections.web
         section.section.clearfix(class=section.slug)
+          include openingPage
           each page, y in section.pages
-            .page.clearfix.wow.bounceInUp
+            .page.clearfix
               .row
                 .column.small-12.large-8.large-push-4
                   if page.desktops
@@ -32,4 +33,5 @@
                           i(class=page.icon)
                       each card in page.cards
                         p #{card}
+          include contactPage
     .half.film

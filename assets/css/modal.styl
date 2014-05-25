@@ -1,0 +1,40 @@
+$green = #51c61e
+.modal
+  background-color: white
+  text-align: right
+  .close-x
+    z-index: 1
+    font-size: 3em
+    line-height: .5em
+    position: absolute
+    left: 22px
+    top: 22px
+    cursor: pointer
+.form
+  h1
+    color: $green
+    margin: 0
+    text-align: right
+  .input
+    padding: 20px 0
+    position: relative
+  input, textarea
+    outline: none
+    padding: 15px
+    font-size: 150%
+    margin: 0
+    background-color: rgba(255,255,255,0.85)
+  .error
+    position: absolute
+    top: 0
+    right: 0
+    font-weight: 800
+    display: none
+  .payment
+    width: 200px
+  .submit
+    //
+@media only screen and (min-width: 40.063em)
+  .modal
+    .buttons
+      //  background: white 

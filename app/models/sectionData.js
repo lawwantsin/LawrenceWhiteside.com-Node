@@ -59,12 +59,12 @@ var americanD = {
       icon : ''
     },
     {
-      posters: 'ad-2guys.jpg', 
-      cards : 'When it came to creating an identity online he needed a guide.',
+      posters: ['ad-2guys.jpg'], 
+      cards : ['When it came to creating an identity online he needed a guide.'],
       icon : ''
     },
     {
-      video: 'ad-oktane.jpg', 
+      video: ['ad-oktane.jpg'], 
       cards : [
         'During my time there, Oktane, created 20 episodes in 5 countries and 4 states',
         'And a wordpress based blog on the American Detour brand.'

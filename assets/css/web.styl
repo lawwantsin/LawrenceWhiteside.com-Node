@@ -1,11 +1,51 @@
 // Colors
+$green = #51c61e
 $green1 = #67ff22
 $green2 = #2c923a
 $green3 = #2c923a
 
+.actionButton
+  font-size: 120%
+  font-family: 'Krungthep'
+  border-radius: 6px
+  box-shadow: 1px 2px 4px rgba(0,0,0,0.2), inset 0px 0px 3px rgba(255,255,255,1)
+  text-align: center
+  display: block
+  letter-spacing: 1px
+  cursor: pointer
+  border-width: 1px 
+  border-type: solid 
+  margin: 0 auto
+  color: white
+  padding: 20px
+  outline: none
+  &:active
+    box-shadow: 0px 0px 0px rgba(0,0,0,0.2), inset 0px 0px 3px rgba(255,255,255,1)
+    margin-top: 3px
+    margin-bottom: -3px
+.greenButton
+  @extend .actionButton
+  background: -moz-linear-gradient(top, $green1 0%, $green2)
+  background: -webkit-gradient(linear, left top, left bottom, from($green1), to($green2))
+  border-color: $green1
+  text-shadow: -1px -1px 2px $green3, 0px 2px 7px $green1
+
 body.web
   overflow: hidden
   font-family: 'Lato', Helvetica
+  .introCircle
+    background: black
+    border-radius: 100%
+    top: 50%
+    left: 50%
+    position: absolute
+    margin: -250px 0 0 -150px
+    padding: 40px
+    color: white
+    width: 300px
+    height: 300px
+    h1
+      text-align: center
   .brands
     position: absolute
     left: 410px
@@ -53,7 +93,7 @@ body.web
     .scrollContent
       width: 100%
       position: absolute
-      background-image: url('/images/bgs/hex-bg.png')
+      //background-image: url('/images/bgs/hex-bg.png')
       background-repeat: repeat
   .half
     width: 100%
@@ -181,39 +221,31 @@ body.web
   .section
     position: relative
     width: 100%
-    padding: 0px 90px 0px 90px
     margin-top: 50px
     display: none
-    .page
+  .page
+    position: relative
+    padding: 0px 90px 0px 90px
+    top: 0
+    left: 0
+  .row
+    max-width: 1090px
+  img
+    width: 100%
+  .poster
+    position: relative
+    width: 100%
+    margin: 40px auto 90px auto
+    opacity: 1
+    .screen
       position: relative
-      top: 0
-      left: 0
-    .row
-      max-width: 1090px
-    img
-      width: 100%
-    .poster
-      position: relative
-      width: 100%
-      margin: 40px auto 90px auto
-      opacity: 1
-      .screen
+      img
         position: relative
-        img
-          position: relative
-    .imac
-      position: relative
-      width: 100%
-      margin: 40px auto 90px auto
-      opacity: 1
-    .iphone
-      position: relative
-      left: 50%
-      margin: -80px 0 0 -60px
-      width: 120px
-      transform: rotateZ(-90deg)
-      -webkit-transform: rotateZ(-90deg)
-      opacity: 1
+  .imac
+    position: relative
+    width: 100%
+    margin: 40px auto 90px auto
+    opacity: 1
     .screen
       position: absolute
       left: 3%
@@ -227,28 +259,49 @@ body.web
         top: -1px
       :first-child
         opacity: 1
-    .cards
-      position: relative
-      width: auto
-      background-color: transparent
-      .infoBox
-        background-color: #FFF
-        color: #444
-        padding: 10px 20px
-        margin: 150px auto 0 auto
-        width: 80%
+  .iphone
+    position: relative
+    width: 50%
+    margin: 40px auto 90px auto
+    opacity: 1
+    .screen
+      position: absolute
+      left: 3%
+      right: 3%
+      top: 4%
+      bottom: 26.7%
+      overflow: hidden
+      img
+        opacity: 0
+        position: absolute
+        top: -1px
+      :first-child
         opacity: 1
-        position: relative
-        border-radius: 2px
-        box-shadow: 1px 0 2px rgba(0,0,0,0.4)
-        font-size: 120%
-        line-height: 1.8em
-      &:first-child
-        display: block
+  .cards
+    position: relative
+    width: auto
+    background-color: transparent
+    &:first-child
+      display: block
+    .infoBox
+      margin: 150px auto 0 auto
+  .infoBox
+    background-color: #FFF
+    color: #444
+    padding: 10px 20px
+    width: 80%
+    opacity: 1
+    position: relative
+    border-radius: 2px
+    box-shadow: 1px 0 2px rgba(0,0,0,0.4)
+    font-size: 120%
+    line-height: 1.8em
   @media only screen and (max-width: 64.063em)
     .section
-      padding: 100px 10px 10px 10px
+      padding: 0px 0px 10px 0px
       margin-top: 0
+      .page
+        padding: 0
       .imac
         margin: 0 auto 40px auto
       .iphone
@@ -256,80 +309,42 @@ body.web
       .cards
         .infoBox
           margin-top: 0
+      .callToAction
+        padding-top: 30px        
   section.fixed
     position: fixed
     pointer-events: noneweb
     .page
       position: fixed
       pointer-events: none
-.law-hands
-  background-image: url('/images/bgs/law-hands-bg.jpg')
-  background-repeat: no-repeat
-  background-position: top left
-.modal
-  background-color: white
-  text-align: right
-  .close-x
-    z-index: 1
-    font-size: 3em
-    line-height: .5em
-    position: absolute
-    left: 22px
-    top: 22px
-    cursor: pointer
-  h1
-    color: #51c61e
-    margin: 0
   .paymentForm
     display: none
     position: relative
   .contactForm
     position: relative
-  .input
-    padding: 20px 0
-    position: relative
-  input, textarea
-    outline: none
-    padding: 15px
-    font-size: 150%
-    margin: 0
-    background-color: rgba(255,255,255,0.85)
-  .error
-    position: absolute
-    top: 0
-    right: 0
-    font-weight: 800
-    display: none
-  .payment
-    width: 200px
-  .submit
-    //
-@media only screen and (min-width: 40.063em)
-  .modal
-    .buttons
-      background: white 
-.actionButton
-  font-size: 120%
-  font-family: 'Krungthep'
-  border-radius: 6px
-  box-shadow: 1px 2px 4px rgba(0,0,0,0.2), inset 0px 0px 3px rgba(255,255,255,1)
-  text-align: center
-  display: block
-  letter-spacing: 1px
-  cursor: pointer
-  border-width: 1px 
-  border-type: solid 
-  margin: 0 auto
-  color: white
-  padding: 20px
-  outline: none
-  &:active
-    box-shadow: 0px 0px 0px rgba(0,0,0,0.2), inset 0px 0px 3px rgba(255,255,255,1)
-    margin-top: 3px
-    margin-bottom: -3px
-.greenButton
-  @extend .actionButton
-  background: -moz-linear-gradient(top, $green1 0%, $green2)
-  background: -webkit-gradient(linear, left top, left bottom, from($green1), to($green2))
-  border-color: $green1
-  text-shadow: -1px -1px 2px $green3, 0px 2px 7px $green1
+  .callToAction
+    background-color: #333
+  .law-hands
+    background-image: url('/images/bgs/law-hands-bg.jpg')
+    background-repeat: no-repeat
+    background-position: top left
+  .callToAction
+    color: white
+    padding-top: 60px
+    border-top: 10px solid white
+    hr
+      border: 1px solid white
+      margin: 10px 0
+    h1
+      line-height: 1.2em
+      margin: 0
+    a
+      text-decoration: none
+      color: white
+    p
+       line-height: 1.6em
+       text-align: justify
+       a
+         text-decoration: underline
+         &:hover
+           color: $green
