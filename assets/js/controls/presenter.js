@@ -3,7 +3,7 @@ App.Presenter = can.Control({
   init :function() {
     this.page = 0;
     this.section = null;
-    this.half = 'front';
+    this.half = this.element.attr('class');
     this.okToProceed = true;
 //    new WOW().init();
 //    $(window).setBreakpoints({breakpoints: [1024]});
@@ -77,11 +77,12 @@ App.Presenter = can.Control({
   },
 
   revealSection : function(half, section, page) {
-    console.log(arguments);
+    this.setHalf(half);
     this.setSection(section);
     this.setPage(page);
     $('.section').css({zIndex: 1, opacity: 0, display: 'none'});
     var tl = new TimelineMax()
+      .to('.half.'+half, 0, {zIndex: 1, opacity: 1, display: 'block'})
       .to('.section.'+section, 0, {display: 'block', zIndex: 2})
       .to('.'+section, 1, {opacity: 1})
       .to('.section.'+section, 0, {display: 'block'})
@@ -133,6 +134,36 @@ App.Presenter = can.Control({
       }
     }
   },
+
+  supl : {
+    section : {
+      open : function() { 
+        var section = presenter.getSection();
+        console.log(section)
+        tl = new TimelineMax()
+          .to('.'+section+' .imac', 1, {opacity: 1})
+          .to('.'+section+' .iphone', 1, {opacity: 1})
+          .to('.'+section+' .poster', 1, {opacity: 1})
+        return tl
+      },
+      close : function() { 
+
+      },
+      iphone : {
+        open : function() {
+          var page = presenter.getPage();
+          return new TimelineMax()
+          .to('.'+page+' .iphone', 1, {marginTop: -590, rotationZ: 0, width: 280, marginLeft: -155})
+        },
+        close : function() {
+          var page = presenter.getPage(); 
+          return new TimelineMax()
+          .to('.'+page+' .iphone', 1, {marginTop: -80, rotationZ: -90, width: 120, marginLeft: -60})
+        }
+      }
+    }
+  },
+
   web : {
     section : {
       open : function() { 

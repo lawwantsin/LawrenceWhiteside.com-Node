@@ -30,7 +30,7 @@ $green3 = #2c923a
   border-color: $green1
   text-shadow: -1px -1px 2px $green3, 0px 2px 7px $green1
 
-body.web
+body.web, body.supl
   overflow: hidden
   font-family: 'Lato', Helvetica
   .introCircle
@@ -80,10 +80,14 @@ body.web
     bottom: 0
     left: 0
     right: 0
+    z-index: 1
+    opacity: 0
   .style.film
     background-color: rgba(0,0,0,0.5)
   .style.web
     background-color: rgba(255,255,255,0.2)
+  .style.supl
+    background-color: rgba(0,0,0,0.5)
   .scrollContainer
     position: relative
     z-index: 0
@@ -195,7 +199,7 @@ body.web
     cursor: pointer
     display: none
     &:hover
-      color: red
+      color: $green
   @media only screen and (min-width: 40.063em)
     .contact
       display: block
@@ -213,11 +217,6 @@ body.web
         line-height: 50px
         font-size: 100%
         opacity: 0
-  .film
-    z-index: 2
-  .web
-    z-index: 1
-    display: block
   .section
     position: relative
     width: 100%
@@ -234,9 +233,32 @@ body.web
     width: 100%
   .poster
     position: relative
-    width: 100%
+    width: 80%
     margin: 40px auto 90px auto
     opacity: 1
+    .playButton
+      width: 100px
+      height: 100px
+      position: absolute
+      z-index: 3
+      top: 50%
+      left: 50%
+      display: table
+      margin: -15% 0 0 -15%
+      border-radius: 100%
+      cursor: pointer
+      i
+        display: table-cell
+        vertical-align: middle
+        color: white
+        font-size: 3em
+        text-align: center
+      i.pause
+        
+      &:hover
+        background-color: rgba(0,0,0,0.4)
+        i
+          color: $green
     .screen
       position: relative
       img
@@ -303,6 +325,25 @@ body.web
       .page
         padding: 0
       .imac
+        width: 80%
+        margin: 0 auto 40px auto
+      .iphone
+        margin-top: -140px
+      .cards
+        .infoBox
+          margin-top: 0
+      .callToAction
+        padding-top: 30px        
+  @media only screen and (max-width: 40.063em)
+    .section
+      padding: 0px 0px 10px 0px
+      margin-top: 0
+      .page
+        padding: 0
+      .poster
+        width: 100%
+      .imac
+        width: 100%
         margin: 0 auto 40px auto
       .iphone
         margin-top: -140px
@@ -324,17 +365,18 @@ body.web
     position: relative
   .callToAction
     background-color: #333
+    box-shadow: inset 0 0 100px black
   .law-hands
     background-image: url('/images/bgs/law-hands-bg.jpg')
     background-repeat: no-repeat
     background-position: top left
   .callToAction
     color: white
-    padding-top: 60px
-    border-top: 10px solid white
+    padding: 60px
+    border-top: 10px solid #ccc
     hr
-      border: 1px solid white
-      margin: 10px 0
+      border: 1px solid #ccc
+      margin: 50px 0
     h1
       line-height: 1.2em
       margin: 0
@@ -348,3 +390,33 @@ body.web
          text-decoration: underline
          &:hover
            color: $green
+
+body.supl .style.supl, body.film .style.film, body.web .style.web
+  opacity: 1
+
+.introBubble
+  color: white
+  position: relative
+  margin: 860px 0 660px 0
+  pointer-events: none
+  .introBubble2
+    position: relative
+    background-color: rgba(0,0,0,0.8)
+    padding: 55px
+    border-radius: 1000em
+    width: 300px
+    height: 300px
+    margin: 0 auto
+  h1
+    font-size: 1.4em
+    border-bottom: 1px solid $green
+    font-family: 'Krungthep', 'Bank Gothic'
+    padding-bottom: 10px
+    margin-bottom: 5px
+    text-align: center
+  p
+    font-size: 0.9em
+    line-height: 2em
+    margin: 5px 0
+    text-align: justify
+

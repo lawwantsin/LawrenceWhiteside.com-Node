@@ -1,8 +1,18 @@
 App.NavControl = can.Control({
 
 	init : function() {
+		this.doorState = 'closed';
 		FastClick.attach(document.body);
 		can.route.ready();
+		this.autoOpen();
+	},
+
+	autoOpen :function() {
+		var b = this.element;
+		if (b.hasClass('supl')) {
+			var section = b.find('.half').attr('data-section');
+			this.navSection('supl', section);
+		}
 	},
 
   '.main click' :function() {
@@ -54,14 +64,16 @@ App.NavControl = can.Control({
 		this.navSection(h, s);
 	},
 
+	':half route' : function(data) {
+		var h = data.half
+		this.navSection(h);
+	},
+
 	navSection :function(half, section, page) {
-		console.log(presenter.getHalf())
-		if (presenter.getHalf() == 'front') {
+		if (this.doorState == 'closed')
 			this.openDoors(half, section);
-		}
-		else {
+		else
 			presenter.revealSection(half, section);
-		}
 		this.chooseHalf(half);
     presenter.setSection(section);
 	},
@@ -72,7 +84,9 @@ App.NavControl = can.Control({
 	},
 
 	openDoors :function(half, section) {
+		console.log(arguments)
 		t = presenter.play('front', 'doors', 'open').revealSection(half, section, 0);
+		this.doorState = 'open';
 	}
 
 });

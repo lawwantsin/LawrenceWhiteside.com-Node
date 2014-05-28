@@ -46,7 +46,9 @@ var feHour = {
 
 var americanD = {
   slug: 'american-detour',
+  logo: 'ad',
   title: 'American Detour',
+  summary : "The brand of travel writer, Bruce Northam.  Web Video Series, Wordpress Blog",
   pages: [ 
     {
       desktops: ['ad-collage.jpg'], 
@@ -83,6 +85,7 @@ var csfME = {
   slug: 'csf',
   logo: 'csf',
   title : 'Cinema Set Free',
+  summary : 'Filmmaking Collective, Various Web Projects, Short Films, Meetups',
   pages: [ 
     {
       desktops: ['csf-logo.jpg'], 
@@ -291,7 +294,7 @@ var h2h = {
   title : 'Head 2 Head',
   pages : [
     {
-      desktops: ['h2h-.jpg'],
+      desktops: ['h2h-front.jpg'],
       cards: [
         "Head2Head was my first real app.  Before app was a thing."
       ],
@@ -425,26 +428,29 @@ var rsf = {
 var bsa = {
   slug: 'brooklyn-street-art',
   title : 'Brooklyn Street Art',
-  info : [
+  logo : 'bsa',
+  pages : [
     {
-      text: "Brooklyn Street Art, a popular blog was releasing a book",
-      icon: "vote"
+      desktops: ['bsa-.jpg'],
+      cards: [
+        "Brooklyn Street Art, a popular blog was releasing a book."
+      ],
+      icon: ''
     },
     {
-      text: "They wanted a video to celebrate the Valentine's day release party",
-      icon: "video-dollars"
+      desktops: ['bsa-.jpg'],
+      cards: [
+        "They wanted a video to celebrate the Valentine's day release party"
+      ],
+      icon: ''
     },
     {
-      text: "We delivered a promotional video the party could be proud of.",
-      icon: "video-dollars"
+      desktops: ['bsa-.jpg'],
+      cards: [
+        "We delivered a promotional video the party could be proud of."
+      ],
+      icon: ''
     }
-  ],
-  posters : [
-    {url : 'bsa-1.jpeg'}, 
-    {url : 'bsa-2.jpeg'}, 
-    {url : 'bsa-3.jpeg'}, 
-    {url : 'bsa-4.jpeg'}, 
-    {url : 'bsa-promo.jpeg'} 
   ]
 }
 
@@ -452,27 +458,25 @@ var eb = {
   slug: 'edible-brians',
   logo: 'eb',
   title : 'Edible Brains Productions',
-  info : [
+  pages : [
     {
-      text: "Edible Brains Productions was applying to a theatre festival",
-      icon: "vote"
+      posters : ['eb-front.jpg'],
+      cards: [
+        "Edible Brains Productions was applying to a theatre festival"
+      ],
     },
     {
-      text: "They needed a trailer of their latest piece and a kickass website to go with it",
-      icon: "video-dollars"
+      desktops : ['eb-film.jpg', 'eb-theatre.jpg'],
+      cards: [
+        "They needed a trailer of their latest piece and a kickass website to go with it"
+      ],
     },
     {
-      text: "I delivered a powerful, expressive video and a site that captured their unique personality.",
-      icon: "video-dollars"
+      posters : ['ed-1.jpeg', 'ed-2.jpeg', 'ed-3.jpeg'],
+      cards: [
+        "We delivered a powerful, expressive video and a site that captured their unique personality."
+      ],
     }
-  ],
-  posters : [
-    {url : 'eb-front.jpg'}, 
-    {url : 'eb-film.jpg'}, 
-    {url : 'eb-theatre.jpg'}, 
-    {url : 'ed-1.jpeg'}, 
-    {url : 'ed-2.jpeg'}, 
-    {url : 'ed-3.jpeg'} 
   ]
 }
 
@@ -480,24 +484,27 @@ var aaa = {
   slug: 'alternative-arts',
   logo: 'aaa',
   title : 'Alternative Arts Association',
-  info : [
+  circa: '2010',
+  summary : 'Web Design, Filmmaking, Branding, Online Strategy',
+  pages : [
     {
-      text: "Alternative Arts was gearing up for it's biggest event",
-      icon: "vote"
+      posters : ['aaa-ira.jpg'],
+      cards: [
+        "Alternative Arts was gearing up for it's biggest event"
+      ],
     },
     {
-      text: "Necropolis would coenside with the West village Halloween parade",
-      icon: "video-dollars"
+      desktops : ['aaa-modal.jpg'],
+      cards: [
+        "Necropolis would coenside with the West village Halloween parade"
+      ],
     },
     {
-      text: "They needed a complete rebranding.  New web site and video to reintroduce their organization to the city",
-      icon: "video-dollars"
-    }
-  ],
-  posters : [
-    {url : 'aaa-ira.jpg'}, 
-    {url : 'aaa-modal.jpg'}, 
-    {url : 'aaa-stage.jpg'} 
+      desktops : ['aaa-stage.jpg'],
+      cards: [
+        "They needed a complete rebranding.  New web site and video to reintroduce their organization to the city"
+      ],
+    },
   ]
 }
 
@@ -524,7 +531,7 @@ sections.web = [
   , elay
   , kavi
   , rsf
-  // , aaa
-  // , eb
+  , aaa
+  , eb
 ]
 

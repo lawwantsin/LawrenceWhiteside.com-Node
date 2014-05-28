@@ -1,4 +1,4 @@
-process.env.NODE_ENV == 'production'
+// process.env.NODE_ENV == 'production'
 var express = require('express'),
   mongoose = require('mongoose'),
   fs = require('fs'),

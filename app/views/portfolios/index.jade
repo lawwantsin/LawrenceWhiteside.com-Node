@@ -1,10 +1,10 @@
 extends ../webLayout
 block content
-  include nav
+  include ../shared/nav
   .contentContainer
-    include contactModal
-    include header
-    include bg
+    include ../shared/contactModal
+    include ../shared/header
+    include ../shared/bg
     include main
     .next-icon.next
       i.ion-chevron-down

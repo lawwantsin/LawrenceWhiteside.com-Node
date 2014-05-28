@@ -1,0 +1,17 @@
+extends ../supLayout
+block content
+  include ../shared/nav
+  .contentContainer
+    include ../shared/contactModal
+    include ../shared/header
+    include ../shared/bg
+    .main.scrollContainer
+      .scrollContent
+        .half.supl('data-section'="client")
+            section.section.clearfix.client
+              .page.intro
+                .introBubble.introCircle
+                  h1 Client Testimonials
+                .bio.infoBox
+                  p 
+                    | "This is some shit someone said once."

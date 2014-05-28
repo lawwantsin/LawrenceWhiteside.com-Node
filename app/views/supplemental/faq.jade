@@ -1,0 +1,14 @@
+extends ../supLayout
+block content
+  include ../shared/nav
+  .contentContainer
+    include ../shared/contactModal
+    include ../shared/header
+    include ../shared/bg
+    .main.scrollContainer
+      .scrollContent
+        .half.supl('data-section'="faq")
+            section.section.clearfix.faq
+              .page.intro
+                .introBubble.introCircle
+                  h1 Frequently Asked Questions

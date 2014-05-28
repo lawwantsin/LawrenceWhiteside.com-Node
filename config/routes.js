@@ -4,8 +4,14 @@ module.exports = function(app){
 	var home = require('../app/controllers/home');
 	app.get('/old', home.index);
 
-  var web = require('../app/controllers/web');
-  app.get('/', web.index);
+  var supplemental = require('../app/controllers/supplemental');
+  app.get('/about-me', supplemental.about);
+  app.get('/questions', supplemental.faq);
+  app.get('/client-testimonials', supplemental.clients);
+
+  var portfolios = require('../app/controllers/portfolios');
+  
+  app.get('/', portfolios.index);
 
 
 };

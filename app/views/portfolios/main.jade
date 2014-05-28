@@ -22,6 +22,8 @@
                           img(src="/images/posters/#{m}")
                   if page.posters
                     .poster
+                      .playButton
+                        i.ion-play
                       .screen
                         each p in page.posters
                           img(src="/images/posters/#{p}")
@@ -33,5 +35,5 @@
                           i(class=page.icon)
                       each card in page.cards
                         p #{card}
-          include contactPage
+          include ../shared/contactPage
     .half.film

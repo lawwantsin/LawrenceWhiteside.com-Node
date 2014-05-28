@@ -1,6 +1,12 @@
 .mobile-menu.clickable
   i.ion-navicon
 .nav.nav-mobile
+  .nav-items.list-vertical.supl-nav
+    a.item.clickable(href="/#!film") Film Portfolio
+    a.item.clickable(href="/#!web") Web Portfolio
+    a.item.clickable(href="/about-me") About Me
+    a.item.clickable(href="/questions") F.A.Q.
+    a.item.clickable(href="/client-testimonials") Testimonials
   .nav-items.list-vertical.film-nav
     a.item.clickable(href="#!") Start Over
     each section, x in sections.film
