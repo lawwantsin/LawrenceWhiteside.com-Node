@@ -402,21 +402,54 @@ body.supl .style.supl, body.film .style.film, body.web .style.web
   .introBubble2
     position: relative
     background-color: rgba(0,0,0,0.8)
-    padding: 55px
+    padding: 75px
     border-radius: 1000em
     width: 300px
     height: 300px
     margin: 0 auto
   h1
     font-size: 1.4em
+    line-height: 1.4em
     border-bottom: 1px solid $green
     font-family: 'Krungthep', 'Bank Gothic'
+    margin: 40px auto 10px auto
+    position: relative
     padding-bottom: 10px
-    margin-bottom: 5px
     text-align: center
   p
     font-size: 0.9em
-    line-height: 2em
+    line-height: 1.6em
     margin: 5px 0
-    text-align: justify
+    text-align: center
 
+.questions
+  position: relative
+  min-height: 400px
+  font-size: 1.2em
+  .question
+    margin: 100px 0
+    h1
+      margin: 0
+      padding: 0
+      text-align: center
+      font-size: 3em
+      text-shadow: 2px 2px 0px $green
+      color: #222
+      font-family: 'Krungthep', 'Bank Gothic'
+    .answer
+      background-color: #FFF
+      color: #444
+      padding: 10px 20px
+      box-shadow: 1px 0 2px rgba(0,0,0,0.4)
+      a
+        color: #222
+        &:hover
+          color: $green
+      p
+        line-height: 2em
+        margin-bottom: 20px      
+.bio
+  @extend .questions .question .answer
+  position: relative
+  top: 330px
+  font-size: 1.2em

@@ -48,7 +48,7 @@ var americanD = {
   slug: 'american-detour',
   logo: 'ad',
   title: 'American Detour',
-  summary : "The brand of travel writer, Bruce Northam.  Web Video Series, Wordpress Blog",
+  summary : "The brand of travel writer, Bruce Northam.  I contributed video work to the Web Video Series. I built the Wordpress Blog",
   pages: [ 
     {
       desktops: ['ad-collage.jpg'], 
@@ -85,7 +85,7 @@ var csfME = {
   slug: 'csf',
   logo: 'csf',
   title : 'Cinema Set Free',
-  summary : 'Filmmaking Collective, Various Web Projects, Short Films, Meetups',
+  summary : 'Filmmaking Collective, Free Portfolio\'s for Artists, Films, Monthly Meetups',
   pages: [ 
     {
       desktops: ['csf-logo.jpg'], 
@@ -149,6 +149,7 @@ var fan = {
   slug: 'fantrotter',
   logo: 'fantrotter',
   title : 'Fantrotter',
+  summary : 'Event travel search engine that empowers artists to make money from their fans travelling to see them.  Available as a website, facebook app, mobile app and embeddable widget.',
   pages : [
     {
       desktops: ['fan-start.jpg'],
@@ -199,6 +200,7 @@ var spins = {
   slug: 'spins-fm',
   logo: 'spins',
   title : 'Spins.FM',
+  summary : "An app that makes it fun for new generations to connect with the old technology of terrestrial radio.  My role was principle technology architect.",
   pages: [
     {
       posters: ['spins-artist.png'],
@@ -249,6 +251,7 @@ var fads = {
   slug: 'fred-astaire',
   logo: 'fads',
   title : 'Fred Astaire Dance Studios',
+  summary : 'Videography, Video Editing, Website creation & printed materials design. Also a student.',
   pages : [
     {
       desktops: ['fads-front.jpg'],
@@ -292,6 +295,7 @@ var h2h = {
   slug: 'head2head',
   logo: 'h2h',
   title : 'Head 2 Head',
+  summary : 'A skinable video competition app built with Branded Entertainment in mind.',
   pages : [
     {
       desktops: ['h2h-front.jpg'],
@@ -335,6 +339,7 @@ var elay = {
   slug: 'e-layaway',
   logo: 'elay',
   title : 'E-Layaway',
+  summary : 'Short contract for a JS heavy, embeddable shopping cart & checkout system using a payment system.',
   pages : [
     {
       desktops: ['elay-checkout1.jpg'],
@@ -364,6 +369,7 @@ var kavi = {
   slug: 'kavi',
   title : 'Kavi Calculator',
   logo: 'kavi',
+  summary : 'Short contract for a responsive sales tool for their Workspace App.',
   pages : [
     {
       desktops: ['h2h-.jpg'],
@@ -400,6 +406,7 @@ var rsf = {
   slug: 'real-smart-fitness',
   logo: 'rsf',
   title : 'Real Smart Fitness',
+  summary : 'Mobile App for a Personal Training company.',
   pages : [
     {
       mobiles: ['rsf-preview1.png'],
@@ -428,6 +435,7 @@ var rsf = {
 var bsa = {
   slug: 'brooklyn-street-art',
   title : 'Brooklyn Street Art',
+  summary : 'Filmmaking for an art-blog\'s book release party.',
   logo : 'bsa',
   pages : [
     {
@@ -458,6 +466,7 @@ var eb = {
   slug: 'edible-brians',
   logo: 'eb',
   title : 'Edible Brains Productions',
+  summary : 'Web Design, Filmmaking, Branding, Online Strategy for NY Theatre company.',
   pages : [
     {
       posters : ['eb-front.jpg'],
@@ -485,7 +494,7 @@ var aaa = {
   logo: 'aaa',
   title : 'Alternative Arts Association',
   circa: '2010',
-  summary : 'Web Design, Filmmaking, Branding, Online Strategy',
+  summary : 'Web Design, Filmmaking, Branding, Online Strategy for NY Arts organization.',
   pages : [
     {
       posters : ['aaa-ira.jpg'],
