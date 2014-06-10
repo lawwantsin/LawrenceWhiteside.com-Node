@@ -7,8 +7,9 @@ var messageSchema = mongoose.Schema({
     // Validation Rules
     mongules : [
       {
-        rule : 'isAlphanumeric',
-        msg : "This message doesn't look right"
+        rule : 'isLength',
+        args : 10,
+        msg : "Tell me a little more."
       },
     ]
   },
@@ -16,7 +17,8 @@ var messageSchema = mongoose.Schema({
     type: String,
     mongules : [
       {
-        rule : 'isAlphanumeric',
+        rule : 'isLength',
+        args : 2,
         msg : "This name doesn't look right"
       },
     ]

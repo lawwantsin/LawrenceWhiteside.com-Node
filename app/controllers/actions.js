@@ -1,5 +1,5 @@
 var sendLawAnEmail = function(msg) {
-  var email     = new sendgrid.Email({
+  var email = new sendgrid.Email({
     to:       'law@cinemasetfree.com',
     from:     msg.email,
     subject:  ('New Contact from '+msg.name+' on LawrenceWhiteside.com'),
@@ -7,7 +7,6 @@ var sendLawAnEmail = function(msg) {
   });
   sendgrid.send(email, function(err, json) {
     if (err) { return console.error(err); }
-    console.log(json);
   });
 }
 
