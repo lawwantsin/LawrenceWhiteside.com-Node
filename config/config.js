@@ -27,7 +27,8 @@ var config = {
       name: 'lawrencewhiteside'
     },
     db: process.env.MONGOHQ_URL
-  }
+  },
+  port : (process.env.PORT || 3000);
 };
 
 module.exports = config[env];
