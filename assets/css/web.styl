@@ -391,13 +391,26 @@ body.web, body.supl
       text-decoration: none
       color: white
     p
-       line-height: 1.6em
-       text-align: justify
-       a
-         text-decoration: underline
-         &:hover
-           color: $green
-
+      line-height: 1.6em
+      text-align: justify
+      a
+        text-decoration: underline
+        margin: 0 10px
+        &:hover
+          color: $green
+    p.license
+      color: #ccc
+      font-size: 0.5em
+      a
+        color: #ccc
+        margin: 0
+        text-decoration: none
+      &:hover
+        color: $white
+      img
+        width: auto
+        float: left
+        margin-right: 10px
 body.supl .style.supl, body.film .style.film, body.web .style.web
   opacity: 1
 
