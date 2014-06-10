@@ -1,6 +1,6 @@
 .contactForm.form
   h1 #{heading || "Contact Me."}
-  form(action="/contact")
+  form(action="/contact", method="POST")
     .input
       textarea(name="message", placeholder="What's your project?")
     .input
@@ -17,7 +17,7 @@
         button.send.actionButton.greenButton.right Send
 .paymentForm.form
   h1 Pay Me.
-  form(action="/contact")
+  form(action="/payment", method="POST")
     .input
       input(name="amount", type="text", placeholder="Amount")
       .error 

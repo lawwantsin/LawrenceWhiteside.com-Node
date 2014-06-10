@@ -5,8 +5,16 @@ App.Controls.Contact = can.Control.extend({
     this.obfuscate("PTD-gvD-DKAz", "M985DrTKnmuNZPvABw0ekWIx4UjCdhEFGYbfc6QsLyialVJ2pzRqtH7S13OgoX", ".phone", 'tel');
   },
 
-  'form submit' :function(el, ev) {
+  '.contactForm form submit' :function(el, ev) {
     ev.preventDefault();
+    var params = el.formParams();
+    contact = new App.Models.Contact(params);
+    contact.save(function(res) {
+      console.log(res);
+    }, 
+    function(res) {
+      console.log(res);
+    })
   },
 
   '.payment click' :function(el, ev) {

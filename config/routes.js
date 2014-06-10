@@ -10,8 +10,9 @@ module.exports = function(app){
   app.get('/client-testimonials', supplemental.clients);
 
   var portfolios = require('../app/controllers/portfolios');
+  var actions = require('../app/controllers/actions');
   
   app.get('/', portfolios.index);
-
-
+  app.post('/contact', actions.contact);
+  app.post('/payment', actions.payment);
 };
