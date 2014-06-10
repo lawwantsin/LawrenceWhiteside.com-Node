@@ -1,4 +1,4 @@
-App.NavControl = can.Control({
+App.Controls.Nav = can.Control.extend({
 
 	init : function() {
 		this.doorState = 'closed';
@@ -90,4 +90,4 @@ App.NavControl = can.Control({
 	}
 
 });
-var nav = new App.NavControl('body');
+var nav = new App.Controls.Nav('body');

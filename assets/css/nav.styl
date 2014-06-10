@@ -24,25 +24,30 @@ $green3 = #2c923a
   right: 0
   z-index: 0
 .nav
-  background-image: url('/images/nav-bgs/tree-bg.jpg')
+  background-image: url('/images/nav-bgs/circuit-bg.jpg')
   background-size: cover
-  font-family: 'Bank Gothic', Helvetica
+  font-family: 'Krungthep', Helvetica
   .nav-items
     position: absolute
-    left: 130px
-    top: 250px
+    left: 120px
+    top: 260px
+    line-height: 0.8em
     -webkit-transform: translate(-50%, -50%)
     -moz-transform: translate(-50%, -50%)
     -o-transform: translate(-50%, -50%)
     -ms-transform: translate(-50%, -50%)
     transform: translate(-50%, -50%)
-    font-size: 1.2em
+    font-size: 1em
     overflow-y: scroll
     display: none
   @media only screen and (min-width: 40.063em)
   	.nav-items
-	    left: 350px
-	    top: 490px
+      left: 200px
+      top: 360px
+  @media only screen and (min-width: 64.063em)
+    .nav-items
+      left: 200px
+      top: 360px
   h1
     color: rgba(255,255,255,0.7)
     text-decoration: underline

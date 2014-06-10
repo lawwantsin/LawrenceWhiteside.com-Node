@@ -51,8 +51,8 @@ var americanD = {
   summary : "The brand of travel writer, Bruce Northam.  I contributed video work to the Web Video Series. I built the Wordpress Blog",
   pages: [ 
     {
-      desktops: ['ad-collage.jpg'], 
-      cards: ['American Detour is a Short travel web-series staring Bruce Northam.'],
+      videos: ['ad-collage.jpg'], 
+      cards: ['The Short-form travel web-series staring Bruce Northam began filming in 2009.'],
       icon: ''
     },
     {
@@ -62,20 +62,24 @@ var americanD = {
     },
     {
       posters: ['ad-2guys.jpg'], 
-      cards : ['When it came to creating an identity online he needed a guide.'],
+      cards : ['But when it came to creating an identity online he needed a guide.'],
       icon : ''
     },
     {
-      video: ['ad-oktane.jpg'], 
+      posters: ['ad-2guys.jpg'], 
+      cards : ['I developed a wordpress site that would provide him a way to sell his latest book.'],
+      icon : ''
+    },
+    {
+      videos: ['ad-oktane.jpg'], 
       cards : [
-        'During my time there, Oktane, created 20 episodes in 5 countries and 4 states',
-        'And a wordpress based blog on the American Detour brand.'
+        'During my time at Oktane we all shot, edited and animated dozens of 3-4 minute episodes.',
       ],
       icon : ''
     },
     {
       posters: ['ad-directions'], 
-      cards : ['Bruce\'s new book is coming soon.'],
+      cards : ['Bruce and I remaind close friends and travel buddies.'],
       icon : ''
     }
   ]
@@ -90,8 +94,7 @@ var csfME = {
     {
       desktops: ['csf-logo.jpg'], 
       cards: [
-        'Cinema Set Free is a personal project.',
-        'And my playground for experimenting with new technologies',
+        'Cinema Set Free is a personal project and my playground for experimenting with new technologies',
       ],
       icon: ''
     },
@@ -116,7 +119,7 @@ var csfME = {
     {
       desktops: ['csf-design.jpg'],
       cards: [
-        'I replaced any design tasks with simple questions that lead to beautiful results.'
+        'Eskewing the complexities of sites such as SquareSpace and Wix, I replaced any design desicions with simple questions that lead to beautiful results.'
       ],
       icon: ''
     },
@@ -130,7 +133,7 @@ var csfME = {
     {
       desktops: ['csf-design3.jpg'],
       cards: [
-        'A menu of options that any real designer would ask.'
+        'A menu of options that any real designer would ask their client to choose.'
       ],
       icon: ''
     },
@@ -154,21 +157,21 @@ var fan = {
     {
       desktops: ['fan-start.jpg'],
       cards: [
-        'Fantrotter is an event-travel search engine.'
+        'Fantrotter is an event-travel search engine that makes money for the performers.'
       ],
       icon: ''
     },
     {
       desktops: ['fan-hotel.jpg'],
       cards: [
-        'Our answer to the next generation of travel sites.'
+        'Our answer to the next generation of travel sites.  It\'s appeal is the fun UX.' 
       ],
       icon: ''
     },
     {
       desktops: ['fan-festival.jpg'],
       cards: [
-        'A compelling, animated interface that draws users to their next action.'
+        'A compelling, animated interface that draws users to their next action, generating revenue through PPC.'
       ],
       icon: ''
     },
@@ -268,7 +271,7 @@ var fads = {
       icon: ''
     },
     {
-      desktops: ['fads-mailer.jpg', 'fads-invite.jpg'],
+      posters: ['fads-mailer.jpg', 'fads-invite.jpg'],
       cards: [
         'They also needed promo print material. No problem.'
       ],
@@ -391,13 +394,6 @@ var kavi = {
         "They couldn't be happier with the results."
       ],
       icon: ''
-    },
-    {
-      mobiles: ['kavi-mobile2.jpg'],
-      cards: [
-        "And the NHL made their own in-house version in Flash (suckers)."
-      ],
-      icon: ''
     }
   ]
 }
@@ -426,6 +422,14 @@ var rsf = {
       mobiles: ['rsf-preview3.png'],
       cards: [
         "The app got attention for their personal training business."
+      ],
+      icon: ''
+    },
+    {
+      mobiles: ['rsf-preview3.png'],
+      cards: [
+        "But with a $5 price tag and a real lack of on-going development.",
+        "The competition won out on market share."
       ],
       icon: ''
     }

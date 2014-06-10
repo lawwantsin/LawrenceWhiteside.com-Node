@@ -1,4 +1,4 @@
-App.Scroll = can.Control({
+App.Controls.Scroll = can.Control.extend({
 
 	init :function() {
 		this.initScrollMagic();
@@ -160,4 +160,4 @@ App.Scroll = can.Control({
 	}
 
 });
-scroll = new App.Scroll(document);
+scroll = new App.Controls.Scroll(document);

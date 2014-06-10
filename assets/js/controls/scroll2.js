@@ -1,4 +1,4 @@
-App.Scroll = can.Control({
+App.Controls.Scroll = can.Control.extend({
 
   defaults : {
     wrapEl : '.scrollContainer'
@@ -19,7 +19,7 @@ App.Scroll = can.Control({
     var iScrollOptions = {
       scrollX: false, scrollY: true, scrollbars: false, 
       useTransform: true, useTransition: true, probeType: 2,
-      bounce: true, momentum: true, bindToWrapper: true, snap: '.page'
+      bounce: true, momentum: true, bindToWrapper: true
     }
     if (!t) $.extend(iScrollOptions, {touch: false});
     this.iScroll = new IScroll(this.options.wrapEl, iScrollOptions);
@@ -66,4 +66,4 @@ App.Scroll = can.Control({
   }
 
 });
-scroller = new App.Scroll('body', {wrapEl: '.scrollContainer'});
+scroller = new App.Controls.Scroll('body', {wrapEl: '.scrollContainer'});

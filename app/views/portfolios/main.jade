@@ -5,28 +5,15 @@
         section.section.clearfix(class=section.slug)
           include openingPage
           each page, y in section.pages
-            .page.clearfix
+            .page.clearfix.snap
               .row
                 .column.small-12.large-8.large-push-4
                   if page.desktops
-                    .imac
-                      img(src="/images/screens/imac.png")
-                      .screen
-                        each d in page.desktops
-                          img(src="/images/posters/#{d}")
+                    include desktops
                   if page.mobiles
-                    .iphone
-                      img(src="/images/screens/iphone.png")                  
-                      .screen
-                        each m in page.mobiles
-                          img(src="/images/posters/#{m}")
+                    include mobilesH
                   if page.posters
-                    .poster
-                      .playButton
-                        i.ion-play
-                      .screen
-                        each p in page.posters
-                          img(src="/images/posters/#{p}")
+                    include posters
                 .column.small-12.large-4.large-pull-8
                   .cards
                     .infoBox

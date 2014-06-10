@@ -1,7 +1,8 @@
-App.SectionControl = can.Control({
+App.Controls.Section = can.Control.extend({
 
 	init : function() {
 		var self = this;
+		this.oHeight = this.element.height();
 		self.sizeToScreen();
 		$(window).on('resize', function() {
 			self.sizeToScreen();
@@ -9,11 +10,11 @@ App.SectionControl = can.Control({
 	},
 
 	sizeToScreen : function() {
-		this.element.css({height: $(window).height()})
+		this.element.css({height: $(window).height()+this.oHeight})
 		setTimeout(function() {
 	    scroller.iScroll.refresh();
 		}, 0)
 	}
 
 });
-var sections = new App.SectionControl('.page');
+//var sections = new App.Controls.Section('.page');

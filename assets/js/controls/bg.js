@@ -1,4 +1,4 @@
-App.BGControl = can.Control({
+App.Controls.BG = can.Control.extend({
 
 	init : function(el) {
 		var self = this;
@@ -75,4 +75,4 @@ App.BGControl = can.Control({
 
 });
 
-var bg = new App.BGControl('.site');
+var bg = new App.Controls.BG('.site');

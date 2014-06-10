@@ -1,4 +1,4 @@
-var Contact = can.Control({
+App.Controls.Contact = can.Control.extend({
 
   init :function() {
     this.obfuscate("4dC@Y5A3sdQ3U7l33.YDs", "RFK4LEmxqwZa3XoUJ0hMY2zrvfNsnTCudPGDpOi1bS8Ilk7HQAWB9eyVtj65gc", ".email", 'mailto');
@@ -41,4 +41,4 @@ var Contact = can.Control({
   }
 
 });
-contact = new Contact('body')
+contact = new App.Controls.Contact('body')

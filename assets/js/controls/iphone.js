@@ -1,4 +1,4 @@
-App.iPhoneControl = can.Control({
+App.Controls.iPhone = can.Control.extend({
 
   init : function() {
     var self = this;
@@ -25,4 +25,4 @@ App.iPhoneControl = can.Control({
   }
 
 });
-var iphone = new App.iPhoneControl('.iphone');
+var iphone = new App.Controls.iPhone('.iphone');

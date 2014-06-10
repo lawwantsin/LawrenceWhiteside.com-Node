@@ -1,4 +1,4 @@
-Modals = can.Control({
+App.Controls.Modals = can.Control.extend({
 
   '.overlay click' : function() {
     this.closeAll();
@@ -27,4 +27,4 @@ Modals = can.Control({
   }
 
 });
-modals = new Modals(document)
+modals = new App.Controls.Modals(document)

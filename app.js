@@ -9,6 +9,9 @@ var db = mongoose.connection;
 db.on('error', function () {
   throw new Error('unable to connect to database at ' + config.db);
 });
+db.once('open', function callback () {
+  console.log('it worked!');
+});
 
 var modelsPath = __dirname + '/app/models';
 fs.readdirSync(modelsPath).forEach(function (file) {
