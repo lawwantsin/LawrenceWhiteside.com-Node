@@ -26,9 +26,9 @@ var config = {
     app: {
       name: 'lawrencewhiteside'
     },
-    db: process.env.MONGOHQ_URL
+    db: process.env.MONGOHQ_URL,
+    port : process.env.PORT
   },
-  port : (process.env.PORT || 3000);
 };
 
 module.exports = config[env];
