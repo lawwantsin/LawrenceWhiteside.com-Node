@@ -15,10 +15,10 @@ exports.contact = function(req, res) {
   var msg = new Message(req.body);
   msg.save(function(err, msg) {
     if (err) {
-      sendLawAnEmail(msg);
       res.json({error: err});
     }
     else {
+      sendLawAnEmail(msg);
       res.json(msg);
     }
   });
