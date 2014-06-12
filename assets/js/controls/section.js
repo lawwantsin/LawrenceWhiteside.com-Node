@@ -10,11 +10,11 @@ App.Controls.Section = can.Control.extend({
 	},
 
 	sizeToScreen : function() {
-		this.element.css({height: $(window).height()+this.oHeight})
-		setTimeout(function() {
-	    scroller.iScroll.refresh();
-		}, 0)
+		this.element.css({height: $(window).height()-50})
+		// setTimeout(function() {
+	 //    scroller.iScroll.refresh();
+		// }, 0)
 	}
 
 });
-//var sections = new App.Controls.Section('.page');
+var sections = new App.Controls.Section('.intro');

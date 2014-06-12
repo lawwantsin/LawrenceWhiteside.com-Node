@@ -12,27 +12,42 @@
       .error 
         span So I know where to reach you.
     .buttons.row.collapse
-      .column.small-12
+      .column.small-9
+        .paymentMade
+          .paymentInfo
+            .ccard.mastercard
+            .amount
+              span $
+              span.amountNum 100 
+            .last4
+              span ...
+              span.last4Num 2323
+            .cancelPayment
+          .paymentFinePrint
+            span Payment won't confirm until you send a message.
+            a(href="#") Remove Payment
         button.payment.actionButton.greenButton.left Add Payment
+      .column.small-3
         button.send.actionButton.greenButton.right Send
 .paymentForm.form
   h1 Pay Me.
   form(action="/payment", method="POST")
-    .input
-      input(name="amount", type="text", placeholder="Amount")
-      .error 
-        span What would you like me to charge?
-    .input
-      input(name="card_number", type="text", placeholder="Credit Card Number")
-      .error 
-        span You're paying with a card, right?
-    .row
-      .column.small-6
+    .row.collapse
+      .column.small-12
         .input
-          input(name="data", placeholder="MM/YY")
-      .column.small-6
+          input.amount(name="amount", type="text", placeholder="Amount", 'data-stripe'='amount', value="100")
+          .error 
+            span What would you like to pay?
         .input
-          input(name="csv", placeholder="CVC")
+          input(name="number", type="text", placeholder="Credit Card Number", 'data-stripe'='number', value="4242424242424242")
+          .error 
+            span You're paying with a card, right?
+    .row.collapse
+      .column.small-12
+        .input.cc-small.clearfix
+          input.left(name="exp-month", size="2", placeholder="MM", 'data-stripe'="exp-month", value="12")
+          input.left(name="exp-year", size="4", placeholder="YYYY", 'data-stripe'="exp-year", value="2015")
+          input.right(name="csv", placeholder="CVC", size="4", 'data-stripe'="cvc", value="123")
     .buttons.row.collapse
       .column.small-12
         button.cancel.actionButton.greenButton.left Cancel

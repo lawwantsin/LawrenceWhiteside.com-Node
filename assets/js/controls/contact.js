@@ -8,6 +8,7 @@ App.Controls.Contact = can.Control.extend({
   '.contactForm form submit' :function(el, ev) {
     ev.preventDefault();
     var params = el.formParams();
+    params.payment = $('body').data('ccInfo');
     contact = new App.Models.Contact(params);
     contact.save(function(res) {
       console.log(res);
@@ -17,12 +18,32 @@ App.Controls.Contact = can.Control.extend({
     })
   },
 
+  '{document} showPaymentInfo' : function() {
+    this.showPaymentInfo();
+  },
+
   '.payment click' :function(el, ev) {
+    this.showPaymentForm();
+  },
+
+  '.cancel click' :function(el, ev) {
+    this.showContactForm();
+  },
+
+  showPaymentInfo :function() {
+    $('.payment').hide();
+    $('.amountNum').text($('body').data('ccInfo').amount);
+    $('.last4Num').text($('body').data('ccInfo').last4);
+    $('.paymentMade').show();
+    this.showContactForm();
+  },
+
+  showPaymentForm :function() {
     $('.paymentForm').show();
     $('.contactForm').hide();
   },
 
-  '.cancel click' :function(el, ev) {
+  showContactForm :function() {
     $('.paymentForm').hide();
     $('.contactForm').show();
   },

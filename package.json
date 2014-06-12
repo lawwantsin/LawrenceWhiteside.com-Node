@@ -16,7 +16,8 @@
     "mongules": "*",
     "sendgrid": "1.0.3",
     "connect-assets" : "3.0.1",
-    "coffee-script" : "*"
+    "coffee-script" : "*",
+    "stripe" : "*"
   },
   "devDependencies": {
     "grunt": "~0.4.1",

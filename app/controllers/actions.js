@@ -12,6 +12,7 @@ var sendLawAnEmail = function(msg) {
 
 exports.contact = function(req, res) {
   var msg = new Message(req.body);
+  console.log(req.body);
   msg.save(function(err, msg) {
     if (err) {
       res.json({error: err});
@@ -21,9 +22,4 @@ exports.contact = function(req, res) {
       res.json(msg);
     }
   });
-}
-
-exports.payment = function(req, res) {
-  console.log(req);
-//  var msg = new Message(params);
 }

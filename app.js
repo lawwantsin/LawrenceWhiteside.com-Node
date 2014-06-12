@@ -10,7 +10,7 @@ db.on('error', function () {
   throw new Error('unable to connect to database at ' + config.db);
 });
 db.once('open', function callback () {
-  console.log('it worked!');
+  console.log('Connected to MongoDB');
 });
 
 var modelsPath = __dirname + '/app/models';
