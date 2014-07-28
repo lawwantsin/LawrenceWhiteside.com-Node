@@ -1,5 +1,9 @@
+// Hardcoded data that can easily be changed during development.  No need for a MongoDB or resaving, updating records.
+// Easier experimentation with schema as it evolves in early stages.  Can be loaded into MongoDB later if needsbe.
+
+// Films
 var googleM = {
-  slug : 'google-m',
+  slug : 'googlem',
   title : "Google M",
   posters : [
     {url : 'googlem-1.jpeg'},
@@ -9,7 +13,7 @@ var googleM = {
 }
 
 var pModels = {
-  slug : 'google-m',
+  slug : 'pm-calendar',
   title : "Prestegious Models",
   posters : [
     {url : 'pm-1.jpeg'},
@@ -30,7 +34,7 @@ var morningAfter = {
 
 var iNinja = {
   slug: '',
-  title : '',
+  title : 'iNinja',
   posters : [
     {url : ''}, 
   ]
@@ -44,6 +48,7 @@ var feHour = {
   ]
 }
 
+// Websites
 var americanD = {
   slug: 'american-detour',
   logo: 'ad',
@@ -53,7 +58,10 @@ var americanD = {
     {
       videos: ['ad-collage.jpg'], 
       cards: ['The Short-form travel web-series staring Bruce Northam began filming in 2009.'],
-      icon: ''
+      button: {
+        label: '',
+        link: ''
+      }
     },
     {
       posters: ['ad-books.jpg'], 
@@ -92,58 +100,79 @@ var csfME = {
   summary : 'Filmmaking Collective, Free Portfolio\'s for Artists, Films, Monthly Meetups',
   pages: [ 
     {
-      desktops: ['csf-logo.jpg'], 
+      desktop: {
+        poster: 'front.jpg',
+        video: 'landing'
+      }, 
       cards: [
         'Cinema Set Free is a personal project and my playground for experimenting with new technologies',
       ],
-      icon: ''
+      button: {
+        label: 'Live Site',
+        link: 'http://cinemasetfree.com'
+      }
     },
     {
-      desktops: ['csf-atlas.jpg'], 
+      desktop: {
+        poster: 'signin.jpg',
+        video: 'landing'
+      }, 
       cards: ['It consists of a suite of apps for indie filmmakers'],
-      icon: ''
+      button: {
+        label: '',
+        link: ''
+      }
     },
-
     {
-      desktops: ['csf-actor.jpg'], 
+      desktop: {
+        poster: 'sales.jpg',
+        video: 'landing'
+      }, 
       cards: ['CSF.ME is my everchanging idea for an Artist\'s Online Portfolio Builder.'],
-      icon: ''
+      button: {
+        label: '',
+        link: ''
+      }
     },
     {
-      desktops: ['csf-upload.jpg'],
+      desktop: {
+        poster: 'video.jpg',
+        video: 'landing'
+      }, 
       cards: [
         'Anyone can create a stunning portfolio with video and images and go live in minutes.'
       ],
-      icon: ''
+      button: {
+        label: '',
+        link: ''
+      }
     },
     {
-      desktops: ['csf-design.jpg'],
+      desktop: {
+        poster: 'design.jpg',
+        video: 'landing'
+      }, 
       cards: [
         'Eskewing the complexities of sites such as SquareSpace and Wix, I replaced any design desicions with simple questions that lead to beautiful results.'
       ],
-      icon: ''
+      button: {
+        label: '',
+        link: ''
+      }
     },
     {
-      desktops: ['csf-design2.jpg'],
-      cards: [
-        'Give them nothing to drag, place or move about.  Everything just lines up.'
-      ],
-      icon: ''
-    },
-    {
-      desktops: ['csf-design3.jpg'],
-      cards: [
-        'A menu of options that any real designer would ask their client to choose.'
-      ],
-      icon: ''
-    },
-    {
-      desktops: ['csf-upgrade.jpg'],
+      desktop: {
+        poster: 'ccard.jpg',
+        video: 'landing'
+      }, 
       cards: [
         'Completely free for everyone.',  
         'Behind your own domain name for $7.99/month'
       ],
-      icon: ''
+      button: {
+        label: '',
+        link: ''
+      }
     }
   ]
 }
@@ -155,46 +184,96 @@ var fan = {
   summary : 'Event travel search engine that empowers artists to make money from their fans travelling to see them.  Available as a website, facebook app, mobile app and embeddable widget.',
   pages : [
     {
-      desktops: ['fan-start.jpg'],
+      desktop: {
+        poster: 'front.jpg',
+        video: 'landing'
+      }, 
       cards: [
         'Fantrotter is an event-travel search engine that makes money for the performers.'
       ],
-      icon: ''
+      button: {
+        label: '',
+        link: ''
+      }
     },
     {
-      desktops: ['fan-hotel.jpg'],
+      desktop: {
+        poster: 'suggestions.jpg',
+        video: 'search'
+      }, 
       cards: [
-        'Our answer to the next generation of travel sites.  It\'s appeal is the fun UX.' 
+        'Our next generation travel site.  It\'s appeal is the fun UX.',
+        'And autofills all the search information for major booking sites.'
       ],
-      icon: ''
+      button: {
+        label: '',
+        link: ''
+      }
     },
     {
-      desktops: ['fan-festival.jpg'],
+      desktop: {
+        poster: 'loaded.jpg',
+        video: 'festival'
+      }, 
       cards: [
         'A compelling, animated interface that draws users to their next action, generating revenue through PPC.'
       ],
-      icon: ''
+      button: {
+        label: '',
+        link: ''
+      }
     },
     {
-      desktops: ['fan-install.jpg'],
+      mobile: {
+        poster: 'm-festival.jpg',
+        video: ''
+      },
+      cards: [
+        "They couldn't be happier with the results."
+      ],
+      button: {
+        label: '',
+        link: ''
+      }
+    },
+    {
+      desktop: {
+        poster: 'install1.jpg',
+        video: 'install'
+      }, 
       cards: [
         'Any band or performer with a tour can install the app in 6 clicks.'
       ],
-      icon: ''
+      button: {
+        label: '',
+        link: ''
+      }
     },
     {
-      desktops: ['fan-umphreys.jpg'],
+      desktop: {
+        poster: 'facebookapp.jpg',
+        video: 'umphreys'
+      }, 
       cards: [
         'They promote their tour right along side the app.'
       ],
-      icon: ''
+      button: {
+        label: '',
+        link: ''
+      }
     },
     {
-      desktops: ['fan-widget.jpg'],
+      desktop: {
+        poster: 'dash.jpg',
+        video: 'results'
+      }, 
       cards: [
         'Bands make 20-70% of the PPC revenue their fans generate.'
       ],
-      icon: ''
+      button: {
+        label: '',
+        link: ''
+      }
     }
   ]
 }
@@ -206,46 +285,82 @@ var spins = {
   summary : "An app that makes it fun for new generations to connect with the old technology of terrestrial radio.  My role was principle technology architect.",
   pages: [
     {
-      posters: ['spins-artist.png'],
+      desktop: {
+        poster: 'front.jpg',
+        video: 'landing'
+      }, 
       cards: [
-        'Spins.FM is a terrestrial radio request app.'
+        'Spins.FM is a radio request app for facebook and iPhone.'
       ],
-      icon: ''
+      button: {
+        label: '',
+        link: ''
+      }
     },
     {
-      desktops: ['spins-station.jpg'],
+      desktop: {
+        poster: 'britney.jpg',
+        video: 'britney'
+      }, 
       cards: [
-        'Radio is still the #1 way musicians build a career.'
+        'Radio is still the #1 way musicians break a new single.'
       ],
-      icon: ''
+      button: {
+        label: '',
+        link: ''
+      }
     },
     {
-      desktops: ['spins-playiga.jpg'],
+      desktop: {
+        poster: 'artistfb.jpg',
+        video: 'facebook'
+      }, 
       cards: [
         'We leveraged their fanbase and reinvigorated the request line.'
       ],
-      icon: ''
+      button: {
+        label: '',
+        link: ''
+      }
     },    
     {
-      desktops: ['spins-station-signup.jpg'],
+      desktop: {
+        poster: 'game.jpg',
+        video: 'analytics'
+      }, 
       cards: [
         'We made it a game and saw engagement increase overnight.'
       ],
-      icon: ''
+      button: {
+        label: '',
+        link: ''
+      }
     },    
     {
-      desktops: ['spins-50cent.jpg'],
+      desktop: {
+        poster: 'iga.jpg',
+        video: 'analytics'
+      }, 
       cards: [
         'We opened the lines of communication to stations.'
       ],
-      icon: ''
+      button: {
+        label: '',
+        link: ''
+      }
     },
     {
-      desktops: ['spins-dash.jpg'],
+      desktop: {
+        poster: 'station.jpg',
+        video: 'analytics'
+      }, 
       cards: [
-        'We got major attention from major labels.  It was fun.'
+        'All for an app that basically started as a way to spam radio stations.'
       ],
-      icon: ''
+      button: {
+        label: '',
+        link: ''
+      }
     }
   ]
 }
@@ -257,39 +372,66 @@ var fads = {
   summary : 'Videography, Video Editing, Website creation & printed materials design. Also a student.',
   pages : [
     {
-      desktops: ['fads-front.jpg'],
+      desktop: {
+        poster: 'front.jpg',
+        video: 'landing'
+      }, 
       cards: [
         'Fred Astaire Portland wanted to engage new customers with video.'
       ],
-      icon: ''
+      button: {
+        label: '',
+        link: ''
+      }
     },
     {
-      desktops: ['fads-showcase.jpg'],
+      desktop: {
+        poster: 'showcase.jpg',
+        video: 'landing'
+      }, 
       cards: [
         'So we developed a system to shoot their showcases and competitions'
       ],
-      icon: ''
+      button: {
+        label: '',
+        link: ''
+      }
     },
     {
-      posters: ['fads-mailer.jpg', 'fads-invite.jpg'],
+      poster: 'print.jpg',
       cards: [
         'They also needed promo print material. No problem.'
       ],
-      icon: ''
+      button: {
+        label: '',
+        link: ''
+      }
     },
     {
-      desktops: ['fads-weddings.jpg'],
+      desktop: {
+        poster: 'calendar.jpg',
+        video: 'landing'
+      }, 
       cards: [
         'Oh yeah, and their site had to sync to their iCalendar class-schedule.'
       ],
-      icon: ''
+      button: {
+        label: '',
+        link: ''
+      }
     },
     {
-      desktops: ['fads-faq.jpg'],
+      desktop: {
+        poster: 'wedding.jpg',
+        video: 'landing'
+      }, 
       cards: [
         "They couldn't be happier with our results."
       ],
-      icon: ''
+      button: {
+        label: '',
+        link: ''
+      }
     }
   ]
 }
@@ -301,39 +443,69 @@ var h2h = {
   summary : 'A skinable video competition app built with Branded Entertainment in mind.',
   pages : [
     {
-      desktops: ['h2h-front.jpg'],
+      desktop: {
+        poster: '.jpg',
+        video: ''
+      }, 
       cards: [
         "Head2Head was my first real app.  Before app was a thing."
       ],
-      icon: ''
+      button: {
+        label: '',
+        link: ''
+      }
     },
     {
-      desktops: ['h2h-.jpg'],
+      desktop: {
+        poster: '.jpg',
+        video: ''
+      }, 
       cards: [
         "The NHL was our first big client.  Fans voted on goals, players & other highlights"
       ],
-      icon: ''
+      button: {
+        label: '',
+        link: ''
+      }
     },
     {
-      desktops: ['h2h-.jpg'],
+      desktop: {
+        poster: '.jpg',
+        video: ''
+      }, 
       cards: [
         "The site went through 3 major version.  I learned a lot."
       ],
-      icon: ''
+      button: {
+        label: '',
+        link: ''
+      }
     },
     {
-      desktops: ['h2h-.jpg'],
+      desktop: {
+        poster: '.jpg',
+        video: ''
+      }, 
       cards: [
         "Sadly the company folded into our 4th year after dozens of clients."
       ],
-      icon: ''
+      button: {
+        label: '',
+        link: ''
+      }
     },
     {
-      desktops: ['h2h-.jpg'],
+      desktop: {
+        poster: '.jpg',
+        video: ''
+      }, 
       cards: [
         "And the NHL made their own in-house version in Flash (suckers)."
       ],
-      icon: ''
+      button: {
+        label: '',
+        link: ''
+      }
     }
   ]
 }
@@ -345,25 +517,43 @@ var elay = {
   summary : 'Short contract for a JS heavy, embeddable shopping cart & checkout system using a payment system.',
   pages : [
     {
-      desktops: ['elay-checkout1.jpg'],
+      desktop: {
+        poster: 'front.jpg',
+        video: ''
+      }, 
       cards: [
         "eLayaway needed a sexier checkout embeddable javascript."
       ],
-      icon: ''
+      button: {
+        label: '',
+        link: ''
+      }
     },
     {
-      desktops: ['elay-checkout2.jpg'],
+      desktop: {
+        poster: '.jpg',
+        video: ''
+      }, 
       cards: [
         "Across thousands of e-commerce sites, this modal had work to do."
       ],
-      icon: ''
+      button: {
+        label: '',
+        link: ''
+      }
     },    
     {
-      desktops: ['elay-checkout1.jpg'],
+      desktop: {
+        poster: '.jpg',
+        video: ''
+      }, 
       cards: [
         "Our answer was a beautiful and complex pay schedule calculator."
       ],
-      icon: ''
+      button: {
+        label: '',
+        link: ''
+      }
     }
   ]
 }
@@ -375,25 +565,56 @@ var kavi = {
   summary : 'Short contract for a responsive sales tool for their Workspace App.',
   pages : [
     {
-      desktops: ['h2h-.jpg'],
+      desktop: {
+        poster: 'full.jpg',
+        video: ''
+      }, 
       cards: [
         "Kavi Workspace needed a promotional questionaire for it's Project Management Software."
       ],
-      icon: ''
+      button: {
+        label: '',
+        link: ''
+      }
     },
     {
-      desktops: ['kavi-desktop1.jpg'],
+      desktop: {
+        poster: 'report.jpg',
+        video: ''
+      }, 
       cards: [
         "We gave them a responsive, simple wizard that generates leads."
       ],
-      icon: ''
+      button: {
+        label: '',
+        link: ''
+      }
     },
     {
-      mobiles: ['kavi-mobile1.jpg'],
+      mobile: {
+        poster: 'm-step7.jpg',
+        video: ''
+      },
       cards: [
         "They couldn't be happier with the results."
       ],
-      icon: ''
+      button: {
+        label: '',
+        link: ''
+      }
+    },
+    {
+      desktop: {
+        poster: 'print.jpg',
+        video: ''
+      }, 
+      cards: [
+        "Printer-friently reports, of course, (the original screen-size)."
+      ],
+      button: {
+        label: '',
+        link: ''
+      }
     }
   ]
 }
@@ -409,21 +630,30 @@ var rsf = {
       cards: [
         "Real Smart Fitness wanted to codify their training program in a mobile app."
       ],
-      icon: ''
+      button: {
+        label: '',
+        link: ''
+      }
     },
     {
       mobiles: ['rsf-preview2.png'],
       cards: [
         "We created 3D puppets that animated and gave instructions through the hour long program"
       ],
-      icon: ''
+      button: {
+        label: '',
+        link: ''
+      }
     },
     {
       mobiles: ['rsf-preview3.png'],
       cards: [
         "The app got attention for their personal training business."
       ],
-      icon: ''
+      button: {
+        label: '',
+        link: ''
+      }
     },
     {
       mobiles: ['rsf-preview3.png'],
@@ -431,7 +661,10 @@ var rsf = {
         "But with a $5 price tag and a real lack of on-going development.",
         "The competition won out on market share."
       ],
-      icon: ''
+      button: {
+        label: '',
+        link: ''
+      }
     }
   ]
 }
@@ -443,49 +676,76 @@ var bsa = {
   logo : 'bsa',
   pages : [
     {
-      desktops: ['bsa-.jpg'],
+      desktop: {
+        poster: '.jpg',
+        video: ''
+      }, 
       cards: [
         "Brooklyn Street Art, a popular blog was releasing a book."
       ],
-      icon: ''
+      button: {
+        label: '',
+        link: ''
+      }
     },
     {
-      desktops: ['bsa-.jpg'],
+      desktop: {
+        poster: '.jpg',
+        video: ''
+      }, 
       cards: [
         "They wanted a video to celebrate the Valentine's day release party"
       ],
-      icon: ''
+      button: {
+        label: '',
+        link: ''
+      }
     },
     {
-      desktops: ['bsa-.jpg'],
+      desktop: {
+        poster: '.jpg',
+        video: ''
+      }, 
       cards: [
         "We delivered a promotional video the party could be proud of."
       ],
-      icon: ''
+      button: {
+        label: '',
+        link: ''
+      }
     }
   ]
 }
 
 var eb = {
-  slug: 'edible-brians',
+  slug: 'edible-brains',
   logo: 'eb',
   title : 'Edible Brains Productions',
   summary : 'Web Design, Filmmaking, Branding, Online Strategy for NY Theatre company.',
   pages : [
     {
-      posters : ['eb-front.jpg'],
+      desktop: {
+        poster: 'front.jpg',
+        video: ''
+      }, 
       cards: [
         "Edible Brains Productions was applying to a theatre festival"
       ],
     },
     {
-      desktops : ['eb-film.jpg', 'eb-theatre.jpg'],
+      desktop: {
+        poster: 'films.jpg',
+        video: ''
+      }, 
       cards: [
         "They needed a trailer of their latest piece and a kickass website to go with it"
       ],
     },
     {
-      posters : ['ed-1.jpeg', 'ed-2.jpeg', 'ed-3.jpeg'],
+      desktop: {
+        poster: 'theatre.jpg',
+        video: ''
+      }, 
       cards: [
         "We delivered a powerful, expressive video and a site that captured their unique personality."
       ],
@@ -501,19 +761,28 @@ var aaa = {
   summary : 'Web Design, Filmmaking, Branding, Online Strategy for NY Arts organization.',
   pages : [
     {
-      posters : ['aaa-ira.jpg'],
+      desktop: {
+        poster: 'one.jpg',
+        video: ''
+      }, 
       cards: [
         "Alternative Arts was gearing up for it's biggest event"
       ],
     },
     {
-      desktops : ['aaa-modal.jpg'],
+      desktop: {
+        poster: 'two.jpg',
+        video: ''
+      }, 
       cards: [
         "Necropolis would coenside with the West village Halloween parade"
       ],
     },
     {
-      desktops : ['aaa-stage.jpg'],
+      desktop: {
+        poster: 'popup.jpg',
+        video: ''
+      }, 
       cards: [
         "They needed a complete rebranding.  New web site and video to reintroduce their organization to the city"
       ],
@@ -535,15 +804,15 @@ sections.film = [
   bsa
 ]
 sections.web = [
-  csfME
-  ,fan
+  csfME,
+  fan
   ,spins
   ,fads
-  ,americanD
-  , h2h
+  // ,americanD
+  // , h2h
   , elay
   , kavi
-  , rsf
+  // , rsf
   , aaa
   , eb
 ]

@@ -1,3 +1,4 @@
+// Routes for supplimental pages of the site.  About, FAQ, Testimonials.
 exports.about = function(req, res){
   res.render('supplemental/about', {
     title: 'About Me'

@@ -15,7 +15,7 @@
       .column.small-9
         .paymentMade
           .paymentInfo
-            .ccard.mastercard
+            .ccard
             .amount
               span $
               span.amountNum 100 
@@ -24,8 +24,8 @@
               span.last4Num 2323
             .cancelPayment
           .paymentFinePrint
-            span Payment won't confirm until you send a message.
-            a(href="#") Remove Payment
+            span Send a message to confirm payment. 
+            a.removePayment(href="#") Remove Payment
         button.payment.actionButton.greenButton.left Add Payment
       .column.small-3
         button.send.actionButton.greenButton.right Send

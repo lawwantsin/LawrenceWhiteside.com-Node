@@ -1,5 +1,8 @@
 .imac
-  img(src="/images/screens/imac.png")
+  img(src="/images/screens/imacHD.png")
   .screen
-    each d in page.desktops
-      img(src="/images/posters/#{d}")
+    img(src="/images/posters/#{section.slug}/#{page.desktop.poster}")
+    //- video(data-setup='{ "controls": false, "loop": true, "autoplay": false, "preload": "auto" }', poster="/images/posters/#{section.slug}/#{page.desktop.poster}", width="100%", height="100%")
+    //-   source(src="/videos/#{section.slug}/#{page.desktop.video}.mp4", type='video/mp4')
+    //-   source(src="/videos/#{section.slug}/#{page.desktop.video}.webm", type='video/webm')
+    //-   source(src="/videos/#{section.slug}/#{page.desktop.video}.ogv", type='video/ogg')

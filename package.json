@@ -1,12 +1,14 @@
 {
   "name": "lawrencewhiteside",
   "version": "0.1.0",
+  "homepage": "https://lawrencewhiteside.com",
   "private": true,
   "scripts": {
-    "start": "app.js"
+    "start": "app.js",
+    "test": "grunt test"
   },
-  "engines" : {
-    "node" : "0.10.x"
+  "engines": {
+    "node": "0.10.x"
   },
   "dependencies": {
     "express": "~3.3.4",
@@ -15,9 +17,9 @@
     "mongoose": "~3.6.14",
     "mongules": "*",
     "sendgrid": "1.0.3",
-    "connect-assets" : "3.0.1",
-    "coffee-script" : "*",
-    "stripe" : "*"
+    "connect-assets": "3.0.1",
+    "coffee-script": "*",
+    "stripe": "*"
   },
   "devDependencies": {
     "grunt": "~0.4.1",
@@ -26,6 +28,11 @@
     "grunt-contrib-compass": "~0.6.0",
     "request": "~2.27.0",
     "time-grunt": "~0.1.1",
-    "load-grunt-tasks": "~0.2.0"
+    "load-grunt-tasks": "~0.2.0",
+    "grunt-contrib-jasmine": "^0.6.5",
+    "grunt-contrib-jshint": "~0.2.0",
+    "jasmine-node": "*",
+    "bower": "^1.3.8",
+    "grunt-bower-requirejs": "^0.11.0"
   }
 }

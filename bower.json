@@ -5,5 +5,16 @@
     "**/.*",
     "node_modules",
     "components"
-  ]
+  ],
+  "dependencies": {
+    "jquery": null,
+    "backbone": null,
+    "underscore": null,
+    "requirejs": null,
+    "canjs": null,
+    "famous": null,
+    "angular": null,
+    "famous-angular": null,
+    "greensock": null
+  }
 }
