@@ -4,6 +4,7 @@ module.exports = function(app){
   app.get('/about-me', supplemental.about);
   app.get('/questions', supplemental.faq);
   app.get('/client-testimonials', supplemental.clients);
+  app.get('/test', supplemental.test);
 
   var portfolios = require('../app/controllers/portfolios');
   var actions = require('../app/controllers/actions');

@@ -41,17 +41,6 @@ define(['jquery', 'can', 'controls/app'], function($, can, App) {
 			modals.open('#contactModal')
 		},
 
-		// Scroll to the next page in the portfolio on click.
-	  '.next click' :function() {
-	    this.scrollNext();
-	  },
-
-	  // Helper function: Use iScroll to scroll more natively on interior (non-body) divs.  
-	  // Prevents that nasty (safari) elastic bouncey effect on my rock solid page.
-	  scrollNext :function() {
-	  	scroller.iScroll.next()
-	  },
-
 	  // Helper function for opening and closing the menu using CSS3.
 		toggleMenu :function(action) {
 			if (this.element.hasClass("navOpen") || action == 'close')
@@ -61,14 +50,14 @@ define(['jquery', 'can', 'controls/app'], function($, can, App) {
 		},
 
 		// Sets the section we're going to be scoped to if the top (film) door is clicked.
-		'.topDoor click' : function() {
-			this.navSection('film', 'morning')
-		},
+		// '.topDoor click' : function() {
+		// 	this.navSection('film', 'morning')
+		// },
 
-		// Sets the section we're going to be scopeed to if the bottom (web) door is clicked.
-		'.bottomDoor click' : function() {
-			this.navSection('web', 'csf')
-		},
+		// // Sets the section we're going to be scopeed to if the bottom (web) door is clicked.
+		// '.bottomDoor click' : function() {
+		// 	this.navSection('web', 'csf')
+		// },
 
 		// Sets the page scope on a logo click.  E.G. each company in web and each project in film.
 		// TODO: Resolve the section/page taxonomy inconsistency.
@@ -84,17 +73,22 @@ define(['jquery', 'can', 'controls/app'], function($, can, App) {
 		},
 
 		// Routing events sets the half without specifying which project.
-		':half route' : function(data) {
-			var h = data.half
-			this.navSection(h);
-		},
+		// ':half route' : function(data) {
+		// 	var h = data.half
+		// 	this.navSection(h);
+		// },
 
 		// Helper function: Opens the door if needsbe.  Sets half and section.
 		navSection :function(half, section, page) {
-			if (this.doorState == 'closed')
+			if (this.doorState == 'closed') {
 				this.openDoors(half, section);
-			else
+			}
+			else {
 				presenter.revealSection(half, section);
+	      setTimeout(function () {
+	        window[half+'Scroller'].iScroll.refresh();
+	      }, 0);
+			}
 			this.chooseHalf(half);
 	    presenter.setSection(section);
 		},
@@ -106,12 +100,15 @@ define(['jquery', 'can', 'controls/app'], function($, can, App) {
 		},
 
 		// Helper funcion: open the doors in the front of the site.
-		openDoors :function(half, section) {
-			t = presenter.play('front', 'doors', 'open').revealSection(half, section, 0);
-			this.doorState = 'open';
+		openDoors :function(half, section) { self = this;
+			setTimeout(function() {
+				presenter.play('front', 'doors', 'open').revealSection(half, section, 2000).play(half, 'scrollButton', 'show');
+				self.doorState = 'open';
+	      setTimeout(function () {
+	        window[half+'Scroller'].iScroll.refresh();
+	      }, 0);
+			}, 500);
 		}
 
 	});
-	// 
-	var nav = new App.Controls.Nav('body');
 });

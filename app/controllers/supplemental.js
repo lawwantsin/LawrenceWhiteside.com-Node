@@ -16,3 +16,9 @@ exports.clients = function(req, res){
     title: 'Client Testimonials'
   });
 };
+
+exports.test = function(req, res){
+  res.render('supplemental/test', {
+    title: 'Test Page'
+  });
+};

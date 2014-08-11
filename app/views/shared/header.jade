@@ -1,25 +1,31 @@
 .front
   .doorH.topDoor.door
-    .label Filmmaker
+    .scroll.film-header-scroll.header-scroll
+      .scrollContent
+        each section, x in sections.film
+          a.frame.clickable(href="#!film/#{section.slug}", style="background-image:url(/images/posters/#{section.slug}/#{section.thumb})")
+            //- span.label #{section.title}
   .doorH.bottomDoor.door
-    .label Web Artitect
-  .knob
-  .initials 
+    .scroll.web-header-scroll.header-scroll
+      .scrollContent
+        each section, x in sections.web
+          a.frame.clickable(href="#!web/#{section.slug}", style="background-image:url(/images/posters/#{section.slug}/#{section.thumb})") 
+            //- span.label #{section.title}
+.header
+  .full-name
     span.nameL.name Lawrence&nbsp;
     span.nameW.name Whiteside
+  .web-label Web Artitect
+  .film-label Filmmaker
   .contact
     span.reachOut
-      .show-for-small-only.
-        Small
-      .show-for-medium-only.
-        Medium
-      .show-for-large-only.
-        Large
-      .show-for-xlarge-only.
-        X-Large
+      span Contact
+      span.show-for-small-only.
+        S
+      span.show-for-medium-only.
+        M
+      span.show-for-large-only.
+        L
+      span.show-for-xlarge-only.
+        X
     i.ion-paper-airplane
-  .brands
-    each section, x in sections.web
-      if section.logo
-        a.logo(href='/#!web/'+section.slug, class="#{section.logo}-logo")
-          img(src="/images/logo-circles/#{section.logo}.png")

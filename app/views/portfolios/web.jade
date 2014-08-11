@@ -1,0 +1,28 @@
+.half.web
+  .web-scroll.scroll
+    .scrollContent
+      each section, x in sections.web
+        section.section.clearfix(class=section.slug)
+          include openingPage
+          each page, y in section.pages
+            .page.clearfix.snap
+              .row
+                .column.small-12.large-8.large-push-4
+                  if page.desktop
+                    include desktops
+                  if page.mobile
+                    include mobilesV
+                  if page.poster
+                    include posters
+                .column.small-12.large-4.large-pull-8
+                  .cards
+                    .infoBox
+                      if page.icon
+                        .icon
+                          i(class=page.icon)
+                      each card in page.cards
+                        p #{card}
+      include ../shared/contactPage
+  .next-icon.next
+    label.scrollIndicator Scroll
+    i.ion-chevron-down

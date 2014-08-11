@@ -1,41 +1,66 @@
 define(['jquery', 'can', 'controls/app'], function($, can, App) {
+  
   // Controller for the various actions that occur from scrolling.
   App.Controls.Scroll = can.Control.extend({
 
     defaults : {
+      horizontal: false
     }
 
   },{
 
     init :function() {
-      var self = this;
-      $('.scrollContainer').scroll(function() {      
+      this.initIScroll();
+    },
+
+    initIScroll :function() {
+      var iScrollOptions = {
+        scrollbars: false, useTransform: true, useTransition: false,
+        bounce: true, momentum: true, mouseWheel: true
+      }
+      var hor = this.options.horizontal ? {scrollX: true, scrollY: false} : {scrollX: false, scrollY: true};
+      $.extend(iScrollOptions, hor);
+      if (!Modernizr.touch) $.extend(iScrollOptions, {touch: false});
+      var sw = this.options.wrapper;
+      var w = ($(sw).find('a').length * $(sw).find('a').width());
+      console.log(w)
+      if (this.options.horizontal) $(sw).children().first().css('width', w);
+      this.iScroll = new IScroll(sw, iScrollOptions);
+      this.iScroll.on('scrollEnd', function() {
+        console.log(this);
+      });
+      var self = this;      
+      this.iScroll.on('scrollStart', function() {      
         self.scrolledToBottom(this.scrollTop);
         self.checkVisiblity();
-      })
+        self.hideScrollButton();
+      });
+    },
+
+    // Scroll to the next page in the portfolio on click.
+    '.next click' :function() {
+      this.scrollNext();
+    },
+
+    '.next-icon .ion-chevron-up click' :function(el, ev) {
+      $('.scrollContainer').scrollTo(0, 500);
+    },
+
+    // Helper function: Use iScroll to scroll more natively on interior (non-body) divs.  
+    // Prevents that nasty (safari) elastic bouncey effect on my rock solid page.
+    scrollNext :function() {
+      var wh = -($(window).height()-100);
+      this.iScroll.scrollBy(0, wh, 1200, IScroll.utils.ease.swing);
+      setTimeout(function () {
+        this.iScroll.refresh();
+      }, 0);
     },
 
     // Checks if the scrollContainer is at the bottom.  Turns the arrow up if so.
     scrolledToBottom : function(scrollTop) {
       scrollTop = scrollTop + $(window).height();
-      var bottom = $('.scrollContent').height() - 100;
-      if(scrollTop > bottom) {
-        this.yesAtBottom();
-      }
-      else {
-        this.noAtBottom();
-      }
-    },
-
-    // Checks if the videos are visible.  If so, plays them, if not, pauses them.  
-    // CPU mostly but also, don't want anyone to miss the fun.  It's not an animated GIF. 
-    checkVisiblity : function() {
-      clearTimeout(this.visiblityTimeout);
-      this.visiblityTimeout = setTimeout(function() {
-        var vs = $('video').each(function() {
-          $(this).visible() ? this.player.play() : this.player.pause();
-        });
-      }, 1000);
+      var bottom = $(this.child).height() - 100;
+      scrollTop > bottom ? this.yesAtBottom() : this.noAtBottom();
     },
 
     // Helper: Turns arrow around.
@@ -48,12 +73,24 @@ define(['jquery', 'can', 'controls/app'], function($, can, App) {
       $('.next-icon i').removeClass('ion-chevron-up').addClass('ion-chevron-down');
     },
 
-    // If icon is up and clicked, scroll to the top
-    '.next-icon .ion-chevron-up click' :function(el, ev) {
-      $('.scrollContainer').scrollTop(0);
+    hideScrollButton : function() {
+      presenter.play('web', 'scrollButton', 'hide');
+      clearTimeout(this.hsbTimeout);
+      this.hsbTimeout = setTimeout(function() {
+        presenter.play('web', 'scrollButton', 'show');
+      }, 2000);
+    },
+
+    // Checks if the videos are visible.  If so, plays them, if not, pauses them.  
+    // CPU mostly but also, don't want anyone to miss the fun.  It's not an animated GIF. 
+    checkVisiblity : function() {
+      clearTimeout(this.visiblityTimeout);
+      this.visiblityTimeout = setTimeout(function() {
+        var vs = $('video').each(function() {
+          $(this).visible() ? this.player.play() : this.player.pause();
+        });
+      }, 1000);
     }
 
-
   });
-  scroller = new App.Controls.Scroll('body');
 });

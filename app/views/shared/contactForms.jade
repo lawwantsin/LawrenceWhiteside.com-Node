@@ -5,12 +5,8 @@
       textarea(name="message", placeholder="What's your project?")
     .input
       input(name="name", type="text", placeholder="Your Name")
-      .error 
-        span So I know what you call you.
     .input
       input(name="email", type="email", placeholder="E-Mail Address")
-      .error 
-        span So I know where to reach you.
     .buttons.row.collapse
       .column.small-9
         .paymentMade
@@ -35,19 +31,15 @@
     .row.collapse
       .column.small-12
         .input
-          input.amount(name="amount", type="text", placeholder="Amount", 'data-stripe'='amount', value="100")
-          .error 
-            span What would you like to pay?
+          input.amount(name="amount", type="text", placeholder="Amount", 'data-stripe'='amount', value="")
         .input
-          input(name="number", type="text", placeholder="Credit Card Number", 'data-stripe'='number', value="4242424242424242")
-          .error 
-            span You're paying with a card, right?
+          input(name="number", type="text", placeholder="Credit Card Number", 'data-stripe'='number', value="")
     .row.collapse
       .column.small-12
         .input.cc-small.clearfix
-          input.left(name="exp-month", size="2", placeholder="MM", 'data-stripe'="exp-month", value="12")
-          input.left(name="exp-year", size="4", placeholder="YYYY", 'data-stripe'="exp-year", value="2015")
-          input.right(name="csv", placeholder="CVC", size="4", 'data-stripe'="cvc", value="123")
+          input.left(name="exp-month", size="2", placeholder="MM", 'data-stripe'="exp-month", value="")
+          input.left(name="exp-year", size="4", placeholder="YYYY", 'data-stripe'="exp-year", value="")
+          input.right(name="csv", placeholder="CVC", size="4", 'data-stripe'="cvc", value="")
     .buttons.row.collapse
       .column.small-12
         button.cancel.actionButton.greenButton.left Cancel

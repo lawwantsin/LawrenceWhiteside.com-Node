@@ -33,13 +33,14 @@ $green3 = #2c923a
 body.web, body.supl
   overflow: hidden
   font-family: 'Lato', Helvetica
+  .circle
+    position: absolute
+    top: 50%
+    left: 50%
+    margin: -175px 0 0 -150px
   .introCircle
     background: black
     border-radius: 100%
-    top: 50%
-    left: 50%
-    position: absolute
-    margin: -150px 0 0 -150px;
     padding: 0 40px;
     color: white
     width: 300px
@@ -50,26 +51,6 @@ body.web, body.supl
       vertical-align: middle
     h1
       text-align: center
-  .brands
-    position: absolute
-    left: 410px
-    overflow: hidden
-    height: 90px
-    right: 0
-    .logo
-      position: relative
-      margin-top: 10px
-      border-radius: 100%
-      border: 5px #787878 solid
-      opacity: 0
-      width: 80px
-      margin-left: 5px
-      float: left
-    .csf-logo
-      margin-left: 0px
-  @media only screen and (min-width: 40.063em)
-    .brands
-      right: 80px
   .contentContainer
     top: 0
     bottom: 0
@@ -92,22 +73,21 @@ body.web, body.supl
     background-color: rgba(255,255,255,0.2)
   .style.supl
     background-color: rgba(0,0,0,0.5)
-  .scrollContainer
-    position: relative
-    z-index: 0
-    margin-top: 50px
+  .scroll
+    width: 100%
+    top: 50px
     bottom: 0
-    overflow-y: auto
+    position: absolute
     .scrollContent
-      width: 100%
       position: absolute
-      //background-image: url('/images/bgs/hex-bg.png')
+      width: 100%
+      top: 0
       background-repeat: repeat
   .half
     width: 100%
     height: 100%
     display: none
-    position: relative
+    position: absolute
   .door
     cursor: pointer
     position: relative
@@ -116,87 +96,133 @@ body.web, body.supl
     width: 100%
     position: absolute
     left: 0
-  .knob
-    position: absolute
-    top: 50%
-    left: 50%
-    margin: -100px 0 0 -100px
-    width: 200px
-    height: 200px
+  .rotation
     background-color: black
     border-radius: 100%
+    position: absolute
+    top: 0
+    left: 0
+    width: 300px
+    height: 300px    
+    -webkit-transform-style: preserve-3d
+    transform-style: preserve-3d
+    .heads, .tails
+      width: 300px
+      height: 300px
+      position: absolute
+      top: 0
+      left: 0
+      backface-visibility: hidden
+    .heads
+      z-index: 2
+    .tails
+      transform: rotateY(-180deg)
+  .header
+    height: 50px    
+    top: 50%
+    margin-top: -25px
+    width: 100%
+    left: 0
+    overflow: hidden
+    position: fixed
+    color: white
+    background-color: black
+    z-index: 3
+    .web-label
+      z-index: 3
+      position: absolute
+      color: #aaa
+      line-height: 50px
+      right: 50%
+      margin-right: -250px
+    .film-label
+      z-index: 3
+      position: absolute
+      color: #aaa
+      left: 50%
+      margin-left: -250px
+      line-height: 50px
+  .full-name
+    -webkit-font-smoothing: antialiased
+    line-height: 50px
+    position: absolute
+    text-align: center
+    width: 100%
+    font-family: Krungthep
+    left: 10px
+    font-size: 1.3em
   .front
     display: block
     opacity: 1
-    z-index: 1
+    z-index: 3
     position: fixed
     bottom: auto
     top: 0
     width: 100%
     height: 100%
-    .topDoor
-      top: 0
-      background-color: rgba(0,0,0,0.5)
-      .label
+    .frame
+      display: block
+      height: 100%
+      width: 100vw
+      max-width: 945px
+      float: left
+      background-color: black
+      color: white
+      text-decoration: none
+      position: relative
+      backgrond-size: cover
+      margin: 0 1px
+      box-shadow: inner 0 0 40px black
+      span.label
         position: absolute
-        color: white
         bottom: 0
         padding: 10px
-        right: 50%
-        margin-right: 100px
+        color: white
+    .web-header-scroll
+      left: 0
+      top: 25px
+    .film-header-scroll
+      left: 0
+      bottom: 25px
+    .header-scroll
+      position: absolute
+      .scrollContent
+        height: 100%
+    .topDoor
+      top: 0
+      position: relative
+      background-color: rgba(0,0,0,0.5)
     .bottomDoor
       bottom: 0
       background-color: rgba(255,255,255,0.2)
-      .label
-        position: absolute
-        left: 50%
-        margin-left: 100px
-        top: 0
-        padding: 10px
-        color: black
-    @media only screen and (max-width: 64.063em)
-      .topDoor
-        .label
-          width: 100%
-          bottom: 120px
-          right: auto
-          text-align: center
-          margin-right: 0
-      .bottomDoor
-        .label
-          width: 100%
-          top: 120px
-          left: auto
-          text-align: center
-          margin-left: 0
-    .initials
-      @extend body.web .knob
-      background-color: transparent
-      font-family: 'Krungthep', 'Bank Gothic'
-      font-size: 100px
-      color: white
-      line-height: 200px
-      text-align: center
-      width: 200px
-      border-radius: 0
+  .initials
+    background-color: transparent
+    font-family: 'Krungthep', 'Bank Gothic'
+    font-size: 150px
+    color: white
+    line-height: 300px
+    text-align: center
+    width: 300px
+    border-radius: 0
+    overflow: hidden
+    span
+      display: inline-block
+    span.name
+      width: 0
       overflow: hidden
-      span
-        display: inline-block
-      span.name
-        width: 0
-        overflow: hidden
-      span.nameL
-        width: 60px
-      span.nameW
-        width: 100px
-    @media only screen and (max-width: 64.063em)
-      .initials
-        //
+    span.nameL
+      width: 90px
+    span.nameW
+      width: 150px
+  @media only screen and (max-width: 64.063em)
+    .initials
+      //
   .contact
     position: absolute
-    width: 150px
+    width: 0px
     height: 50px
-    right: 70%
+    right: 0
+    bottom: 0
     opacity: 0
     left: auto
     color: #ccc
@@ -220,7 +246,7 @@ body.web, body.supl
         position: absolute
         line-height: 50px
         font-size: 100%
-        opacity: 0
+        opacity: 1
   .section
     position: relative
     width: 100%
@@ -231,7 +257,7 @@ body.web, body.supl
     padding: 30px 90px 0px 90px
     top: 0
     left: 0
-    min-height: 720px
+    min-height: 540px
   .row
     max-width: 1300px
   img
@@ -310,7 +336,7 @@ body.web, body.supl
     &:first-child
       display: block
     .infoBox
-      margin: 150px auto 0 auto
+      margin: 0px auto 0 auto
   .infoBox
     background-color: #FFF
     color: #444
@@ -328,8 +354,6 @@ body.web, body.supl
       margin-top: 0
       .page
         padding: 0
-      .imac
-        width: 80%
         margin: 0 auto 40px auto
       .iphone
         //margin-top: -140px
@@ -338,7 +362,7 @@ body.web, body.supl
         .infoBox
           margin-top: 0
       .callToAction
-        padding: 30px 4px 40px 4px  
+        padding: 40px 10px  
   @media only screen and (min-width: 40.063em)
     .section
       padding: 0px 0px 10px 0px
@@ -353,11 +377,14 @@ body.web, body.supl
       .iphone
         //margin-top: -140px
       .cards
-        margin-top: 80%
+        margin: 100px 0
         .infoBox
           line-height: 1.2em
       .callToAction
         padding: 80px 20px 200px 20px
+  @media only screen and (min-width: 64.063em)
+    .infoBox
+      margin-top: 150px
   section.fixed
     position: fixed
     pointer-events: noneweb
@@ -374,6 +401,8 @@ body.web, body.supl
         margin-right: 0
   .contactForm
     position: relative
+    textarea
+      min-height: 260px
     .payment
       display: block
     .paymentMade
@@ -451,6 +480,8 @@ body.web, body.supl
         margin: 0 10px
         &:hover
           color: $green
+    p.networks
+      text-align: left
     p.license
       color: #ccc
       font-size: 0.5em
@@ -473,7 +504,6 @@ body.supl .style.supl, body.film .style.film, body.web .style.web
 .introBubble
   color: white
   position: relative
-  margin: 860px 0 660px 0
   pointer-events: none
   .introBubble2
     position: relative

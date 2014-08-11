@@ -5,6 +5,7 @@
 var googleM = {
   slug : 'googlem',
   title : "Google M",
+  thumb: 'googlem-1.jpeg',
   posters : [
     {url : 'googlem-1.jpeg'},
     {url : 'googlem-2.jpeg'},
@@ -15,6 +16,7 @@ var googleM = {
 var pModels = {
   slug : 'pm-calendar',
   title : "Prestegious Models",
+  thumb: 'pm-1.jpeg',
   posters : [
     {url : 'pm-1.jpeg'},
     {url : 'pm-2.jpeg'},
@@ -25,6 +27,7 @@ var pModels = {
 var morningAfter = {
   slug: 'morning-after',
   title: "The Morning After",
+  thumb: 'morning-after-1.jpeg',
   posters : [
     {url: 'morning-after-1.jpeg'},
     {url: 'morning-after-2.jpeg'},
@@ -34,17 +37,22 @@ var morningAfter = {
 
 var iNinja = {
   slug: '',
+  thumb: 'ininja-1.jpeg',
   title : 'iNinja',
   posters : [
-    {url : ''}, 
+    {url: 'ininja-1.jpeg'},
+    {url: 'ininja-2.jpeg'},
+    {url: 'ininja-3.jpeg'}
   ]
 }
 
-var feHour = {
-  slug: '48-hour-films',
-  title : '48 Hour Films',
+var coursing = {
+  slug: 'coursing',
+  title : 'Coursing',
   posters : [
-    {url : ''} 
+    {url: 'coursing-1.jpeg'},
+    {url: 'coursing-2.jpeg'},
+    {url: 'coursing-3.jpeg'}
   ]
 }
 
@@ -52,6 +60,7 @@ var feHour = {
 var americanD = {
   slug: 'american-detour',
   logo: 'ad',
+  thumb: 'front.jpg',
   title: 'American Detour',
   summary : "The brand of travel writer, Bruce Northam.  I contributed video work to the Web Video Series. I built the Wordpress Blog",
   pages: [ 
@@ -96,6 +105,7 @@ var americanD = {
 var csfME = {
   slug: 'csf',
   logo: 'csf',
+  thumb: 'front.jpg',
   title : 'Cinema Set Free',
   summary : 'Filmmaking Collective, Free Portfolio\'s for Artists, Films, Monthly Meetups',
   pages: [ 
@@ -181,6 +191,7 @@ var fan = {
   slug: 'fantrotter',
   logo: 'fantrotter',
   title : 'Fantrotter',
+  thumb: 'front.jpg',
   summary : 'Event travel search engine that empowers artists to make money from their fans travelling to see them.  Available as a website, facebook app, mobile app and embeddable widget.',
   pages : [
     {
@@ -282,6 +293,7 @@ var spins = {
   slug: 'spins-fm',
   logo: 'spins',
   title : 'Spins.FM',
+  thumb: 'front.jpg',
   summary : "An app that makes it fun for new generations to connect with the old technology of terrestrial radio.  My role was principle technology architect.",
   pages: [
     {
@@ -368,6 +380,7 @@ var spins = {
 var fads = {
   slug: 'fred-astaire',
   logo: 'fads',
+  thumb: 'front.jpg',
   title : 'Fred Astaire Dance Studios',
   summary : 'Videography, Video Editing, Website creation & printed materials design. Also a student.',
   pages : [
@@ -514,6 +527,7 @@ var elay = {
   slug: 'e-layaway',
   logo: 'elay',
   title : 'E-Layaway',
+  thumb: 'front.jpg',
   summary : 'Short contract for a JS heavy, embeddable shopping cart & checkout system using a payment system.',
   pages : [
     {
@@ -561,6 +575,7 @@ var elay = {
 var kavi = {
   slug: 'kavi',
   title : 'Kavi Calculator',
+  thumb: 'full.jpg',
   logo: 'kavi',
   summary : 'Short contract for a responsive sales tool for their Workspace App.',
   pages : [
@@ -622,6 +637,7 @@ var kavi = {
 var rsf = {
   slug: 'real-smart-fitness',
   logo: 'rsf',
+  thumb: 'front.jpg',
   title : 'Real Smart Fitness',
   summary : 'Mobile App for a Personal Training company.',
   pages : [
@@ -672,6 +688,7 @@ var rsf = {
 var bsa = {
   slug: 'brooklyn-street-art',
   title : 'Brooklyn Street Art',
+  thumb: 'front.jpg',
   summary : 'Filmmaking for an art-blog\'s book release party.',
   logo : 'bsa',
   pages : [
@@ -720,6 +737,7 @@ var bsa = {
 var eb = {
   slug: 'edible-brains',
   logo: 'eb',
+  thumb: 'front.jpg',
   title : 'Edible Brains Productions',
   summary : 'Web Design, Filmmaking, Branding, Online Strategy for NY Theatre company.',
   pages : [
@@ -756,6 +774,7 @@ var eb = {
 var aaa = {
   slug: 'alternative-arts',
   logo: 'aaa',
+  thumb: 'front.jpg',
   title : 'Alternative Arts Association',
   circa: '2010',
   summary : 'Web Design, Filmmaking, Branding, Online Strategy for NY Arts organization.',
@@ -798,7 +817,7 @@ sections.film = [
   pModels,
   morningAfter,
   iNinja,
-  feHour,
+  coursing,
   americanD,
   aaa,
   bsa

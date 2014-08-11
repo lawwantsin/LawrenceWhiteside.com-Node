@@ -30,5 +30,5 @@ define(['jquery', 'can', 'controls/app'], function($, can, App) {
     }
 
   });
-  modals = new App.Controls.Modals(document)
+
 });

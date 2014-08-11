@@ -12,6 +12,7 @@
     each section, x in sections.film
       a.item.clickable(href="#!film/#{section.slug}") #{section.title}
   .nav-items.list-vertical.web-nav
-    a.item.clickable(href="#!") Start Over
     each section, x in sections.web
-      a.item.clickable(href="#!web/#{section.slug}") #{section.title}
+      if section.logo
+        a.logo(href='/#!web/'+section.slug, class="#{section.logo}-logo")
+          img(src="/images/logo-circles/#{section.logo}.png")

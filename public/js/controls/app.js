@@ -4,6 +4,7 @@ define(['jquery', 'can'], function() {
   App = {};
   App.Controls = {};
   App.Models = {};
+  App.Maps = {};
  
   return App;
 

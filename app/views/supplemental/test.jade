@@ -1,0 +1,29 @@
+:stylus
+  #scrollContainer
+    position: absolute
+    z-index: 3
+    width: 100%
+    left: 0
+    top: 0
+    margin-top: 50px
+    height: 600px
+    bottom: 0
+    overflow: hidden
+    .scrollContent
+      width: 100%
+      position: absolute
+      overflow: hidden
+      height: 4000px
+body(onload="scroll()")
+  .main#scrollContainer
+    .scrollContent
+      ul
+        - for (var i = 0; i < 400; ++i) {
+          li #{i}
+        - }
+script(src="/js/lib/iscroll.js")
+script
+  var theScroll;
+  function scroll() {
+      theScroll = new IScroll('#scrollContainer', {mouseWheel: true});
+  }

@@ -1,30 +1,14 @@
-.editorOpen .editor
-  -webkit-transform: translateX(-300px)
-  -moz-transform: translateX(-300px)
-  -o-transform: translateX(-300px)
-  -ms-transform: translateX(-300px)
-  transform: translateX(-300px)
-.editor
-  -webkit-transform: translateX(0px)
-  -moz-transform: translateX(0px)
-  -o-transform: translateX(0px)
-  -ms-transform: translateX(0px)
-  transform: translateX(0px)
-  -webkit-transition: -webkit-transform 400ms cubic-bezier(0.165, 0.84, 0.44, 1), opacity 300ms ease-in 300ms
-  -moz-transition: -moz-transform 400ms cubic-bezier(0.165, 0.84, 0.44, 1), opacity 300ms ease-in 300ms
-  -o-transition: -o-transform 400ms cubic-bezier(0.165, 0.84, 0.44, 1), opacity 300ms ease-in 300ms
-  transition: -webkit-transform 400ms cubic-bezier(0.165, 0.84, 0.44, 1),-moz-transform 400ms cubic-bezier(0.165, 0.84, 0.44, 1),-o-transform 400ms cubic-bezier(0.165, 0.84, 0.44, 1),transform 400ms cubic-bezier(0.165, 0.84, 0.44, 1), opacity 300ms ease-in 300ms
-
 .navOpen 
   .main-overlay
     display: block !important
   .contentContainer
     opacity: .9
-    -webkit-transform: translate3d(60%, 0, 0) scale(0.85)
-    -moz-transform: translate3d(60%, 0, 0) scale(0.85)
-    -o-transform: translate3d(60%, 0, 0) scale(0.85)
-    -ms-transform: translate3d(60%, 0, 0) scale(0.85)
-    transform: translate3d(60%, 0, 0) scale(0.85)
+    -webkit-transform: translate3d(240px, 0, 0) scale(0.85)
+    -moz-transform: translate3d(240px, 0, 0) scale(0.85)
+    -o-transform: translate3d(240px, 0, 0) scale(0.85)
+    -ms-transform: translate3d(240px, 0, 0) scale(0.85)
+    transform: translate3d(240px, 0, 0) scale(0.85)
+
 .contentContainer
   -webkit-transform: scale(1)
   -moz-transform: scale(1)
@@ -50,11 +34,11 @@
   transform: translateX(0px)
   >*
     opacity: 0
-    -webkit-transform: translateX(-1000px)
-    -moz-transform: translateX(-1000px)
-    -o-transform: translateX(-1000px)
-    -ms-transform: translateX(-1000px)
-    transform: translateX(-1000px)
+    -webkit-transform: translateX(-400px)
+    -moz-transform: translateX(-400px)
+    -o-transform: translateX(-400px)
+    -ms-transform: translateX(-400px)
+    transform: translateX(-400px)
     -webkit-transition: -webkit-transform 400ms cubic-bezier(0.165, 0.84, 0.44, 1), opacity 300ms ease-in 300ms
     -moz-transition: -moz-transform 400ms cubic-bezier(0.165, 0.84, 0.44, 1), opacity 300ms ease-in 300ms
     -o-transition: -o-transform 400ms cubic-bezier(0.165, 0.84, 0.44, 1), opacity 300ms ease-in 300ms
@@ -130,7 +114,7 @@
     transform: translateX(0px)
 
 $top1 = -1200px
-$top2 = 50px
+$top2 = 1250px
 .modal
   display: block
   visibility: visible
@@ -140,16 +124,12 @@ $top2 = 50px
   padding: 1.25rem
   -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.4)
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.4) 
-  -webkit-transform: translateY($top1)
-  -moz-transform: translateY($top1)
-  -o-transform: translateY($top1)
-  -ms-transform: translateY($top1)
-  transform: translateY($top1)
+  top: $top1
   -webkit-transition: -webkit-transform 400ms cubic-bezier(0.165, 0.84, 0.44, 1), opacity 300ms ease-in 300ms
   -moz-transition: -moz-transform 400ms cubic-bezier(0.165, 0.84, 0.44, 1), opacity 300ms ease-in 300ms
   -o-transition: -o-transform 400ms cubic-bezier(0.165, 0.84, 0.44, 1), opacity 300ms ease-in 300ms
   transition: -webkit-transform 400ms cubic-bezier(0.165, 0.84, 0.44, 1),-moz-transform 400ms cubic-bezier(0.165, 0.84, 0.44, 1),-o-transform 400ms cubic-bezier(0.165, 0.84, 0.44, 1),transform 400ms cubic-bezier(0.165, 0.84, 0.44, 1), opacity 300ms ease-in 300ms
-@media only screen and (max-width: 40em)
+@media only screen and (max-width: 40.063em)
   .modal
     height: 100vh
     min-height: 100vh  
@@ -168,9 +148,6 @@ dialog > :last-child, .modal > :last-child
   .modal
     margin-left: -40%
     width: 80%  
-@media only screen and (min-width: 40.063em)
-  .modal
-    top: 6.25rem  
 .modal .close-modal
   font-size: 2.5rem
   line-height: 1
@@ -190,9 +167,6 @@ dialog > :last-child, .modal > :last-child
     height: 100vh
     min-height: 100vh
     margin-left: 0 !important  
-@media only screen and (min-width: 40.063em) and (min-width: 40.063em)
-  .modal
-    top: 6.25rem  
 @media only screen and (min-width: 40.063em) and (min-width: 40.063em)
   .modal.tiny
     margin-left: -15%

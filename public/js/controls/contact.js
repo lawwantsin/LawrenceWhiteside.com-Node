@@ -33,14 +33,45 @@ define(['jquery', 'can', 'controls/app'], function($, can, App) {
     '.contactForm form submit' :function(el, ev) {
       ev.preventDefault();
       var params = el.formParams();
+      this.formSubmit(params);
+    },
+
+    formSubmit :function(params) {
       params.payment = $('body').data('ccInfo');
-      contact = new App.Models.Contact(params);
+      if (!this.validate(params)) return;
+      var self = this;
+      var contact = new App.Models.Contact(params);
       contact.save(function(res) {
-        console.log(res);    // TODO: Add success action
+         self.saveSuccess(res);
       }, 
       function(res) {
-        console.log(res);    // TODO: Add error visualization
-      })
+        self.validate(params);
+      });
+    },
+
+    validate :function(params) {
+      var contact = new App.Maps.Contact(params);
+      var errors = contact.errors();
+      if (errors) {
+        $('.error').removeClass('error').removeClass('wobble');
+        for(x in errors) {
+          this.displayError(x, errors[x]);
+        }
+        return false;
+      }
+      else return true;
+    },
+
+    saveSuccess : function(res) {
+      presenter.play('contact', 'close', 'thank');
+    },
+
+    'input, textarea keydown' :function(el, ev) {
+      if(el.val() != '') el.removeClass('error').removeClass('wobble');
+    },
+
+    displayError :function(element, message) {
+      $('.contactForm').find('[name='+element+']').addClass('error').addClass('wobble');
     },
 
     // Attach a custom event to the doument object on the dom so any controller may show or hide the contact form.
@@ -98,5 +129,4 @@ define(['jquery', 'can', 'controls/app'], function($, can, App) {
     }
 
   });
-  var contact = new App.Controls.Contact('body')
 });

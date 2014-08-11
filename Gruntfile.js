@@ -36,32 +36,24 @@ module.exports = function (grunt) {
       }
     },
     jasmine : {
-      src : [
-        'assets/js/lib/jquery-1.9.1.js',
-        'assets/js/lib/*.js', 
-        'assets/js/models/*.js', 
-        'assets/js/controls/*.js'
-      ],
-      options : {
-        specs : ['spec/client/*/*.js', 'spec/server/*/*.js']
+      clientSpecs: {
+        options: {
+          host: 'http://127.0.0.1:8000/',
+          template: require('grunt-template-jasmine-requirejs'),
+          templateOptions: {
+            requireConfigFile: ['js/main.js', 'spec/client/main.js'],
+            requireConfig: {
+              baseUrl: ''
+            }
+          }
+        }
       }
     },
-    // jasmine : {
-    //   src : [
-    //     'app/controllers/*.js',
-    //     'assets/js/lib/*.js', 
-    //     'assets/js/models/*.js', 
-    //     'assets/js/controls/*.js'
-    //   ],
-    //   options : {
-    //     specs : ['spec/client/*/*.js', 'spec/server/*/*.js']
-    //   }
-    // },
     jshint: {
       all: [
         'Gruntfile.js',
-        'src/*/*/*.js',
-        'spec/*/*/*.js'
+        // 'src/*/*/*.js',
+        // 'spec/*/*/*.js'
       ],
       options: {
         jshintrc: '.jshintrc'
@@ -69,7 +61,7 @@ module.exports = function (grunt) {
     },
      bower: {
       target: {
-        rjsConfig: 'public/js/rjs-config.js'
+        rjsConfig: 'public/js/main.js'
       }
     }
   });
@@ -91,9 +83,10 @@ module.exports = function (grunt) {
   });
 
   grunt.loadNpmTasks('grunt-bower-requirejs');
+  grunt.loadNpmTasks('grunt-template-jasmine-requirejs');
   grunt.loadNpmTasks('grunt-contrib-jasmine');
   grunt.loadNpmTasks('grunt-contrib-jshint');
 
   grunt.registerTask('test', ['jshint', 'jasmine']);
-  grunt.registerTask('default', ['bower', 'develop', 'watch']);
+  grunt.registerTask('default', ['develop', 'watch']);
 };

@@ -87,5 +87,4 @@ define(['jquery', 'can', 'controls/app'], function($, can, App) {
 
 	});
 
-	var bg = new App.Controls.BG('.site');
 });
