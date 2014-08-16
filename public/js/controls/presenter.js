@@ -6,7 +6,13 @@ define(['jquery', 'can', 'controls/app', 'greensock'], function($, can, App, Tim
       this.section = null;
       this.half = this.element.attr('class');
       this.okToProceed = true;
+      var self = this;
+      $(window).on('load', function() {self.fadeIn()});
     },
+
+    fadeIn : function(){
+      presenter.play('front', 'doors', 'fadeIn');
+    }, 
 
     scrolled :function() {
       var self = this;
@@ -125,6 +131,11 @@ define(['jquery', 'can', 'controls/app', 'greensock'], function($, can, App, Tim
             .to('.header', 0.5, {top: "50%", marginTop: -25}, 'close')
             .to('.full-name', 0.3, {left: 0, textAlign: 'center'}, 'across')
           return tl
+        },
+        fadeIn :function() {
+          var tl = new TimelineMax()
+            .staggerTo('.web-header-scroll .frame', 1, {opacity: 1}, 0.4, 'fades')
+            .staggerTo('.film-header-scroll .frame', 1, {opacity: 1}, 0.4, 'fades');
         }
       }
     },

@@ -116,6 +116,7 @@ body.web, body.supl
     .heads
       z-index: 2
     .tails
+      -webkit-perspective: 1000
       transform: rotateY(-180deg)
       -webkit-transform: rotateY(-180deg)
   .header
@@ -149,7 +150,7 @@ body.web, body.supl
     position: absolute
     text-align: center
     width: 100%
-    font-family: Krungthep
+    font-family: 'Krungthep'
     left: 10px
     font-size: 1.3em
   .front
@@ -163,7 +164,7 @@ body.web, body.supl
     height: 100%
     .caption
       width: 100%
-      position: absolute
+      position: relative
       line-height: 20px
       color: white
       background-color: rgba(0,0,0,0.9)
@@ -186,24 +187,22 @@ body.web, body.supl
       left: 0
       top: 25px
       .frame
+        opacity: 0
         height: 100%
         width: 100vw
         max-width: 640px
-        .caption
-          top: 0
     .film-header-scroll
       bottom: 25px
       .scrollContent
         left: -100px
       .frame
+        opacity: 0
         height: 100%
         width: 100vw
         max-width: 640px
         img
           bottom: 0
           position: absolute
-        .caption
-          bottom: 0
     .header-scroll
       position: absolute
       .scrollContent

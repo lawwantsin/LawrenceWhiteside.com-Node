@@ -14,7 +14,7 @@ define(['jquery', 'can', 'controls/app'], function($, can, App) {
 
 		// Centers vertically the section on the stage, minus the header height.
 		sizeToScreen : function() {
-			this.element.css({height: $(window).height()-50})
+			this.element.css({height: $(window).height()})
 			// setTimeout(function() {
 		 //    scroller.iScroll.refresh();
 			// }, 0)

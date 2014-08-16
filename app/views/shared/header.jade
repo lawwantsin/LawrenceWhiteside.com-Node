@@ -12,9 +12,9 @@
       .scrollContent
         each section, x in sections.web
           a.frame.clickable(href="#!web/#{section.slug}") 
-            img(src="/images/posters/#{section.slug}/#{section.thumb}")
             .caption
               span.label #{section.title}
+            img(src="/images/posters/#{section.slug}/#{section.thumb}")
 .header
   .mobile-menu.clickable
     i.ion-navicon
