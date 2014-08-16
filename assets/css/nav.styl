@@ -24,13 +24,14 @@ $green3 = #2c923a
   right: 0
   z-index: 0
 .nav
-  background-image: url('/images/nav-bgs/circuit-bg.jpg')
+//  background-image: url('/images/nav-bgs/rain.jpg')
+  background-color: #ccc
   background-size: cover
   font-family: 'Krungthep', Helvetica
   .nav-items
     position: absolute
-    left: 162px;
-    top: 287px;
+    left: 173px;
+    top: 340px;
     line-height: 0.8em
     -webkit-transform: translate(-50%, -50%)
     -moz-transform: translate(-50%, -50%)
@@ -38,19 +39,20 @@ $green3 = #2c923a
     -ms-transform: translate(-50%, -50%)
     transform: translate(-50%, -50%)
     font-size: 1em
-    width: 280px
+    width: 380px
     display: none
   h1
     color: rgba(255,255,255,0.7)
     text-decoration: underline
     font-size: 1.2em
-  a.logo
-    position: relative
-    padding: 5px
-    opacity: 1
-    background-color: #000
-    margin: 5px
-    width: 100px
-    float: left
+    .item
+      width: 100%
+    .caption
+      bottom: 0
+      width: 100%
+      min-height: 200px
+      padding: 10px
+      position: absolute
+      color: white
 .nav.web .nav-items.web-nav, .nav.film .nav-items.film-nav, .nav.supl .nav-items.supl-nav
   display: block

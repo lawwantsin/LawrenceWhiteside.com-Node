@@ -1,4 +1,4 @@
-define(['jquery', 'can', 'controls/app'], function($, can, App) {
+define(['jquery', 'can', 'controls/app', 'greensock'], function($, can, App) {
   
   // Controller for the various actions that occur from scrolling.
   App.Controls.Scroll = can.Control.extend({
@@ -14,26 +14,28 @@ define(['jquery', 'can', 'controls/app'], function($, can, App) {
     },
 
     initIScroll :function() {
-      var iScrollOptions = {
-        scrollbars: false, useTransform: false, useTransition: true,
-        bounce: true, momentum: true, mouseWheel: true
-      }
-      var hor = this.options.horizontal ? {scrollX: true, scrollY: false} : {scrollX: false, scrollY: true};
-      $.extend(iScrollOptions, hor);
-      if (!Modernizr.touch) $.extend(iScrollOptions, {touch: false});
-      var sw = this.options.wrapper;
-      var w = ($(sw).find('.frame').length * $(sw).find('.frame').width()) + 30;
-      if (this.options.horizontal) $(sw).children().first().css('width', w);
-      this.iScroll = new IScroll(sw, iScrollOptions);
-      this.iScroll.on('scrollEnd', function() {
-//        console.log(this);
-      });
-      var self = this;      
-      this.iScroll.on('scrollStart', function() {      
-        self.scrolledToBottom(this.scrollTop);
-//        self.checkVisiblity();
-        self.hideScrollButton();
-      });
+      var direction = this.options.horizontal ? "scrollLeft"  : "scrollTop"; 
+      Draggable.create(this.options.wrapper, {type: direction, edgeResistance:0.1, throwProps:true, lockAxis:true});
+      // var iScrollOptions = {
+      //   scrollbars: false, useTransform: false, useTransition: true,
+      //   bounce: true, momentum: true, mouseWheel: true
+      // }
+      // var hor = this.options.horizontal ? {scrollX: true, scrollY: false} : {scrollX: false, scrollY: true};
+      // $.extend(iScrollOptions, hor);
+      // if (!Modernizr.touch) $.extend(iScrollOptions, {touch: false});
+      // var sw = this.options.wrapper;
+      // var w = ($(sw).find('.frame').length * $(sw).find('.frame').width()) + 30;
+      // if (this.options.horizontal) $(sw).children().first().css('width', w);
+      // this.iScroll = new IScroll(sw, iScrollOptions);
+      // this.iScroll.on('scrollEnd', function() {
+      //   console.log(this);
+      // });
+      // var self = this;      
+      // this.iScroll.on('scrollStart', function() {      
+      //   self.scrolledToBottom(this.scrollTop);
+      //   self.checkVisiblity();
+      //   self.hideScrollButton();
+      // });
     },
 
     // Scroll to the next page in the portfolio on click.
@@ -49,10 +51,10 @@ define(['jquery', 'can', 'controls/app'], function($, can, App) {
     // Prevents that nasty (safari) elastic bouncey effect on my rock solid page.
     scrollNext :function() {
       var wh = -($(window).height()-100);
-      this.iScroll.scrollBy(0, wh, 1200, IScroll.utils.ease.swing);
-      setTimeout(function () {
-        this.iScroll.refresh();
-      }, 0);
+      // this.iScroll.scrollBy(0, wh, 1200, IScroll.utils.ease.swing);
+      // setTimeout(function () {
+      //   this.iScroll.refresh();
+      // }, 0);
     },
 
     // Checks if the scrollContainer is at the bottom.  Turns the arrow up if so.

@@ -3,15 +3,21 @@
     .scroll.film-header-scroll.header-scroll
       .scrollContent
         each section, x in sections.film
-          a.frame.clickable(href="#!film/#{section.slug}", style="background-image:url(/images/posters/#{section.slug}/#{section.thumb})")
-            //- span.label #{section.title}
+          a.frame.clickable(href="#!film/#{section.slug}")
+            img(src="/images/stills/#{section.slug}/#{section.thumb}")
+            .caption
+              span.label #{section.title}
   .doorH.bottomDoor.door
     .scroll.web-header-scroll.header-scroll
       .scrollContent
         each section, x in sections.web
-          a.frame.clickable(href="#!web/#{section.slug}", style="background-image:url(/images/posters/#{section.slug}/#{section.thumb})") 
-            //- span.label #{section.title}
+          a.frame.clickable(href="#!web/#{section.slug}") 
+            img(src="/images/posters/#{section.slug}/#{section.thumb}")
+            .caption
+              span.label #{section.title}
 .header
+  .mobile-menu.clickable
+    i.ion-navicon
   .full-name
     span.nameL.name Lawrence&nbsp;
     span.nameW.name Whiteside

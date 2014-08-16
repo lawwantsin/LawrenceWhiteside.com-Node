@@ -73,10 +73,9 @@ define(['jquery', 'can', 'controls/app'], function($, can, App) {
 		},
 
 		// Routing events sets the half without specifying which project.
-		// ':half route' : function(data) {
-		// 	var h = data.half
-		// 	this.navSection(h);
-		// },
+		'route' : function(data) {
+			if (location.hash == '#!') this.closeDoors();
+		},
 
 		// Helper function: Opens the door if needsbe.  Sets half and section.
 		navSection :function(half, section, page) {
@@ -102,12 +101,17 @@ define(['jquery', 'can', 'controls/app'], function($, can, App) {
 		// Helper funcion: open the doors in the front of the site.
 		openDoors :function(half, section) { self = this;
 			setTimeout(function() {
-				presenter.play('front', 'doors', 'open').revealSection(half, section, 2000).play(half, 'scrollButton', 'show');
+				presenter.play('front', 'doors', 'open').revealSection(half, section, 1000).play(half, 'scrollButton', 'show');
 				self.doorState = 'open';
-	      setTimeout(function () {
+	      setInterval(function () {
 	        window[half+'Scroller'].iScroll.refresh();
 	      }, 0);
-			}, 500);
+			}, 2500);
+		},
+
+		closeDoors :function() {
+			presenter.play('front', 'doors', 'close');
+			this.doorState = 'closed';
 		}
 
 	});

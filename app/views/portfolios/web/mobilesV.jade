@@ -1,0 +1,17 @@
+.page.clearfix.snap
+  .row
+    .column.small-12.large-8.large-push-4
+      .iphone
+        img(src="/images/screens/iphoneHD.png")
+        .screen
+          each m in page.mobiles
+            img(src="/images/posters/#{m}")
+    .column.small-12.large-4.large-pull-8
+      .cards
+        .infoBox
+          if page.icon
+            .icon
+              i(class=page.icon)
+          if page.cards
+            each card in page.cards
+              p #{card}

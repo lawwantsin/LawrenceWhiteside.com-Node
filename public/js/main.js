@@ -5,6 +5,7 @@ require.config({
       '../js/lib/jquerypp.custom'
     ],
     greensock: [
+      // '../js/lib/ThrowPropsPlugin.min',
       '../components/greensock/src/minified/TweenMax.min',
       '../components/greensock/src/minified/TweenLite.min',
       '../components/greensock/src/minified/easing/EasePack.min'
@@ -37,6 +38,7 @@ require([
 	'lib/fastclick',
 	'lib/modernizr',
   'lib/iscroll',
+  'lib/video.dev',
   'models/contact',
   'models/payment',
   'controls/bg',
@@ -54,10 +56,12 @@ require([
   payment = new App.Controls.Payment('body')
   bg = new App.Controls.BG('.site');
   modals = new App.Controls.Modals(document)
-  // filmScroller = new App.Controls.Scroll(document, {wrapper: '.film-scroll'});
+  filmScroller = new App.Controls.Scroll(document, {wrapper: '.film-scroll'});
   webScroller = new App.Controls.Scroll(document, {wrapper: '.web-scroll'});
-  // filmHeaderScroller = new App.Controls.Scroll(document, {wrapper: '.film-header-scroll', horizontal: true});
-  webHeaderScroller = new App.Controls.Scroll(document, {wrapper: '.web-header-scroll', horizontal: true});
+  filmNavScroller = new App.Controls.Scroll(document, {wrapper: '.film-nav-scroll'});
+  webNavScroller = new App.Controls.Scroll(document, {wrapper: '.web-nav-scroll'});
+  filmHeaderScroller = new App.Controls.Scroll(document, {wrapper: '.film-header-scroll', horizontal: true, initialMove: 100});
+  webHeaderScroller = new App.Controls.Scroll(document, {wrapper: '.web-header-scroll', horizontal: true, initialMove: -100});
   sections = new App.Controls.Section('.intro');
   nav = new App.Controls.Nav('body');
 	console.log ("App Started");

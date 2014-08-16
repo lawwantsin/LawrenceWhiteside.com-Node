@@ -6,10 +6,32 @@ var googleM = {
   slug : 'googlem',
   title : "Google M",
   thumb: 'googlem-1.jpeg',
-  posters : [
-    {url : 'googlem-1.jpeg'},
-    {url : 'googlem-2.jpeg'},
-    {url : 'googlem-3.jpeg'}    
+  summary: "6 Minute Short Comedy about one woman's love for her phone.",
+  pages: [ 
+    {
+      theater: {
+        poster: 'googlem-1.jpeg',
+        video: 'googlem-short'
+      },
+      cards : [
+        'We made Google M when iPhones first hit the market.',
+        'Our friends Max and Molly were kind enough to star with no rehearsal',
+        'Lit by a few LEDs we rented for free from VER in NYC.',
+        'It placed 3rd in the Bite My Flick Film Festival in Portland'
+      ]
+    },
+    {
+      credits: [
+        ['Directors', 'Antonio Bonilla & Lawrence Whiteside'],
+        ['Writer', 'Antonio Bonilla'],
+        ['Cindy', 'Molly Ryzdel'],
+        ['John', 'Max Hambleton'],
+        ['Editor', 'Benadict'],
+        ['Sound Design', 'Gora Faal'],
+        ['Visual Effects', 'Chris Lohouse'],
+        ['Script Supervisor', 'Cindy Ormondroyd']
+      ]
+    }
   ]
 }
 
@@ -17,10 +39,31 @@ var pModels = {
   slug : 'pm-calendar',
   title : "Prestegious Models",
   thumb: 'pm-1.jpeg',
-  posters : [
-    {url : 'pm-1.jpeg'},
-    {url : 'pm-2.jpeg'},
-    {url : 'pm-3.jpeg'}    
+  summary: "Behind the scenes calendar photoshoot at the Velvet Lounge in NYC",
+  pages: [ 
+    {
+      theater: {
+        poster: 'pm-1.jpeg',
+        video: 'pm-teaser'
+      },
+      cards : ['Kim Lo, head of Prestigious Models, an asian modeling agency in NYC, brought me in to shoot PTS on their calendar shoot']
+    }
+  ]
+}
+
+var aaaf = {
+  slug: 'alternative-arts',
+  thumb: 'necropolis-1.jpeg',
+  title : 'Alternative Arts Association',
+  summary: 'Promotional video about the multi-night Necropolis arts festival.',
+  pages: [ 
+    {
+      theater: {
+        poster: 'necropolis-1.jpeg',
+        video: 'aaa-promo',
+      },
+      cards : ['AlternativeArts.org wanted a fun and from the heart promotional video to accompany their rebranding.']
+    }
   ]
 }
 
@@ -28,26 +71,38 @@ var morningAfter = {
   slug: 'morning-after',
   title: "The Morning After",
   thumb: 'morning-after-1.jpeg',
-  posters : [
-    {url: 'morning-after-1.jpeg'},
-    {url: 'morning-after-2.jpeg'},
-    {url: 'morning-after-3.jpeg'}
+  summary: 'Episode 3 of a 3-part web-series about love and lycanthropy',
+  pages: [ 
+    {
+      theater: {
+        poster: 'morning-after-1.jpeg',
+        video: 'morning-after-ep3',
+      },
+      cards : ['We were recruited by a young writer to reimagine her sketch comedy script as an action parody.']
+    }
   ]
 }
 
 var iNinja = {
-  slug: '',
-  thumb: 'ininja-1.jpeg',
+  slug: 'ininja',
+  thumb: 'ininja-2.jpeg',
   title : 'iNinja',
-  posters : [
-    {url: 'ininja-1.jpeg'},
-    {url: 'ininja-2.jpeg'},
-    {url: 'ininja-3.jpeg'}
+  summary: 'A 3 minute short about the secrets we keep as an international ninja assassin.',
+  pages: [ 
+    {
+      theater: {
+        poster: 'ininja-2.jpeg',
+        video: 'ininja-short',
+      },
+      cards : ['I took the On the Lot challenge and made this film, with just me and my actress.',
+      'Written, shoot and edited in 1 week']
+    }
   ]
 }
 
 var coursing = {
   slug: 'coursing',
+  thumb: 'coursing-1.jpeg',
   title : 'Coursing',
   posters : [
     {url: 'coursing-1.jpeg'},
@@ -56,6 +111,44 @@ var coursing = {
   ]
 }
 
+var bsa = {
+  slug: 'bsa',
+  title : 'Brooklyn Street Art',
+  thumb: 'bsa-promo.jpeg',
+  video: 'bsa-promo',
+  pages: [ 
+    {
+      theater: {
+        poster: 'bsa-promo.jpeg',
+        video: 'bsa-promo',
+      },
+      cards : [
+        '', 
+        ''
+      ]
+    }
+  ]
+}
+
+var moment = {
+  slug: 'moment',
+  title : 'Moment',
+  thumb: 'moment-1.jpeg',
+  video: 'moment',
+  posters : [
+    {url: 'moment-stairs.jpeg'},
+    {url: 'moment-subway.jpeg'}
+  ]
+}
+
+
+
+
+
+
+
+
+
 // Websites
 var americanD = {
   slug: 'american-detour',
@@ -63,7 +156,7 @@ var americanD = {
   thumb: 'front.jpg',
   title: 'American Detour',
   summary : "The brand of travel writer, Bruce Northam.  I contributed video work to the Web Video Series. I built the Wordpress Blog",
-  pages: [ 
+  pages: [
     {
       videos: ['ad-collage.jpg'], 
       cards: ['The Short-form travel web-series staring Bruce Northam began filming in 2009.'],
@@ -685,55 +778,6 @@ var rsf = {
   ]
 }
 
-var bsa = {
-  slug: 'brooklyn-street-art',
-  title : 'Brooklyn Street Art',
-  thumb: 'front.jpg',
-  summary : 'Filmmaking for an art-blog\'s book release party.',
-  logo : 'bsa',
-  pages : [
-    {
-      desktop: {
-        poster: '.jpg',
-        video: ''
-      }, 
-      cards: [
-        "Brooklyn Street Art, a popular blog was releasing a book."
-      ],
-      button: {
-        label: '',
-        link: ''
-      }
-    },
-    {
-      desktop: {
-        poster: '.jpg',
-        video: ''
-      }, 
-      cards: [
-        "They wanted a video to celebrate the Valentine's day release party"
-      ],
-      button: {
-        label: '',
-        link: ''
-      }
-    },
-    {
-      desktop: {
-        poster: '.jpg',
-        video: ''
-      }, 
-      cards: [
-        "We delivered a promotional video the party could be proud of."
-      ],
-      button: {
-        label: '',
-        link: ''
-      }
-    }
-  ]
-}
-
 var eb = {
   slug: 'edible-brains',
   logo: 'eb',
@@ -774,7 +818,8 @@ var eb = {
 var aaa = {
   slug: 'alternative-arts',
   logo: 'aaa',
-  thumb: 'front.jpg',
+  thumb: 'one.jpg',
+  still: 'necropolis-1.jpeg',
   title : 'Alternative Arts Association',
   circa: '2010',
   summary : 'Web Design, Filmmaking, Branding, Online Strategy for NY Arts organization.',
@@ -809,24 +854,71 @@ var aaa = {
   ]
 }
 
+var exit21 = {
+  slug: 'exit-21',
+  logo: 'exit21',
+  thumb: 'front.jpg',
+  title : 'Exit-21: Apparel Solutions',
+  circa: '2010',
+  summary : 'Online Strategy for Portfland Apparel Team.',
+  pages : [
+    {
+      desktop: {
+        poster: 'front.jpg',
+        video: ''
+      }, 
+      cards: [
+        "Alternative Arts was gearing up for it's biggest event"
+      ],
+    },
+    {
+      desktop: {
+        poster: 'modal.jpg',
+        video: ''
+      }, 
+      cards: [
+        "Necropolis would coenside with the West village Halloween parade"
+      ],
+    },
+    {
+      desktop: {
+        poster: 'portfolio.jpg',
+        video: ''
+      }, 
+      cards: [
+        "They needed a complete rebranding.  New web site and video to reintroduce their organization to the city"
+      ],
+    },
+    {
+      desktop: {
+        poster: 'team.jpg',
+        video: ''
+      }, 
+      cards: [
+        "They needed a complete rebranding.  New web site and video to reintroduce their organization to the city"
+      ],
+    }
+  ]
+}
+
 
 
 sections = {}
 sections.film = [
-  googleM,
-  pModels,
-  morningAfter,
-  iNinja,
-  coursing,
-  americanD,
-  aaa,
-  bsa
+  googleM
+  , morningAfter
+  , iNinja
+  // , coursing
+  // , americanD
+  , aaaf
+  , bsa
+  , pModels
 ]
 sections.web = [
-  csfME,
-  fan
-  ,spins
-  ,fads
+  csfME
+  , fan
+  , spins
+  , fads
   // ,americanD
   // , h2h
   , elay
@@ -834,5 +926,6 @@ sections.web = [
   // , rsf
   , aaa
   , eb
+  , exit21
 ]
 

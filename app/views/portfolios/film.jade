@@ -1,3 +1,9 @@
 .half.film
   .scroll.film-scroll
     .scrollContent
+      each section, x in sections.film
+        include section
+      include ../shared/contactPage
+  .next-icon.next
+    label.scrollIndicator Scroll
+    i.ion-chevron-down
