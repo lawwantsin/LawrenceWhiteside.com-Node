@@ -30,23 +30,33 @@ $green3 = #2c923a
   font-family: 'Krungthep', Helvetica
   .nav-items
     position: absolute
-    left: 190px;
-    top: 340px;
+    left: 0
+    top: 0
+    bottom: 0
     line-height: 0.8em
-    -webkit-transform: translate(-50%, -50%)
-    -moz-transform: translate(-50%, -50%)
-    -o-transform: translate(-50%, -50%)
-    -ms-transform: translate(-50%, -50%)
-    transform: translate(-50%, -50%)
     font-size: 1em
-    width: 380px
-    display: none
+    width: 350px
+    background-color: #222
+    .scrollContent
+      position: absolute
   h1
     color: rgba(255,255,255,0.7)
     text-decoration: underline
     font-size: 1.2em
   .item
+    position: relative
     width: 100%
+    display: block
+    text-decoration: none
+  .text-item
+    position: relative
+    width: 100%
+    line-height: 100px
+    padding: 0 30px
+    color: white
+    text-decoration: none
+    display: inline-block
+    text-decoration: none
   .caption
     width: 100%
     position: relative

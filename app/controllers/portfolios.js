@@ -2,7 +2,7 @@
 exports.index = function(req, res){
 
   res.render('portfolios/index', {
-    title: 'Lawrence Whiteside'
+    title: 'Lawrence Whiteside - Filmmaker/Web Architect'
   });
 
 };

@@ -1,4 +1,5 @@
 require.config({
+  waitSeconds: 0,
   shim: {
     can: [
       'jquery',

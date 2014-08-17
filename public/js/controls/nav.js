@@ -103,10 +103,10 @@ define(['jquery', 'can', 'controls/app'], function($, can, App) {
 			setTimeout(function() {
 				presenter.play('front', 'doors', 'open').revealSection(half, section, 1000).play(half, 'scrollButton', 'show');
 				self.doorState = 'open';
-	      setInterval(function () {
+	      setInterval(function() {
 	        window[half+'Scroller'].iScroll.refresh();
 	      }, 0);
-			}, 2500);
+			}, 1);
 		},
 
 		closeDoors :function() {

@@ -8,6 +8,7 @@ define(['jquery', 'can', 'controls/app', 'greensock'], function($, can, App, Tim
       this.okToProceed = true;
       var self = this;
       $(window).on('load', function() {self.fadeIn()});
+      $(document).on('load', function() {self.fadeIn()});
     },
 
     fadeIn : function(){
@@ -75,8 +76,8 @@ define(['jquery', 'can', 'controls/app', 'greensock'], function($, can, App, Tim
       this.setHalf(half);
       this.setSection(section);
       this.setPage(page);
-      $('.section').css({zIndex: 1, opacity: 0, display: 'none'});
       var tl = new TimelineMax()
+        .to('.section', 0, {zIndex: 1, opacity: 0, display: 'none'})
         .to('.style', 1, {opacity: 0}, 'style')
         .to('.style.'+half, 1, {opacity: 1}, 'style')
         .to('.half.'+half, 0, {zIndex: 1, opacity: 1, display: 'block'})
@@ -86,7 +87,8 @@ define(['jquery', 'can', 'controls/app', 'greensock'], function($, can, App, Tim
         .to('.knob', 0, {display: 'none'})
         .to('.'+section+' .rotation', 1.9, {rotationY: -180, ease: Elastic.easeOut})
         .to('.section.'+section, 0, {display: 'block'})
-        .to('.section.'+section, 0.5, {opacity: 1});
+        .to('.section.'+section, 0.5, {opacity: 1})
+        .to('.callToAction', 0, {display: 'block', opacity: 1})
       return this
     },
 

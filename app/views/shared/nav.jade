@@ -1,23 +1,30 @@
 .nav.nav-mobile
   .nav-items.list-vertical.supl-nav
-    a.item.clickable(href="/#!film") Film Portfolio
-    a.item.clickable(href="/#!web") Web Portfolio
-    a.item.clickable(href="/about-me") About Me
-    a.item.clickable(href="/questions") F.A.Q.
-    a.item.clickable(href="/client-testimonials") Testimonials
+    a.text-item.clickable(href="/#!film") Film Portfolio
+    a.text-item.clickable(href="/#!web") Web Portfolio
+    a.text-item.clickable(href="/about-me") About Me
+    a.text-item.clickable(href="/questions") F.A.Q.
+    a.text-item.clickable(href="/client-testimonials") Testimonials
   .nav-items.list-vertical.film-nav-scroll.film-nav
     .scrollContent
-      a.item.clickable(href="#!") More Information
       each section, x in sections.film
         a.item.clickable(href="#!film/#{section.slug}") 
           img(src="/images/stills/#{section.slug}/#{section.thumb}")
           .caption
             span.label #{section.title}
+      a.text-item.clickable(href="/#!web") Web Portfolio
+      a.text-item.clickable(href="/about-me") About Me
+      a.text-item.clickable(href="/questions") F.A.Q.
+      a.text-item.clickable(href="/client-testimonials") Testimonials
   .nav-items.list-vertical.web-nav-scroll.web-nav
     .scrollContent
       each section, x in sections.web
         if section.logo
           a.item(href='/#!web/'+section.slug, class="#{section.logo}-logo")
-          img(src="/images/posters/#{section.slug}/#{section.thumb}")
-          .caption
-            span.label #{section.title}
+            img(src="/images/posters/#{section.slug}/#{section.thumb}")
+            .caption
+              span.label #{section.title}
+      a.text-item.clickable(href="/#!film") Film Portfolio
+      a.text-item.clickable(href="/about-me") About Me
+      a.text-item.clickable(href="/questions") F.A.Q.
+      a.text-item.clickable(href="/client-testimonials") Testimonials

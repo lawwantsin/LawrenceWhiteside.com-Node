@@ -15,7 +15,7 @@ define(['jquery', 'can', 'controls/app'], function($, can, App) {
 
     initIScroll :function() {
       var iScrollOptions = {
-        scrollbars: false, useTransform: false, useTransition: true,
+        scrollbars: false,// useTransform: false, useTransition: true,
         bounce: true, momentum: true, mouseWheel: true
       }
       var hor = this.options.horizontal ? {scrollX: true, scrollY: false} : {scrollX: false, scrollY: true};
