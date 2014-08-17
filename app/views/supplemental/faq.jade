@@ -5,105 +5,14 @@ block content
     include ../shared/contactModal
     include ../shared/header
     include ../shared/bg
-    .main.scrollContainer
-      .scrollContent
-        .half.supl('data-section'="faq")
-          section.section.clearfix.faq
-            .page.intro
-              .introBubble.introCircle
-                h1 Frequently Asked Questions
-            .questions
-              .question.snap
-                .row
-                  .column.small-12
-                    h1 How much will my project cost?
-                    .answer
-                      p
-                        | The short answer is, 
-                        | I don't know.  I work on an hourly rate.  I can quote most projects based on my best guess of how 
-                        | long it'll take to build.  The more a project's goals change once production begins,
-                        | the less accurate my quote will become.  I bill based on actual hours spent working adding value to your
-                        | project.  Not hours spent learning or socializing with colleagues.  An hour is 2 pomodoros.
-                      p 
-                        | Projects come in all size and complexities.  I've been making them for so long, 
-                        | I've learned best practices for most of the projects people have in mind.
-                        | The more you know what your project is not and specifically what
-                        | the Product you will be happy with is, the better my estimate 
-                        | of how much time it will take. I make it somewhat more complex by having different 
-                        | rates for different kinds of clients. In my mind, big corporations can afford to pay
-                        | more than small business or struggling artist.  
-                        | I'd be happy to send you my rates in an e-mail.
-              .question.snap
-                  .row
-                    .column.small-12
-                      h1 What technologies do you use?
-                      .answer
-                        p 
-                          | The short answer is,
-                          | I use every technology I have the time to learn.  I crave technologies on the cutting edge,
-                          | Be they in the realm of filmmaking, web architecture or beyond into virtual reality, 3d-printing,
-                          | and the like.  I would love to get paid to learn something on the very forefront of thought.
-                        p
-                          | My current obsessions are real-time, cloud/client web with 
-                          a(href="http://meteor.com", target="_blank") Meteor
-                          | , CSS-Based Animation with 
-                          a(href="http://www.greensock.com/gsap-js", target="_blank") Greensock, 
-                          | 3D Web with 
-                          a(href="http://famo.us", target="_blank") Famous, 
-                          | HTML5-Based Mobile ready web using a varety of technolgies.  From 
-                          a(href="http://phonegap.com", target="_blank") PhoneGap
-                          | &nbsp;to 
-                          a(href="http://www.appmobi.com/", target="_blank") AppMobi
-                          | &nbsp;to 
-                          a(href="http://foundation.zurb.com", target="_blank") Foundation 
-                          | &nbsp;and 
-                          a(href="http://canjs.us", target="_blank") CanJS
-                          | . I'm also following 
-                          a(href="http://occulusvr.com", target="_blank") Occulus Rift
-                          | &nbsp;and am totally getting one for Chirstmas.
-              .question.snap
-                  .row
-                    .column.small-12
-                      h1 Ok, what about experience?
-                      .answer
-                        p
-                          | Most of my experience is in Ruby and Javascript using the CanJS and Rails frameworks.
-                          | I love APIs and methodologies that prioritize developer happiness.  They also happen to be where reside the 
-                          | best communities and tools for creating successful businesses.  I've worked Agile for years.
-                          | Have done some scrum.  Prefer a trello board.  Well tested, modular, functional code that is continuously integrated
-                          | and automated saves time and money in the long run.
-              .question.snap
-                  .row
-                    .column.small-12
-                      h1 What jobs are you not going to take?
-                      .answer
-                        p
-                          | I don't code entreprise, I code open source.  So Cold Fusion, .NET, and Java aren't at the top
-                          | of my list to learn.  I also can but usually don't want to waste time in pre-built CMS's and
-                          | other shortcut, technology free products with one exception: Wordpress.  Joomla, Mambo, Drupal, Expression Engine
-                          | and the like, I mean, I can do custom some-frontend javasccript, but the backend doesn't interest me.
-                          | I have nothing against their community or their creators.  In my view they are too general in scope and too tied to 
-                          | plugins and other non-sense to offer what turns out to be a very clumbsy to maintain and edit and ultimately a very breakable product that
-                          | I can't in good conscience recommend anyone rest their business's ability to thrive on those kinds of technologies.  The tools
-                          | I use are elegant and precise and they are backed up by automating testing tools that proves they're unbreakable.
-              .question.snap
-                .row
-                  .column.small-12
-                    h1 What do you do again?
-                    .answer
-                      p
-                        | The short answer is,
-                        | I help small business and artists succeed using my skills in filmmaking and web technology.
-                        | To that end I've produced promotional videos and websites for organizations and entrepreneurial 
-                        | creative people for over a decade.  I've co-founded 4 start-ups.  I host a monthly meetup about independent filmmaking
-                        | and entreprenuership.  I write like the dickens and really work far too hard for my own good.
-                      p
-                        | I have the people and resources to deliver professional, polished video at any budget.  I have most experience
-                        | in mid and low budget shoots, but (be warned) the lower the budget, the cooler the subject matter better be.
-                      p
-                        | When it comes to the web I am comfortable as part of a team.  I can lead the team if needs be.
-                        | I can work solo and remote and finish projects on-schedule.  
-                        | My communication is terse, impactful and to the point.  
-                        | I am disciplined, professional and courageous in my descision making.
-            - heading = 'Do you have a question?'
-            include ../shared/contactPage
+    .main
+      .half.supl('data-section'="faq")
+        .supl-scroll
+          .scrollContent
+              include faqQuestions
+              - heading = 'Do you have a question?'
+              include ../shared/contactPage
+        .next-icon.next
+          label.scrollIndicator Scroll
+          i.ion-chevron-down
+

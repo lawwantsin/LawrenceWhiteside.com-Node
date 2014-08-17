@@ -24,16 +24,18 @@ define(['jquery', 'can', 'controls/app'], function($, can, App) {
       var sw = this.options.wrapper;
       var w = ($(sw).find('.frame').length * $(sw).find('.frame').width()) + 30;
       if (this.options.horizontal) $(sw).children().first().css('width', w);
-      this.iScroll = new IScroll(sw, iScrollOptions);
-      this.iScroll.on('scrollEnd', function() {
-//        console.log(this);
-      });
-      var self = this;      
-      this.iScroll.on('scrollStart', function() {      
-        self.scrolledToBottom(this.scrollTop);
-//        self.checkVisiblity();
-        self.hideScrollButton();
-      });
+      if ($(sw).length > 0) {
+        this.iScroll = new IScroll(sw, iScrollOptions);
+        this.iScroll.on('scrollEnd', function() {
+  //        console.log(this);
+        });
+        var self = this;      
+        this.iScroll.on('scrollStart', function() {      
+          self.scrolledToBottom(this.scrollTop);
+  //        self.checkVisiblity();
+          self.hideScrollButton();
+        });
+      }
     },
 
     // Scroll to the next page in the portfolio on click.
@@ -73,10 +75,10 @@ define(['jquery', 'can', 'controls/app'], function($, can, App) {
     },
 
     hideScrollButton : function() {
-      presenter.play('web', 'scrollButton', 'hide');
+      presenter.play('shared', 'scrollButton', 'hide');
       clearTimeout(this.hsbTimeout);
       this.hsbTimeout = setTimeout(function() {
-        presenter.play('web', 'scrollButton', 'show');
+        presenter.play('shared', 'scrollButton', 'show');
       }, 2000);
     },
 

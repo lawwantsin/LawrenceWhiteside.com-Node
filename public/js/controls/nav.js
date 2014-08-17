@@ -37,7 +37,7 @@ define(['jquery', 'can', 'controls/app'], function($, can, App) {
 		},
 
 		// Open the contact dialog if the "contact me" button in the header is clicked.
-		'.contact click' :function() {
+		'.contact-click click' :function() {
 			modals.open('#contactModal')
 		},
 
@@ -74,7 +74,7 @@ define(['jquery', 'can', 'controls/app'], function($, can, App) {
 
 		// Routing events sets the half without specifying which project.
 		'route' : function(data) {
-			if (location.hash == '#!') this.closeDoors();
+			if (location.hash == '#!' && !$('body').hasClass('supl')) this.closeDoors();
 		},
 
 		// Helper function: Opens the door if needsbe.  Sets half and section.
@@ -101,11 +101,8 @@ define(['jquery', 'can', 'controls/app'], function($, can, App) {
 		// Helper funcion: open the doors in the front of the site.
 		openDoors :function(half, section) { self = this;
 			setTimeout(function() {
-				presenter.play('front', 'doors', 'open').revealSection(half, section, 1000).play(half, 'scrollButton', 'show');
+				presenter.play('front', 'doors', 'open').revealSection(half, section, 1000).play('shared', 'scrollButton', 'show');
 				self.doorState = 'open';
-	      setInterval(function() {
-	        window[half+'Scroller'].iScroll.refresh();
-	      }, 0);
 			}, 1);
 		},
 

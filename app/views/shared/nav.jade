@@ -1,12 +1,14 @@
 .nav.nav-mobile
   .nav-items.list-vertical.supl-nav
+    a.text-item.clickable.contact-click(href="#") Contact Me
     a.text-item.clickable(href="/#!film") Film Portfolio
     a.text-item.clickable(href="/#!web") Web Portfolio
     a.text-item.clickable(href="/about-me") About Me
     a.text-item.clickable(href="/questions") F.A.Q.
-    a.text-item.clickable(href="/client-testimonials") Testimonials
+    //- a.text-item.clickable(href="/client-testimonials") Testimonials
   .nav-items.list-vertical.film-nav-scroll.film-nav
     .scrollContent
+      a.text-item.clickable.contact-click(href="#") Contact Me
       each section, x in sections.film
         a.item.clickable(href="#!film/#{section.slug}") 
           img(src="/images/stills/#{section.slug}/#{section.thumb}")
@@ -15,9 +17,10 @@
       a.text-item.clickable(href="/#!web") Web Portfolio
       a.text-item.clickable(href="/about-me") About Me
       a.text-item.clickable(href="/questions") F.A.Q.
-      a.text-item.clickable(href="/client-testimonials") Testimonials
+      //- a.text-item.clickable(href="/client-testimonials") Testimonials
   .nav-items.list-vertical.web-nav-scroll.web-nav
     .scrollContent
+      a.text-item.clickable.contact-click(href="#") Contact Me
       each section, x in sections.web
         if section.logo
           a.item(href='/#!web/'+section.slug, class="#{section.logo}-logo")
@@ -27,4 +30,4 @@
       a.text-item.clickable(href="/#!film") Film Portfolio
       a.text-item.clickable(href="/about-me") About Me
       a.text-item.clickable(href="/questions") F.A.Q.
-      a.text-item.clickable(href="/client-testimonials") Testimonials
+      //- a.text-item.clickable(href="/client-testimonials") Testimonials

@@ -38,6 +38,8 @@ body.web, body.supl
     top: 50%
     left: 50%
     margin: -175px 0 0 -150px
+    background-color: black
+    border-radius: 100%
   .introCircle
     padding: 0 40px;
     width: 300px
@@ -96,11 +98,9 @@ body.web, body.supl
     position: absolute
     left: 0
   .rotation
+    position: absolute
     background-color: black
     border-radius: 100%
-    position: absolute
-    top: 0
-    left: 0
     width: 300px
     height: 300px    
     -webkit-transform-style: preserve-3d
@@ -151,7 +151,6 @@ body.web, body.supl
     text-align: center
     width: 100%
     font-family: 'Krungthep'
-    left: 10px
     font-size: 1.3em
   .front
     display: block
@@ -193,8 +192,6 @@ body.web, body.supl
         max-width: 640px
     .film-header-scroll
       bottom: 25px
-      .scrollContent
-        left: -100px
       .frame
         opacity: 0
         height: 100%
@@ -563,6 +560,7 @@ body.supl .style.supl, body.film .style.film, body.web .style.web
   position: relative
   min-height: 400px
   font-size: 1.2em
+  padding: 0 40px
   .question
     margin: 100px 0
     h1
@@ -589,3 +587,8 @@ body.supl .style.supl, body.film .style.film, body.web .style.web
   @extend .questions .question .answer
   position: relative
   font-size: 1.2em
+.supl-scroll
+  top: 0
+  bottom: 0
+  position: absolute
+

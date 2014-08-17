@@ -77,22 +77,25 @@ define(['jquery', 'can', 'controls/app', 'greensock'], function($, can, App, Tim
       this.setSection(section);
       this.setPage(page);
       var tl = new TimelineMax()
-        .to('.section', 0, {zIndex: 1, opacity: 0, display: 'none'})
         .to('.style', 1, {opacity: 0}, 'style')
         .to('.style.'+half, 1, {opacity: 1}, 'style')
-        .to('.half.'+half, 0, {zIndex: 1, opacity: 1, display: 'block'})
-        .to('.section.'+section, 0, {display: 'block', zIndex: 2})
-        .to('.'+section, 0, {opacity: 1})
-        .to('.half', 1, {zIndex: 2})
-        .to('.knob', 0, {display: 'none'})
+        .to('.section', 0, {zIndex: 1, opacity: 0, display: 'none'}, 'style')
+
+        .to('.half.'+half, 0, {zIndex: 1, opacity: 1, display: 'block'}, 'reveal')
+        .to('.section.'+section, 0, {display: 'block', zIndex: 2}, 'reveal')
+        .to('.'+section, 0, {opacity: 1}, 'reveal')
+        .to('.half', 0, {zIndex: 2}, 'reveal')        
+        .to('.section.'+section, 0, {display: 'block'}, 'reveal')
+        .to('.section.'+section, 1, {opacity: 1}, 'reveal')
+        .to('.'+half+' .callToAction', 0, {display: 'block', opacity: 1, onComplete: function() {
+          if (window[half+'Scroller']) window[half+'Scroller'].iScroll.refresh();
+        }}, 'reveal')
         .to('.'+section+' .rotation', 1.9, {rotationY: -180, ease: Elastic.easeOut})
-        .to('.section.'+section, 0, {display: 'block'})
-        .to('.section.'+section, 0.5, {opacity: 1})
-        .to('.callToAction', 0, {display: 'block', opacity: 1})
       return this
     },
 
     play :function(half, section, page, addCue) {
+      console.log("Playing: "+half+'|'+section+'|'+page);
       var f = this[half][section][page];
       if (typeof(f) == 'function') {
         this.setHalf(half);
@@ -115,7 +118,6 @@ define(['jquery', 'can', 'controls/app', 'greensock'], function($, can, App, Tim
             .to('.header', 0.5, {top: 0, marginTop: 0}, 'open')
             .to('.door', 0, {display: 'none'})
             .to('.front', 0, {display: 'none'})
-            .to('.full-name', 0.3, {left: 60, textAlign: 'left'}, 'across')
             .to('.mobile-menu', 0.5, {opacity: 1}, 'windup')
             .to('.contact', 1, {opacity: 1}, 'contact')
             .to('.contact i', 0.2, {rotation: '0deg'}, 'contact')
@@ -131,7 +133,6 @@ define(['jquery', 'can', 'controls/app', 'greensock'], function($, can, App, Tim
             .to('.topDoor', 0.5, {top: "0%"}, 'close')      
             .to('.bottomDoor', 0.5, {top: "50%"}, 'close')
             .to('.header', 0.5, {top: "50%", marginTop: -25}, 'close')
-            .to('.full-name', 0.3, {left: 0, textAlign: 'center'}, 'across')
           return tl
         },
         fadeIn :function() {
@@ -166,7 +167,7 @@ define(['jquery', 'can', 'controls/app', 'greensock'], function($, can, App, Tim
       }
     },
     
-    web : {
+    shared : {
       scrollButton : {
         show : function() {
           if ($('.next-icon i').hasClass('ion-chevron-up')) {            
@@ -186,7 +187,10 @@ define(['jquery', 'can', 'controls/app', 'greensock'], function($, can, App, Tim
         hide : function() {
           tl = new TimelineMax().to('.next-icon', 0.7, {bottom: -100})
         }
-      },
+      }
+    },
+
+    web : {
       section : {
         open : function() { 
           var section = presenter.getSection();

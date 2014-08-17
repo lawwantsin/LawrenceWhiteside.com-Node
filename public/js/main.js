@@ -1,5 +1,5 @@
 require.config({
-  waitSeconds: 0,
+  waitSeconds: 5,
   shim: {
     can: [
       'jquery',
@@ -63,6 +63,7 @@ require([
   webNavScroller = new App.Controls.Scroll(document, {wrapper: '.web-nav-scroll'});
   filmHeaderScroller = new App.Controls.Scroll(document, {wrapper: '.film-header-scroll', horizontal: true, initialMove: 100});
   webHeaderScroller = new App.Controls.Scroll(document, {wrapper: '.web-header-scroll', horizontal: true, initialMove: -100});
+  suplScroller = new App.Controls.Scroll(document, {wrapper: '.supl-scroll'});
   sections = new App.Controls.Section('.intro');
   nav = new App.Controls.Nav('body');
 	console.log ("App Started");
