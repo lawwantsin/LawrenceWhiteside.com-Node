@@ -8,27 +8,11 @@ define(['jquery', 'can', 'controls/app', 'greensock'], function($, can, App, Tim
       this.okToProceed = true;
       var self = this;
       $(window).on('load', function() {self.fadeIn()});
-      $(document).on('load', function() {self.fadeIn()});
     },
 
     fadeIn : function(){
       presenter.play('front', 'doors', 'fadeIn');
     }, 
-
-    scrolled :function() {
-      var self = this;
-      if (self.okToProceed) self.swiped();
-      setTimeout(function() {
-        self.okToProceed = true;
-      }, 1000);
-    },
-
-    swiped :function() {
-      this.okToProceed = false
-      this[this.section][this.page].place++;
-      cue = 'rotateCardWScreen'
-      this.playCue(this.section, this.page, cue);
-    },
 
     flyin :function() {
       
@@ -147,10 +131,15 @@ define(['jquery', 'can', 'controls/app', 'greensock'], function($, can, App, Tim
     contact : {
       close : {
         thank : function() { 
-          tl = new TimelineMax()
-            .to('#contactModal', 1, {opacity: 0})
-          return tl
-        }
+           var tl = new TimelineMax()
+             .to('.thankYou', 0, {display: 'block'})
+             .to('.contactForm', 0, {display: 'none'})
+        },
+        reset : function() { 
+           var tl = new TimelineMax()
+             .to('.thankYou', 0, {display: 'none'})
+             .to('.contactForm', 0, {display: 'block'})
+        },        
       }
     },
 

@@ -63,7 +63,17 @@ define(['jquery', 'can', 'controls/app'], function($, can, App) {
     },
 
     saveSuccess : function(res) {
+      var self = this;
       presenter.play('contact', 'close', 'thank');
+      setTimeout(function() {
+        modals.closeAll();
+        self.resetForm();
+        presenter.play('contact', 'close', 'reset');
+      }, 3000)
+    },
+
+    resetForm :function() {
+      $('.contactForm form').map(function(i,e) {e.reset()});
     },
 
     'input, textarea keydown' :function(el, ev) {

@@ -1,3 +1,10 @@
+.thankYou
+  .circle
+    .rotation
+      .introCircle.introBubble
+        .introCircle2
+          h1 Thanks for the message
+          p I usually respond within 24 hours.
 .contactForm.form
   h1 #{heading || "Contact Me."}
   form(action="/contact", method="POST")
@@ -22,7 +29,7 @@
           .paymentFinePrint
             span Send a message to confirm payment. 
             a.removePayment(href="#") Remove Payment
-        button.payment.actionButton.greenButton.left Add Payment
+        .payment.actionButton.greenButton.left(tabindex="-1") Add Payment
       .column.small-3
         button.send.actionButton.greenButton.right Send
 .paymentForm.form
