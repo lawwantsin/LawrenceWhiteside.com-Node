@@ -37,7 +37,8 @@ define(['jquery', 'can', 'controls/app'], function($, can, App) {
 		},
 
 		// Open the contact dialog if the "contact me" button in the header is clicked.
-		'.contact-click click' :function() {
+		'.contact-click click' :function(el, ev) {
+			ev.preventDefault();
 			modals.open('#contactModal')
 		},
 
