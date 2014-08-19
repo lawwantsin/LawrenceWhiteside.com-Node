@@ -110,6 +110,7 @@ define(['jquery', 'can', 'controls/app'], function($, can, App) {
 
 		closeDoors :function() {
 			presenter.play('front', 'doors', 'close');
+      var tl = new TimelineMax().to('.section', 0, {zIndex: 1, opacity: 0, display: 'none'}, 'style')
 			presenter.setLabel('front');
 			this.doorState = 'closed';
 		}

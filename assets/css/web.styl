@@ -6,6 +6,7 @@ $green3 = #2c923a
 
 .actionButton
   font-size: 120%
+  line-height: 25px
   font-family: 'Krungthep'
   border-radius: 6px
   box-shadow: 1px 2px 4px rgba(0,0,0,0.2), inset 0px 0px 3px rgba(255,255,255,1)
@@ -13,12 +14,14 @@ $green3 = #2c923a
   display: block
   letter-spacing: 1px
   cursor: pointer
-  border-width: 1px 
+  border-width: 1px !important 
   border-type: solid 
   margin: 0 auto
   color: white
   padding: 20px
   outline: none
+  align-items: flex-start
+  -webkit-writing-mode: horizontal-tb
   &:active
     box-shadow: 0px 0px 0px rgba(0,0,0,0.2), inset 0px 0px 3px rgba(255,255,255,1)
     margin-top: 3px
@@ -189,7 +192,7 @@ body.web, body.supl
     height: 100%
     .caption
       font-family: 'Krungthep'
-      font-size: 1.3em
+      font-size: 1em
       color: white
       position: absolute
       line-height: 30px
@@ -203,13 +206,13 @@ body.web, body.supl
     .frame
       display: block
       float: left
-      background-color: black
       color: white
       text-decoration: none
       position: relative
       background-size: cover
       margin: 0
       box-shadow: inner 0 0 40px black
+      overflow: hidden
       span.label
         bottom: 0
         padding: 10px
@@ -218,12 +221,13 @@ body.web, body.supl
       left: 0
       top: 25px
       .frame
-        opacity: 0
-        height: 100%
-        width: 100vw
-        max-width: 640px
+        //
+        img
+          //
     .film-header-scroll
       bottom: 25px
+    .header-scroll
+      position: absolute
       .frame
         opacity: 0
         height: 100%
@@ -231,10 +235,8 @@ body.web, body.supl
         max-width: 640px
         text-decoration: none
         img
-          bottom: 0
           position: absolute
-    .header-scroll
-      position: absolute
+          opacity: 0.5
       .scrollContent
         height: 100%
     .topDoor
@@ -276,10 +278,14 @@ body.web, body.supl
     left: auto
     color: #ccc
     cursor: pointer
-    display: none
     z-index: 2
+    width: 50px
+    font-size: 36px
+    line-height: 50px
     &:hover
       color: $green
+    .reachOut
+      display: none  
   @media only screen and (min-width: 40.063em)
     .contact
       display: block
@@ -466,6 +472,11 @@ body.web, body.supl
     position: relative
     textarea
       min-height: 260px
+    .resume
+      display: block
+      max-width: 200px
+      &:after
+        clear: both
     .payment
       display: block
     .paymentMade

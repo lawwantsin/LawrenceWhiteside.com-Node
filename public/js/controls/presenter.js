@@ -80,7 +80,7 @@ define(['jquery', 'can', 'controls/app', 'greensock'], function($, can, App, Tim
 
         .to('.half.'+half, 0, {zIndex: 1, opacity: 1, display: 'block'}, 'reveal')
         .to('.section.'+section, 0, {display: 'block', zIndex: 2}, 'reveal')
-        .to('.'+section, 0, {opacity: 1}, 'reveal')
+        .to('.'+section, 1, {opacity: 1}, 'reveal')
         .to('.half', 0, {zIndex: 2}, 'reveal')        
         .to('.section.'+section, 0, {display: 'block'}, 'reveal')
         .to('.section.'+section, 1, {opacity: 1}, 'reveal')

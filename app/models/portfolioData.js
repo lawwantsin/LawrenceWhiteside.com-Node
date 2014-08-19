@@ -125,7 +125,7 @@ var iNinja = {
         video: 'ininja-short',
       },
       cards : ['I took the On the Lot challenge and made this film, with just me and my actress.',
-      'Written, shoot and edited in 1 week']
+      'Written, shot edited and composed in 1 week']
     },
     {
       credits: [
@@ -207,7 +207,7 @@ var americanDf = {
   slug: 'american-detour',
   title : 'American Detour',
   thumb: 'ad-3.jpg',
-  summary: 'Shot 3 episodes for the short lived American Detour Webseries',
+  summary: 'Shot 3 pilot episodes for the American Detour Webseries',
   pages: [ 
     {
       theater: {
@@ -224,7 +224,7 @@ var americanDf = {
         video: 'ad-tunesia-2',
       },
       cards : [
-        'Bruce and I were contracted to do a pilot for a new Web Series'
+        'Our first destination was the oft-overlooked Mediteranean destination in Tunesia.'
       ]
     },
     {
@@ -233,7 +233,7 @@ var americanDf = {
         video: 'ad-tunesia-3',
       },
       cards : [
-        'Bruce and I were contracted to do a pilot for a new Web Series'
+        'The show ran for a few seasons online.  Our friendship continues.'
       ]
     }
   ]
@@ -663,23 +663,23 @@ var fads = {
         video: 'landing'
       }, 
       cards: [
-        'So we developed a system to shoot their showcases and competitions'
+        'So we developed a system to shoot their showcases and competitions.'
       ],
       button: {
         label: '',
         link: ''
       }
     },
-    {
-      poster: 'print.jpg',
-      cards: [
-        'They also needed promo print material. No problem.'
-      ],
-      button: {
-        label: '',
-        link: ''
-      }
-    },
+    // {
+    //   poster: 'print.jpg',
+    //   cards: [
+    //     'They also needed promo print material. No problem.'
+    //   ],
+    //   button: {
+    //     label: '',
+    //     link: ''
+    //   }
+    // },
     {
       desktop: {
         poster: 'calendar.jpg',
@@ -699,7 +699,7 @@ var fads = {
         video: 'landing'
       }, 
       cards: [
-        "They couldn't be happier with our results."
+        "They couldn't be happier with the results."
       ],
       button: {
         label: '',
@@ -858,7 +858,7 @@ var kavi = {
         video: ''
       }, 
       cards: [
-        "We gave them a responsive, simple wizard that generates leads."
+        "We gave them a responsive, simple wizard that delivers numbers an organization can use."
       ],
       button: {
         label: '',
@@ -871,7 +871,7 @@ var kavi = {
         video: ''
       },
       cards: [
-        "They couldn't be happier with the results."
+        "We hoped to make the decision to switch to Kavi more concrete."
       ],
       button: {
         label: '',
@@ -884,7 +884,7 @@ var kavi = {
         video: ''
       }, 
       cards: [
-        "Printer-friently reports, of course, (the original screen-size)."
+        "With printably-friently final reports of the savings."
       ],
       button: {
         label: '',
@@ -1035,7 +1035,7 @@ var exit21 = {
         video: ''
       }, 
       cards: [
-        "Alternative Arts was gearing up for it's biggest event"
+        "Exit-21 hired us originally to shoot their apparel on live models.  They were in the middle of a huge upgrade."
       ],
     },
     {
@@ -1044,7 +1044,7 @@ var exit21 = {
         video: ''
       }, 
       cards: [
-        "Necropolis would coenside with the West village Halloween parade"
+        "They needed a website that would capture the fun, vitality and especially the new space in Old Town Portland."
       ],
     },
     {
@@ -1053,7 +1053,7 @@ var exit21 = {
         video: ''
       }, 
       cards: [
-        "They needed a complete rebranding.  New web site and video to reintroduce their organization to the city"
+        "We came together to improve our portfolios.  They chose a Wordpress site."
       ],
     },
     {
@@ -1062,7 +1062,7 @@ var exit21 = {
         video: ''
       }, 
       cards: [
-        "They needed a complete rebranding.  New web site and video to reintroduce their organization to the city"
+        "From one small business to another, good luck with your big dreams."
       ],
     }
   ]

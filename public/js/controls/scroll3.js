@@ -21,9 +21,8 @@ define(['jquery', 'can', 'controls/app'], function($, can, App) {
       var hor = this.options.horizontal ? {scrollX: true, scrollY: false} : {scrollX: false, scrollY: true};
       $.extend(iScrollOptions, hor);
       if (!Modernizr.touch) $.extend(iScrollOptions, {touch: false});
+      this.recalcContentSize();
       var sw = this.options.wrapper;
-      var w = ($(sw).find('.frame').length * $(sw).find('.frame').width()) + 30;
-      if (this.options.horizontal) $(sw).children().first().css('width', w);
       if ($(sw).length > 0) {
         this.iScroll = new IScroll(sw, iScrollOptions);
         this.iScroll.on('scrollEnd', function() {
@@ -34,6 +33,19 @@ define(['jquery', 'can', 'controls/app'], function($, can, App) {
         this.iScroll.on('scrollStart', function() {      
           self.hideScrollButton();
         });
+      }
+    },
+
+    '{window} resize' : function() {
+      this.recalcContentSize();
+    },
+
+    recalcContentSize :function() {
+      var sw = this.options.wrapper;
+      var w = 0;
+      if (this.options.horizontal) {
+        $(sw).children().first().children().each(function(i,e) { w = w + $(e).width() });
+        $(sw).children().first().css('width', w);
       }
     },
 
@@ -51,9 +63,6 @@ define(['jquery', 'can', 'controls/app'], function($, can, App) {
     scrollNext :function() {
       var wh = -($(window).height()-100);
       this.iScroll.scrollBy(0, wh, 1200, IScroll.utils.ease.swing);
-      setTimeout(function () {
-        this.iScroll.refresh();
-      }, 0);
     },
 
     // Checks if the scrollContainer is at the bottom.  Turns the arrow up if so.

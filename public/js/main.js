@@ -48,6 +48,7 @@ require([
   'controls/modals',
   'controls/presenter',
   'controls/scroll3',
+  'controls/images',
   'controls/section',
   'controls/nav'
 ], function() {
@@ -65,6 +66,7 @@ require([
   webHeaderScroller = new App.Controls.Scroll(document, {wrapper: '.web-header-scroll', horizontal: true, initialMove: -100});
   suplScroller = new App.Controls.Scroll(document, {wrapper: '.supl-scroll'});
   sections = new App.Controls.Section('.intro');
+  images = new App.Controls.Images('body', {selector: '.frame img'});
   nav = new App.Controls.Nav('body');
 	console.log ("App Started");
 })
