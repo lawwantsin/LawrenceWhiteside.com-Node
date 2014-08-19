@@ -12,7 +12,9 @@ define(['jquery', 'can', 'controls/app'], function($, can, App) {
     init : function(el) {
       var self = this;
       var imgs = $(this.options.selector);
-      self.sizeBigImages(imgs);
+      setTimeout(function() {
+        self.sizeBigImages(imgs);
+      }, 1);
     },
 
     '{window} resize' :function() {
