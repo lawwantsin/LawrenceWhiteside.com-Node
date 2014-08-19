@@ -5,12 +5,12 @@
 var googleM = {
   slug : 'googlem',
   title : "Google M",
-  thumb: 'googlem-1.jpeg',
+  thumb: 'googlem-1.jpg',
   summary: "6 Minute Short Comedy about one woman's love for her phone.",
   pages: [ 
     {
       theater: {
-        poster: 'googlem-1.jpeg',
+        poster: 'googlem-1.jpg',
         video: 'googlem-short'
       },
       cards : [
@@ -38,28 +38,29 @@ var googleM = {
 var pModels = {
   slug : 'pm-calendar',
   title : "Prestegious Models",
-  thumb: 'pm-1.jpeg',
+  thumb: 'pm-1.jpg',
   summary: "Behind the scenes calendar photoshoot at the Velvet Lounge in NYC",
   pages: [ 
     {
       theater: {
-        poster: 'pm-1.jpeg',
+        poster: 'pm-1.jpg',
         video: 'pm-teaser'
       },
-      cards : ['Kim Lo, head of Prestigious Models, an asian modeling agency in NYC, brought me in to shoot PTS on their calendar shoot']
+      cards : ['Kim Lo, head of The "Prestigious Models" modeling agency in NYC, brought me in to shoot BTS on their sexy calendar shoot.',
+      'The footage was included in a DVD and Web promotional material for years.']
     }
   ]
 }
 
 var aaaf = {
   slug: 'alternative-arts',
-  thumb: 'necropolis-1.jpeg',
+  thumb: 'necropolis-2.jpg',
   title : 'Alternative Arts Association',
   summary: 'Promotional video about the multi-night Necropolis arts festival.',
   pages: [ 
     {
       theater: {
-        poster: 'necropolis-1.jpeg',
+        poster: 'necropolis-2.jpg',
         video: 'aaa-promo',
       },
       cards : ['AlternativeArts.org wanted a fun and from the heart promotional video to accompany their rebranding.']
@@ -67,64 +68,210 @@ var aaaf = {
   ]
 }
 
+var fadsf = {
+  slug: 'fred-astaire',
+  thumb: 'fads-1.jpg',
+  title : 'Fred Astaire Dance Portland',
+  summary: 'Promotional video for the school to showcase the dances they teach.',
+  pages: [ 
+    {
+      theater: {
+        poster: 'fads-1.jpg',
+        video: 'fads-promo',
+      },
+      cards : ['Fred Astaire wanted a video showcase of each of their 6 signature dances',
+      "To go on the front page of the studio's web site"]
+    }
+  ]
+}
+
 var morningAfter = {
   slug: 'morning-after',
   title: "The Morning After",
-  thumb: 'morning-after-1.jpeg',
+  thumb: 'morning-after-1.jpg',
   summary: 'Episode 3 of a 3-part web-series about love and lycanthropy',
   pages: [ 
     {
       theater: {
-        poster: 'morning-after-1.jpeg',
+        poster: 'morning-after-1.jpg',
         video: 'morning-after-ep3',
       },
       cards : ['We were recruited by a young writer to reimagine her sketch comedy script as an action parody.']
+    },
+    {
+      credits: [
+        ['Directors', 'Antonio Bonilla & Lawrence Whiteside'],
+        ['Writer', 'Antonio Bonilla'],
+        ['Cindy', 'Molly Ryzdel'],
+        ['John', 'Max Hambleton'],
+        ['Editor', 'Benadict'],
+        ['Sound Design', 'Gora Faal'],
+        ['Visual Effects', 'Chris Lohouse'],
+        ['Script Supervisor', 'Cindy Ormondroyd']
+      ]
     }
   ]
 }
 
 var iNinja = {
   slug: 'ininja',
-  thumb: 'ininja-2.jpeg',
+  thumb: 'ininja-2.jpg',
   title : 'iNinja',
   summary: 'A 3 minute short about the secrets we keep as an international ninja assassin.',
   pages: [ 
     {
       theater: {
-        poster: 'ininja-2.jpeg',
+        poster: 'ininja-2.jpg',
         video: 'ininja-short',
       },
       cards : ['I took the On the Lot challenge and made this film, with just me and my actress.',
       'Written, shoot and edited in 1 week']
+    },
+    {
+      credits: [
+        ['Directors', 'Antonio Bonilla & Lawrence Whiteside'],
+        ['Writer', 'Antonio Bonilla'],
+        ['Cindy', 'Molly Ryzdel'],
+        ['John', 'Max Hambleton'],
+        ['Editor', 'Benadict'],
+        ['Sound Design', 'Gora Faal'],
+        ['Visual Effects', 'Chris Lohouse'],
+        ['Script Supervisor', 'Cindy Ormondroyd']
+      ]
     }
   ]
 }
 
 var coursing = {
   slug: 'coursing',
-  thumb: 'coursing-1.jpeg',
+  thumb: 'coursing-1.jpg',
   title : 'Coursing',
-  posters : [
-    {url: 'coursing-1.jpeg'},
-    {url: 'coursing-2.jpeg'},
-    {url: 'coursing-3.jpeg'}
+  summary: 'Our first entry into the 48-hour film festivl in Portland.  2011.',
+  pages: [ 
+    {
+      theater: {
+        poster: 'coursing-1.jpg',
+        video: 'coursing-48hour',
+      },
+      cards : [
+        'Our category was Femme Fatale.  With less than a day to prepare and a weekend to shoot and cut it.', 
+        'We delivered a face-paced, action film.  Hoping Luc Besson would approve.'
+      ]
+    },
+    {
+      credits: [
+        ['Directors', 'Antonio Bonilla & Lawrence Whiteside'],
+        ['Writer', 'Antonio Bonilla'],
+        ['Cindy', 'Molly Ryzdel'],
+        ['John', 'Max Hambleton'],
+        ['Editor', 'Benadict'],
+        ['Sound Design', 'Gora Faal'],
+        ['Visual Effects', 'Chris Lohouse'],
+        ['Script Supervisor', 'Cindy Ormondroyd']
+      ]
+    }  ]
+}
+
+var illHave = {
+  slug: 'ill-have-another',
+  thumb: 'illhave-1.jpg',
+  title : "I'll Have Another",
+  summary: 'Our second try at the 48-hour film festivl in Portland.  2012.',
+  pages: [ 
+    {
+      theater: {
+        poster: 'illhave-1.jpg',
+        video: 'ill-have-another-48hour',
+      },
+      cards : [
+        'Our category was Femme Fatale.  With less than a day to prepare and a weekend to shoot and cut it.', 
+        'We delivered a face-paced, action film.  Hoping Luc Besson would approve.'
+      ]
+    },
+    {
+      credits: [
+        ['Directors', 'Antonio Bonilla & Lawrence Whiteside'],
+        ['Writer', 'Antonio Bonilla'],
+        ['Cindy', 'Molly Ryzdel'],
+        ['John', 'Max Hambleton'],
+        ['Editor', 'Benadict'],
+        ['Sound Design', 'Gora Faal'],
+        ['Visual Effects', 'Chris Lohouse'],
+        ['Script Supervisor', 'Cindy Ormondroyd']
+      ]
+    }  
+  ]
+}
+
+var americanDf = {
+  slug: 'american-detour',
+  title : 'American Detour',
+  thumb: 'ad-3.jpg',
+  summary: 'Shot 3 episodes for the short lived American Detour Webseries',
+  pages: [ 
+    {
+      theater: {
+        poster: 'ad-2.jpg',
+        video: 'ad-tunesia-1',
+      },
+      cards : [
+        'Bruce and I were contracted to do a pilot for a new Web Series'
+      ]
+    },
+    {
+      theater: {
+        poster: 'ad-3.jpg',
+        video: 'ad-tunesia-2',
+      },
+      cards : [
+        'Bruce and I were contracted to do a pilot for a new Web Series'
+      ]
+    },
+    {
+      theater: {
+        poster: 'ad-4.jpg',
+        video: 'ad-tunesia-3',
+      },
+      cards : [
+        'Bruce and I were contracted to do a pilot for a new Web Series'
+      ]
+    }
+  ]
+}
+
+var yay = {
+  slug: 'yaywallet',
+  title : 'YayWallet',
+  thumb: 'yaywallet-1.jpg',
+  summary: 'Crowd Supply video for a crowd-funding campaign.',
+  pages: [ 
+    {
+      theater: {
+        poster: 'yaywallet-2.jpg',
+        video: 'yaywallet-funder',
+      },
+      cards : [
+        'Yay Wallet hired us to create a fun and informative video about their new company.', 
+        'We delivered something personal, beautiful and from the heart.'
+      ]
+    }
   ]
 }
 
 var bsa = {
   slug: 'bsa',
   title : 'Brooklyn Street Art',
-  thumb: 'bsa-promo.jpeg',
-  video: 'bsa-promo',
+  thumb: 'bsa-4.jpg',
+  summary: 'Promotional video for the Brooklyn-Based art collective and blog',
   pages: [ 
     {
       theater: {
-        poster: 'bsa-promo.jpeg',
+        poster: 'bsa-4.jpg',
         video: 'bsa-promo',
       },
       cards : [
-        '', 
-        ''
+        'Brooklyn Street Art was throwing a party to celebrate their latest book', 
+        'On valentines day.  We captured the heart of the event and the mission of the organization'
       ]
     }
   ]
@@ -133,11 +280,31 @@ var bsa = {
 var moment = {
   slug: 'moment',
   title : 'Moment',
-  thumb: 'moment-1.jpeg',
+  thumb: 'moment-1.jpg',
   video: 'moment',
-  posters : [
-    {url: 'moment-stairs.jpeg'},
-    {url: 'moment-subway.jpeg'}
+  pages: [ 
+    {
+      theater: {
+        poster: 'illhave-1.jpg',
+        video: 'ill-have-another-48hour',
+      },
+      cards : [
+        'Our category was Femme Fatale.  With less than a day to prepare and a weekend to shoot and cut it.', 
+        'We delivered a face-paced, action film.  Hoping Luc Besson would approve.'
+      ]
+    },
+    {
+      credits: [
+        ['Directors', 'Antonio Bonilla & Lawrence Whiteside'],
+        ['Writer', 'Antonio Bonilla'],
+        ['Cindy', 'Molly Ryzdel'],
+        ['John', 'Max Hambleton'],
+        ['Editor', 'Benadict'],
+        ['Sound Design', 'Gora Faal'],
+        ['Visual Effects', 'Chris Lohouse'],
+        ['Script Supervisor', 'Cindy Ormondroyd']
+      ]
+    }  
   ]
 }
 
@@ -333,7 +500,7 @@ var fan = {
         video: ''
       },
       cards: [
-        "They couldn't be happier with the results."
+        "A place for fans to gather and interact before and after the show."
       ],
       button: {
         label: '',
@@ -638,11 +805,11 @@ var elay = {
     },
     {
       desktop: {
-        poster: '.jpg',
+        poster: 'elay-checkout1.jpg',
         video: ''
       }, 
       cards: [
-        "Across thousands of e-commerce sites, this modal had work to do."
+        "Across thousands of e-commerce sites, this popup had lots of calculations to work out."
       ],
       button: {
         label: '',
@@ -651,11 +818,11 @@ var elay = {
     },    
     {
       desktop: {
-        poster: '.jpg',
+        poster: 'elay-checkout2.jpg',
         video: ''
       }, 
       cards: [
-        "Our answer was a beautiful and complex pay schedule calculator."
+        "I delivered a beautiful and complex pay schedule calculator on spec and schedule."
       ],
       button: {
         label: '',
@@ -819,7 +986,7 @@ var aaa = {
   slug: 'alternative-arts',
   logo: 'aaa',
   thumb: 'one.jpg',
-  still: 'necropolis-1.jpeg',
+  still: 'necropolis-1.jpg',
   title : 'Alternative Arts Association',
   circa: '2010',
   summary : 'Web Design, Filmmaking, Branding, Online Strategy for NY Arts organization.',
@@ -908,9 +1075,12 @@ sections.film = [
   googleM
   , morningAfter
   , iNinja
-  // , coursing
-  // , americanD
+  , coursing
+  , illHave
+  , americanDf
   , aaaf
+  , fadsf
+  , yay
   , bsa
   , pModels
 ]

@@ -27,12 +27,11 @@ define(['jquery', 'can', 'controls/app'], function($, can, App) {
       if ($(sw).length > 0) {
         this.iScroll = new IScroll(sw, iScrollOptions);
         this.iScroll.on('scrollEnd', function() {
-  //        console.log(this);
+          self.scrolledToBottom(this.scrollTop);
+  //        self.checkVisiblity();
         });
         var self = this;      
         this.iScroll.on('scrollStart', function() {      
-          self.scrolledToBottom(this.scrollTop);
-  //        self.checkVisiblity();
           self.hideScrollButton();
         });
       }
