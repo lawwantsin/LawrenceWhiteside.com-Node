@@ -103,12 +103,14 @@ define(['jquery', 'can', 'controls/app'], function($, can, App) {
 		openDoors :function(half, section) { self = this;
 			setTimeout(function() {
 				presenter.play('front', 'doors', 'open').revealSection(half, section, 1000).play('shared', 'scrollButton', 'show');
+				presenter.setLabel(half);
 				self.doorState = 'open';
 			}, 1);
 		},
 
 		closeDoors :function() {
 			presenter.play('front', 'doors', 'close');
+			presenter.setLabel('front');
 			this.doorState = 'closed';
 		}
 

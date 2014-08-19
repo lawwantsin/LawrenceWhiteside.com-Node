@@ -56,6 +56,19 @@ define(['jquery', 'can', 'controls/app', 'greensock'], function($, can, App, Tim
       return this.setHalf('front');
     },
 
+    setLabel :function(half) {
+      if (half == 'film') {
+        var tl = new TimelineMax()
+          .to('.film-label', 1, {top: 124, ease: Elastic.easeOut}, 'labels')
+          .to('.web-label', 1, {top: 15, ease: Elastic.easeOut}, 'labels')                  
+      }
+      else {
+        var tl = new TimelineMax()
+          .to('.film-label', 1, {top: 15, ease: Elastic.easeOut}, 'labels')
+          .to('.web-label', 1, {top: 124, ease: Elastic.easeOut}, 'labels')
+      }
+    },
+
     revealSection : function(half, section, page) {
       this.setHalf(half);
       this.setSection(section);

@@ -41,7 +41,7 @@ body.web, body.supl
     background-color: black
     border-radius: 100%
   .introCircle
-    padding: 0 40px;
+    padding: 0 40px
     width: 300px
     height: 300px
     display: table
@@ -119,39 +119,65 @@ body.web, body.supl
       -webkit-perspective: 1000
       transform: rotateY(-180deg)
       -webkit-transform: rotateY(-180deg)
+
+  .hexagon
+    top: 50%
+    margin: -100px 0 0 -100px
+    left: 50%
+    position: absolute
+    color: white
+    z-index: 1
+    width: 200px
+    height: 200px
+    font-family: 'Krungthep'
+    .hexagon-svg
+      width: 200px
+      position: absolute
+      top: 0
+      left: 0
+      z-index: 2
+      polygon
+        fill: rgba(0,0,0,0.7)
+        stroke: #000000
+        stroke-width:0px
+    .web-label
+      z-index: 3
+      position: absolute
+      color: #aaa
+      line-height: 60px
+      width: 100%
+      text-align: center
+      top: 124px
+      font-size: 23px
+    .film-label
+      top: 15px
+      z-index: 3
+      position: absolute
+      color: #aaa
+      width: 100%
+      text-align: center
+      line-height: 60px
+      font-size: 23px
   .header
     height: 50px    
     top: 50%
     margin-top: -25px
     width: 100%
     left: 0
-    overflow: hidden
     position: fixed
     color: white
     background-color: black
     z-index: 3
-    .web-label
-      z-index: 3
-      position: absolute
-      color: #aaa
+    .full-name
+      -webkit-font-smoothing: antialiased
+      //opacity: 0
       line-height: 50px
-      right: 50%
-      margin-right: -250px
-    .film-label
-      z-index: 3
       position: absolute
-      color: #aaa
-      left: 50%
-      margin-left: -250px
-      line-height: 50px
-  .full-name
-    -webkit-font-smoothing: antialiased
-    line-height: 50px
-    position: absolute
-    text-align: center
-    width: 100%
-    font-family: 'Krungthep'
-    font-size: 1.3em
+      text-align: center
+      width: 100%
+      font-family: 'Krungthep'
+      font-size: 1.3em
+      z-index: 2
   .front
     display: block
     opacity: 1
@@ -162,12 +188,18 @@ body.web, body.supl
     width: 100%
     height: 100%
     .caption
-      width: 100%
-      position: relative
-      line-height: 20px
+      font-family: 'Krungthep'
+      font-size: 1.3em
       color: white
-      background-color: rgba(0,0,0,0.9)
-      padding: 10px
+      position: absolute
+      line-height: 30px
+      top: 50%
+      line-height: 30px
+      top: 50%
+      margin-top: -15px
+      width: 100%
+      z-index: 2
+      text-align: center
     .frame
       display: block
       float: left
@@ -236,7 +268,7 @@ body.web, body.supl
       //
   .contact
     position: absolute
-    width: 0px
+    width: 140px
     height: 50px
     right: 0
     bottom: 0
@@ -245,6 +277,7 @@ body.web, body.supl
     color: #ccc
     cursor: pointer
     display: none
+    z-index: 2
     &:hover
       color: $green
   @media only screen and (min-width: 40.063em)
