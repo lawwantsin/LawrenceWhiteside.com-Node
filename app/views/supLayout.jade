@@ -7,21 +7,12 @@ html(lang='en')
     meta(name="description", content="Lawrence Whiteside is the motherfucking best dude ever!")
     meta(name="keywords", content="Web Developer, Javascript, Ruby, Rails Expert, Mobile Apps, Freelancer, Film, Cinema, Set, Free, Independent, Indy, Indie, Video, Production, Collective, Organization, Creative, Professional, Film School, Atlas, Web Application, Scheduler, Budget, Organize, Organization, Manage, Brooklyn, New York, Filmmaking, Filmmaker, Cooperative")
     title= title
-    != css('foundation-icons')
-    != css('animate')    
-    != css('foundation')
-    != css('ionicon.min')
-    != css('site')    
-    != css('modal')    
-    != css('interaction')
-    != css('nav')
-    != css('web')
     link(href='http://fonts.googleapis.com/css?family=Lato:300', rel='stylesheet', type='text/css')
+    !=css('app')
   body.supl('data-video' = 'off')
     block content
     script(type="text/javascript", src="https://js.stripe.com/v2/")
     if process.env.NODE_ENV == 'development'
       script(data-main="js/main", src="/js/components/requirejs/require.js")
     else
-      script(src="/js/components/requirejs/require.js")
       script(src="/js/app-compressed.js")
