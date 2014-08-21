@@ -63,6 +63,27 @@ module.exports = function (grunt) {
       target: {
         rjsConfig: 'public/js/main.js'
       }
+    },
+    requirejs: {
+      compile: {
+        options: {
+          baseUrl: "public/js",
+          out: "public/js/app-compressed.js",
+          name: "main",
+          mainConfigFile: "public/js/main.js",
+          done: function(done, output) {
+            var duplicates = require('rjs-build-analysis').duplicates(output);
+
+            if (duplicates.length > 0) {
+              grunt.log.subhead('Duplicates found in requirejs build:');
+              grunt.log.warn(duplicates);
+              return done(new Error('r.js built duplicate modules, please check the excludes option.'));
+            }
+
+            done();
+          }
+        }
+      }
     }
   });
 
@@ -86,7 +107,7 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-template-jasmine-requirejs');
   grunt.loadNpmTasks('grunt-contrib-jasmine');
   grunt.loadNpmTasks('grunt-contrib-jshint');
-
+  grunt.loadNpmTasks('grunt-contrib-requirejs');
   grunt.registerTask('test', ['jshint', 'jasmine']);
   grunt.registerTask('default', ['develop', 'watch']);
 };
