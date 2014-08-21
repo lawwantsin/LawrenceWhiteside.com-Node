@@ -86,13 +86,14 @@ define(['jquery', 'can', 'controls/app', 'greensock'], function($, can, App, Tim
         .to('.section.'+section, 1, {opacity: 1}, 'reveal')
         .to('.'+half+' .callToAction', 0, {display: 'block', opacity: 1, onComplete: function() {
           if (window[half+'Scroller']) window[half+'Scroller'].iScroll.refresh();
+          if (window[half+'NavScroller']) window[half+'NavScroller'].iScroll.refresh();          
         }}, 'reveal')
         .to('.'+section+' .rotation', 1.9, {rotationY: -180, ease: Elastic.easeOut})
       return this
     },
 
     play :function(half, section, page, addCue) {
-      console.log("Playing: "+half+'|'+section+'|'+page);
+      // console.log("Playing: "+half+'|'+section+'|'+page);
       var f = this[half][section][page];
       if (typeof(f) == 'function') {
         this.setHalf(half);
@@ -155,19 +156,6 @@ define(['jquery', 'can', 'controls/app', 'greensock'], function($, can, App, Tim
         },        
       }
     },
-
-    supl : {
-      section : {
-        open : function() { 
-          var section = presenter.getSection();
-          tl = new TimelineMax()
-            .to('.'+section+' .imac', 1, {opacity: 1})
-            .to('.'+section+' .iphone', 1, {opacity: 1})
-            .to('.'+section+' .poster', 1, {opacity: 1})
-          return tl
-        }
-      }
-    },
     
     shared : {
       scrollButton : {
@@ -188,52 +176,6 @@ define(['jquery', 'can', 'controls/app', 'greensock'], function($, can, App, Tim
         },
         hide : function() {
           tl = new TimelineMax().to('.next-icon', 0.7, {bottom: -100})
-        }
-      }
-    },
-
-    web : {
-      section : {
-        open : function() { 
-          var section = presenter.getSection();
-          tl = new TimelineMax()
-            .to('.'+section+' .imac', 1, {opacity: 1})
-            .to('.'+section+' .iphone', 1, {opacity: 1})
-            .to('.'+section+' .poster', 1, {opacity: 1})
-          return tl
-        }
-      }
-    },
-
-    film : {
-      scrollButton : {
-        show : function() {
-          if ($('.next-icon i').hasClass('ion-chevron-up')) {            
-            tl = new TimelineMax()
-              .to('.next-icon', 1, {bottom: 10, ease: Elastic.easeOut}, 'one')
-              .to('i.ion-chevron-up', 0, {opacity: 1}, 'one')
-          }
-          else {            
-            tl = new TimelineMax()
-              .to('.next-icon', 1, {bottom: 10, ease: Elastic.easeOut, delay: 2}, 'one')
-              .to('i.ion-chevron-down', 0, {opacity: 0}, 'one')
-              .to('label.scrollIndicator', 0.7, {opacity: 1}, 'one')
-              .to('label.scrollIndicator', 0.7, {opacity: 0}, 'two')
-              .to('i.ion-chevron-down', 1, {opacity: 1}, 'two')
-          }
-        },
-        hide : function() {
-          tl = new TimelineMax().to('.next-icon', 0.7, {bottom: -100})
-        }
-      },
-      section : {
-        open : function() { 
-          var section = presenter.getSection();
-          tl = new TimelineMax()
-            .to('.'+section+' .imac', 1, {opacity: 1})
-            .to('.'+section+' .iphone', 1, {opacity: 1})
-            .to('.'+section+' .poster', 1, {opacity: 1})
-          return tl
         }
       }
     }
