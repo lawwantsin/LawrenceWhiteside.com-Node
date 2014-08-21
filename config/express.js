@@ -1,4 +1,5 @@
 var express = require('express');
+var gzip = require('connect-gzip');
 
 module.exports = function(app, config) {
   app.configure(function () {
@@ -14,6 +15,7 @@ module.exports = function(app, config) {
     app.use(express.bodyParser());
     app.use(express.methodOverride());
     app.use(app.router);
+    gzip.gzip({ matchType: /css/, flags: '--best' })
     app.use(function(req, res) {
       res.status(404).render('404', { title: '404' });
     });
