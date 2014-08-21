@@ -5,11 +5,28 @@ block content
     include ../shared/contactModal
     include ../shared/header
     include ../shared/bg
-    .main.scrollContainer
-      .scrollContent
-        .half.supl('data-section'="client")
-          section.section.clearfix.client
-            .page.intro
-              .introBubble.introCircle
-                h1 Client Testimonials
+    .main
+      .half.supl('data-section'="about")
+        .supl-scroll
+          .scrollContent
+            section.section.clearfix.about
+              .page.intro
+                .circle
+                  .rotation
+                    .heads
+                      .initials 
+                        span.nameL.name L&nbsp;
+                        span.nameW.name W
+                    .tails
+                      .introCircle.introBubble
+                        .introCircle2
+                          h1 Client Testimony
+                          p These folks actually said this about me.
+              .page.clientTestimonials
+                .row
+                  .column.small-12
+                    .testiment
+                      p
+                        |  Lawrence has been programming at a high level since he was 15. He has a no nonsense approach to nurturing projects -- and he does it with exceptional humor and grace. If you are working with Lawrence in any capacity, you are lucky.
+                        span.byline Bruce Northam, Americandetour.com
             include ../shared/contactPage

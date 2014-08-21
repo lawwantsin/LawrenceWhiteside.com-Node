@@ -37,7 +37,7 @@ define(['jquery', 'can', 'controls/app'], function($, can, App) {
         if ((sizes.ww-sizes.iw) < (sizes.wh-sizes.ih)) sizes = self.scaleUp('height', sizes);
         if ((sizes.ww-sizes.iw) >= (sizes.wh-sizes.ih)) sizes = self.scaleUp('width', sizes);
         var niRatio = sizes.niw/sizes.nih;  // >1 is landscape; <=1 is portrait
-        $(image).css({ height: sizes.nih, width: sizes.niw});
+        $(image).css({ height: sizes.nih, width: sizes.niw, marginLeft: -(sizes.niw/2)});
       });
     }, 
 

@@ -1,5 +1,7 @@
 require.config({
   name: 'main',
+  preserveLicenseComments: false,
+  include: 'requireLib',
   shim: {
     can: [
       'jquery',
@@ -13,7 +15,7 @@ require.config({
     famous: 'components/famous/dist/famous',
     'famous-angular': 'components/famous-angular/dist/famous-angular',
     jquery: 'components/jquery/dist/jquery',
-    requirejs: 'components/requirejs/require',
+    requireLib: 'components/requirejs/require',
     underscore: 'components/underscore/underscore',
     canjs: 'components/canjs/can.jquery',
     greensock: 'components/greensock/src/uncompressed/TimelineMax',

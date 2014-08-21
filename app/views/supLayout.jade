@@ -20,4 +20,8 @@ html(lang='en')
   body.supl('data-video' = 'off')
     block content
     script(type="text/javascript", src="https://js.stripe.com/v2/")
-    script(data-main="js/main", src="/components/requirejs/require.js")
+    if process.env.NODE_ENV == 'development'
+      script(data-main="js/main", src="/js/components/requirejs/require.js")
+    else
+      script(src="/js/components/requirejs/require.js")
+      script(src="/js/app-compressed.js")

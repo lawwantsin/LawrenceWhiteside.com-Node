@@ -2,10 +2,7 @@
   .nav-items.list-vertical.supl-nav
     a.text-item.clickable.contact-click(href="#") Contact Me
     a.text-item.clickable(href="/#!film") Film Portfolio
-    a.text-item.clickable(href="/#!web") Web Portfolio
-    a.text-item.clickable(href="/about-me") About Me
-    a.text-item.clickable(href="/questions") F.A.Q.
-    //- a.text-item.clickable(href="/client-testimonials") Testimonials
+    include nav-supl
   .nav-items.list-vertical.film-nav-scroll.film-nav
     .scrollContent
       a.text-item.clickable.contact-click(href="#") Contact Me
@@ -15,9 +12,7 @@
           .caption
             span.label #{section.title}
       a.text-item.clickable(href="/#!web") Web Portfolio
-      a.text-item.clickable(href="/about-me") About Me
-      a.text-item.clickable(href="/questions") F.A.Q.
-      //- a.text-item.clickable(href="/client-testimonials") Testimonials
+      include nav-supl
   .nav-items.list-vertical.web-nav-scroll.web-nav
     .scrollContent
       a.text-item.clickable.contact-click(href="#") Contact Me
@@ -28,6 +23,4 @@
             .caption
               span.label #{section.title}
       a.text-item.clickable(href="/#!film") Film Portfolio
-      a.text-item.clickable(href="/about-me") About Me
-      a.text-item.clickable(href="/questions") F.A.Q.
-      //- a.text-item.clickable(href="/client-testimonials") Testimonials
+      include nav-supl
