@@ -1,4 +1,4 @@
-define(['jquery', 'can', 'controls/app'], function($, can, App) {
+define(['jquery', 'can', 'controls/app', 'imagesLoaded'], function($, can, App, imagesLoaded) {
   // Controller for the Full Screen Background Images/Videos.
   // Catchall controller for functions do not need their own conroller, yet.
   App.Controls.Images = can.Control.extend({
@@ -12,9 +12,9 @@ define(['jquery', 'can', 'controls/app'], function($, can, App) {
     init : function(el) {
       var self = this;
       var imgs = $(this.options.selector);
-      setTimeout(function() {
-        self.sizeBigImages(imgs);
-      }, 1);
+      imagesLoaded(imgs, function() {
+//        self.sizeBigImages(imgs);
+      });
     },
 
     '{window} resize' :function() {

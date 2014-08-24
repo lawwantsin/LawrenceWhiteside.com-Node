@@ -1,0 +1,54 @@
+.front
+  display: block
+  opacity: 1
+  z-index: 2
+  position: absolute
+  bottom: 0
+  top: 0
+  width: 100%
+  .caption
+    font-family: 'Krungthep'
+    font-size: 1em
+    color: white
+    position: absolute
+    line-height: 30px
+    top: 50%
+    line-height: 30px
+    top: 50%
+    margin-top: -15px
+    width: 100%
+    z-index: 2
+    text-align: center
+  .film-header-iso
+    bottom: 0
+    background-color: rgba(0,0,0,0.5)
+  .web-header-iso
+    top: 0
+    background-color: rgba(255,255,255,0.2)    
+  .header-iso
+    position: absolute
+    width: 100%
+    overflow: auto
+    height: 0
+    .frame
+      display: block
+      color: white
+      text-decoration: none
+      position: absolute
+      width: 33.33333%
+      text-decoration: none
+      position: relative
+      float: left
+      img
+        // position: absolute
+        opacity: 1
+        // left: 50%
+    @media only screen and (max-width: 64.063em)
+      .frame
+        width: 50%
+    @media only screen and (max-width: 40.063em)
+      .frame
+        width: 100%
+    .iContent
+      .hexagon
+        display: none

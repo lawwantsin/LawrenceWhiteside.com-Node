@@ -74,14 +74,16 @@ define(['jquery', 'can', 'controls/app', 'greensock'], function($, can, App, Tim
       this.setSection(section);
       this.setPage(page);
       var tl = new TimelineMax()
+        .to('.main', 0, {display: 'block'}, 'style')
+        .to('.front', 0, {display: 'none'}, 'style')
         .to('.style', 1, {opacity: 0}, 'style')
         .to('.style.'+half, 1, {opacity: 1}, 'style')
         .to('.section', 0, {zIndex: 1, opacity: 0, display: 'none'}, 'style')
 
-        .to('.half.'+half, 0, {zIndex: 1, opacity: 1, display: 'block'}, 'reveal')
+        .to('.half', 0, {zIndex: 2, height: 0})        
+        .to('.half.'+half, 0, {zIndex: 1, opacity: 1, display: 'block', height: '100%'}, 'reveal')
         .to('.section.'+section, 0, {display: 'block', zIndex: 2}, 'reveal')
         .to('.'+section, 1, {opacity: 1}, 'reveal')
-        .to('.half', 0, {zIndex: 2}, 'reveal')        
         .to('.section.'+section, 0, {display: 'block'}, 'reveal')
         .to('.section.'+section, 1, {opacity: 1}, 'reveal')
         .to('.'+half+' .callToAction', 0, {display: 'block', opacity: 1, onComplete: function() {
@@ -109,28 +111,49 @@ define(['jquery', 'can', 'controls/app', 'greensock'], function($, can, App, Tim
 
     front : {
       doors : {
-        open : function() {
+        film : function() {
+          var wh = $(window).height();
+          var hh = $('.header').height();
           var tl = new TimelineMax()
-            .to('.topDoor', 0.5, {top: "-50%"}, 'open')      
-            .to('.bottomDoor', 0.5, {top: "100%"}, 'open')
-            .to('.header', 0.5, {top: 0, marginTop: 0}, 'open')
+            .to('.topDoor', 0.5, {bottom: 0}, 'open')      
+            .to('.bottomDoor', 0.5, {top: 0}, 'open')
+            .to('.header', 0.5, {top: (wh-hh), marginTop: 0}, 'open')
+            .to('.front', 0.5, {top: 0, bottom: hh}, 'open')
+            .to('.web-header-iso', 1, {height: 0})
+            .to('.header', 0, {top: 'auto', bottom: 0})
             .to('.door', 0, {display: 'none'})
-            .to('.front', 0, {display: 'none'})
             .to('.mobile-menu', 0.5, {opacity: 1}, 'windup')
             .to('.contact', 1, {opacity: 1}, 'contact')
             .to('.contact i', 0.2, {rotation: '0deg'}, 'contact')
+            .to('.film-header-iso', 1, {height: '100%'}, 'finish')
           return tl
         },
-        close : function() {
+        middle : function() {
           var tl = new TimelineMax()
             .to('.door', 0, {display: 'block'})
             .to('.contact', 1, {opacity: 0}, 'contact')
             .to('.contact i', 0.2, {rotation: '45deg'}, 'contact')
             .to('.mobile-menu', 0.5, {opacity: 0}, 'windup')
-            .to('.front', 0, {display: 'block'})
-            .to('.topDoor', 0.5, {top: "0%"}, 'close')      
-            .to('.bottomDoor', 0.5, {top: "50%"}, 'close')
+            .to('.topDoor', 0.5, {bottom: "50%"}, 'close')      
+            .to('.bottomDoor', 0.5, {top: "0%"}, 'close')
             .to('.header', 0.5, {top: "50%", marginTop: -25}, 'close')
+            .to('.front', 0.5, {top: 0, bottom: 0}, 'close')
+            .to('.header-iso', 1, {height: 0})
+          return tl
+        },
+        web : function() {
+          var hh = $('.header').height();
+          var tl = new TimelineMax()
+            .to('.topDoor', 0.5, {bottom: 0}, 'open')      
+            .to('.bottomDoor', 0.5, {top: 0}, 'open')
+            .to('.header', 0.5, {top: 0, marginTop: 0}, 'open')
+            .to('.front', 0.5, {top: hh, bottom: 0}, 'open')
+            .to('.film-header-iso', 1, {height: 0})
+            .to('.door', 0, {display: 'none'})
+            .to('.mobile-menu', 0.5, {opacity: 1}, 'windup')
+            .to('.contact', 1, {opacity: 1}, 'contact')
+            .to('.contact i', 0.2, {rotation: '0deg'}, 'contact')
+            .to('.web-header-iso', 1, {height: '100%'}, 'finish')
           return tl
         },
         fadeIn :function() {

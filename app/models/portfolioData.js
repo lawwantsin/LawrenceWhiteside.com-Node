@@ -277,6 +277,37 @@ var bsa = {
   ]
 }
 
+var every = {
+  slug: 'everybody-dies',
+  title : 'Everybody Dies Trailer',
+  summary: "Movie Trailer for a fringe play in NYC",
+  thumb: 'ed-1.jpg',
+  pages: [ 
+    {
+      theater: {
+        poster: 'ed-1.jpg',
+        video: 'everybody-dies-trailer',
+      },
+      cards : [
+        'Edible Brains wanted somethign special to set them apart in a Theatre festival competition.', 
+        'We made a movie trailer for the play, that delighted the admissions panel.'
+      ]
+    },
+    {
+      credits: [
+        ['Directors', 'Antonio Bonilla & Lawrence Whiteside'],
+        ['Writer', 'Antonio Bonilla'],
+        ['Cindy', 'Molly Ryzdel'],
+        ['John', 'Max Hambleton'],
+        ['Editor', 'Benadict'],
+        ['Sound Design', 'Gora Faal'],
+        ['Visual Effects', 'Chris Lohouse'],
+        ['Script Supervisor', 'Cindy Ormondroyd']
+      ]
+    }  
+  ]
+}
+
 var moment = {
   slug: 'moment',
   title : 'Moment',
@@ -1081,6 +1112,7 @@ sections.film = [
   , aaaf
   , fadsf
   , yay
+  , every
   , bsa
   , pModels
 ]
