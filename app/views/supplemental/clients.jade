@@ -6,10 +6,10 @@ block content
     include ../shared/header
     include ../shared/bg
     .main
-      .half.supl('data-section'="about")
+      .half.supl('data-section'="testimonials")
         .supl-scroll
           .scrollContent
-            section.section.clearfix.about
+            section.section.clearfix.testimonials
               .page.intro
                 .circle
                   .rotation
@@ -20,13 +20,39 @@ block content
                     .tails
                       .introCircle.introBubble
                         .introCircle2
-                          h1 Client Testimony
+                          h1 Testimonials
                           p These folks actually said this about me.
               .page.clientTestimonials
-                .row
-                  .column.small-12
-                    .testiment
+                .testiment
+                  .row
+                    .column.small-12.medium-4
+                      img.avatar(src="/images/avatars/bruce.jpg")
+                    .column.small-12.medium-8
                       p
                         |  Lawrence has been programming at a high level since he was 15. He has a no nonsense approach to nurturing projects -- and he does it with exceptional humor and grace. If you are working with Lawrence in any capacity, you are lucky.
                         span.byline Bruce Northam, Americandetour.com
+                .testiment
+                  .row
+                    .column.small-12.medium-8
+                      p
+                        |  Lawrence is a top-notch Ruby/Javascript developer, a creative video producer and editor, as well as a gentleman.
+                        span.byline Mike Coletta, Fantrotter.com
+                    .column.small-12.medium-4
+                      img.avatar(src="/images/avatars/mike.jpg")
+                .testiment
+                  .row
+                    .column.small-12.medium-4
+                      img.avatar(src="/images/avatars/josh.jpg")
+                    .column.small-12.medium-8
+                      p
+                        |  Clients continuously appreciate his attention to detail and ability to offer a variety of technical solutions. Lawrence is very likable and engaging with a knack for solving complex problems from ambiguity.
+                        span.byline Josh Matthews, Endevour Staffing
+                .testiment
+                  .row
+                    .column.small-12.medium-8
+                      p
+                        | Lawrence really understands what it takes to get people involved with using an application or website and keep them engaged.
+                        span.byline Ben Turner, Ocodot Labs
+                    .column.small-12.medium-4
+                      img.avatar(src="/images/avatars/ben.jpg")
             include ../shared/contactPage

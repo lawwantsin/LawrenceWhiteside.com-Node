@@ -1,5 +1,11 @@
+// Colors
+$green = #51c61e
+$green1 = #67ff22
+$green2 = #2c923a
+$green3 = #2c923a
+
 body.supl
-  .page
+  .section .page
     h1
       margin: 0
       padding: 0
@@ -41,6 +47,7 @@ body.supl
         padding-bottom: 10px
         color: #eee
         text-align: center
+        text-shadow: none
       p
         background-color: transparent
         color: #ccc
@@ -48,6 +55,9 @@ body.supl
         line-height: 1.6em
         margin: 5px 0
         text-align: center
+  @media only screen and (min-width: 40.063em)
+    .section .page
+      padding: 0 40px
   .aboutPage
     min-height: 800px
   .questions
@@ -65,4 +75,17 @@ body.supl
     bottom: 0
     position: absolute
     width: 100%
-
+  .avatar
+    border-radius: 100%
+    border: 10px solid white
+    max-height: 200px
+    max-width: 200px
+    margin: 0 auto
+    position: relative
+    display: block
+  .byline
+    display: block
+    color: $green
+    text-align: right
+  .testiment
+    margin: 40px 0    

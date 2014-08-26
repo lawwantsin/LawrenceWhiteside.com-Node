@@ -5,7 +5,6 @@ define(['jquery', 'can', 'controls/app'], function($, can, App) {
 
 		init : function() {
 			this.doorState = 'middle';
-			can.route.ready();
 			this.autoOpen();
 		},
 
@@ -16,6 +15,10 @@ define(['jquery', 'can', 'controls/app'], function($, can, App) {
 			if (b.hasClass('supl')) {
 				var section = b.find('.half').attr('data-section');
 				this.navSection('supl', section);
+				play.setLabel('');
+			}
+			else {
+				can.route.ready();
 			}
 		},
 

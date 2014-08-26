@@ -30,7 +30,6 @@ define(['jquery', 'can', 'controls/app', 'greensock'], function($, can, App, Tim
         .to('.contact', 1, {opacity: 1}, 'open')
         .to('.contact i', 0.2, {rotation: '0deg'}, 'open')
         .to('.film-header-iso', 0.4, {display: 'block', opacity: 1, onComplete :function() {
-          filmHeaderGrid.iso.layout(); 
           filmHeaderScroller.iScroll.refresh();
         }})
       return tl
@@ -62,7 +61,6 @@ define(['jquery', 'can', 'controls/app', 'greensock'], function($, can, App, Tim
         .to('.contact i', 0.2, {rotation: '0deg'}, 'open')
         .to('.door', 0, {display: 'none'}, 'open')
         .to('.web-header-iso', 1, {display: 'block', opacity: 1, onComplete :function() {
-          // webHeaderGrid.iso.layout();
           webHeaderScroller.iScroll.refresh();
         }})
       return tl
@@ -92,10 +90,14 @@ define(['jquery', 'can', 'controls/app', 'greensock'], function($, can, App, Tim
           .to('.film-label', 1, {top: 124, ease: Elastic.easeOut}, 'labels')
           .to('.web-label', 1, {top: 15, ease: Elastic.easeOut}, 'labels')                  
       }
-      else {
+      else if (half == 'web') {
         var tl = new TimelineMax()
           .to('.film-label', 1, {top: 15, ease: Elastic.easeOut}, 'labels')
           .to('.web-label', 1, {top: 124, ease: Elastic.easeOut}, 'labels')
+      }
+      else {
+        var tl = new TimelineMax()
+          .to('.film-label, .web-label', 1, {opacity: 0})        
       }
       return tl
     },
