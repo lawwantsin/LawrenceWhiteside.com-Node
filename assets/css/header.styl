@@ -1,3 +1,9 @@
+// Colors
+$green = #51c61e
+$green1 = #67ff22
+$green2 = #2c923a
+$green3 = #2c923a
+
 .hexagon
   top: 50%
   margin: -100px 0 0 -100px
@@ -92,9 +98,12 @@
   cursor: pointer
   z-index: 2
   width: 50px
-  font-size: 36px
   line-height: 50px
   &:hover
     color: $green
   .reachOut
-    display: none  
+    display: none 
+    font-size: .5em
+  @media only screen and (min-width: 40.063em)
+    .reachOut
+      display: block

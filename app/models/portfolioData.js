@@ -61,7 +61,7 @@ var aaaf = {
     {
       theater: {
         poster: 'necropolis-2.jpg',
-        video: 'aaa-promo',
+        video: 'necropolis-promo',
       },
       cards : ['AlternativeArts.org wanted a fun and from the heart promotional video to accompany their rebranding.']
     }
@@ -316,8 +316,8 @@ var moment = {
   pages: [ 
     {
       theater: {
-        poster: 'illhave-1.jpg',
-        video: 'ill-have-another-48hour',
+        poster: 'moment-1.jpg',
+        video: 'moment-short',
       },
       cards : [
         'Our category was Femme Fatale.  With less than a day to prepare and a weekend to shoot and cut it.', 

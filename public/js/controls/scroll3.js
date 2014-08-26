@@ -55,7 +55,7 @@ define(['jquery', 'can', 'controls/app'], function($, can, App) {
     },
 
     '.next-icon .ion-chevron-up click' :function(el, ev) {
-      $('.scrollContainer').scrollTo(0, 500);
+      this.iScroll.scrollTo(0, 0);
     },
 
     // Helper function: Use iScroll to scroll more natively on interior (non-body) divs.  
@@ -83,10 +83,10 @@ define(['jquery', 'can', 'controls/app'], function($, can, App) {
     },
 
     hideScrollButton : function() {
-      presenter.play('shared', 'scrollButton', 'hide');
+      play.scrollButtonHide();
       clearTimeout(this.hsbTimeout);
       this.hsbTimeout = setTimeout(function() {
-        presenter.play('shared', 'scrollButton', 'show');
+        play.scrollButtonShow();
       }, 2000);
     },
 

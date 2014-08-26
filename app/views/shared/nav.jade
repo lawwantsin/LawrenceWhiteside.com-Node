@@ -1,36 +1,39 @@
 .nav.nav-mobile
   .nav-items.list-vertical.supl-nav
     a.text-item.clickable.contact-click(href="#")
-      i.ion-email
+      i.ion-paper-airplane
       span Contact Me
     a.text-item.clickable(href="/#!film") 
       i.ion-ios7-film
       span Film Portfolio
-
+    a.text-item.clickable(href="/#!web") 
+      i.ion-android-earth
+      span Web Portfolio
     include nav-supl
   .nav-items.list-vertical.film-nav-scroll.film-nav
-    .scrollContent
-      i.ion-email
+    a.text-item.clickable.contact-click(href="#")
+      i.ion-paper-airplane
       span Contact Me
-      //- each section, x in sections.film
-      //-   a.item.clickable(href="#!film/#{section.slug}") 
-      //-     img(src="/images/stills/#{section.slug}/#{section.thumb}")
-      //-     .caption
-      //-       span.label #{section.title}
-      a.text-item.clickable(href="/#!web") 
-        i.ion-android-earth
-        span Web Portfolio
-      include nav-supl
+    //- each section, x in sections.film
+    //-   a.item.clickable(href="#!film/#{section.slug}") 
+    //-     img(src="/images/stills/#{section.slug}/#{section.thumb}")
+    //-     .caption
+    //-       span.label #{section.title}
+    a.text-item.clickable(href="/#!web") 
+      i.ion-android-earth
+      span Web Portfolio
+    include nav-supl
   .nav-items.list-vertical.web-nav-scroll.web-nav
-    .scrollContent
-      a.text-item.clickable.contact-click(href="#") Contact Me
-      //- each section, x in sections.web
-      //-   if section.logo
-      //-     a.item(href='/#!web/'+section.slug, class="#{section.logo}-logo")
-      //-       img(src="/images/posters/#{section.slug}/#{section.thumb}")
-      //-       .caption
-      //-         span.label #{section.title}
-      a.text-item.clickable(href="/#!film")
-        i.ion-ios7-film
-        span Film Portfolio
-      include nav-supl
+    a.text-item.clickable.contact-click(href="#") 
+      i.ion-paper-airplane
+      span Contact Me
+    //- each section, x in sections.web
+    //-   if section.logo
+    //-     a.item(href='/#!web/'+section.slug, class="#{section.logo}-logo")
+    //-       img(src="/images/posters/#{section.slug}/#{section.thumb}")
+    //-       .caption
+    //-         span.label #{section.title}
+    a.text-item.clickable(href="/#!film")
+      i.ion-ios7-film
+      span Film Portfolio
+    include nav-supl

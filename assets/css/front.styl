@@ -6,22 +6,10 @@
   bottom: 0
   top: 0
   width: 100%
-  .caption
-    font-family: 'Krungthep'
-    font-size: 1em
-    color: white
-    position: absolute
-    line-height: 30px
-    top: 50%
-    line-height: 30px
-    top: 50%
-    margin-top: -15px
-    width: 100%
-    z-index: 2
-    text-align: center
   .film-header-iso
     bottom: 0
     background-color: rgba(0,0,0,0.5)
+    overflow: hidden
   .web-header-iso
     top: 0
     background-color: rgba(255,255,255,0.2)    
@@ -29,7 +17,8 @@
     position: absolute
     width: 100%
     overflow: auto
-    height: 0
+    height: 100%
+    opacity: 0
     .frame
       display: block
       color: white
@@ -38,7 +27,21 @@
       width: 33.33333%
       text-decoration: none
       position: relative
-      float: left
+      .caption
+        font-family: 'Lato'
+        font-size: 3em
+        text-align: left
+        width: 100%
+        position: absolute
+        bottom: 0
+        opacity: 0
+        background-color: rgba(0,0,0,0.7)
+        padding: 10px
+        transition-property: opacity
+        transition-duration: 2s
+        -webkit-transition-property: opacity        
+      &:hover .caption
+        opacity: 1
       img
         // position: absolute
         opacity: 1

@@ -50,7 +50,7 @@ require([
   'controls/contact',
   'controls/payment',
   'controls/modals',
-  'controls/presenter',
+  'controls/interactions',
   'controls/scroll3',
   'controls/images',
   'controls/grid',
@@ -58,7 +58,8 @@ require([
   'controls/nav'
 ], function() {
   // Initialize
-  presenter = new App.Controls.Presenter(document)
+  FastClick.attach(document.body);
+  play = new App.Controls.Interactions(document)
   contact = new App.Controls.Contact('body')
   payment = new App.Controls.Payment('body')
   bg = new App.Controls.BG('.site');
@@ -66,10 +67,8 @@ require([
   filmScroller = new App.Controls.Scroll(document, {wrapper: '.film-scroll'});
   webScroller = new App.Controls.Scroll(document, {wrapper: '.web-scroll'});
   suplScroller = new App.Controls.Scroll(document, {wrapper: '.supl-scroll'});
-  filmNavScroller = new App.Controls.Scroll(document, {wrapper: '.film-nav-scroll'});
-  webNavScroller = new App.Controls.Scroll(document, {wrapper: '.web-nav-scroll'});
-  // filmHeaderScroller = new App.Controls.Scroll(document, {wrapper: '.film-header-scroll', horizontal: true, initialMove: 100});
-  // webHeaderScroller = new App.Controls.Scroll(document, {wrapper: '.web-header-scroll', horizontal: true, initialMove: -100});
+  filmHeaderScroller = new App.Controls.Scroll(document, {wrapper: '.film-header-scroll'});
+  webHeaderScroller = new App.Controls.Scroll(document, {wrapper: '.web-header-scroll'});
   filmHeaderGrid = new App.Controls.Grid(document, {wrapper: '.film-header-iso'});
   webHeaderGrid = new App.Controls.Grid(document, {wrapper: '.web-header-iso'});
   sections = new App.Controls.Section('.intro');

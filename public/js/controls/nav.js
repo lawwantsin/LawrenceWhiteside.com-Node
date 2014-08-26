@@ -5,7 +5,6 @@ define(['jquery', 'can', 'controls/app'], function($, can, App) {
 
 		init : function() {
 			this.doorState = 'middle';
-			FastClick.attach(document.body);
 			can.route.ready();
 			this.autoOpen();
 		},
@@ -66,16 +65,16 @@ define(['jquery', 'can', 'controls/app'], function($, can, App) {
 			var p = el.attr('data-page');
 		},
 
-
-
-		// Routing events.  Sets the half (web/film) and the 
-		':half/:section route' : function(data) {
-			var s = data.section
-			var h = data.half
-			this.navSection(h, s);
+		// Routing events sets the half without specifying which project.
+		'route' : function(data) {
+			var sup = $('body').hasClass('supl');
+			if (location.hash == '#!' && !sup) this.moveDoors(this.doorState);
+			else if (sup) this.moveDoors('web')
 		},
 
+		// Routing events.  Sets the half (web/film) and the 
 		':half route' : function(data) {
+			console.log('Route: '+data);
 			var h = data.half
 			if (this.doorState == h) {
 				this.moveDoors('middle');
@@ -85,53 +84,50 @@ define(['jquery', 'can', 'controls/app'], function($, can, App) {
 			}
 		},
 
-		// Routing events sets the half without specifying which project.
-		'route' : function(data) {
-			var sup = $('body').hasClass('supl');
-			if (location.hash == '#!' && !sup) this.moveDoors(this.doorState);
-			else if (sup) this.moveDoors('web')
+		':half/:section route' : function(data) {
+			console.log('Route: ', data);
+			var s = data.section
+			var h = data.half
+			this.navSection(h, s);
 		},
 
 		// Helper function: Opens the door if needsbe.  Sets half and section.
 		navSection :function(half, section, page) {
-			this.chooseHalf(half);
 			if (this.doorState == half) {
-				presenter.revealSection(half, section);
+				play.revealSection(half, section);
 	      setTimeout(function () {
 	        window[half+'Scroller'].iScroll.refresh();
 	      }, 0);
-		    presenter.setSection(section);
 			}
 			else {
 				this.moveDoors(half, section);
+				this.showNavHalf(half);
 			}
 		},
 
 		// Half is web or film.  2 halves of the portfolio.  TODO: Film is not yet written.
-		chooseHalf :function(half) {
-	    presenter.setHalf(half);
+		showNavHalf :function(half) {
 			$('.nav').removeClass('film').removeClass('web').addClass(half)
-			this.moveDoors(half);
 		},
 
 		// Helper funcion: open the doors in the front of the site.
 		moveDoors: function(half, section) {
+			console.log('move Doors: '+half+"|"+section)
       if (this.doorState != half) {
-        presenter.play('front', 'doors', half)
-	      var tl = new TimelineMax().to('.section, .half', 0, {zIndex: 1, opacity: 0, display: 'none'}, 'style')
-        if (section) presenter.revealSection(half, section, 1000).play('shared', 'scrollButton', 'show');
+      	var halfUpper = half.slice(0,1).toUpperCase() + half.slice(1);
+        var tl = play.resetSections().add(play['door'+halfUpper]());
+        if (section) tl.add(play.revealSection(half, section)).add(play.scrollButtonShow());
         this.doorState == half;
         $('.film-label').attr('href', '#!');
         $('.web-label').attr('href', '#!');
-				// presenter.setLabel(half);
+				// play.setLabel(half);
       }
       else {
-        presenter.play('front', 'doors', 'middle');
-        this.doorState == 'middle';
+        play.doorMiddle().add(play.resetSections());
+        this.doorState == 'Middle';
         $('.film-label').attr('href', '#!film');
         $('.web-label').attr('href', '#!web');
-	      var tl = new TimelineMax().to('.section, .half', 0, {zIndex: 1, opacity: 0, display: 'none'}, 'style')
-				presenter.setLabel('front');
+				play.setLabel();
       }
 		}
 
