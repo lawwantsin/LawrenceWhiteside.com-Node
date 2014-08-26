@@ -140,6 +140,7 @@ define(['jquery', 'can', 'controls/app', 'greensock'], function($, can, App, Tim
         // .to('.front', 0, {display: 'block'}, 'style')
         .to('.style', 1, {opacity: 0}, 'style')
         .to('.section', 0, {zIndex: 1, opacity: 0, display: 'none'}, 'style')
+        .to('callToAction', 0, {display: 'none', opacity: 0})
       return tl
     },
     scrollButtonShow : function() {
