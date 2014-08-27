@@ -14,7 +14,7 @@ define(['jquery', 'can', 'controls/app'], function($, can, App) {
 			var b = this.element;
 			if (b.hasClass('supl')) {
 				var section = b.find('.half').attr('data-section');
-				this.navSection('supl', section);
+				this.navigate('supl', section);
 				play.setLabel('');
 			}
 			else {
@@ -54,12 +54,12 @@ define(['jquery', 'can', 'controls/app'], function($, can, App) {
 
 		// Sets the section we're going to be scoped to if the top (film) door is clicked.
 		// '.topDoor click' : function() {
-		// 	this.navSection('film', 'morning')
+		// 	this.navigate('film', 'morning')
 		// },
 
 		// // Sets the section we're going to be scopeed to if the bottom (web) door is clicked.
 		// '.bottomDoor click' : function() {
-		// 	this.navSection('web', 'csf')
+		// 	this.navigate('web', 'csf')
 		// },
 
 		// Sets the page scope on a logo click.  E.G. each company in web and each project in film.
@@ -83,7 +83,7 @@ define(['jquery', 'can', 'controls/app'], function($, can, App) {
 				this.moveDoors('middle');
 			}
 			else {
-				this.navSection(h);
+				this.navigate(h);
 			}
 		},
 
@@ -91,16 +91,13 @@ define(['jquery', 'can', 'controls/app'], function($, can, App) {
 			console.log('Route: ', data);
 			var s = data.section
 			var h = data.half
-			this.navSection(h, s);
+			this.navigate(h, s);
 		},
 
 		// Helper function: Opens the door if needsbe.  Sets half and section.
-		navSection :function(half, section, page) {
-			if (this.doorState == half) {
+		navigate :function(half, section, page) {
+			if (this.doorState == half && section) {
 				play.revealSection(half, section);
-	      setTimeout(function () {
-	        window[half+'Scroller'].iScroll.refresh();
-	      }, 0);
 			}
 			else {
 				this.moveDoors(half, section);

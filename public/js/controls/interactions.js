@@ -21,7 +21,7 @@ define(['jquery', 'can', 'controls/app', 'greensock'], function($, can, App, Tim
       var wh = $(window).height();
       var hh = $('.header').height();
       return new TimelineMax()
-        .to('.header', 1, {top: (wh-hh), marginTop: 0, ease: Bounce.easeOut}, 'header')
+        .to('.header', 1, {top: (wh-hh), marginTop: 0}, 'header')
         .to('.front', 0.5, {top: 0, bottom: hh, opacity: 1, display: 'block'}, 'open')
         .to('.web-header-iso', 1, {opacity: 0, display: 'none'}, 'open')
         .to('.header', 1, {top: 'auto', bottom: 0}, 'open')
@@ -53,7 +53,7 @@ define(['jquery', 'can', 'controls/app', 'greensock'], function($, can, App, Tim
       var tl = new TimelineMax()
         .to('.topDoor', 0.5, {bottom: 0}, 'open')      
         .to('.bottomDoor', 0.5, {top: 0}, 'open')
-        .to('.header', 1, {top: 0, marginTop: 0, ease: Bounce.easeOut}, 'open')
+        .to('.header', 1, {top: 0, marginTop: 0}, 'open')
         .to('.front', 0.5, {top: hh, bottom: 0, display: 'block', opacity: 1}, 'open')
         .to('.film-header-iso', 1, {opacity: 0, display: 'block'})
         .to('.mobile-menu', 0.5, {opacity: 1}, 'open')
@@ -113,14 +113,19 @@ define(['jquery', 'can', 'controls/app', 'greensock'], function($, can, App, Tim
         .to('.contactForm', 0, {display: 'block'})
       return tl
     },
-    revealSection : function(half, section) {
-      console.log('revealSection:', half, section)
+    hideFront :function() {
+      console.log('hideFront:')
       var tl = new TimelineMax()
         .to('.front', 1, {opacity: 0}, 'one')
         .to('.main', 0, {display: 'block'}, 'one')
         .to('.front', 0, {display: 'none'})
         .to('.style.'+half, 0, {opacity: 1}, 'reveal')
         .to('.half.'+half, 0, {zIndex: 1, opacity: 1, display: 'block', height: '100%'}, 'reveal')
+      return tl;
+    },
+    revealSection : function(half, section) {
+      console.log('revealSection:', half, section)
+      var tl = new TimelineMax()
         .to('.section'+section, 0, {display: 'block', zIndex: 2}, 'reveal')
         .to('.section'+section, 1, {opacity: 1}, 'reveal')
         .to('.section.'+section, 1, {opacity: 1}, 'reveal')
@@ -136,6 +141,7 @@ define(['jquery', 'can', 'controls/app', 'greensock'], function($, can, App, Tim
       return tl
     },
     resetSections : function() {
+      console.log('resetSections');
       var tl = new TimelineMax()
         // .to('.front', 0, {display: 'block'}, 'style')
         .to('.style', 1, {opacity: 0}, 'style')
