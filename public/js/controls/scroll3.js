@@ -83,10 +83,10 @@ define(['jquery', 'can', 'controls/app'], function($, can, App) {
     },
 
     hideScrollButton : function() {
-      play.scrollButtonHide();
+      play.hideScrollButton();
       clearTimeout(this.hsbTimeout);
       this.hsbTimeout = setTimeout(function() {
-        play.scrollButtonShow();
+        play.showScrollButton();
       }, 2000);
     },
 

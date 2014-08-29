@@ -70,65 +70,73 @@ define(['jquery', 'can', 'controls/app'], function($, can, App) {
 
 		// Routing events sets the half without specifying which project.
 		'route' : function(data) {
-			var sup = $('body').hasClass('supl');
-			if (location.hash == '#!' && !sup) this.moveDoors(this.doorState);
-			else if (sup) this.moveDoors('web')
+			console.log('Route empty: ', data);
+			// var sup = $('body').hasClass('supl');
+			// if (location.hash == '#!' && !sup) this.moveDoors(this.doorState);
+			// else if (sup) this.moveDoors('web')
+			this.navigate('front')
 		},
 
 		// Routing events.  Sets the half (web/film) and the 
-		':half route' : function(data) {
-			console.log('Route: '+data);
-			var h = data.half
-			if (this.doorState == h) {
-				this.moveDoors('middle');
-			}
-			else {
-				this.navigate(h);
-			}
+		':folio route' : function(data) {
+			console.log('Route Folio: ', data);
+			// if (this.doorState == h) {
+			// 	this.moveDoors('middle');
+			// }
+			// else {
+			this.navigate(data.folio);
+			// }
 		},
 
-		':half/:section route' : function(data) {
-			console.log('Route: ', data);
-			var s = data.section
-			var h = data.half
-			this.navigate(h, s);
+		':folio/:project route' : function(data) {
+			console.log('Route project: ', data);
+			this.navigate(data.folio, data.project);
 		},
 
 		// Helper function: Opens the door if needsbe.  Sets half and section.
-		navigate :function(half, section, page) {
-			if (this.doorState == half && section) {
-				play.revealSection(half, section);
-			}
-			else {
-				this.moveDoors(half, section);
-				this.showNavHalf(half);
-			}
+		navigate :function(folio, project) {
+			var newState = this.calcState(folio, project);
+			play.seek(newState, project)
+			this.showNavHalf(folio);
+		},
+
+		calcState :function(folio, project) {
+			if (folio && project) return folio+"Project";
+			if (folio) return folio+"Folio";
 		},
 
 		// Half is web or film.  2 halves of the portfolio.  TODO: Film is not yet written.
-		showNavHalf :function(half) {
-			$('.nav').removeClass('film').removeClass('web').addClass(half)
+		showNavHalf :function(folio) {
+			$('.nav').removeClass('film').removeClass('web').addClass(folio)
 		},
 
 		// Helper funcion: open the doors in the front of the site.
-		moveDoors: function(half, section) {
-			console.log('move Doors: '+half+"|"+section)
-      if (this.doorState != half) {
-      	var halfUpper = half.slice(0,1).toUpperCase() + half.slice(1);
-        var tl = play.resetSections().add(play['door'+halfUpper]());
-        if (section) tl.add(play.revealSection(half, section)).add(play.scrollButtonShow());
-        this.doorState == half;
-        $('.film-label').attr('href', '#!');
-        $('.web-label').attr('href', '#!');
-				// play.setLabel(half);
-      }
-      else {
-        play.doorMiddle().add(play.resetSections());
-        this.doorState == 'Middle';
-        $('.film-label').attr('href', '#!film');
-        $('.web-label').attr('href', '#!web');
-				play.setLabel();
-      }
+		// moveDoors: function(half, section) {
+		// 	console.log('move Doors: '+half+"|"+section)
+  //     if (this.doorState != half) {
+  //     	var halfUpper = half.slice(0,1).toUpperCase() + half.slice(1);
+  //       var tl = play.resetSections().add(play['door'+halfUpper]());
+  //       if (section) tl.add(play.revealSection(half, section)).add(play.scrollButtonShow());
+  //       this.doorState == half;
+  //       this.labels2Root();
+		// 		// play.setLabel(half);
+  //     }
+  //     else {
+  //       play.doorMiddle().add(play.resetSections());
+  //       this.state == 'start';
+  //       this.labelBack
+		// 		play.setLabel();
+  //     }
+		// },
+
+		labelsReset :function() {
+      $('.film-label').attr('href', '#!film');
+      $('.web-label').attr('href', '#!web');			
+		},
+
+		labels2Root :function() {
+      $('.film-label').attr('href', '#!');
+      $('.web-label').attr('href', '#!');
 		}
 
 	});

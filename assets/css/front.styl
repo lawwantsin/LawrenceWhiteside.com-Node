@@ -1,6 +1,6 @@
 .front
-  display: block
-  opacity: 1
+  display: none
+  opacity: 0
   z-index: 2
   position: absolute
   bottom: 0
@@ -19,14 +19,15 @@
     overflow: auto
     height: 100%
     opacity: 0
+    display: none
     .frame
       display: block
       color: white
       text-decoration: none
-      position: absolute
       width: 33.33333%
       text-decoration: none
       position: relative
+      float: left
       .caption
         font-family: 'Lato'
         font-size: 3em
@@ -53,5 +54,6 @@
       .frame
         width: 100%
     .iContent
+      height: 100%
       .hexagon
         display: none
