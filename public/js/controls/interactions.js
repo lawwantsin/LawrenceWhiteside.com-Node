@@ -93,24 +93,23 @@ define(['jquery', 'can', 'controls/app', 'greensock'], function($, can, App, Tim
     },
 
     webFolio2filmFolio : function(){
-      return this.webFolio2start()
-        .add(this.setLabel('film'))
-        .add(this.start2filmFolio())
+      return this.setLabel('film')
+        .add(this.closeFolio('web'))
+        .add(this.openFolio('film'))
         .add(this.showScrollButton());
     },    
 
     filmFolio2webFolio : function(){
-      return this.filmFolio2start()
-        .add(this.showFront())
-        .add(this.setLabel('web'))
-        .add(this.start2webFolio())
+      return this.setLabel('web')
+        .add(this.closeFolio('film'))
+        .add(this.openFolio('web'))
         .add(this.showScrollButton());
     },    
 
     webProject2webFolio : function() {
       return this.resetProjects()
         .add(this.showFront())
-        .add(this.openFolio('web'))
+        
         .add(this.showScrollButton());
     },
 
