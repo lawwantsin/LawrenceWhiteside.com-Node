@@ -75,6 +75,7 @@ define(['jquery', 'can', 'controls/app'], function($, can, App) {
 			// if (location.hash == '#!' && !sup) this.moveDoors(this.doorState);
 			// else if (sup) this.moveDoors('web')
 			this.navigate('front')
+			this.showNavHalf('supl')
 		},
 
 		// Routing events.  Sets the half (web/film) and the 
@@ -85,19 +86,20 @@ define(['jquery', 'can', 'controls/app'], function($, can, App) {
 			// }
 			// else {
 			this.navigate(data.folio);
+			this.showNavHalf(data.folio);
 			// }
 		},
 
 		':folio/:project route' : function(data) {
 			console.log('Route project: ', data);
 			this.navigate(data.folio, data.project);
+			this.showNavHalf(data.folio);
 		},
 
 		// Helper function: Opens the door if needsbe.  Sets half and section.
 		navigate :function(folio, project) {
 			var newState = this.calcState(folio, project);
 			play.seek(newState, project)
-			this.showNavHalf(folio);
 		},
 
 		calcState :function(folio, project) {
@@ -107,7 +109,8 @@ define(['jquery', 'can', 'controls/app'], function($, can, App) {
 
 		// Half is web or film.  2 halves of the portfolio.  TODO: Film is not yet written.
 		showNavHalf :function(folio) {
-			$('.nav').removeClass('film').removeClass('web').addClass(folio)
+			console.log("Nav:"+folio)
+			$('.nav').removeClass('film').removeClass('web').removeClass('supl').addClass(folio)
 		},
 
 		// Helper funcion: open the doors in the front of the site.

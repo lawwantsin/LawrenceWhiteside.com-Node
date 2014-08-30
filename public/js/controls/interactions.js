@@ -62,7 +62,7 @@ define(['jquery', 'can', 'controls/app', 'greensock'], function($, can, App, Tim
         .add(this.showFront())
         .add(this.setLabel('film'))
         .add(this.openFolio('film'))
-        .add(this.folioPrestige('film'))
+        // .add(this.folioPrestige('film'))
         .add(this.showScrollButton());        
     },
 
