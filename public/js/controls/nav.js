@@ -110,7 +110,7 @@ define(['jquery', 'can', 'controls/app'], function($, can, App) {
 		// Half is web or film.  2 halves of the portfolio.  TODO: Film is not yet written.
 		showNavHalf :function(folio) {
 			console.log("Nav:"+folio)
-			$('.nav').removeClass('film').removeClass('web').removeClass('supl').addClass(folio)
+			$('.nav').removeClass('film web supl').addClass(folio)
 		},
 
 		// Helper funcion: open the doors in the front of the site.

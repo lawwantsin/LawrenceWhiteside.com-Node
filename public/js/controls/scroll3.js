@@ -31,7 +31,7 @@ define(['jquery', 'can', 'controls/app'], function($, can, App) {
         });
         var self = this;      
         this.iScroll.on('scrollStart', function() {      
-          self.hideScrollButton();
+          // self.hideScrollButton();
         });
       }
     },
@@ -82,13 +82,13 @@ define(['jquery', 'can', 'controls/app'], function($, can, App) {
       $('.next-icon i').removeClass('ion-chevron-up').addClass('ion-chevron-down');
     },
 
-    hideScrollButton : function() {
-      play.hideScrollButton();
-      clearTimeout(this.hsbTimeout);
-      this.hsbTimeout = setTimeout(function() {
-        play.showScrollButton();
-      }, 2000);
-    },
+    // hideScrollButton : function() {
+    //   play.hideScrollButton();
+    //   clearTimeout(this.hsbTimeout);
+    //   this.hsbTimeout = setTimeout(function() {
+    //     play.showScrollButton();
+    //   }, 2000);
+    // },
 
     // Checks if the videos are visible.  If so, plays them, if not, pauses them.  
     // CPU mostly but also, don't want anyone to miss the fun.  It's not an animated GIF. 

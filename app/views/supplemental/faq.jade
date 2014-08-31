@@ -9,10 +9,7 @@ block content
       .half.supl('data-section'="faq")
         .supl-scroll
           .scrollContent
-              include faqQuestions
-              - heading = 'Do you have a question?'
-              include ../shared/contactPage
-        .next-icon.next
-          label.scrollIndicator Scroll
-          i.ion-chevron-down
-
+            include faqQuestions
+            - heading = 'Do you have a question?'
+            include ../shared/contactPage
+            include ../shared/scroll

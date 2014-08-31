@@ -39,14 +39,12 @@ define(['jquery', 'can', 'controls/app', 'greensock'], function($, can, App, Tim
         .add(this.hideFront())
         .add(this.setLabel('web'))
         .add(this.openProject('web', project))
-        .add(this.showScrollButton());
     },
 
     start2suplProject :function(project) {
       return this.leftHex()
         .add(this.hideFront())      
         .add(this.openProject('supl', project))
-        .add(this.showScrollButton());
     },
 
     start2filmProject : function(project) {
@@ -54,7 +52,6 @@ define(['jquery', 'can', 'controls/app', 'greensock'], function($, can, App, Tim
         .add(this.hideFront())
         .add(this.setLabel('film'))
         .add(this.openProject('film', project))
-        .add(this.showScrollButton());
     },
 
     start2filmFolio : function(){
@@ -63,7 +60,6 @@ define(['jquery', 'can', 'controls/app', 'greensock'], function($, can, App, Tim
         .add(this.setLabel('film'))
         .add(this.openFolio('film'))
         // .add(this.folioPrestige('film'))
-        .add(this.showScrollButton());        
     },
 
     start2webFolio : function(){
@@ -96,21 +92,17 @@ define(['jquery', 'can', 'controls/app', 'greensock'], function($, can, App, Tim
       return this.setLabel('film')
         .add(this.closeFolio('web'))
         .add(this.openFolio('film'))
-        .add(this.showScrollButton());
     },    
 
     filmFolio2webFolio : function(){
       return this.setLabel('web')
         .add(this.closeFolio('film'))
         .add(this.openFolio('web'))
-        .add(this.showScrollButton());
     },    
 
     webProject2webFolio : function() {
       return this.resetProjects()
         .add(this.showFront())
-        
-        .add(this.showScrollButton());
     },
 
     webProject2filmFolio : function() {
@@ -118,7 +110,6 @@ define(['jquery', 'can', 'controls/app', 'greensock'], function($, can, App, Tim
         .add(this.leftHex())
         .add(this.setLabel('film'))
         .add(this.openFolio('film'))
-        .add(this.showScrollButton());
     },
 
     filmProject2webFolio : function() {
@@ -126,28 +117,24 @@ define(['jquery', 'can', 'controls/app', 'greensock'], function($, can, App, Tim
         .add(this.raiseCover())
         .add(this.setLabel('web'))
         .add(this.openFolio('web'))
-        .add(this.showScrollButton());      
     },
 
     filmProject2filmFolio : function() {
       return this.resetProjects()
         .add(this.showFront())
         .add(this.openFolio('film'))
-        .add(this.showScrollButton());
     },
 
     filmFolio2filmProject : function(project) {
       return this.closeFolio('web')
         .add(this.hideFront())
         .add(this.openProject('film', project))
-        .add(this.showScrollButton());
     },
 
     webFolio2webProject : function(project) {
       return this.closeFolio('web')
         .add(this.hideFront())
         .add(this.openProject('web', project))
-        .add(this.showScrollButton());
     },
 
     // Actions
@@ -192,7 +179,7 @@ define(['jquery', 'can', 'controls/app', 'greensock'], function($, can, App, Tim
       var hh = $('.header').height();
       return new TimelineMax()
         .to('.header', 0.6, {top: 0, marginTop: 0}, 'open')
-        .to('.hexagon', 0.8, {left: 0, marginLeft: -0, top: -28}, 'open')
+        .to('.header .hexagon', 0.8, {left: 0, marginLeft: 0, top: 10, left: -62}, 'open')
         .to('.front', 0.5, {top: hh, bottom: 0, display: 'block', opacity: 1}, 'open')
         .to('.mobile-menu', 0.5, {opacity: 1}, 'open')
         .to('.contact', 1, {opacity: 1}, 'open')
@@ -238,6 +225,7 @@ define(['jquery', 'can', 'controls/app', 'greensock'], function($, can, App, Tim
         }
       });
     },
+
     folioPrestige :function(folio) {
       return new TimelineMax()
         .staggerTo('.'+folio+'-header-iso .frame', 1, {opacity: 1}, 0.4)
@@ -271,8 +259,7 @@ define(['jquery', 'can', 'controls/app', 'greensock'], function($, can, App, Tim
             ws.iScroll.scrollTo(0,0);
           }
         }})
-        .from('.'+project+' .rotation', 2, {top: -600, ease: Elastic.easeOut}, 'reveal')
-        .to('.'+project+' .rotation', 2, {rotationY: -180, ease: Elastic.easeOut, delay: 1}, 'reveal')
+        .from('.'+project+' .hexagon, .next', 1.3, {top: -600, ease: Elastic.easeOut}, 'reveal')
     },
 
     resetProjects : function() {
@@ -312,24 +299,25 @@ define(['jquery', 'can', 'controls/app', 'greensock'], function($, can, App, Tim
     },
 
     // Scroll Actions
-    showScrollButton : function() {
-      if ($('.next-icon i').hasClass('ion-chevron-up')) {            
-        return new TimelineMax()
-          .to('.next-icon', 1, {bottom: 40, ease: Elastic.easeOut}, 'one')
-          .to('i.ion-chevron-up', 0, {opacity: 1}, 'one')
-      }
-      else {            
-        return new TimelineMax()
-          .to('.next-icon', 1, {bottom: 30, ease: Elastic.easeOut}, 'one')
-          .to('i.ion-chevron-down', 0, {opacity: 0}, 'one')
-          .to('label.scrollIndicator', 0.7, {opacity: 1}, 'one')
-          .to('label.scrollIndicator', 0.7, {opacity: 0}, 'two')
-          .to('i.ion-chevron-down', 1, {opacity: 1}, 'two')
-      }
-    },
-    hideScrollButton : function() {
-      return new TimelineMax().to('.next-icon', 0.7, {bottom: -100})
-    }
+    // showScrollButton : function() {
+    //   if ($('.next-icon i').hasClass('ion-chevron-up')) {            
+    //     this.scrollButton = new TimelineMax().stop()
+    //       .to('.next-icon', 1, {bottom: 100, ease: Elastic.easeOut}, 'one')
+    //       .to('i.ion-chevron-up', 0, {opacity: 1}, 'one')
+    //   }
+    //   else {            
+    //     this.scrollButton = new TimelineMax().stop()
+    //       .to('.next-icon', 1, {bottom: 100, ease: Elastic.easeOut}, 'one')
+    //       // .to('i.ion-chevron-down', 0, {opacity: 0}, 'one')
+    //       // .to('label.scrollIndicator', 0.7, {opacity: 1}, 'one')
+    //       // .to('label.scrollIndicator', 0.7, {opacity: 0}, 'two')
+    //       .to('i.ion-chevron-down', 1, {opacity: 1}, 'two')
+    //   }
+    //   return this.scrollButton;
+    // },
+    // hideScrollButton : function() {
+    //   return new TimelineMax().to('.next-icon', 0.7, {bottom: -100})
+    // }
 
   });
 });

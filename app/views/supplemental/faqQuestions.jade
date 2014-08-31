@@ -1,15 +1,7 @@
 section.section.clearfix.faq
   .page.intro
-    .circle
-      .rotation
-        .heads
-          .initials 
-            span.nameL.name L&nbsp;
-            span.nameW.name W
-        .tails
-          .introCircle.introBubble
-            .introCircle2
-              h1 Frequently Asked Questions
+    - section = {title: 'Frequently Asked Questions', summary: 'Ask me some, so I can fill this thing in a bit.'}
+    include ../shared/intro
   .page.questions
     .question.snap
       .row

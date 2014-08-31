@@ -11,17 +11,8 @@ block content
           .scrollContent
             section.section.clearfix.testimonials
               .page.intro
-                .circle
-                  .rotation
-                    .heads
-                      .initials 
-                        span.nameL.name L&nbsp;
-                        span.nameW.name W
-                    .tails
-                      .introCircle.introBubble
-                        .introCircle2
-                          h1 Testimonials
-                          p These folks actually said this about me.
+                - section = {title: 'Testimonials', summary: 'These folks actually said this about me.'}
+                include ../shared/intro
               .page.clientTestimonials
                 .testiment
                   .row
@@ -33,12 +24,12 @@ block content
                         span.byline Bruce Northam, Americandetour.com
                 .testiment
                   .row
-                    .column.small-12.medium-8
+                    .column.small-12.medium-4.medium-push-8
+                      img.avatar(src="/images/avatars/mike.jpg")
+                    .column.small-12.medium-8.medium-pull-4
                       p
                         |  Lawrence is a top-notch Ruby/Javascript developer, a creative video producer and editor, as well as a gentleman.
                         span.byline Mike Coletta, Fantrotter.com
-                    .column.small-12.medium-4
-                      img.avatar(src="/images/avatars/mike.jpg")
                 .testiment
                   .row
                     .column.small-12.medium-4
@@ -49,10 +40,10 @@ block content
                         span.byline Josh Matthews, Endevour Staffing
                 .testiment
                   .row
-                    .column.small-12.medium-8
+                    .column.small-12.medium-4.medium-push-8
+                      img.avatar(src="/images/avatars/ben.jpg")
+                    .column.small-12.medium-8.medium-pull-4
                       p
                         | Lawrence really understands what it takes to get people involved with using an application or website and keep them engaged.
                         span.byline Ben Turner, Ocodot Labs
-                    .column.small-12.medium-4
-                      img.avatar(src="/images/avatars/ben.jpg")
             include ../shared/contactPage

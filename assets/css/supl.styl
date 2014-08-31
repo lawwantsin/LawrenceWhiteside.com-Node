@@ -25,36 +25,27 @@ body.supl
         color: #222
         &:hover
           color: $green
-    .introBubble
-      color: white
-      position: relative
-      pointer-events: none
-      .introBubble2
-        position: relative
-        background-color: rgba(0,0,0,0.8)
-        padding: 75px
-        border-radius: 100%
-        width: 300px
-        height: 300px
-        margin: 0 auto
-      h1
-        font-size: 1.4em
-        line-height: 1.4em
-        border-bottom: 1px solid $green
-        font-family: 'Krungthep', 'Bank Gothic'
-        margin: 20px auto 10px auto
-        position: relative
-        padding-bottom: 10px
-        color: #eee
-        text-align: center
-        text-shadow: none
-      p
-        background-color: transparent
-        color: #ccc
-        font-size: 0.9em
-        line-height: 1.6em
-        margin: 5px 0
-        text-align: center
+    .introText
+      top: 0
+      .introText2
+        h1
+          font-size: 1.4em
+          line-height: 1.4em
+          border-bottom: 1px solid $green
+          font-family: 'Krungthep', 'Bank Gothic'
+          margin: 20px auto 10px auto
+          position: relative
+          padding-bottom: 10px
+          color: #eee
+          text-align: center
+          text-shadow: none
+        p
+          background-color: transparent
+          color: #ccc
+          font-size: 0.9em
+          line-height: 1.6em
+          margin: 5px 0
+          text-align: center
   @media only screen and (min-width: 40.063em)
     .section .page
       padding: 0 40px
@@ -70,6 +61,9 @@ body.supl
   .bio
     position: relative
     font-size: 1.2em
+    width: 100%
+    max-width: 640px
+    margin: 0 auto
   .supl-scroll
     top: 0
     bottom: 0

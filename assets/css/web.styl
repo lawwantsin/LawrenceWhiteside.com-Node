@@ -52,19 +52,13 @@ $green3 = #2c923a
 body.portfolio, body.supl
   overflow: hidden
   font-family: 'Lato', Helvetica
-  .circle
+  .introText
     position: absolute
-    top: 50%
-    left: 50%
-    margin: -175px 0 0 -150px
-    background-color: black
-    border-radius: 100%
-  .introCircle
     padding: 0 40px
-    width: 300px
-    height: 300px
+    width: inherit
+    height: inherit
     display: table
-    .introCircle2    
+    .introText2    
       display: table-cell
       vertical-align: middle
     h1
@@ -113,30 +107,31 @@ body.portfolio, body.supl
     cursor: pointer
     width: 100%
     position: absolute
-  .rotation
+  .hexagon
     position: absolute
-    background-color: black
-    border-radius: 100%
     width: 300px
-    height: 300px    
+    height: 300px
+    left: 50%
+    top: 50%
+    margin-top: -150px
+    margin-left: -150px
+    -webkit-transform: scale(.85)
+    -moz-transform: scale(.85)
+    -o-transform: scale(.85)
+    -ms-transform: scale(.85)
+    transform: scale(.85)
     -webkit-transform-style: preserve-3d
     transform-style: preserve-3d
-    .heads, .tails
+    .hexagon-svg
       width: 300px
       height: 300px
-      position: absolute
-      top: 0
-      left: 0
-      backface-visibility: hidden
-      -webkit-backface-visibility: hidden
-    .heads
-      z-index: 2
-    .tails
-      -webkit-perspective: 1000
-      transform: rotateY(-180deg)
-      -webkit-transform: rotateY(-180deg)
-
   @media only screen and (min-width: 40.063em)
+    .hexagon
+      -webkit-transform: scale(1)
+      -moz-transform: scale(1)
+      -o-transform: scale(1)
+      -ms-transform: scale(1)
+      transform: scale(1)
     .contact
       display: block
       i
@@ -424,17 +419,12 @@ body.portfolio, body.supl
 body.supl .style.supl, body.film .style.film, body.web .style.web
   opacity: 1
 
-.introBubble
+.introText
   color: white
   position: relative
-  pointer-events: none
-  .introBubble2
+  top: 13px
+  .introText2
     position: relative
-    background-color: rgba(0,0,0,0.8)
-    padding: 75px
-    border-radius: 100%
-    width: 300px
-    height: 300px
     margin: 0 auto
   h1
     font-size: 1.4em
