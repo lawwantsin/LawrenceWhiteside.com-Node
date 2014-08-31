@@ -103,6 +103,7 @@ define(['jquery', 'can', 'controls/app'], function($, can, App) {
 		},
 
 		calcState :function(folio, project) {
+			if (folio == 'front') return 'start';
 			if (folio && project) return folio+"Project";
 			if (folio) return folio+"Folio";
 		},

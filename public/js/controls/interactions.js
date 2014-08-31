@@ -73,7 +73,9 @@ define(['jquery', 'can', 'controls/app', 'greensock'], function($, can, App, Tim
       return this.resetProjects()
         .add(this.setLabel('web'))
         .add(this.resetFolios())
-        .add(this.resetCover());
+        .add(this.resetCover())
+        .add(this.hideMain('web'))
+        .add(this.hideMain('film'))
     },
 
     filmProject2start : function() {
@@ -103,12 +105,15 @@ define(['jquery', 'can', 'controls/app', 'greensock'], function($, can, App, Tim
     webProject2webFolio : function() {
       return this.resetProjects()
         .add(this.showFront())
+        .add(this.hideMain('web'))
+        .add(this.openFolio('web'))
     },
 
     webProject2filmFolio : function() {
       return this.resetProjects()
         .add(this.leftHex())
         .add(this.setLabel('film'))
+        .add(this.hideMain('web'))
         .add(this.openFolio('film'))
     },
 
@@ -116,6 +121,7 @@ define(['jquery', 'can', 'controls/app', 'greensock'], function($, can, App, Tim
       return this.resetProjects()
         .add(this.raiseCover())
         .add(this.setLabel('web'))
+        .add(this.hideMain('film'))
         .add(this.openFolio('web'))
     },
 
@@ -162,6 +168,7 @@ define(['jquery', 'can', 'controls/app', 'greensock'], function($, can, App, Tim
         .to('.topDoor', 0.5, {bottom: "50%"}, 'close')      
         .to('.bottomDoor', 0.5, {top: "0%"}, 'close')
         .to('.header', 0.5, {top: "50%", marginTop: -25}, 'close')
+        .to('.header .hexagon', 0.5, {left: 0, marginLeft: -100, top: '50%', left: '50%'}, 'close')
         .to('.front', 0.5, {top: 0, bottom: 0, opacity: 1}, 'close')
     },
     raiseCover : function() {
@@ -207,10 +214,9 @@ define(['jquery', 'can', 'controls/app', 'greensock'], function($, can, App, Tim
         .to('.half.'+folio+' .iContent', 0, {height: h}, 'open')
     },
 
-    hideMain :function(folio) {
+    hideMain :function(folio) {  // hide the folio we just came from
       return new TimelineMax()
         .to('.half.'+folio, 0, {zIndex: 1, opacity: 0, display: 'none', height: '100%'}, 'open')
-        .to('.half.'+folio+' .iContent', 0, {height: h}, 'open')      
         .to('.style.'+folio, 0.5, {opacity: 0 }, 'open')
         .to('.main', 0, {display: 'none'})
     },
@@ -272,13 +278,13 @@ define(['jquery', 'can', 'controls/app', 'greensock'], function($, can, App, Tim
     setLabel :function(folio) {
       if (folio == 'film') {
         return new TimelineMax()
-          .to('.film-label', 1, {top: 124, ease: Elastic.easeOut}, 'open')
-          .to('.web-label', 1, {top: 15, ease: Elastic.easeOut}, 'open')                  
+          .to('.film-label', 0.6, {top: 124, ease: Elastic.easeOut}, 'open')
+          .to('.web-label', 0.6, {top: 15, ease: Elastic.easeOut}, 'open')                  
       }
       else if (folio == 'web') {
         return new TimelineMax()
-          .to('.film-label', 1, {top: 15, ease: Elastic.easeOut}, 'open')
-          .to('.web-label', 1, {top: 124, ease: Elastic.easeOut}, 'open')
+          .to('.film-label', 0.6, {top: 15, ease: Elastic.easeOut}, 'open')
+          .to('.web-label', 0.6, {top: 124, ease: Elastic.easeOut}, 'open')
       }
       else if (folio == 'supl') {
         return new TimelineMax()

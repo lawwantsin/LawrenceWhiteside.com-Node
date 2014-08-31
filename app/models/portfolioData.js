@@ -873,7 +873,7 @@ var elay = {
 var kavi = {
   slug: 'kavi',
   title : 'Kavi Calculator',
-  site: 'kaviworks.com/roi',
+  site: 'kaviworkspace.com/roi',
   thumb: 'full.jpg',
   logo: 'kavi',
   summary : 'Short contract for a responsive sales tool for their Workspace App.',
