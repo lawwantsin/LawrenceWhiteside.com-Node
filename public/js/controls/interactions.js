@@ -254,10 +254,11 @@ define(['jquery', 'can', 'controls/app', 'greensock'], function($, can, App, Tim
     openProject : function(folio, project) {
       return new TimelineMax()
         .to('.main', 0, {display: 'block'})
-        .to('.style.'+folio, 1, {opacity: 1}, 'open')
+        .to('.style.'+folio, 0, {opacity: 1}, 'open')
         .to('.half.'+folio, 0, {zIndex: 1, opacity: 1, display: 'block', height: '100%'}, 'open')
         .to('.section.'+project, 0, {display: 'block', zIndex: 2}, 'reveal')
         .to('.section.'+project, 1, {opacity: 1}, 'reveal')
+        .from('.'+project+' .hexagon, .next', 1.3, {top: -300, ease: Elastic.easeOut}, 'reveal')
         .to('.'+folio+' .callToAction', 0, {display: 'block', opacity: 1, onComplete: function() {
           var ws = window[folio+'Scroller'];
           if (ws) {
@@ -265,7 +266,6 @@ define(['jquery', 'can', 'controls/app', 'greensock'], function($, can, App, Tim
             ws.iScroll.scrollTo(0,0);
           }
         }})
-        .from('.'+project+' .hexagon, .next', 1.3, {top: -600, ease: Elastic.easeOut}, 'reveal')
     },
 
     resetProjects : function() {
