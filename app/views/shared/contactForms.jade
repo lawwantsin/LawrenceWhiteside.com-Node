@@ -1,10 +1,6 @@
 .thankYou
-  .circle
-    .rotation
-      .introCircle.introBubble
-        .introCircle2
-          h1 Thanks for the message
-          p I usually respond within 24 hours.
+  - section = {title: 'Thanks for reaching out', summary: 'I will respond shortly.  Please check out the rest of the site.'}
+  include ../shared/intro
 .contactForm.form
   h1 #{heading || "Contact Me."}
   form(action="/contact", method="POST")

@@ -64,11 +64,11 @@ define(['jquery', 'can', 'controls/app'], function($, can, App) {
 
     saveSuccess : function(res) {
       var self = this;
-      presenter.play('contact', 'close', 'thank');
+      play.thankContact();
       setTimeout(function() {
         modals.closeAll();
         self.resetForm();
-        presenter.play('contact', 'close', 'reset');
+        play.resetContactForm();
       }, 3000)
     },
 

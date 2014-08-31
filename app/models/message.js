@@ -117,7 +117,7 @@ messageSchema.pre('save', function(next) {
   
   var msg = this;
   msg.createdOn = new Date();
-  if (msg.payment.amount) {
+  if (msg.payment) {
     stripe.charges.create({
       amount: parseInt(msg.payment.amount*100),  // param is in dollars, stripe needs amount in cents.
       currency: "usd",

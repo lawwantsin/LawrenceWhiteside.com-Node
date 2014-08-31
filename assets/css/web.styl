@@ -52,17 +52,6 @@ $green3 = #2c923a
 body.portfolio, body.supl
   overflow: hidden
   font-family: 'Lato', Helvetica
-  .introText
-    position: absolute
-    padding: 0 40px
-    width: inherit
-    height: inherit
-    display: table
-    .introText2    
-      display: table-cell
-      vertical-align: middle
-    h1
-      text-align: center
   .contentContainer
     top: 0
     bottom: 0
@@ -260,7 +249,7 @@ body.portfolio, body.supl
     line-height: 1.8em
   @media only screen and (max-width: 40.063em)
     .section
-      padding: 0px 0px 10px 0px
+      padding: 0px 0px 20px 0px
       margin-top: 0
       .page
         padding: 0
@@ -275,7 +264,7 @@ body.portfolio, body.supl
         padding: 40px 10px  
   @media only screen and (min-width: 40.063em)
     .section
-      padding: 0px 0px 10px 0px
+      padding: 0px 0px 70px 0px
       margin-top: 0
       .page
         padding: 0
@@ -314,6 +303,10 @@ body.portfolio, body.supl
     display: none
     position: relative
     height: 630px
+    .introText
+      margin-top: -27px
+      .hexagon-svg polygon
+        fill: rgba(0,0,0,0.5)
   .contactForm
     position: relative
     min-height: 600px
@@ -413,6 +406,19 @@ body.portfolio, body.supl
         width: auto
         float: left
         margin-right: 10px
+  .introText
+    position: absolute
+    padding: 0 40px
+    width: inherit
+    height: inherit
+    display: table
+    .introText2    
+      display: table-cell
+      vertical-align: middle
+    h1
+      text-align: center
+    p
+      text-align: center
   @media only screen and (max-width: 40.063em)
     .callToAction
       padding: 40px 0

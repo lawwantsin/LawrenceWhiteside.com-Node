@@ -287,7 +287,7 @@ define(['jquery', 'can', 'controls/app', 'greensock'], function($, can, App, Tim
     },
 
     // Contact Form Actions
-    closeContactThankYou : function() { 
+    thankContact : function() { 
       return new TimelineMax()
         .to('.thankYou', 0, {display: 'block'})
         .to('.contactForm', 0, {display: 'none'})
