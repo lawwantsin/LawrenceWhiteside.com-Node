@@ -129,14 +129,13 @@ var iNinja = {
     },
     {
       credits: [
-        ['Directors', 'Antonio Bonilla & Lawrence Whiteside'],
-        ['Writer', 'Antonio Bonilla'],
-        ['Cindy', 'Molly Ryzdel'],
-        ['John', 'Max Hambleton'],
-        ['Editor', 'Benadict'],
-        ['Sound Design', 'Gora Faal'],
-        ['Visual Effects', 'Chris Lohouse'],
-        ['Script Supervisor', 'Cindy Ormondroyd']
+        ['Director', 'Lawrence Whiteside'],
+        ['Writer', 'Lawrence Whiteside'],
+        ['Babe', 'Cecily Crow'],
+        ['Babe', 'Lawrence Whiteside'],
+        ['Ninja', 'Anotonio Bonilla'],
+        ['Editor', 'Lawrence Whiteside'],
+        ['Sound Track', 'Jake Doris']
       ]
     }
   ]
@@ -160,14 +159,9 @@ var coursing = {
     },
     {
       credits: [
-        ['Directors', 'Antonio Bonilla & Lawrence Whiteside'],
-        ['Writer', 'Antonio Bonilla'],
-        ['Cindy', 'Molly Ryzdel'],
-        ['John', 'Max Hambleton'],
-        ['Editor', 'Benadict'],
-        ['Sound Design', 'Gora Faal'],
-        ['Visual Effects', 'Chris Lohouse'],
-        ['Script Supervisor', 'Cindy Ormondroyd']
+        ['Directors', 'Jon Bebe'],
+        ['Writer', 'Jonathan Bebe'],
+        ['Assistant Director', 'Lawrence Whiteside']
       ]
     }  ]
 }
@@ -184,20 +178,15 @@ var illHave = {
         video: 'ill-have-another-48hour',
       },
       cards : [
-        'Our category was Femme Fatale.  With less than a day to prepare and a weekend to shoot and cut it.', 
-        'We delivered a face-paced, action film.  Hoping Luc Besson would approve.'
+        'Our category was DArk Comedy.  With less than a day to prepare and a weekend to shoot and cut it.', 
+        'We delivered a dark family portrait that goes too far for Wes Anderson.'
       ]
     },
     {
       credits: [
-        ['Directors', 'Antonio Bonilla & Lawrence Whiteside'],
-        ['Writer', 'Antonio Bonilla'],
-        ['Cindy', 'Molly Ryzdel'],
-        ['John', 'Max Hambleton'],
-        ['Editor', 'Benadict'],
-        ['Sound Design', 'Gora Faal'],
-        ['Visual Effects', 'Chris Lohouse'],
-        ['Script Supervisor', 'Cindy Ormondroyd']
+        ['Directors', 'Jon Bebe'],
+        ['Writer', 'Jonathan Bebe'],
+        ['Assistant Director', 'Lawrence Whiteside']
       ]
     }  
   ]
@@ -320,8 +309,7 @@ var moment = {
         video: 'moment-short',
       },
       cards : [
-        'Our category was Femme Fatale.  With less than a day to prepare and a weekend to shoot and cut it.', 
-        'We delivered a face-paced, action film.  Hoping Luc Besson would approve.'
+        ''
       ]
     },
     {
@@ -358,11 +346,7 @@ var americanD = {
   pages: [
     {
       videos: ['ad-collage.jpg'], 
-      cards: ['The Short-form travel web-series staring Bruce Northam began filming in 2009.'],
-      button: {
-        label: '',
-        link: ''
-      }
+      cards: ['The Short-form travel web-series staring Bruce Northam began filming in 2009.']
     },
     {
       posters: ['ad-books.jpg'], 
@@ -420,22 +404,14 @@ var csfME = {
         poster: 'signin.jpg',
         video: 'landing'
       }, 
-      cards: ['It consists of a suite of apps for indie filmmakers'],
-      button: {
-        label: '',
-        link: ''
-      }
+      cards: ['It consists of a suite of apps for indie filmmakers']
     },
     {
       desktop: {
         poster: 'sales.jpg',
         video: 'landing'
       }, 
-      cards: ['CSF.ME is my everchanging idea for an Artist\'s Online Portfolio Builder.'],
-      button: {
-        label: '',
-        link: ''
-      }
+      cards: ['CSF.ME is my everchanging idea for an Artist\'s Online Portfolio Builder.']
     },
     {
       desktop: {
@@ -444,11 +420,7 @@ var csfME = {
       }, 
       cards: [
         'Anyone can create a stunning portfolio with video and images and go live in minutes.'
-      ],
-      button: {
-        label: '',
-        link: ''
-      }
+      ]
     },
     {
       desktop: {
@@ -457,11 +429,7 @@ var csfME = {
       }, 
       cards: [
         'Eskewing the complexities of sites such as SquareSpace and Wix, I replaced any design desicions with simple questions that lead to beautiful results.'
-      ],
-      button: {
-        label: '',
-        link: ''
-      }
+      ]
     },
     {
       desktop: {
@@ -471,11 +439,7 @@ var csfME = {
       cards: [
         'Completely free for everyone.',  
         'Behind your own domain name for $7.99/month'
-      ],
-      button: {
-        label: '',
-        link: ''
-      }
+      ]
     }
   ]
 }
@@ -486,7 +450,7 @@ var fan = {
   site: 'fantrotter.com',
   title : 'Fantrotter',
   thumb: 'front.jpg',
-  summary : 'Event travel search engine that empowers artists to make money from their fans travelling to see them.  Available as a website, facebook app, mobile app and embeddable widget.',
+  summary : 'Event travel search engine that connects fans to one another.',
   pages : [
     {
       desktop: {
@@ -494,12 +458,9 @@ var fan = {
         video: 'landing'
       }, 
       cards: [
-        'Fantrotter is an event-travel search engine that makes money for the performers.'
-      ],
-      button: {
-        label: '',
-        link: ''
-      }
+        'Fantrotter is an event-travel search engine that makes money for the performers.',
+        'While looking towards an algorythm for senerdipity between fans meeting one another'
+      ]
     },
     {
       desktop: {
@@ -509,11 +470,7 @@ var fan = {
       cards: [
         'Our next generation travel site.  It\'s appeal is the fun UX.',
         'And autofills all the search information for major booking sites.'
-      ],
-      button: {
-        label: '',
-        link: ''
-      }
+      ]
     },
     {
       desktop: {
@@ -522,11 +479,7 @@ var fan = {
       }, 
       cards: [
         'A compelling, animated interface that draws users to their next action, generating revenue through PPC.'
-      ],
-      button: {
-        label: '',
-        link: ''
-      }
+      ]
     },
     {
       mobile: {
@@ -535,11 +488,7 @@ var fan = {
       },
       cards: [
         "A place for fans to gather and interact before and after the show."
-      ],
-      button: {
-        label: '',
-        link: ''
-      }
+      ]
     },
     {
       desktop: {
@@ -548,11 +497,7 @@ var fan = {
       }, 
       cards: [
         'Any band or performer with a tour can install the app in 6 clicks.'
-      ],
-      button: {
-        label: '',
-        link: ''
-      }
+      ]
     },
     {
       desktop: {
@@ -561,11 +506,7 @@ var fan = {
       }, 
       cards: [
         'They promote their tour right along side the app.'
-      ],
-      button: {
-        label: '',
-        link: ''
-      }
+      ]
     },
     {
       desktop: {
@@ -574,11 +515,7 @@ var fan = {
       }, 
       cards: [
         'Bands make 20-70% of the PPC revenue their fans generate.'
-      ],
-      button: {
-        label: '',
-        link: ''
-      }
+      ]
     }
   ]
 }
@@ -598,11 +535,7 @@ var spins = {
       }, 
       cards: [
         'Spins.FM is a radio request app for facebook and iPhone.'
-      ],
-      button: {
-        label: '',
-        link: ''
-      }
+      ]
     },
     {
       desktop: {
@@ -611,11 +544,7 @@ var spins = {
       }, 
       cards: [
         'Radio is still the #1 way musicians break a new single.'
-      ],
-      button: {
-        label: '',
-        link: ''
-      }
+      ]
     },
     {
       desktop: {
@@ -624,11 +553,7 @@ var spins = {
       }, 
       cards: [
         'We leveraged their fanbase and reinvigorated the request line.'
-      ],
-      button: {
-        label: '',
-        link: ''
-      }
+      ]
     },    
     {
       desktop: {
@@ -637,11 +562,7 @@ var spins = {
       }, 
       cards: [
         'We made it a game and saw engagement increase overnight.'
-      ],
-      button: {
-        label: '',
-        link: ''
-      }
+      ]
     },    
     {
       desktop: {
@@ -650,11 +571,7 @@ var spins = {
       }, 
       cards: [
         'We opened the lines of communication to stations.'
-      ],
-      button: {
-        label: '',
-        link: ''
-      }
+      ]
     },
     {
       desktop: {
@@ -663,11 +580,7 @@ var spins = {
       }, 
       cards: [
         'All for an app that basically started as a way to spam radio stations.'
-      ],
-      button: {
-        label: '',
-        link: ''
-      }
+      ]
     }
   ]
 }
@@ -687,11 +600,7 @@ var fads = {
       }, 
       cards: [
         'Fred Astaire Portland wanted to engage new customers with video.'
-      ],
-      button: {
-        label: '',
-        link: ''
-      }
+      ]
     },
     {
       desktop: {
@@ -700,11 +609,7 @@ var fads = {
       }, 
       cards: [
         'So we developed a system to shoot their showcases and competitions.'
-      ],
-      button: {
-        label: '',
-        link: ''
-      }
+      ]
     },
     // {
     //   poster: 'print.jpg',
@@ -723,11 +628,7 @@ var fads = {
       }, 
       cards: [
         'Oh yeah, and their site had to sync to their iCalendar class-schedule.'
-      ],
-      button: {
-        label: '',
-        link: ''
-      }
+      ]
     },
     {
       desktop: {
@@ -736,11 +637,7 @@ var fads = {
       }, 
       cards: [
         "They couldn't be happier with the results."
-      ],
-      button: {
-        label: '',
-        link: ''
-      }
+      ]
     }
   ]
 }
@@ -759,11 +656,7 @@ var h2h = {
       }, 
       cards: [
         "Head2Head was my first real app.  Before app was a thing."
-      ],
-      button: {
-        label: '',
-        link: ''
-      }
+      ]
     },
     {
       desktop: {
@@ -772,11 +665,7 @@ var h2h = {
       }, 
       cards: [
         "The NHL was our first big client.  Fans voted on goals, players & other highlights"
-      ],
-      button: {
-        label: '',
-        link: ''
-      }
+      ]
     },
     {
       desktop: {
@@ -785,11 +674,7 @@ var h2h = {
       }, 
       cards: [
         "The site went through 3 major version.  I learned a lot."
-      ],
-      button: {
-        label: '',
-        link: ''
-      }
+      ]
     },
     {
       desktop: {
@@ -798,11 +683,7 @@ var h2h = {
       }, 
       cards: [
         "Sadly the company folded into our 4th year after dozens of clients."
-      ],
-      button: {
-        label: '',
-        link: ''
-      }
+      ]
     },
     {
       desktop: {
@@ -811,11 +692,7 @@ var h2h = {
       }, 
       cards: [
         "And the NHL made their own in-house version in Flash (suckers)."
-      ],
-      button: {
-        label: '',
-        link: ''
-      }
+      ]
     }
   ]
 }
@@ -835,11 +712,7 @@ var elay = {
       }, 
       cards: [
         "eLayaway needed a sexier checkout embeddable javascript."
-      ],
-      button: {
-        label: '',
-        link: ''
-      }
+      ]
     },
     {
       desktop: {
@@ -848,11 +721,7 @@ var elay = {
       }, 
       cards: [
         "Across thousands of e-commerce sites, this popup had lots of calculations to work out."
-      ],
-      button: {
-        label: '',
-        link: ''
-      }
+      ]
     },    
     {
       desktop: {
@@ -861,11 +730,7 @@ var elay = {
       }, 
       cards: [
         "I delivered a beautiful and complex pay schedule calculator on spec and schedule."
-      ],
-      button: {
-        label: '',
-        link: ''
-      }
+      ]
     }
   ]
 }
@@ -885,11 +750,7 @@ var kavi = {
       }, 
       cards: [
         "Kavi Workspace needed a promotional questionaire for it's Project Management Software."
-      ],
-      button: {
-        label: '',
-        link: ''
-      }
+      ]
     },
     {
       desktop: {
@@ -898,11 +759,7 @@ var kavi = {
       }, 
       cards: [
         "We gave them a responsive, simple wizard that delivers numbers an organization can use."
-      ],
-      button: {
-        label: '',
-        link: ''
-      }
+      ]
     },
     {
       mobile: {
@@ -911,11 +768,7 @@ var kavi = {
       },
       cards: [
         "We hoped to make the decision to switch to Kavi more concrete."
-      ],
-      button: {
-        label: '',
-        link: ''
-      }
+      ]
     },
     {
       desktop: {
@@ -924,11 +777,7 @@ var kavi = {
       }, 
       cards: [
         "With printably-friently final reports of the savings."
-      ],
-      button: {
-        label: '',
-        link: ''
-      }
+      ]
     }
   ]
 }
@@ -945,42 +794,26 @@ var rsf = {
       mobiles: ['rsf-preview1.png'],
       cards: [
         "Real Smart Fitness wanted to codify their training program in a mobile app."
-      ],
-      button: {
-        label: '',
-        link: ''
-      }
+      ]
     },
     {
       mobiles: ['rsf-preview2.png'],
       cards: [
         "We created 3D puppets that animated and gave instructions through the hour long program"
-      ],
-      button: {
-        label: '',
-        link: ''
-      }
+      ]
     },
     {
       mobiles: ['rsf-preview3.png'],
       cards: [
         "The app got attention for their personal training business."
-      ],
-      button: {
-        label: '',
-        link: ''
-      }
+      ]
     },
     {
       mobiles: ['rsf-preview3.png'],
       cards: [
         "But with a $5 price tag and a real lack of on-going development.",
         "The competition won out on market share."
-      ],
-      button: {
-        label: '',
-        link: ''
-      }
+      ]
     }
   ]
 }
