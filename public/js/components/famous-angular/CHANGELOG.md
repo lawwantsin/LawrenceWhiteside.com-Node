@@ -1,3 +1,104 @@
+<a name="0.3.0"></a>
+# 0.3.0 (2014-08-15)
+
+
+## Bug Fixes
+
+- expose .util on window for non-DI use
+ ([3820b783](https://github.com/Famous/famous-angular/commit/3820b783ebabbfc50da1aa63ac1ec00bf0b81304))
+- throw exception if fa-elements are added to fa-surface
+ ([60c8fe05](https://github.com/Famous/famous-angular/commit/60c8fe05539c51e7d004c76404e473530ad42a82))
+- make famous#getIsolate correctly manage cases where scope is null
+ ([175a775a](https://github.com/Famous/famous-angular/commit/175a775a04e2bc9245ae1e8c14c7d6a2e940dedf))
+- support proper translate-z (and general 3D) behavior in Chrome
+ ([1f82bd97](https://github.com/Famous/famous-angular/commit/1f82bd97d9fb03249023b6a90f8e3ce787bb38e5))
+- add check for isFaElement for animate leave
+ ([4d009c5d](https://github.com/Famous/famous-angular/commit/4d009c5d0f34ae6cdafe5e10cbc7b54e3decd526))
+
+
+## Features
+
+- implement fa-video-surface
+ ([9a07f11d](https://github.com/Famous/famous-angular/commit/9a07f11d69016eb5b46983d7ba7da451c11d133a))
+- ngClick decorated for fa-surface with touch
+ ([3e50b871](https://github.com/Famous/famous-angular/commit/3e50b871a0f52ff90a9905917a027f5dafea95c8))
+- add all mouseEvents
+ ([cbd875bc](https://github.com/Famous/famous-angular/commit/cbd875bcfe5436fb2085e7265f4b65d147051330))
+- decorate ng-click to register on renderNode in fa-directives
+ ([968b09ac](https://github.com/Famous/famous-angular/commit/968b09ac3b85d6fe29003cdcb1844058d3419af1))
+- update famous-angular.css to support changes in Famo.us core
+ ([864bd8b8](https://github.com/Famous/famous-angular/commit/864bd8b8ca5866959e34af3f85cbc8a0108e96c2))
+- removed the requirejs dependency
+ ([c9d318f2](https://github.com/Famous/famous-angular/commit/c9d318f27bb5d5f0ecdadf0029955976b5d8eff0))
+- add hide and show functionality on renderables
+ ([767fea86](https://github.com/Famous/famous-angular/commit/767fea86397ffcc874de463bb8f630d091c27e08))
+
+
+## Performance Improvements
+
+- include the famous modules definition in $famous provider
+ ([12668f2a](https://github.com/Famous/famous-angular/commit/12668f2a287439397f2a33907bdfb835a32ed2df))
+
+
+## Documentation
+
+- fixed docs code interpreted by jekyll & angular
+ ([4993f169](https://github.com/Famous/famous-angular/commit/4993f169c1305afd922626c040fb64d16d8cbf82))
+- live demos
+ ([4b519241](https://github.com/Famous/famous-angular/commit/4b519241abb367dbb80f742833ea104abf87dfae),
+ [#158](https://github.com/Famous/famous-angular/issues/158))
+- update readme to describe how to get started without RequireJS
+ ([aa553e4c](https://github.com/Famous/famous-angular/commit/aa553e4c9e7c0df146d98670457f62310b211fbe))
+
+
+<a name="0.2.0"></a>
+# 0.2.0 (2014-08-04)
+
+
+## Bug Fixes
+
+- faOptions in faGridLayout to work properly
+ ([99086406](https://github.com/Famous/famous-angular/commit/990864068c1b8f7ee8ce052e9622033620ab3d9e))
+- make addClass and removeClass return the correct element (enables ng-bind-html)
+ ([4c62288a](https://github.com/Famous/famous-angular/commit/4c62288a11f081fc4e59f682e8371265b6c26875))
+- make fa-grid-layout respect changes in ng-repeat index when updating
+ ([0410113d](https://github.com/Famous/famous-angular/commit/0410113d07df68a147137efe8c89c7283bdc9bd7))
+- fix errors caused by empty class names getting applied to Surfaces via
+ ([4054c446](https://github.com/Famous/famous-angular/commit/4054c446c9d0995814805ce3406cc3ad1247051b))
+
+
+## Features
+
+- deprecate fa-animation
+ ([e50d3536](https://github.com/Famous/famous-angular/commit/e50d35367b8f28181fe40ce47d312456f81bfada))
+- run unit tests with PhantomJS
+ ([481a483c](https://github.com/Famous/famous-angular/commit/481a483c3a3a0c4359790f21c0fd106e68ed12bd))
+- add fa-mouseover directive
+ ([b2d00d09](https://github.com/Famous/famous-angular/commit/b2d00d095fff2fb9f3d66cf406e28633cf7ef730))
+- support removing children from fa-flipper
+ ([f97e357d](https://github.com/Famous/famous-angular/commit/f97e357d5e231c01c8f45c4464a8b2477460fd01))
+- implement physics support by accepting Particles as fa-modifier attributes
+ ([32c8ebe9](https://github.com/Famous/famous-angular/commit/32c8ebe97011b5fc6adcb964cfc209924654a77f))
+- add timeline service to replace fa-animation
+ ([dd5494d1](https://github.com/Famous/famous-angular/commit/dd5494d15329413cd6033df8db43f9a37b597cd9))
+- added faCanvasSurface
+ ([82295bf1](https://github.com/Famous/famous-angular/commit/82295bf1448d35529befe9e22c1be0ee2201adad))
+- support reflowing fa-grid-layout and fa-scrollview when fa-index changes
+ ([3a7d6ee4](https://github.com/Famous/famous-angular/commit/3a7d6ee4e990e1a0e81832fdfb1f066b15821cc7))
+- throw error objects
+ ([c0d3130a](https://github.com/Famous/famous-angular/commit/c0d3130abf7eba74da176ffbbfb2db5656bc7fa8))
+
+
+## Documentation
+
+- update fa-modifier ng-doc with support for Particles
+ ([32f296db](https://github.com/Famous/famous-angular/commit/32f296dbb972956d949b15e6293f1cce1acb2a1f))
+- add link to starter kit zip in README
+ ([cd75fd43](https://github.com/Famous/famous-angular/commit/cd75fd436715703769897c03bf303a746b94bd8a))
+- add link to Pivotal roadmap in README
+ ([b9599c1e](https://github.com/Famous/famous-angular/commit/b9599c1ea494f478920a86345a772dbccba24403))
+
+
 <a name="0.1.0"></a>
 # 0.1.0 (2014-07-13)
 

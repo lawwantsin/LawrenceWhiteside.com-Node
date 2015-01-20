@@ -3,10 +3,10 @@
     .iContent.scrollContent
       each section, x in sections.film
         a.frame.clickable(href="#!film/#{section.slug}")
-          img(src="/images/stills/#{section.slug}/#{section.thumb}")
+          img(src="/images/stills/#{section.slug}/#{section.thumb.replace('?', 1)}")
           .caption
             span.label #{section.title}
-  .iso.web-header-iso.header-iso.web-header-scroll.header-scroll
+  .iso.web-header-iso.header-iso.web-header-scroll.header-scroll(header-iso="sdsd")
     .iContent.scrollContent
       each section, x in sections.web
         a.frame.clickable(href="#!web/#{section.slug}") 

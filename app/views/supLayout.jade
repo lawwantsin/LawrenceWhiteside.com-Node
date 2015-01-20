@@ -13,7 +13,7 @@ html(lang='en')
     block content
     script(type="text/javascript", src="https://js.stripe.com/v2/")
     if process.env.NODE_ENV == 'development'
-      script(data-main="js/main", src="/js/components/requirejs/require.js")
+      script(data-main="js/can-gs-iscroll", src="/js/components/requirejs/require.js")
     else
-      script(src="/js/app-compressed.js")
+      script(src="/js/compressed/cgi.js")
     include shared/googleAnalytics

@@ -1,11 +1,7 @@
-.theater
+.theater(data-theater-poster="#{page.theater.poster}", data-theater-video="#{page.theater.video}")
   .row
     .column.small-12.large-8.large-push-4
       .screen
-        video.vjs-default-skin.video-js(data-setup='{ "controls": true, "loop": false, "autoplay": false }', poster="/images/stills/#{section.slug}/#{page.theater.poster}", width="100%", height="100%")
-          source(src="http://lawwantsin.s3.amazonaws.com/web-portfolio/films/#{page.theater.video}.webm", type='video/webm')
-          source(src="http://lawwantsin.s3.amazonaws.com/web-portfolio/films/#{page.theater.video}.mp4", type='video/mp4')
-          source(src="http://lawwantsin.s3.amazonaws.com/web-portfolio/films/#{page.theater.video}.ogv", type='video/ogg')
     .column.small-12.large-4.large-pull-8
       .cards
         .infoBox

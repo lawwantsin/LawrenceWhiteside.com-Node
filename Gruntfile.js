@@ -61,25 +61,23 @@ module.exports = function (grunt) {
     },
      bower: {
       target: {
-        rjsConfig: 'public/js/main.js'
+        rjsConfig: 'public/js/can-gs-iscroll.js'
       }
     },
     requirejs: {
       compile: {
         options: {
-          baseUrl: "public/js",
-          out: "public/js/app-compressed.js",
-          name: "main",
-          mainConfigFile: "public/js/main.js",
+          baseUrl: "public/js/compressed",
+          out: "public/js/compressed/cgi.js",
+          name: "cgi",
+          mainConfigFile: "public/js/can-gs-iscroll.js",
           done: function(done, output) {
             var duplicates = require('rjs-build-analysis').duplicates(output);
-
             if (duplicates.length > 0) {
               grunt.log.subhead('Duplicates found in requirejs build:');
               grunt.log.warn(duplicates);
               return done(new Error('r.js built duplicate modules, please check the excludes option.'));
             }
-
             done();
           }
         }

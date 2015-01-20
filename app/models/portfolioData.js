@@ -5,7 +5,8 @@
 var googleM = {
   slug : 'googlem',
   title : "Google M",
-  thumb: 'googlem-1.jpg',
+  thumb: 'googlem-?.jpg',
+  thumbNum: 3,
   summary: "6 Minute Short Comedy about one woman's love for her phone.",
   pages: [ 
     {
@@ -38,7 +39,8 @@ var googleM = {
 var pModels = {
   slug : 'pm-calendar',
   title : "Prestegious Models",
-  thumb: 'pm-1.jpg',
+  thumb: 'pm-?.jpg',
+  thumbNum: 3,
   summary: "Behind the scenes calendar photoshoot at the Velvet Lounge in NYC",
   pages: [ 
     {
@@ -54,7 +56,8 @@ var pModels = {
 
 var aaaf = {
   slug: 'alternative-arts',
-  thumb: 'necropolis-2.jpg',
+  thumb: 'necropolis-?.jpg',
+  thumbNum: 3,
   title : 'Alternative Arts Association',
   summary: 'Promotional video about the multi-night Necropolis arts festival.',
   pages: [ 
@@ -70,7 +73,8 @@ var aaaf = {
 
 var fadsf = {
   slug: 'fred-astaire',
-  thumb: 'fads-1.jpg',
+  thumb: 'fads-?.jpg',
+  thumNum: 3,
   title : 'Fred Astaire Dance Portland',
   summary: 'Promotional video for the school to showcase the dances they teach.',
   pages: [ 
@@ -88,7 +92,8 @@ var fadsf = {
 var morningAfter = {
   slug: 'morning-after',
   title: "The Morning After",
-  thumb: 'morning-after-1.jpg',
+  thumb: 'morning-after-?.jpg',
+  thumbNum: 3,
   summary: 'Episode 3 of a 3-part web-series about love and lycanthropy',
   pages: [ 
     {
@@ -115,7 +120,8 @@ var morningAfter = {
 
 var iNinja = {
   slug: 'ininja',
-  thumb: 'ininja-2.jpg',
+  thumb: 'ininja-?.jpg',
+  thumbNum: 4,
   title : 'iNinja',
   summary: 'A 3 minute short about the secrets we keep as an international ninja assassin.',
   pages: [ 
@@ -143,7 +149,8 @@ var iNinja = {
 
 var coursing = {
   slug: 'coursing',
-  thumb: 'coursing-1.jpg',
+  thumb: 'coursing-?.jpg',
+  thumbNum: 4,
   title : 'Coursing',
   summary: 'Our first entry into the 48-hour film festivl in Portland.  2011.',
   pages: [ 
@@ -168,7 +175,8 @@ var coursing = {
 
 var illHave = {
   slug: 'ill-have-another',
-  thumb: 'illhave-1.jpg',
+  thumb: 'illhave-?.jpg',
+  thumbNum: 4,
   title : "I'll Have Another",
   summary: 'Our second try at the 48-hour film festivl in Portland.  2012.',
   pages: [ 
@@ -195,7 +203,8 @@ var illHave = {
 var americanDf = {
   slug: 'american-detour',
   title : 'American Detour',
-  thumb: 'ad-3.jpg',
+  thumb: 'ad-?.jpg',
+  thumbNum: 5,
   summary: 'Shot 3 pilot episodes for the American Detour Webseries',
   pages: [ 
     {
@@ -231,7 +240,8 @@ var americanDf = {
 var yay = {
   slug: 'yaywallet',
   title : 'YayWallet',
-  thumb: 'yaywallet-1.jpg',
+  thumb: 'yaywallet-?.jpg',
+  thumbNav: 4,
   summary: 'Crowd Supply video for a crowd-funding campaign.',
   pages: [ 
     {
@@ -250,7 +260,8 @@ var yay = {
 var bsa = {
   slug: 'bsa',
   title : 'Brooklyn Street Art',
-  thumb: 'bsa-4.jpg',
+  thumb: 'bsa-?.jpg',
+  thumbNav: 4,
   summary: 'Promotional video for the Brooklyn-Based art collective and blog',
   pages: [ 
     {
@@ -270,7 +281,8 @@ var every = {
   slug: 'everybody-dies',
   title : 'Everybody Dies Trailer',
   summary: "Movie Trailer for a fringe play in NYC",
-  thumb: 'ed-1.jpg',
+  thumb: 'ed-?.jpg',
+  thumbNum: 3,
   pages: [ 
     {
       theater: {
@@ -278,8 +290,8 @@ var every = {
         video: 'everybody-dies-trailer',
       },
       cards : [
-        'Edible Brains wanted somethign special to set them apart in a Theatre festival competition.', 
-        'We made a movie trailer for the play, that delighted the admissions panel.'
+        'Edible Brains wanted something special to set them apart in a Theatre festival competition.', 
+        'We made a movie trailer for the play, that delighted and horrified the admissions panel.'
       ]
     },
     {
@@ -300,8 +312,8 @@ var every = {
 var moment = {
   slug: 'moment',
   title : 'Moment',
-  thumb: 'moment-1.jpg',
-  video: 'moment',
+  thumb: 'moment-?.jpg',
+  thumbNum: 2,
   pages: [ 
     {
       theater: {
@@ -309,7 +321,7 @@ var moment = {
         video: 'moment-short',
       },
       cards : [
-        ''
+        'Once upon a time, I made a music video about how photographs steal our memories.'
       ]
     },
     {

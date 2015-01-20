@@ -12,9 +12,9 @@
     "underscore": null,
     "requirejs": null,
     "canjs": null,
-    "famous": null,
-    "angular": null,
-    "famous-angular": null,
-    "greensock": null
+    "famous-angular": "0.3.0",
+    "angular": "1.2.22",
+    "greensock": null,
+    "requirejs-domready": null
   }
 }

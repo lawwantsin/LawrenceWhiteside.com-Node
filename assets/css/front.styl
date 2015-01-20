@@ -28,9 +28,12 @@
       text-decoration: none
       position: relative
       float: left
+      img
+        position: relative
+        opacity: 0
       .caption
         font-family: 'Lato'
-        font-size: 3em
+        font-size: 2.4em
         text-align: left
         width: 100%
         position: absolute
@@ -39,9 +42,9 @@
         background-color: rgba(0,0,0,0.7)
         padding: 10px
         transition-property: opacity
-        transition-duration: 2s
         -webkit-transition-property: opacity        
-      &:hover .caption
+        transition-duration: 0.5s
+      &:hover .caption, &:active .caption
         opacity: 1
       img
         // position: absolute

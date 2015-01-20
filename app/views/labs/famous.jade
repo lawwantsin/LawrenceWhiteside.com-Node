@@ -1,0 +1,7 @@
+extends ../labsLayout
+block content
+  fa-app(id="app", ng-app="famousApp", ng-controller="mainController")
+    fa-grid-layout(fa-options="gridOptions")
+      fa-modifier(ng-repeat="item in list", fa-size="[undefined, undefined]", fa-origin="[0.5, 0.5]", fa-align="[0.5, 0.5]")
+        fa-surface(fa-background-color="item.bgColor") {{item.content}}
+        //- fa-video-surface(ng-repeat="item in list", fa-video-url="http://lawwantsin.s3.amazonaws.com/kate/{{video}}.mp4", fa-options="{autoplay: true}")

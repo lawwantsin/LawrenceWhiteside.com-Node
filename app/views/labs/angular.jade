@@ -1,0 +1,43 @@
+extends ../labsLayout
+block content
+  div(ng-app="famousApp", ng-controller='myController')
+    //- .slide.slide-front(fit-image=true, priority='bottom right', ng-style="style()")
+    //-   img(src='/images/labs/kate/sleeping.jpg')
+    //- .slide.slide-experience(fit-image=true, ng-style="style()")
+    //-   img(src='/images/labs/kate/wall.jpg')
+    //- .slide.slide-reel(fit-image=true, ng-style="style()")
+    //-   img(src='/images/labs/kate/train.jpg')
+    //- .slide.slide-contact(fit-image=true, ng-style="style()")
+    .contact-form
+      form(name='contactForm', novalidate ng-submit="contactForm()")
+        fieldset
+          legend Contact Kate
+          .row
+            .columns.small-6
+              label Your name
+              input(type='text', name="name", placeholder="Your Name", ng-model="contact.name", ng-minlength=3, ng-focus=true, ng-maxlength=20, required)
+              .error(ng-show="contactForm.name.$dirty && contactForm.name.$invalid && contactForm.name.$focused")
+                small.error(ng-show="contactForm.name.$error.required") Your name please
+                small.error(ng-show="contactForm.name.$error.minlength") Your name must be at least 3 characters
+                small.error(ng-show="contactForm.name.$error.maxlength") Your name cannot be longer than 20 characters
+              div(my-directive="hello", url="contact.email", some-link="contact.name")
+              textarea(ng-disabled="isDisabled")
+              label Your EMail
+              input(type='email', name="email", placeholder="Your email", ng-model="contact.email", ng-focus=true, ng-minlength=3, ng-maxlength=20, required, ensure-unique="email")
+              input(type='text', ng-readonly="prop", value="nope")                
+              input(type='text', ng-model="prop")
+              .error(ng-show="contactForm.email.$dirty && contactForm.email.$invalid && contactForm.email.$focused")
+                small.error(ng-show="contactForm.email.$error.required") Your email please
+                small.error(ng-show="contactForm.email.$error.minlength") Your email must be at least 3 characters
+                small.error(ng-show="contactForm.email.$error.maxlength") Your email cannot be longer than 20 characters
+                small.error(ng-show="contactForm.email.$error.unique") That is not a valid email.  Please input a valid email.
+              button(type="submit", ng-disabled="contactForm.$invalid", class="button radius") Send
+    form(ng-submit="submit()")
+      label People
+      input(type='text', ng-model='contact.person')
+      ul(ng-repeat="(index, object) in people")
+        li {{ object.person }}
+    //- img(src='/images/labs/kate/hammock.jpg')
+    svg
+      circle(ng-attr-cx="{{radius}}")
+    button(ng-click="grow()") Grow
