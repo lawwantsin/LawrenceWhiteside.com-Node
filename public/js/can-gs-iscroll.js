@@ -1,5 +1,4 @@
 require.config({
-  name: 'cgi',
   preserveLicenseComments: false,
   include: 'requireLib',
   shim: {
