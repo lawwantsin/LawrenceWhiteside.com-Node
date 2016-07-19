@@ -68,7 +68,7 @@ module.exports = function (grunt) {
       compile: {
         options: {
           baseUrl: "public/js",
-          out: "public/js/compressed/cgi.js",
+          out: "public/js/compressed/cgi.js", 
           mainConfigFile: "public/js/can-gs-iscroll.js",
           done: function(done, output) {
             var duplicates = require('rjs-build-analysis').duplicates(output);

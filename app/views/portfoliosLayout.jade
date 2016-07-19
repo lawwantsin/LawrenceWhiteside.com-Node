@@ -13,9 +13,9 @@ html(lang='en')
     !=css('app')
   body.portfolio('data-video' = 'off')
     block content
-    script(type="text/javascript", src="https://js.stripe.com/v2/")
-    if process.env.NODE_ENV == 'development'
-      script(data-main="js/can-gs-iscroll", src="/js/components/requirejs/require.js")
-    else
+    script(type="text/javascript", src="https://js.stripe.com/v2/", sync="true")
+    script(data-main="js/can-gs-iscroll", src="/js/components/requirejs/require.js")
+    //- if process.env.NODE_ENV == 'development'
+    //- else
       script(src="/js/compressed/cgi.js")
     include shared/googleAnalytics
